@@ -1,0 +1,15 @@
+{
+  "python": "3.13.5",
+  "platform": "Windows",
+  "method": "median of 9 warm local reads; 100 copies of a real saved snapshot in a temporary SQLite database",
+  "runs": 100,
+  "snapshot_bytes": 28570,
+  "summary_bytes": 338,
+  "list_100_previous_ms": 62.05270002828911,
+  "list_100_projection_ms": 7.859200006350875,
+  "list_speedup": 7.895549162528688,
+  "polling_full_snapshot_ms": 2.71869997959584,
+  "polling_unchanged_revision_ms": 1.6140000079758465,
+  "polling_speedup": 1.6844485540030587,
+  "same_summary_values": true
+}

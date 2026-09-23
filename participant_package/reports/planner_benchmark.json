@@ -1,0 +1,36 @@
+{
+  "seed": 42,
+  "repetitions": 5,
+  "method": "Frozen v1 public posterior and spent resources. Alternating calls; loading and pilot time excluded. Cache-only output equals old specs and actual audiences.",
+  "identical_cache_only_plan": true,
+  "seconds": {
+    "original": [
+      0.6293849000358023,
+      0.573911199986469,
+      0.6131190999876708,
+      0.6431599000352435,
+      0.609058800037019
+    ],
+    "cached_identical_objective": [
+      0.06815910001751035,
+      0.08919139998033643,
+      0.06819340004585683,
+      0.0756385000422597,
+      0.07756250002421439
+    ],
+    "new_search": [
+      0.19015819998458028,
+      0.2429740999941714,
+      0.19293180003296584,
+      0.2025800999836065,
+      0.30425190000096336
+    ]
+  },
+  "median_seconds": {
+    "original": 0.6131190999876708,
+    "cached_identical_objective": 0.0756385000422597,
+    "new_search": 0.2025800999836065
+  },
+  "cache_speedup": 8.105912989352213,
+  "full_search_speedup": 3.0265514729101555
+}

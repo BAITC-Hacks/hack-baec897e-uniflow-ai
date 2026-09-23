@@ -1,0 +1,5 @@
+{
+  "prior_sensitivity": "Multiply weak historical mean ranking by 0.5, 1, 2 before the same clipping; prior variance stays broad and unchanged. Paired noise seeds, standard agent seed42.",
+  "overlap_sensitivity": "Compare final analytic pilot inclusion against ignoring pilot overlap, holding learned posterior and spent pilot resources fixed. Scorer uses actual hidden pilot IDs only after both plans are fixed. Agent does not see the scores.",
+  "limits": "Three local-model seeds are a sensitivity check, not statistical evidence of judging performance. Analytic inclusion is exact under uniform independent sampling at fixed posterior means; uncertainty of the maximum over uncertain effect parameters is not integrated."
+}

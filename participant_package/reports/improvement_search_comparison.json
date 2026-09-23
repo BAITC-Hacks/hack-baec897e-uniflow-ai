@@ -1,0 +1,121 @@
+{
+  "method": "Paired recorded advanced-versus-temporary-simple outputs on identical true model hashes and environment seeds. Final fresh-check rows are deliberately excluded; this broader evidence was available before the restoration decision. No policy is executed or modified by this aggregation.",
+  "source_csv_sha256": {
+    "v2_advanced\\improvement.csv": "37bfd23bdf72d8c27feb47fc505b70bb428ee63ed12e50ff74b73f629d39dad6",
+    "v2_simple\\improvement.csv": "914acbfc5b7be2c4a7a7a6f13c06910373d49f5dc7dcd725f9b20dc1134d1c28",
+    "v2_advanced\\improvement_model_holdout.csv": "567156afc92f071012f6c04c73e16c41a253074f019426f48f3b88e5bff05459",
+    "v2_simple\\improvement_model_holdout.csv": "b566caeb70ea228e3de524c64631e93d6f149f7a712348dc447f2e1b2d0aa06d"
+  },
+  "summary": [
+    {
+      "scenario": "low_conversion",
+      "paired_runs": 3,
+      "mean_advanced_net": -24709.09745285936,
+      "mean_simple_net": -25099.81408674036,
+      "mean_advanced_minus_simple": 390.71663388100086,
+      "advanced_wins": 1,
+      "ties": 2,
+      "simple_wins": 0
+    },
+    {
+      "scenario": "mock_heldout",
+      "paired_runs": 10,
+      "mean_advanced_net": 995809.8847350955,
+      "mean_simple_net": 913107.004624377,
+      "mean_advanced_minus_simple": 82702.88011071846,
+      "advanced_wins": 3,
+      "ties": 6,
+      "simple_wins": 1
+    },
+    {
+      "scenario": "mock_tuning",
+      "paired_runs": 10,
+      "mean_advanced_net": 583506.8821906357,
+      "mean_simple_net": 580558.1165069093,
+      "mean_advanced_minus_simple": 2948.7656837264426,
+      "advanced_wins": 1,
+      "ties": 9,
+      "simple_wins": 0
+    },
+    {
+      "scenario": "model_holdout_permuted_leaders",
+      "paired_runs": 1,
+      "mean_advanced_net": -296781.05822196347,
+      "mean_simple_net": -297527.1431348897,
+      "mean_advanced_minus_simple": 746.0849129262497,
+      "advanced_wins": 1,
+      "ties": 0,
+      "simple_wins": 0
+    },
+    {
+      "scenario": "model_holdout_saturated_calls",
+      "paired_runs": 1,
+      "mean_advanced_net": 21772273.858294025,
+      "mean_simple_net": 15867046.720478822,
+      "mean_advanced_minus_simple": 5905227.1378152035,
+      "advanced_wins": 1,
+      "ties": 0,
+      "simple_wins": 0
+    },
+    {
+      "scenario": "model_holdout_weak_history",
+      "paired_runs": 1,
+      "mean_advanced_net": 7106126.385271946,
+      "mean_simple_net": 7106126.385271946,
+      "mean_advanced_minus_simple": 0.0,
+      "advanced_wins": 0,
+      "ties": 1,
+      "simple_wins": 0
+    },
+    {
+      "scenario": "near_zero",
+      "paired_runs": 3,
+      "mean_advanced_net": -35637.70846874735,
+      "mean_simple_net": -35645.3625588772,
+      "mean_advanced_minus_simple": 7.6540901298479485,
+      "advanced_wins": 1,
+      "ties": 2,
+      "simple_wins": 0
+    },
+    {
+      "scenario": "permuted_leaders",
+      "paired_runs": 3,
+      "mean_advanced_net": -236577.77014444218,
+      "mean_simple_net": -236852.78204356311,
+      "mean_advanced_minus_simple": 275.0118991209699,
+      "advanced_wins": 1,
+      "ties": 2,
+      "simple_wins": 0
+    },
+    {
+      "scenario": "saturated_calls",
+      "paired_runs": 3,
+      "mean_advanced_net": 19089371.248244856,
+      "mean_simple_net": 17067945.640299343,
+      "mean_advanced_minus_simple": 2021425.6079455137,
+      "advanced_wins": 3,
+      "ties": 0,
+      "simple_wins": 0
+    },
+    {
+      "scenario": "sign_reversed",
+      "paired_runs": 3,
+      "mean_advanced_net": 157452.5583848089,
+      "mean_simple_net": 165747.35742920346,
+      "mean_advanced_minus_simple": -8294.799044394575,
+      "advanced_wins": 1,
+      "ties": 1,
+      "simple_wins": 1
+    },
+    {
+      "scenario": "weak_history",
+      "paired_runs": 3,
+      "mean_advanced_net": 11192513.466121487,
+      "mean_simple_net": 10555794.260389648,
+      "mean_advanced_minus_simple": 636719.2057318389,
+      "advanced_wins": 1,
+      "ties": 2,
+      "simple_wins": 0
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+scenario,strategy,seed,agent_seed,net_arpu_gain,gross_gain,communication_cost,total_contacts,unique_customers,n_pilots,n_final_campaigns,runtime_seconds,negative,conforms
+model_holdout_permuted_leaders,v1,31,42,-904721.136927136,-804721.1369271361,100000.0,14646,12046,16,10,5.323716800019611,True,True
+model_holdout_permuted_leaders,new,31,42,-297527.1431348897,-229733.14313488972,67794.0,15000,13785,16,8,2.2247441000072286,True,True
+model_holdout_weak_history,v1,31,42,9307590.2246789,9407590.2246789,100000.0,15000,11505,16,7,4.443440500006545,False,True
+model_holdout_weak_history,new,31,42,7106126.385271946,7206124.385271946,99998.0,15000,12384,16,6,2.3492249000119045,False,True
+model_holdout_saturated_calls,v1,31,42,21045564.051779084,21144832.051779084,99268.0,15000,12125,16,5,4.69330829998944,False,True
+model_holdout_saturated_calls,new,31,42,15867046.720478822,15967036.720478822,99990.0,15000,10369,16,4,2.156489800021518,False,True

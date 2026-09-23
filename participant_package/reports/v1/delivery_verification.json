@@ -1,0 +1,74 @@
+{
+  "organizer_files": [
+    {
+      "path": "participant_package/environment.py",
+      "sha256": "6385136a79814624449843930c55305b397a2d3d30c4d8c280e7b2b08bf033fc",
+      "unchanged_from_git_head": true
+    },
+    {
+      "path": "participant_package/scoring_core.py",
+      "sha256": "74e2316c2329872dd7c93165a4b47e6c583ecdb9af853671c14a8a11cb701cf7",
+      "unchanged_from_git_head": true
+    },
+    {
+      "path": "participant_package/mock_environment.py",
+      "sha256": "9c7515361270ebef8cec08f3a78ed0d288532a14d51e08eb6455de71994f9111",
+      "unchanged_from_git_head": true
+    },
+    {
+      "path": "participant_package/local_eval.py",
+      "sha256": "6af581b2c626c75adf72afd8cf965b883753518ef6b75df3844571d97a508e02",
+      "unchanged_from_git_head": true
+    },
+    {
+      "path": "participant_package/make_submission.py",
+      "sha256": "e5aa465252221835600efb007bd080693a1fdf2ac79318e818d62abb576718fe",
+      "unchanged_from_git_head": true
+    },
+    {
+      "path": "participant_package/agent_template.py",
+      "sha256": "739ec30073deef0767e64b814043dd6190ed85ed0eb70ec15dfe461cbeedf62f",
+      "unchanged_from_git_head": true
+    },
+    {
+      "path": "participant_package/customer_profile.csv",
+      "sha256": "e377baa2553a790f030a1d3411b3b5c5ca6316ccc7485badc9b08afa6da17d3f",
+      "unchanged_from_git_head": true
+    },
+    {
+      "path": "participant_package/feature_dictionary.csv",
+      "sha256": "7cf844d19cceb29f6796d49b047296b2643a35e7345390a637320c33553fb5fd",
+      "unchanged_from_git_head": true
+    },
+    {
+      "path": "participant_package/tariff_dictionary.csv",
+      "sha256": "f28fdc513c562b86a86849c243340523b0f2bb450a6a74a999322aeab505f584",
+      "unchanged_from_git_head": true
+    },
+    {
+      "path": "participant_package/data/arpu_monthly.csv",
+      "sha256": "e72c0fd5a59df245a4972ccd83d0139ef5c81273708cd14fe75639d2d08558fa",
+      "unchanged_from_git_head": true
+    },
+    {
+      "path": "participant_package/data/change_tariff.csv",
+      "sha256": "655d6af287093e681e4057ce9db438d4953598b5340951d95b891ed0cb6ad257",
+      "unchanged_from_git_head": true
+    },
+    {
+      "path": "participant_package/data/dict_tariff.csv",
+      "sha256": "74ef4242c9a6c46bd391d78251d6e3b9a408d913590c6efad7aa3957018be74c",
+      "unchanged_from_git_head": true
+    },
+    {
+      "path": "participant_package/data/traffic.csv",
+      "sha256": "51bb265b0c561564899b0718b5598d662eeea1ad00e333e001433dcd196a0857",
+      "unchanged_from_git_head": true
+    }
+  ],
+  "all_originals_unchanged": true,
+  "clean_copy_submission_matches": true,
+  "submission_sha256": "8cc87c56cd79afa05d0879a0695e769c4809748bc2da2b8c5eb95322f24e8f85",
+  "core_imports_fastapi": false,
+  "core_imports_scorer": false
+}

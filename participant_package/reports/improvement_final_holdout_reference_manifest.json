@@ -1,0 +1,23 @@
+{
+  "reference": {
+    "experiments/reference_v1/__init__.py": "a86e4c2d4b57a2a1f9cd3b493a13736b8effc703a69ca5bedac16f17640c6201",
+    "experiments/reference_v1/agent_core.py": "451e8898ec4aa2eed20ee7ad7d080e5febb2a3a3fdefa8d4454483341d152ac4",
+    "experiments/reference_v1/candidates.py": "6df3e030c186aea30254d3f9c7cf689baf8857e2a6795b51ec023dc8575ea67f",
+    "experiments/reference_v1/portfolio.py": "f638dfb68110de664e78adea858edbb13dd5120c472a3ab82418208d6f6c85d1",
+    "experiments/reference_v1/posterior.py": "abfb816341d47380ca448696574f96a3e2509cb2b14210d2e943b1dc8f585969"
+  },
+  "data_and_organizer": {
+    "environment.py": "6385136a79814624449843930c55305b397a2d3d30c4d8c280e7b2b08bf033fc",
+    "scoring_core.py": "74e2316c2329872dd7c93165a4b47e6c583ecdb9af853671c14a8a11cb701cf7",
+    "mock_environment.py": "9c7515361270ebef8cec08f3a78ed0d288532a14d51e08eb6455de71994f9111",
+    "local_eval.py": "6af581b2c626c75adf72afd8cf965b883753518ef6b75df3844571d97a508e02",
+    "make_submission.py": "e5aa465252221835600efb007bd080693a1fdf2ac79318e818d62abb576718fe",
+    "agent_template.py": "739ec30073deef0767e64b814043dd6190ed85ed0eb70ec15dfe461cbeedf62f",
+    "customer_profile.csv": "e377baa2553a790f030a1d3411b3b5c5ca6316ccc7485badc9b08afa6da17d3f",
+    "data/change_tariff.csv": "655d6af287093e681e4057ce9db438d4953598b5340951d95b891ed0cb6ad257",
+    "data/dict_tariff.csv": "74ef4242c9a6c46bd391d78251d6e3b9a408d913590c6efad7aa3957018be74c"
+  },
+  "models": {
+    "mock_fresh": "580c22fd25b21dae8af9e755556a9717e70a4bb077eeda3f552b633b92c9cf7c"
+  }
+}

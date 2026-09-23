@@ -1,0 +1,272 @@
+{
+  "metadata": {
+    "python": "3.13.5",
+    "scope": "model_holdout",
+    "status": "completed",
+    "planned_scenario_seed_pairs": 3,
+    "harness_sha256": "bb7a74ea01590dc4ef6d356c925a56a0f7a56229289f21b5fdddab54d9ccc0e5",
+    "model_rng_seed": 20260925,
+    "agent_seed": 42,
+    "new_options": {},
+    "final_policy_revision": {
+      "default_advanced_search": false,
+      "decision_basis": "Structural removal of advanced search after the first held-out evaluation, based on zero improvement in development component ablations and frozen-posterior diagnostics.",
+      "other_parameter_changes": false,
+      "previous_advanced_reports": "reports/v2_advanced",
+      "reused_evaluation_warning": "Repeated full/model_holdout cases are not fresh independent hold-outs after the structural decision.",
+      "fresh_check": "Only final_holdout mock seeds40..44 were declared after the final structural freeze; they change pilot noise/sampling, not mock true effects. No further tuning is performed."
+    },
+    "source_hashes": {
+      "v1": {
+        "experiments/reference_v1/__init__.py": "a86e4c2d4b57a2a1f9cd3b493a13736b8effc703a69ca5bedac16f17640c6201",
+        "experiments/reference_v1/agent_core.py": "451e8898ec4aa2eed20ee7ad7d080e5febb2a3a3fdefa8d4454483341d152ac4",
+        "experiments/reference_v1/candidates.py": "6df3e030c186aea30254d3f9c7cf689baf8857e2a6795b51ec023dc8575ea67f",
+        "experiments/reference_v1/portfolio.py": "f638dfb68110de664e78adea858edbb13dd5120c472a3ab82418208d6f6c85d1",
+        "experiments/reference_v1/posterior.py": "abfb816341d47380ca448696574f96a3e2509cb2b14210d2e943b1dc8f585969"
+      },
+      "new": {
+        "uniflow/__init__.py": "0bbf9388678e04808700c7624d9e4d60ad0cdcc31d85534ac287b2b4aa656aeb",
+        "uniflow/agent_core.py": "7d9ee85211fe833c41e7cc9dc7aab19313e1efd651f1bb5d12b52849f3605fcf",
+        "uniflow/candidates.py": "ba8a38bdb0f283ca1f36712fcf2b92eec8077be83fb9a707e7df949a29fddee8",
+        "uniflow/portfolio.py": "79e62e1c80f6185fe575e187bdf34fa385e061cd4781cc44c6fe577d72958dc7",
+        "uniflow/posterior.py": "aae10148a13cb9f07cefa7abeb5eaffd3658953dd72503f07a6db4e7fc4d0007"
+      }
+    },
+    "dataset_and_organizer_hashes": {
+      "environment.py": "6385136a79814624449843930c55305b397a2d3d30c4d8c280e7b2b08bf033fc",
+      "scoring_core.py": "74e2316c2329872dd7c93165a4b47e6c583ecdb9af853671c14a8a11cb701cf7",
+      "mock_environment.py": "9c7515361270ebef8cec08f3a78ed0d288532a14d51e08eb6455de71994f9111",
+      "local_eval.py": "6af581b2c626c75adf72afd8cf965b883753518ef6b75df3844571d97a508e02",
+      "make_submission.py": "e5aa465252221835600efb007bd080693a1fdf2ac79318e818d62abb576718fe",
+      "agent_template.py": "739ec30073deef0767e64b814043dd6190ed85ed0eb70ec15dfe461cbeedf62f",
+      "customer_profile.csv": "e377baa2553a790f030a1d3411b3b5c5ca6316ccc7485badc9b08afa6da17d3f",
+      "data/change_tariff.csv": "655d6af287093e681e4057ce9db438d4953598b5340951d95b891ed0cb6ad257",
+      "data/dict_tariff.csv": "74ef4242c9a6c46bd391d78251d6e3b9a408d913590c6efad7aa3957018be74c"
+    },
+    "model_hashes": {
+      "model_holdout_permuted_leaders": "1c718844eda2527df7bbf1642566e65df7daf4915c7cda3af9f0e2bf5126c2aa",
+      "model_holdout_weak_history": "1ff74c8058b7abb1c16dfec22fadc4fb120fc6fbc17a40f9a556d2f21b9098a1",
+      "model_holdout_saturated_calls": "9c8510255e7ced55df9e2b5e01be3bee9f45bbdef955e5246ce6cdbec2f41523"
+    },
+    "declared_partitions": {
+      "mock_tuning": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mock_heldout": [
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "shifted_family_seeds": [
+        10,
+        11,
+        12
+      ],
+      "final_holdout_mock_seeds": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "model_holdout": {
+        "model_seed": 20260925,
+        "environment_seed": 31,
+        "families": [
+          "permuted_leaders",
+          "weak_history",
+          "saturated_calls"
+        ]
+      }
+    },
+    "notes": [
+      "All agents receive only the public environment; true effects are used exclusively by the harness after act().",
+      "Mock seeds change pilot noise and sampling, not true effect family. Separate synthetic families use fresh model RNG 20260924 plus family index.",
+      "Quick checkpoint uses mock seeds 0..2 and family seeds 10..11; its results may guide development, so those subsets are not claimed as unseen afterward.",
+      "Full run repeats mock0..9, mock20..29 and six shifted families10..12 after the structural removal of advanced search. These repeated cases are no longer fresh independent hold-outs.",
+      "The model_holdout tables from RNG20260925/environment seed31 were new in the advanced-search evaluation; they are reused here after the structural decision and must not be called newly unseen.",
+      "Final_holdout adds five previously untested mock noise/sample seeds40..44 after final structural freeze, with no further tuning. The mock true-effect table remains the same.",
+      "p10 from ten runs and especially three family runs is descriptive, not a guarantee. No significance claim is made.",
+      "Reference timing may be reused from cached runs; compare runtimes cautiously under concurrent development load.",
+      "Sign reversal includes magnitude jitter; low conversion uses random factors0.01..0.05; calls use conversion0.90..1.0; near-zero varies delta and conversion."
+    ],
+    "resolved_new_options": {
+      "seed": 42,
+      "risk_profile": "balanced",
+      "risk_penalty": 0.55,
+      "use_history": true,
+      "history_strength": 1.0,
+      "adaptive": true,
+      "max_pilots": 16,
+      "strategy_version": "v2",
+      "calibrate_prior": true,
+      "advanced_search": false
+    },
+    "resolved_reference_options": {
+      "seed": 42,
+      "risk_profile": "balanced",
+      "risk_penalty": 0.55,
+      "use_history": true,
+      "history_strength": 1.0,
+      "adaptive": true,
+      "max_pilots": 16
+    },
+    "elapsed_seconds": 7.456178100022953,
+    "measurement_count": 6
+  },
+  "strategy_summaries": [
+    {
+      "scenario": "model_holdout_permuted_leaders",
+      "strategy": "new",
+      "runs": 1,
+      "mean_net": -297527.1431348897,
+      "median_net": -297527.1431348897,
+      "min_net": -297527.1431348897,
+      "p10_net": -297527.1431348897,
+      "negative_fraction": 1.0,
+      "all_conform": true,
+      "mean_communication_cost": 67794.0,
+      "mean_total_contacts": 15000.0,
+      "mean_unique_customers": 13785.0,
+      "mean_n_pilots": 16.0,
+      "mean_n_final_campaigns": 8.0,
+      "mean_runtime_seconds": 2.2247441000072286,
+      "max_runtime_seconds": 2.2247441000072286
+    },
+    {
+      "scenario": "model_holdout_permuted_leaders",
+      "strategy": "v1",
+      "runs": 1,
+      "mean_net": -904721.136927136,
+      "median_net": -904721.136927136,
+      "min_net": -904721.136927136,
+      "p10_net": -904721.136927136,
+      "negative_fraction": 1.0,
+      "all_conform": true,
+      "mean_communication_cost": 100000.0,
+      "mean_total_contacts": 14646.0,
+      "mean_unique_customers": 12046.0,
+      "mean_n_pilots": 16.0,
+      "mean_n_final_campaigns": 10.0,
+      "mean_runtime_seconds": 5.323716800019611,
+      "max_runtime_seconds": 5.323716800019611
+    },
+    {
+      "scenario": "model_holdout_saturated_calls",
+      "strategy": "new",
+      "runs": 1,
+      "mean_net": 15867046.720478822,
+      "median_net": 15867046.720478822,
+      "min_net": 15867046.720478822,
+      "p10_net": 15867046.720478822,
+      "negative_fraction": 0.0,
+      "all_conform": true,
+      "mean_communication_cost": 99990.0,
+      "mean_total_contacts": 15000.0,
+      "mean_unique_customers": 10369.0,
+      "mean_n_pilots": 16.0,
+      "mean_n_final_campaigns": 4.0,
+      "mean_runtime_seconds": 2.156489800021518,
+      "max_runtime_seconds": 2.156489800021518
+    },
+    {
+      "scenario": "model_holdout_saturated_calls",
+      "strategy": "v1",
+      "runs": 1,
+      "mean_net": 21045564.051779084,
+      "median_net": 21045564.051779084,
+      "min_net": 21045564.051779084,
+      "p10_net": 21045564.051779084,
+      "negative_fraction": 0.0,
+      "all_conform": true,
+      "mean_communication_cost": 99268.0,
+      "mean_total_contacts": 15000.0,
+      "mean_unique_customers": 12125.0,
+      "mean_n_pilots": 16.0,
+      "mean_n_final_campaigns": 5.0,
+      "mean_runtime_seconds": 4.69330829998944,
+      "max_runtime_seconds": 4.69330829998944
+    },
+    {
+      "scenario": "model_holdout_weak_history",
+      "strategy": "new",
+      "runs": 1,
+      "mean_net": 7106126.385271946,
+      "median_net": 7106126.385271946,
+      "min_net": 7106126.385271946,
+      "p10_net": 7106126.385271946,
+      "negative_fraction": 0.0,
+      "all_conform": true,
+      "mean_communication_cost": 99998.0,
+      "mean_total_contacts": 15000.0,
+      "mean_unique_customers": 12384.0,
+      "mean_n_pilots": 16.0,
+      "mean_n_final_campaigns": 6.0,
+      "mean_runtime_seconds": 2.3492249000119045,
+      "max_runtime_seconds": 2.3492249000119045
+    },
+    {
+      "scenario": "model_holdout_weak_history",
+      "strategy": "v1",
+      "runs": 1,
+      "mean_net": 9307590.2246789,
+      "median_net": 9307590.2246789,
+      "min_net": 9307590.2246789,
+      "p10_net": 9307590.2246789,
+      "negative_fraction": 0.0,
+      "all_conform": true,
+      "mean_communication_cost": 100000.0,
+      "mean_total_contacts": 15000.0,
+      "mean_unique_customers": 11505.0,
+      "mean_n_pilots": 16.0,
+      "mean_n_final_campaigns": 7.0,
+      "mean_runtime_seconds": 4.443440500006545,
+      "max_runtime_seconds": 4.443440500006545
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "scenario": "model_holdout_permuted_leaders",
+      "paired_runs": 1,
+      "mean_net_difference": 607193.9937922463,
+      "median_net_difference": 607193.9937922463,
+      "min_net_difference": 607193.9937922463,
+      "fraction_new_better": 1.0,
+      "fraction_new_worse": 0.0
+    },
+    {
+      "scenario": "model_holdout_saturated_calls",
+      "paired_runs": 1,
+      "mean_net_difference": -5178517.331300262,
+      "median_net_difference": -5178517.331300262,
+      "min_net_difference": -5178517.331300262,
+      "fraction_new_better": 0.0,
+      "fraction_new_worse": 1.0
+    },
+    {
+      "scenario": "model_holdout_weak_history",
+      "paired_runs": 1,
+      "mean_net_difference": -2201463.839406954,
+      "median_net_difference": -2201463.839406954,
+      "min_net_difference": -2201463.839406954,
+      "fraction_new_better": 0.0,
+      "fraction_new_worse": 1.0
+    }
+  ]
+}

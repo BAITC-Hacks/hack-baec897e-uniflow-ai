@@ -1,0 +1,11 @@
+{
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "scope": "Three paired development seeds of one mock; not an independent held-out comparison.",
+  "fixed_diverse": "Frozen diverse hypotheses and channels; posterior still updates, total competition resources enforced.",
+  "basic_planner": "Cached original contact-price greedy; disable money prices and local channel/order search.",
+  "default_selected_from": "Separate improvement_quick and final held-out reports; these ablations describe component sensitivity, not universal superiority."
+}

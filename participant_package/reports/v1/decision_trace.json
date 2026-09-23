@@ -1,0 +1,1111 @@
+{
+  "resources": {
+    "budget": {
+      "limit": 100000.0,
+      "used_by_pilots": 70400.0,
+      "planned_final": 29246.0,
+      "remaining_after_plan": 354.0
+    },
+    "contacts": {
+      "limit": 15000,
+      "used_by_pilots": 3200,
+      "planned_final": 10719,
+      "remaining_after_plan": 1081
+    },
+    "pilots_used": 16,
+    "pilots_limit": 20,
+    "final_campaigns_count": 10,
+    "final_campaigns_limit": 10
+  },
+  "pilots": [
+    {
+      "id": "pilot-1",
+      "sequence": 1,
+      "campaign": {
+        "campaign_name": "pilot_1",
+        "filter_arpu_segment": "HIGH",
+        "filter_data_segment": null,
+        "filter_call_segment": null,
+        "filter_current_tariff": "tariff_8",
+        "target_tariff": "tariff_9",
+        "channel": "digital_ads"
+      },
+      "requested_customers": 200,
+      "actual_customers": 200,
+      "cost": 4400.0,
+      "observed_lift_ratio": -0.0674188383605386,
+      "observed_lift_total": -110374.4910213657,
+      "selection_reason": "Diverse initial coverage; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 1050659.52 CU.",
+      "decision_after": "Posterior mean changed 0.04063 → -0.04181; portfolio recomputed with actual resource balances.",
+      "completed_at": "2026-09-23T10:08:33.173667Z"
+    },
+    {
+      "id": "pilot-2",
+      "sequence": 2,
+      "campaign": {
+        "campaign_name": "pilot_2",
+        "filter_arpu_segment": "HIGH",
+        "filter_data_segment": null,
+        "filter_call_segment": null,
+        "filter_current_tariff": "tariff_10",
+        "target_tariff": "tariff_9",
+        "channel": "digital_ads"
+      },
+      "requested_customers": 200,
+      "actual_customers": 200,
+      "cost": 4400.0,
+      "observed_lift_ratio": 0.02607558735796926,
+      "observed_lift_total": 41284.93080810607,
+      "selection_reason": "Diverse initial coverage; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 682250.45 CU.",
+      "decision_after": "Posterior mean changed 0.01880 → 0.02435; portfolio recomputed with actual resource balances.",
+      "completed_at": "2026-09-23T10:08:33.489270Z"
+    },
+    {
+      "id": "pilot-3",
+      "sequence": 3,
+      "campaign": {
+        "campaign_name": "pilot_3",
+        "filter_arpu_segment": "HIGH",
+        "filter_data_segment": null,
+        "filter_call_segment": null,
+        "filter_current_tariff": "tariff_4",
+        "target_tariff": "tariff_9",
+        "channel": "digital_ads"
+      },
+      "requested_customers": 200,
+      "actual_customers": 200,
+      "cost": 4400.0,
+      "observed_lift_ratio": -0.11257791332876615,
+      "observed_lift_total": -170240.45065929167,
+      "selection_reason": "Diverse initial coverage; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 440534.56 CU.",
+      "decision_after": "Posterior mean changed 0.04520 → -0.07518; portfolio recomputed with actual resource balances.",
+      "completed_at": "2026-09-23T10:08:33.792203Z"
+    },
+    {
+      "id": "pilot-4",
+      "sequence": 4,
+      "campaign": {
+        "campaign_name": "pilot_4",
+        "filter_arpu_segment": "HIGH",
+        "filter_data_segment": null,
+        "filter_call_segment": null,
+        "filter_current_tariff": "tariff_11",
+        "target_tariff": "tariff_9",
+        "channel": "digital_ads"
+      },
+      "requested_customers": 200,
+      "actual_customers": 200,
+      "cost": 4400.0,
+      "observed_lift_ratio": -0.10057247300049205,
+      "observed_lift_total": -177305.41777374473,
+      "selection_reason": "Diverse initial coverage; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 393944.24 CU.",
+      "decision_after": "Posterior mean changed 0.01443 → -0.07331; portfolio recomputed with actual resource balances.",
+      "completed_at": "2026-09-23T10:08:34.092991Z"
+    },
+    {
+      "id": "pilot-5",
+      "sequence": 5,
+      "campaign": {
+        "campaign_name": "pilot_5",
+        "filter_arpu_segment": "MID",
+        "filter_data_segment": null,
+        "filter_call_segment": null,
+        "filter_current_tariff": "tariff_8",
+        "target_tariff": "tariff_9",
+        "channel": "digital_ads"
+      },
+      "requested_customers": 200,
+      "actual_customers": 200,
+      "cost": 4400.0,
+      "observed_lift_ratio": -0.012288147211260418,
+      "observed_lift_total": -11570.084131456266,
+      "selection_reason": "Diverse initial coverage; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 216865.15 CU.",
+      "decision_after": "Posterior mean changed 0.03090 → -0.00205; portfolio recomputed with actual resource balances.",
+      "completed_at": "2026-09-23T10:08:34.404964Z"
+    },
+    {
+      "id": "pilot-6",
+      "sequence": 6,
+      "campaign": {
+        "campaign_name": "pilot_6",
+        "filter_arpu_segment": "HIGH",
+        "filter_data_segment": null,
+        "filter_call_segment": null,
+        "filter_current_tariff": "tariff_14",
+        "target_tariff": "tariff_9",
+        "channel": "digital_ads"
+      },
+      "requested_customers": 200,
+      "actual_customers": 200,
+      "cost": 4400.0,
+      "observed_lift_ratio": -0.017046113651757618,
+      "observed_lift_total": -25464.307117780863,
+      "selection_reason": "Diverse initial coverage; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 204920.25 CU.",
+      "decision_after": "Posterior mean changed 0.03120 → -0.00561; portfolio recomputed with actual resource balances.",
+      "completed_at": "2026-09-23T10:08:34.781974Z"
+    },
+    {
+      "id": "pilot-7",
+      "sequence": 7,
+      "campaign": {
+        "campaign_name": "pilot_7",
+        "filter_arpu_segment": "HIGH",
+        "filter_data_segment": null,
+        "filter_call_segment": null,
+        "filter_current_tariff": "tariff_8",
+        "target_tariff": "tariff_10",
+        "channel": "digital_ads"
+      },
+      "requested_customers": 200,
+      "actual_customers": 200,
+      "cost": 4400.0,
+      "observed_lift_ratio": 0.05546138953921905,
+      "observed_lift_total": 90715.9404998525,
+      "selection_reason": "Decision-relevant uncertainty; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 890389.42 CU.",
+      "decision_after": "Posterior mean changed 0.00303 → 0.04303; portfolio recomputed with actual resource balances.",
+      "completed_at": "2026-09-23T10:08:35.213656Z"
+    },
+    {
+      "id": "pilot-8",
+      "sequence": 8,
+      "campaign": {
+        "campaign_name": "pilot_8",
+        "filter_arpu_segment": "HIGH",
+        "filter_data_segment": null,
+        "filter_call_segment": null,
+        "filter_current_tariff": "tariff_8",
+        "target_tariff": "tariff_12",
+        "channel": "digital_ads"
+      },
+      "requested_customers": 200,
+      "actual_customers": 200,
+      "cost": 4400.0,
+      "observed_lift_ratio": 0.04725744787894733,
+      "observed_lift_total": 75769.92088594816,
+      "selection_reason": "Decision-relevant uncertainty; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 744836.15 CU.",
+      "decision_after": "Posterior mean changed 0.00220 → 0.03658; portfolio recomputed with actual resource balances.",
+      "completed_at": "2026-09-23T10:08:35.605500Z"
+    },
+    {
+      "id": "pilot-9",
+      "sequence": 9,
+      "campaign": {
+        "campaign_name": "pilot_9",
+        "filter_arpu_segment": "HIGH",
+        "filter_data_segment": null,
+        "filter_call_segment": null,
+        "filter_current_tariff": "tariff_8",
+        "target_tariff": "tariff_11",
+        "channel": "digital_ads"
+      },
+      "requested_customers": 200,
+      "actual_customers": 200,
+      "cost": 4400.0,
+      "observed_lift_ratio": 0.06743082464672902,
+      "observed_lift_total": 103828.5381653225,
+      "selection_reason": "Decision-relevant uncertainty; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 657616.06 CU.",
+      "decision_after": "Posterior mean changed 0.00199 → 0.05192; portfolio recomputed with actual resource balances.",
+      "completed_at": "2026-09-23T10:08:36.059357Z"
+    },
+    {
+      "id": "pilot-10",
+      "sequence": 10,
+      "campaign": {
+        "campaign_name": "pilot_10",
+        "filter_arpu_segment": "HIGH",
+        "filter_data_segment": null,
+        "filter_call_segment": null,
+        "filter_current_tariff": "tariff_8",
+        "target_tariff": "tariff_14",
+        "channel": "digital_ads"
+      },
+      "requested_customers": 200,
+      "actual_customers": 200,
+      "cost": 4400.0,
+      "observed_lift_ratio": 0.034375196951891424,
+      "observed_lift_total": 52541.672093825735,
+      "selection_reason": "Decision-relevant uncertainty; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 576136.71 CU.",
+      "decision_after": "Posterior mean changed 0.00000 → 0.02623; portfolio recomputed with actual resource balances.",
+      "completed_at": "2026-09-23T10:08:36.458348Z"
+    },
+    {
+      "id": "pilot-11",
+      "sequence": 11,
+      "campaign": {
+        "campaign_name": "pilot_11",
+        "filter_arpu_segment": "HIGH",
+        "filter_data_segment": null,
+        "filter_call_segment": null,
+        "filter_current_tariff": "tariff_10",
+        "target_tariff": "tariff_21",
+        "channel": "digital_ads"
+      },
+      "requested_customers": 200,
+      "actual_customers": 200,
+      "cost": 4400.0,
+      "observed_lift_ratio": 0.014328551809733777,
+      "observed_lift_total": 23263.08728677089,
+      "selection_reason": "Decision-relevant uncertainty; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 571339.21 CU.",
+      "decision_after": "Posterior mean changed 0.00108 → 0.01119; portfolio recomputed with actual resource balances.",
+      "completed_at": "2026-09-23T10:08:36.875895Z"
+    },
+    {
+      "id": "pilot-12",
+      "sequence": 12,
+      "campaign": {
+        "campaign_name": "pilot_12",
+        "filter_arpu_segment": "HIGH",
+        "filter_data_segment": null,
+        "filter_call_segment": null,
+        "filter_current_tariff": "tariff_8",
+        "target_tariff": "tariff_15",
+        "channel": "digital_ads"
+      },
+      "requested_customers": 200,
+      "actual_customers": 200,
+      "cost": 4400.0,
+      "observed_lift_ratio": -0.06778468623174261,
+      "observed_lift_total": -106104.54291690313,
+      "selection_reason": "Decision-relevant uncertainty; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 521387.48 CU.",
+      "decision_after": "Posterior mean changed 0.00000 → -0.05172; portfolio recomputed with actual resource balances.",
+      "completed_at": "2026-09-23T10:08:37.292291Z"
+    },
+    {
+      "id": "pilot-13",
+      "sequence": 13,
+      "campaign": {
+        "campaign_name": "pilot_13",
+        "filter_arpu_segment": "HIGH",
+        "filter_data_segment": null,
+        "filter_call_segment": null,
+        "filter_current_tariff": "tariff_10",
+        "target_tariff": "tariff_14",
+        "channel": "digital_ads"
+      },
+      "requested_customers": 200,
+      "actual_customers": 200,
+      "cost": 4400.0,
+      "observed_lift_ratio": -0.0033360152769350447,
+      "observed_lift_total": -5651.539881657338,
+      "selection_reason": "Decision-relevant uncertainty; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 494672.85 CU.",
+      "decision_after": "Posterior mean changed 0.00000 → -0.00255; portfolio recomputed with actual resource balances.",
+      "completed_at": "2026-09-23T10:08:37.684354Z"
+    },
+    {
+      "id": "pilot-14",
+      "sequence": 14,
+      "campaign": {
+        "campaign_name": "pilot_14",
+        "filter_arpu_segment": "HIGH",
+        "filter_data_segment": null,
+        "filter_call_segment": null,
+        "filter_current_tariff": "tariff_8",
+        "target_tariff": "tariff_16",
+        "channel": "digital_ads"
+      },
+      "requested_customers": 200,
+      "actual_customers": 200,
+      "cost": 4400.0,
+      "observed_lift_ratio": -0.018803982767349944,
+      "observed_lift_total": -29874.228728955783,
+      "selection_reason": "Decision-relevant uncertainty; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 476132.82 CU.",
+      "decision_after": "Posterior mean changed 0.00000 → -0.01435; portfolio recomputed with actual resource balances.",
+      "completed_at": "2026-09-23T10:08:38.192929Z"
+    },
+    {
+      "id": "pilot-15",
+      "sequence": 15,
+      "campaign": {
+        "campaign_name": "pilot_15",
+        "filter_arpu_segment": "HIGH",
+        "filter_data_segment": null,
+        "filter_call_segment": null,
+        "filter_current_tariff": "tariff_8",
+        "target_tariff": "tariff_17",
+        "channel": "digital_ads"
+      },
+      "requested_customers": 200,
+      "actual_customers": 200,
+      "cost": 4400.0,
+      "observed_lift_ratio": 0.06452658778067291,
+      "observed_lift_total": 102404.0010958699,
+      "selection_reason": "Decision-relevant uncertainty; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 438184.57 CU.",
+      "decision_after": "Posterior mean changed 0.00000 → 0.04923; portfolio recomputed with actual resource balances.",
+      "completed_at": "2026-09-23T10:08:38.736177Z"
+    },
+    {
+      "id": "pilot-16",
+      "sequence": 16,
+      "campaign": {
+        "campaign_name": "pilot_16",
+        "filter_arpu_segment": "HIGH",
+        "filter_data_segment": null,
+        "filter_call_segment": null,
+        "filter_current_tariff": "tariff_10",
+        "target_tariff": "tariff_15",
+        "channel": "digital_ads"
+      },
+      "requested_customers": 200,
+      "actual_customers": 200,
+      "cost": 4400.0,
+      "observed_lift_ratio": -0.03035039856142259,
+      "observed_lift_total": -49598.89773579321,
+      "selection_reason": "Decision-relevant uncertainty; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 437101.30 CU.",
+      "decision_after": "Posterior mean changed 0.00000 → -0.02316; portfolio recomputed with actual resource balances.",
+      "completed_at": "2026-09-23T10:08:39.310188Z"
+    }
+  ],
+  "campaigns": [
+    {
+      "id": "campaign-1",
+      "execution_order": 1,
+      "spec": {
+        "campaign_name": "uniflow_01_tariff_8_tariff_11",
+        "filter_arpu_segment": "HIGH",
+        "filter_data_segment": null,
+        "filter_call_segment": null,
+        "filter_current_tariff": "tariff_8",
+        "target_tariff": "tariff_11",
+        "channel": "sms"
+      },
+      "audience_count": 4726,
+      "communication_cost": 18904.0,
+      "expected_incremental_net_gain": 1314558.560676075,
+      "expected_lift_ratio": 0.039703641853980794,
+      "evidence": "pilot_supported",
+      "supporting_pilot_ids": [
+        "pilot-9"
+      ],
+      "reasons": [
+        "Posterior lift 0.03970, standard deviation 0.03797.",
+        "Executable ID-ordered audience: 4726; marginal expected net: 1314558.56 CU.",
+        "Selection accounts for previous campaigns, estimated pilot overlap, contacts and budget."
+      ],
+      "warnings": []
+    },
+    {
+      "id": "campaign-2",
+      "execution_order": 2,
+      "spec": {
+        "campaign_name": "uniflow_02_tariff_10_tariff_9",
+        "filter_arpu_segment": "HIGH",
+        "filter_data_segment": null,
+        "filter_call_segment": null,
+        "filter_current_tariff": "tariff_10",
+        "target_tariff": "tariff_9",
+        "channel": "push"
+      },
+      "audience_count": 2950,
+      "communication_cost": 0.0,
+      "expected_incremental_net_gain": 340322.6080348907,
+      "expected_lift_ratio": 0.014324839236001237,
+      "evidence": "pilot_supported",
+      "supporting_pilot_ids": [
+        "pilot-2"
+      ],
+      "reasons": [
+        "Posterior lift 0.01432, standard deviation 0.02921.",
+        "Executable ID-ordered audience: 2950; marginal expected net: 340322.61 CU.",
+        "Selection accounts for previous campaigns, estimated pilot overlap, contacts and budget."
+      ],
+      "warnings": []
+    },
+    {
+      "id": "campaign-3",
+      "execution_order": 3,
+      "spec": {
+        "campaign_name": "uniflow_03_tariff_8_tariff_9",
+        "filter_arpu_segment": "LOW",
+        "filter_data_segment": null,
+        "filter_call_segment": null,
+        "filter_current_tariff": "tariff_8",
+        "target_tariff": "tariff_9",
+        "channel": "digital_ads"
+      },
+      "audience_count": 457,
+      "communication_cost": 10054.0,
+      "expected_incremental_net_gain": 102072.44461666765,
+      "expected_lift_ratio": 0.08544541587021476,
+      "evidence": "prior_only",
+      "supporting_pilot_ids": [],
+      "reasons": [
+        "Posterior lift 0.08545, standard deviation 0.10200.",
+        "Executable ID-ordered audience: 457; marginal expected net: 102072.44 CU.",
+        "Selection accounts for previous campaigns, estimated pilot overlap, contacts and budget."
+      ],
+      "warnings": [
+        "Historical prior only; no direct pilot evidence."
+      ]
+    },
+    {
+      "id": "campaign-4",
+      "execution_order": 4,
+      "spec": {
+        "campaign_name": "uniflow_04_tariff_4_tariff_9",
+        "filter_arpu_segment": "MID",
+        "filter_data_segment": null,
+        "filter_call_segment": null,
+        "filter_current_tariff": "tariff_4",
+        "target_tariff": "tariff_9",
+        "channel": "push"
+      },
+      "audience_count": 1227,
+      "communication_cost": 0.0,
+      "expected_incremental_net_gain": 213495.92839512063,
+      "expected_lift_ratio": 0.036554159227499494,
+      "evidence": "prior_only",
+      "supporting_pilot_ids": [],
+      "reasons": [
+        "Posterior lift 0.03655, standard deviation 0.06000.",
+        "Executable ID-ordered audience: 1227; marginal expected net: 213495.93 CU.",
+        "Selection accounts for previous campaigns, estimated pilot overlap, contacts and budget."
+      ],
+      "warnings": [
+        "Historical prior only; no direct pilot evidence."
+      ]
+    },
+    {
+      "id": "campaign-5",
+      "execution_order": 5,
+      "spec": {
+        "campaign_name": "uniflow_05_tariff_4_tariff_9",
+        "filter_arpu_segment": "LOW",
+        "filter_data_segment": null,
+        "filter_call_segment": null,
+        "filter_current_tariff": "tariff_4",
+        "target_tariff": "tariff_9",
+        "channel": "push"
+      },
+      "audience_count": 299,
+      "communication_cost": 0.0,
+      "expected_incremental_net_gain": 43800.702748121585,
+      "expected_lift_ratio": 0.0510757735632204,
+      "evidence": "prior_only",
+      "supporting_pilot_ids": [],
+      "reasons": [
+        "Posterior lift 0.05108, standard deviation 0.06000.",
+        "Executable ID-ordered audience: 299; marginal expected net: 43800.70 CU.",
+        "Selection accounts for previous campaigns, estimated pilot overlap, contacts and budget."
+      ],
+      "warnings": [
+        "Historical prior only; no direct pilot evidence."
+      ]
+    },
+    {
+      "id": "campaign-6",
+      "execution_order": 6,
+      "spec": {
+        "campaign_name": "uniflow_06_tariff_10_tariff_9",
+        "filter_arpu_segment": "LOW",
+        "filter_data_segment": null,
+        "filter_call_segment": null,
+        "filter_current_tariff": "tariff_10",
+        "target_tariff": "tariff_9",
+        "channel": "push"
+      },
+      "audience_count": 370,
+      "communication_cost": 0.0,
+      "expected_incremental_net_gain": 38065.12281544328,
+      "expected_lift_ratio": 0.03915224083952147,
+      "evidence": "prior_only",
+      "supporting_pilot_ids": [],
+      "reasons": [
+        "Posterior lift 0.03915, standard deviation 0.06000.",
+        "Executable ID-ordered audience: 370; marginal expected net: 38065.12 CU.",
+        "Selection accounts for previous campaigns, estimated pilot overlap, contacts and budget."
+      ],
+      "warnings": [
+        "Historical prior only; no direct pilot evidence."
+      ]
+    },
+    {
+      "id": "campaign-7",
+      "execution_order": 7,
+      "spec": {
+        "campaign_name": "uniflow_07_tariff_11_tariff_9",
+        "filter_arpu_segment": "LOW",
+        "filter_data_segment": null,
+        "filter_call_segment": null,
+        "filter_current_tariff": "tariff_11",
+        "target_tariff": "tariff_9",
+        "channel": "push"
+      },
+      "audience_count": 387,
+      "communication_cost": 0.0,
+      "expected_incremental_net_gain": 40768.73759888461,
+      "expected_lift_ratio": 0.038185925737878414,
+      "evidence": "prior_only",
+      "supporting_pilot_ids": [],
+      "reasons": [
+        "Posterior lift 0.03819, standard deviation 0.06000.",
+        "Executable ID-ordered audience: 387; marginal expected net: 40768.74 CU.",
+        "Selection accounts for previous campaigns, estimated pilot overlap, contacts and budget."
+      ],
+      "warnings": [
+        "Historical prior only; no direct pilot evidence."
+      ]
+    },
+    {
+      "id": "campaign-8",
+      "execution_order": 8,
+      "spec": {
+        "campaign_name": "uniflow_08_tariff_1_tariff_9",
+        "filter_arpu_segment": "LOW",
+        "filter_data_segment": null,
+        "filter_call_segment": null,
+        "filter_current_tariff": "tariff_1",
+        "target_tariff": "tariff_9",
+        "channel": "sms"
+      },
+      "audience_count": 40,
+      "communication_cost": 160.0,
+      "expected_incremental_net_gain": 8678.826687485012,
+      "expected_lift_ratio": 0.06684959942509326,
+      "evidence": "prior_only",
+      "supporting_pilot_ids": [],
+      "reasons": [
+        "Posterior lift 0.06685, standard deviation 0.07800.",
+        "Executable ID-ordered audience: 40; marginal expected net: 8678.83 CU.",
+        "Selection accounts for previous campaigns, estimated pilot overlap, contacts and budget."
+      ],
+      "warnings": [
+        "Historical prior only; no direct pilot evidence."
+      ]
+    },
+    {
+      "id": "campaign-9",
+      "execution_order": 9,
+      "spec": {
+        "campaign_name": "uniflow_09_tariff_1_tariff_9",
+        "filter_arpu_segment": "MID",
+        "filter_data_segment": null,
+        "filter_call_segment": null,
+        "filter_current_tariff": "tariff_1",
+        "target_tariff": "tariff_9",
+        "channel": "sms"
+      },
+      "audience_count": 32,
+      "communication_cost": 128.0,
+      "expected_incremental_net_gain": 9654.657323795895,
+      "expected_lift_ratio": 0.05922814479392376,
+      "evidence": "prior_only",
+      "supporting_pilot_ids": [],
+      "reasons": [
+        "Posterior lift 0.05923, standard deviation 0.07800.",
+        "Executable ID-ordered audience: 32; marginal expected net: 9654.66 CU.",
+        "Selection accounts for previous campaigns, estimated pilot overlap, contacts and budget."
+      ],
+      "warnings": [
+        "Historical prior only; no direct pilot evidence."
+      ]
+    },
+    {
+      "id": "campaign-10",
+      "execution_order": 10,
+      "spec": {
+        "campaign_name": "uniflow_10_tariff_14_tariff_9",
+        "filter_arpu_segment": "LOW",
+        "filter_data_segment": null,
+        "filter_call_segment": null,
+        "filter_current_tariff": "tariff_14",
+        "target_tariff": "tariff_9",
+        "channel": "push"
+      },
+      "audience_count": 231,
+      "communication_cost": 0.0,
+      "expected_incremental_net_gain": 25202.22936132766,
+      "expected_lift_ratio": 0.0349067003930816,
+      "evidence": "prior_only",
+      "supporting_pilot_ids": [],
+      "reasons": [
+        "Posterior lift 0.03491, standard deviation 0.06000.",
+        "Executable ID-ordered audience: 231; marginal expected net: 25202.23 CU.",
+        "Selection accounts for previous campaigns, estimated pilot overlap, contacts and budget."
+      ],
+      "warnings": [
+        "Historical prior only; no direct pilot evidence."
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "event-1",
+      "sequence": 1,
+      "created_at": "2026-09-23T10:08:32.519079Z",
+      "phase": "audit",
+      "title": "Public profile audit",
+      "message": "Validating customer identifiers, public segment labels and baseline values."
+    },
+    {
+      "id": "event-2",
+      "sequence": 2,
+      "created_at": "2026-09-23T10:08:32.873685Z",
+      "phase": "candidates",
+      "title": "Candidates constructed",
+      "message": "63 homogeneous groups and 1260 source/target hypotheses; no same-tariff offers."
+    },
+    {
+      "id": "event-3",
+      "sequence": 3,
+      "created_at": "2026-09-23T10:08:33.065310Z",
+      "phase": "planning",
+      "title": "Initial feasible plan",
+      "message": "10 executable final campaigns; risk penalty 0.55 standard deviations."
+    },
+    {
+      "id": "event-4",
+      "sequence": 4,
+      "created_at": "2026-09-23T10:08:33.154214Z",
+      "phase": "pilots",
+      "title": "Pilot selected",
+      "message": "tariff_8/HIGH → tariff_9, digital_ads, requested 200. Diverse initial coverage; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 1050659.52 CU."
+    },
+    {
+      "id": "event-5",
+      "sequence": 5,
+      "created_at": "2026-09-23T10:08:33.173762Z",
+      "phase": "pilots",
+      "title": "Pilot observed",
+      "message": "pilot-1: actual n=200, observed lift=-0.06742; Posterior mean changed 0.04063 → -0.04181; portfolio recomputed with actual resource balances."
+    },
+    {
+      "id": "event-6",
+      "sequence": 6,
+      "created_at": "2026-09-23T10:08:33.375875Z",
+      "phase": "planning",
+      "title": "Portfolio updated",
+      "message": "10 final campaigns; forecast net including pilots 528841.00 CU."
+    },
+    {
+      "id": "event-7",
+      "sequence": 7,
+      "created_at": "2026-09-23T10:08:33.469062Z",
+      "phase": "pilots",
+      "title": "Pilot selected",
+      "message": "tariff_10/HIGH → tariff_9, digital_ads, requested 200. Diverse initial coverage; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 682250.45 CU."
+    },
+    {
+      "id": "event-8",
+      "sequence": 8,
+      "created_at": "2026-09-23T10:08:33.489327Z",
+      "phase": "pilots",
+      "title": "Pilot observed",
+      "message": "pilot-2: actual n=200, observed lift=0.02608; Posterior mean changed 0.01880 → 0.02435; portfolio recomputed with actual resource balances."
+    },
+    {
+      "id": "event-9",
+      "sequence": 9,
+      "created_at": "2026-09-23T10:08:33.685137Z",
+      "phase": "planning",
+      "title": "Portfolio updated",
+      "message": "10 final campaigns; forecast net including pilots 564379.70 CU."
+    },
+    {
+      "id": "event-10",
+      "sequence": 10,
+      "created_at": "2026-09-23T10:08:33.774521Z",
+      "phase": "pilots",
+      "title": "Pilot selected",
+      "message": "tariff_4/HIGH → tariff_9, digital_ads, requested 200. Diverse initial coverage; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 440534.56 CU."
+    },
+    {
+      "id": "event-11",
+      "sequence": 11,
+      "created_at": "2026-09-23T10:08:33.792251Z",
+      "phase": "pilots",
+      "title": "Pilot observed",
+      "message": "pilot-3: actual n=200, observed lift=-0.11258; Posterior mean changed 0.04520 → -0.07518; portfolio recomputed with actual resource balances."
+    },
+    {
+      "id": "event-12",
+      "sequence": 12,
+      "created_at": "2026-09-23T10:08:33.990783Z",
+      "phase": "planning",
+      "title": "Portfolio updated",
+      "message": "10 final campaigns; forecast net including pilots 447323.42 CU."
+    },
+    {
+      "id": "event-13",
+      "sequence": 13,
+      "created_at": "2026-09-23T10:08:34.076267Z",
+      "phase": "pilots",
+      "title": "Pilot selected",
+      "message": "tariff_11/HIGH → tariff_9, digital_ads, requested 200. Diverse initial coverage; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 393944.24 CU."
+    },
+    {
+      "id": "event-14",
+      "sequence": 14,
+      "created_at": "2026-09-23T10:08:34.093027Z",
+      "phase": "pilots",
+      "title": "Pilot observed",
+      "message": "pilot-4: actual n=200, observed lift=-0.10057; Posterior mean changed 0.01443 → -0.07331; portfolio recomputed with actual resource balances."
+    },
+    {
+      "id": "event-15",
+      "sequence": 15,
+      "created_at": "2026-09-23T10:08:34.292389Z",
+      "phase": "planning",
+      "title": "Portfolio updated",
+      "message": "10 final campaigns; forecast net including pilots 315639.20 CU."
+    },
+    {
+      "id": "event-16",
+      "sequence": 16,
+      "created_at": "2026-09-23T10:08:34.389118Z",
+      "phase": "pilots",
+      "title": "Pilot selected",
+      "message": "tariff_8/MID → tariff_9, digital_ads, requested 200. Diverse initial coverage; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 216865.15 CU."
+    },
+    {
+      "id": "event-17",
+      "sequence": 17,
+      "created_at": "2026-09-23T10:08:34.405024Z",
+      "phase": "pilots",
+      "title": "Pilot observed",
+      "message": "pilot-5: actual n=200, observed lift=-0.01229; Posterior mean changed 0.03090 → -0.00205; portfolio recomputed with actual resource balances."
+    },
+    {
+      "id": "event-18",
+      "sequence": 18,
+      "created_at": "2026-09-23T10:08:34.650469Z",
+      "phase": "planning",
+      "title": "Portfolio updated",
+      "message": "10 final campaigns; forecast net including pilots 309324.01 CU."
+    },
+    {
+      "id": "event-19",
+      "sequence": 19,
+      "created_at": "2026-09-23T10:08:34.756208Z",
+      "phase": "pilots",
+      "title": "Pilot selected",
+      "message": "tariff_14/HIGH → tariff_9, digital_ads, requested 200. Diverse initial coverage; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 204920.25 CU."
+    },
+    {
+      "id": "event-20",
+      "sequence": 20,
+      "created_at": "2026-09-23T10:08:34.782024Z",
+      "phase": "pilots",
+      "title": "Pilot observed",
+      "message": "pilot-6: actual n=200, observed lift=-0.01705; Posterior mean changed 0.03120 → -0.00561; portfolio recomputed with actual resource balances."
+    },
+    {
+      "id": "event-21",
+      "sequence": 21,
+      "created_at": "2026-09-23T10:08:35.067477Z",
+      "phase": "planning",
+      "title": "Portfolio updated",
+      "message": "10 final campaigns; forecast net including pilots 296058.47 CU."
+    },
+    {
+      "id": "event-22",
+      "sequence": 22,
+      "created_at": "2026-09-23T10:08:35.190396Z",
+      "phase": "pilots",
+      "title": "Pilot selected",
+      "message": "tariff_8/HIGH → tariff_10, digital_ads, requested 200. Decision-relevant uncertainty; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 890389.42 CU."
+    },
+    {
+      "id": "event-23",
+      "sequence": 23,
+      "created_at": "2026-09-23T10:08:35.213710Z",
+      "phase": "pilots",
+      "title": "Pilot observed",
+      "message": "pilot-7: actual n=200, observed lift=0.05546; Posterior mean changed 0.00303 → 0.04303; portfolio recomputed with actual resource balances."
+    },
+    {
+      "id": "event-24",
+      "sequence": 24,
+      "created_at": "2026-09-23T10:08:35.441701Z",
+      "phase": "planning",
+      "title": "Portfolio updated",
+      "message": "10 final campaigns; forecast net including pilots 1609970.63 CU."
+    },
+    {
+      "id": "event-25",
+      "sequence": 25,
+      "created_at": "2026-09-23T10:08:35.581851Z",
+      "phase": "pilots",
+      "title": "Pilot selected",
+      "message": "tariff_8/HIGH → tariff_12, digital_ads, requested 200. Decision-relevant uncertainty; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 744836.15 CU."
+    },
+    {
+      "id": "event-26",
+      "sequence": 26,
+      "created_at": "2026-09-23T10:08:35.605566Z",
+      "phase": "pilots",
+      "title": "Pilot observed",
+      "message": "pilot-8: actual n=200, observed lift=0.04726; Posterior mean changed 0.00220 → 0.03658; portfolio recomputed with actual resource balances."
+    },
+    {
+      "id": "event-27",
+      "sequence": 27,
+      "created_at": "2026-09-23T10:08:35.860511Z",
+      "phase": "planning",
+      "title": "Portfolio updated",
+      "message": "10 final campaigns; forecast net including pilots 1598619.66 CU."
+    },
+    {
+      "id": "event-28",
+      "sequence": 28,
+      "created_at": "2026-09-23T10:08:36.038388Z",
+      "phase": "pilots",
+      "title": "Pilot selected",
+      "message": "tariff_8/HIGH → tariff_11, digital_ads, requested 200. Decision-relevant uncertainty; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 657616.06 CU."
+    },
+    {
+      "id": "event-29",
+      "sequence": 29,
+      "created_at": "2026-09-23T10:08:36.059450Z",
+      "phase": "pilots",
+      "title": "Pilot observed",
+      "message": "pilot-9: actual n=200, observed lift=0.06743; Posterior mean changed 0.00199 → 0.05192; portfolio recomputed with actual resource balances."
+    },
+    {
+      "id": "event-30",
+      "sequence": 30,
+      "created_at": "2026-09-23T10:08:36.320788Z",
+      "phase": "planning",
+      "title": "Portfolio updated",
+      "message": "10 final campaigns; forecast net including pilots 1795872.87 CU."
+    },
+    {
+      "id": "event-31",
+      "sequence": 31,
+      "created_at": "2026-09-23T10:08:36.438234Z",
+      "phase": "pilots",
+      "title": "Pilot selected",
+      "message": "tariff_8/HIGH → tariff_14, digital_ads, requested 200. Decision-relevant uncertainty; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 576136.71 CU."
+    },
+    {
+      "id": "event-32",
+      "sequence": 32,
+      "created_at": "2026-09-23T10:08:36.458405Z",
+      "phase": "pilots",
+      "title": "Pilot observed",
+      "message": "pilot-10: actual n=200, observed lift=0.03438; Posterior mean changed 0.00000 → 0.02623; portfolio recomputed with actual resource balances."
+    },
+    {
+      "id": "event-33",
+      "sequence": 33,
+      "created_at": "2026-09-23T10:08:36.756821Z",
+      "phase": "planning",
+      "title": "Portfolio updated",
+      "message": "10 final campaigns; forecast net including pilots 1777542.66 CU."
+    },
+    {
+      "id": "event-34",
+      "sequence": 34,
+      "created_at": "2026-09-23T10:08:36.858123Z",
+      "phase": "pilots",
+      "title": "Pilot selected",
+      "message": "tariff_10/HIGH → tariff_21, digital_ads, requested 200. Decision-relevant uncertainty; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 571339.21 CU."
+    },
+    {
+      "id": "event-35",
+      "sequence": 35,
+      "created_at": "2026-09-23T10:08:36.875933Z",
+      "phase": "pilots",
+      "title": "Pilot observed",
+      "message": "pilot-11: actual n=200, observed lift=0.01433; Posterior mean changed 0.00108 → 0.01119; portfolio recomputed with actual resource balances."
+    },
+    {
+      "id": "event-36",
+      "sequence": 36,
+      "created_at": "2026-09-23T10:08:37.181550Z",
+      "phase": "planning",
+      "title": "Portfolio updated",
+      "message": "10 final campaigns; forecast net including pilots 1776308.93 CU."
+    },
+    {
+      "id": "event-37",
+      "sequence": 37,
+      "created_at": "2026-09-23T10:08:37.277269Z",
+      "phase": "pilots",
+      "title": "Pilot selected",
+      "message": "tariff_8/HIGH → tariff_15, digital_ads, requested 200. Decision-relevant uncertainty; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 521387.48 CU."
+    },
+    {
+      "id": "event-38",
+      "sequence": 38,
+      "created_at": "2026-09-23T10:08:37.292328Z",
+      "phase": "pilots",
+      "title": "Pilot observed",
+      "message": "pilot-12: actual n=200, observed lift=-0.06778; Posterior mean changed 0.00000 → -0.05172; portfolio recomputed with actual resource balances."
+    },
+    {
+      "id": "event-39",
+      "sequence": 39,
+      "created_at": "2026-09-23T10:08:37.551298Z",
+      "phase": "planning",
+      "title": "Portfolio updated",
+      "message": "10 final campaigns; forecast net including pilots 1763915.10 CU."
+    },
+    {
+      "id": "event-40",
+      "sequence": 40,
+      "created_at": "2026-09-23T10:08:37.665813Z",
+      "phase": "pilots",
+      "title": "Pilot selected",
+      "message": "tariff_10/HIGH → tariff_14, digital_ads, requested 200. Decision-relevant uncertainty; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 494672.85 CU."
+    },
+    {
+      "id": "event-41",
+      "sequence": 41,
+      "created_at": "2026-09-23T10:08:37.684405Z",
+      "phase": "pilots",
+      "title": "Pilot observed",
+      "message": "pilot-13: actual n=200, observed lift=-0.00334; Posterior mean changed 0.00000 → -0.00255; portfolio recomputed with actual resource balances."
+    },
+    {
+      "id": "event-42",
+      "sequence": 42,
+      "created_at": "2026-09-23T10:08:38.061378Z",
+      "phase": "planning",
+      "title": "Portfolio updated",
+      "message": "10 final campaigns; forecast net including pilots 2103184.91 CU."
+    },
+    {
+      "id": "event-43",
+      "sequence": 43,
+      "created_at": "2026-09-23T10:08:38.170946Z",
+      "phase": "pilots",
+      "title": "Pilot selected",
+      "message": "tariff_8/HIGH → tariff_16, digital_ads, requested 200. Decision-relevant uncertainty; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 476132.82 CU."
+    },
+    {
+      "id": "event-44",
+      "sequence": 44,
+      "created_at": "2026-09-23T10:08:38.192977Z",
+      "phase": "pilots",
+      "title": "Pilot observed",
+      "message": "pilot-14: actual n=200, observed lift=-0.01880; Posterior mean changed 0.00000 → -0.01435; portfolio recomputed with actual resource balances."
+    },
+    {
+      "id": "event-45",
+      "sequence": 45,
+      "created_at": "2026-09-23T10:08:38.595970Z",
+      "phase": "planning",
+      "title": "Portfolio updated",
+      "message": "10 final campaigns; forecast net including pilots 2097871.52 CU."
+    },
+    {
+      "id": "event-46",
+      "sequence": 46,
+      "created_at": "2026-09-23T10:08:38.713484Z",
+      "phase": "pilots",
+      "title": "Pilot selected",
+      "message": "tariff_8/HIGH → tariff_17, digital_ads, requested 200. Decision-relevant uncertainty; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 438184.57 CU."
+    },
+    {
+      "id": "event-47",
+      "sequence": 47,
+      "created_at": "2026-09-23T10:08:38.736224Z",
+      "phase": "pilots",
+      "title": "Pilot observed",
+      "message": "pilot-15: actual n=200, observed lift=0.06453; Posterior mean changed 0.00000 → 0.04923; portfolio recomputed with actual resource balances."
+    },
+    {
+      "id": "event-48",
+      "sequence": 48,
+      "created_at": "2026-09-23T10:08:39.191756Z",
+      "phase": "planning",
+      "title": "Portfolio updated",
+      "message": "10 final campaigns; forecast net including pilots 2073098.03 CU."
+    },
+    {
+      "id": "event-49",
+      "sequence": 49,
+      "created_at": "2026-09-23T10:08:39.286903Z",
+      "phase": "pilots",
+      "title": "Pilot selected",
+      "message": "tariff_10/HIGH → tariff_15, digital_ads, requested 200. Decision-relevant uncertainty; compared sample sizes 80/140/200 and available unsaturated channels; heuristic value 437101.30 CU."
+    },
+    {
+      "id": "event-50",
+      "sequence": 50,
+      "created_at": "2026-09-23T10:08:39.310247Z",
+      "phase": "pilots",
+      "title": "Pilot observed",
+      "message": "pilot-16: actual n=200, observed lift=-0.03035; Posterior mean changed 0.00000 → -0.02316; portfolio recomputed with actual resource balances."
+    },
+    {
+      "id": "event-51",
+      "sequence": 51,
+      "created_at": "2026-09-23T10:08:39.770539Z",
+      "phase": "planning",
+      "title": "Portfolio updated",
+      "message": "10 final campaigns; forecast net including pilots 2011436.98 CU."
+    },
+    {
+      "id": "event-52",
+      "sequence": 52,
+      "created_at": "2026-09-23T10:08:40.649618Z",
+      "phase": "planning",
+      "title": "Final plan validated",
+      "message": "10 campaigns, 16 successful pilots, runtime 8.131s. Official evaluation runs separately."
+    }
+  ],
+  "forecast": {
+    "scope": "pilots_and_final",
+    "expected_gross_gain": 2111082.983551605,
+    "expected_net_gain": 2011436.9835516051,
+    "net_gain_interval": null,
+    "expected_unique_reach": 11519.0,
+    "overlap_method": "Analytic independent uniform sampling within each pilot filter; posterior mean effects plugged into client-wise maxima. Final intersections exact, pilot IDs unknown; uncertainty of maxima is not integrated."
+  },
+  "warnings": [
+    {
+      "code": "SYNTHETIC_DATA",
+      "severity": "info",
+      "message": "Синтетические данные; результат симуляции не является прогнозом реального Beeline.",
+      "affected_count": null
+    },
+    {
+      "code": "INVALID_CURRENT_TARIFF",
+      "severity": "warning",
+      "message": "Нет пригодного текущего тарифа: исключены из адресных кандидатов.",
+      "affected_count": 95
+    },
+    {
+      "code": "INVALID_ARPU_SEGMENT",
+      "severity": "warning",
+      "message": "Нет пригодного ARPU-сегмента: исключены из адресных кандидатов.",
+      "affected_count": 5
+    },
+    {
+      "code": "MISSING_DATA_SEGMENT",
+      "severity": "info",
+      "message": "Нет пригодного data_segment: доступны общие группы, но не адресный фильтр по этому полю.",
+      "affected_count": 110
+    },
+    {
+      "code": "INELIGIBLE_CUSTOMERS",
+      "severity": "warning",
+      "message": "Missing/unknown current tariff or invalid ARPU segment excluded from targeted candidates.",
+      "affected_count": 100
+    },
+    {
+      "code": "OPTIONAL_SEGMENTS_MISSING",
+      "severity": "warning",
+      "message": "Missing data/call labels remain in unrestricted groups and cannot match those optional filters.",
+      "affected_count": 10
+    },
+    {
+      "code": "FORECAST_APPROXIMATION",
+      "severity": "warning",
+      "message": "Pilot identities are unavailable; forecast uses analytic expected overlap and posterior mean maxima, without a calibrated interval.",
+      "affected_count": null
+    }
+  ],
+  "local_evaluation": {
+    "label": "local_simulation",
+    "gross_gain": 1027804.7891481007,
+    "net_arpu_gain": 928158.7891481007,
+    "communication_cost": 99646.0,
+    "total_contacts": 13919,
+    "unique_customers": 11519,
+    "n_pilots": 16,
+    "n_final_campaigns": 10,
+    "runtime_seconds": 8.746237200044561
+  }
+}

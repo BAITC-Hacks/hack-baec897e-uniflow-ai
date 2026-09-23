@@ -1,0 +1,190 @@
+{
+  "generated_at": "2026-09-23T10:11:37.733996+00:00",
+  "commands_completed": [
+    "python local_eval.py",
+    "python local_eval.py --runs 10",
+    "python make_submission.py (twice; identical bytes)",
+    "python -m pytest -q (participant_package)",
+    "python -m pytest -q backend/tests",
+    "python -m uniflow.audit",
+    "python -m uniflow.evaluation",
+    "python -m experiments.benchmark --runs 10 --scenario-runs 3",
+    "python -m experiments.sensitivity --runs 3",
+    "python -m experiments.diverse_fixed",
+    "python -m experiments.overlap_sensitivity",
+    "python -m experiments.portfolio_refinement",
+    "python -m experiments.verify_delivery",
+    "python -m backend.smoke",
+    "python -m pip check"
+  ],
+  "tests": {
+    "participant_passed": 46,
+    "backend_passed": 17,
+    "failed": 0,
+    "backend_warning": "Installed Starlette TestClient warns that httpx fallback is deprecated; real HTTP and tests pass."
+  },
+  "dataset_id": "1a2ed6872b5591be0f81750d84e61fe7288336fafc77e57d1d4c0c0111ebd177",
+  "standard_seed42": {
+    "label": "local_simulation",
+    "gross_gain": 1027804.7891481007,
+    "net_arpu_gain": 928158.7891481007,
+    "communication_cost": 99646.0,
+    "total_contacts": 13919,
+    "unique_customers": 11519,
+    "n_pilots": 16,
+    "n_final_campaigns": 10,
+    "runtime_seconds": 8.746237200044561
+  },
+  "benchmark": [
+    {
+      "scenario": "mock",
+      "strategy": "adaptive",
+      "runs": 10,
+      "mean_net": 459131.6076053122,
+      "median_net": 337105.0423878322,
+      "min_net": -297696.92196291016,
+      "p10_net": 35431.518571484834,
+      "negative_fraction": 0.1,
+      "all_conform": true,
+      "mean_communication_cost": 99368.2,
+      "mean_total_contacts": 14468.5,
+      "mean_unique_customers": 11748.3,
+      "mean_n_pilots": 16.0,
+      "mean_n_final_campaigns": 7.7,
+      "mean_runtime_seconds": 7.837357479991624,
+      "max_runtime_seconds": 9.451119500037748
+    },
+    {
+      "scenario": "mock",
+      "strategy": "fixed",
+      "runs": 10,
+      "mean_net": 1106968.9662704954,
+      "median_net": 1097480.2381917932,
+      "min_net": 761887.3689951231,
+      "p10_net": 924273.3988708016,
+      "negative_fraction": 0.0,
+      "all_conform": true,
+      "mean_communication_cost": 99676.6,
+      "mean_total_contacts": 11248.3,
+      "mean_unique_customers": 7770.1,
+      "mean_n_pilots": 16.0,
+      "mean_n_final_campaigns": 10.0,
+      "mean_runtime_seconds": 8.033686640002998,
+      "max_runtime_seconds": 10.134858099976555
+    },
+    {
+      "scenario": "mock",
+      "strategy": "template",
+      "runs": 10,
+      "mean_net": -480836.183828768,
+      "median_net": -357947.7963826433,
+      "min_net": -1019431.0606441048,
+      "p10_net": -1019256.1103635122,
+      "negative_fraction": 1.0,
+      "all_conform": false,
+      "mean_communication_cost": 29270.4,
+      "mean_total_contacts": 7317.6,
+      "mean_unique_customers": 6547.3,
+      "mean_n_pilots": 6.0,
+      "mean_n_final_campaigns": 2.4,
+      "mean_runtime_seconds": 0.1085430099919904,
+      "max_runtime_seconds": 0.15434180002193898
+    }
+  ],
+  "delivery": {
+    "organizer_files": [
+      {
+        "path": "participant_package/environment.py",
+        "sha256": "6385136a79814624449843930c55305b397a2d3d30c4d8c280e7b2b08bf033fc",
+        "unchanged_from_git_head": true
+      },
+      {
+        "path": "participant_package/scoring_core.py",
+        "sha256": "74e2316c2329872dd7c93165a4b47e6c583ecdb9af853671c14a8a11cb701cf7",
+        "unchanged_from_git_head": true
+      },
+      {
+        "path": "participant_package/mock_environment.py",
+        "sha256": "9c7515361270ebef8cec08f3a78ed0d288532a14d51e08eb6455de71994f9111",
+        "unchanged_from_git_head": true
+      },
+      {
+        "path": "participant_package/local_eval.py",
+        "sha256": "6af581b2c626c75adf72afd8cf965b883753518ef6b75df3844571d97a508e02",
+        "unchanged_from_git_head": true
+      },
+      {
+        "path": "participant_package/make_submission.py",
+        "sha256": "e5aa465252221835600efb007bd080693a1fdf2ac79318e818d62abb576718fe",
+        "unchanged_from_git_head": true
+      },
+      {
+        "path": "participant_package/agent_template.py",
+        "sha256": "739ec30073deef0767e64b814043dd6190ed85ed0eb70ec15dfe461cbeedf62f",
+        "unchanged_from_git_head": true
+      },
+      {
+        "path": "participant_package/customer_profile.csv",
+        "sha256": "e377baa2553a790f030a1d3411b3b5c5ca6316ccc7485badc9b08afa6da17d3f",
+        "unchanged_from_git_head": true
+      },
+      {
+        "path": "participant_package/feature_dictionary.csv",
+        "sha256": "7cf844d19cceb29f6796d49b047296b2643a35e7345390a637320c33553fb5fd",
+        "unchanged_from_git_head": true
+      },
+      {
+        "path": "participant_package/tariff_dictionary.csv",
+        "sha256": "f28fdc513c562b86a86849c243340523b0f2bb450a6a74a999322aeab505f584",
+        "unchanged_from_git_head": true
+      },
+      {
+        "path": "participant_package/data/arpu_monthly.csv",
+        "sha256": "e72c0fd5a59df245a4972ccd83d0139ef5c81273708cd14fe75639d2d08558fa",
+        "unchanged_from_git_head": true
+      },
+      {
+        "path": "participant_package/data/change_tariff.csv",
+        "sha256": "655d6af287093e681e4057ce9db438d4953598b5340951d95b891ed0cb6ad257",
+        "unchanged_from_git_head": true
+      },
+      {
+        "path": "participant_package/data/dict_tariff.csv",
+        "sha256": "74ef4242c9a6c46bd391d78251d6e3b9a408d913590c6efad7aa3957018be74c",
+        "unchanged_from_git_head": true
+      },
+      {
+        "path": "participant_package/data/traffic.csv",
+        "sha256": "51bb265b0c561564899b0718b5598d662eeea1ad00e333e001433dcd196a0857",
+        "unchanged_from_git_head": true
+      }
+    ],
+    "all_originals_unchanged": true,
+    "clean_copy_submission_matches": true,
+    "submission_sha256": "8cc87c56cd79afa05d0879a0695e769c4809748bc2da2b8c5eb95322f24e8f85",
+    "core_imports_fastapi": false,
+    "core_imports_scorer": false
+  },
+  "decision_source_sha256": {
+    "participant_package/agent.py": "356b3015cbbb2362704c6d84d2b20f0fa051550c73572fe13e16adf6fa2e2733",
+    "participant_package/uniflow/__init__.py": "0bbf9388678e04808700c7624d9e4d60ad0cdcc31d85534ac287b2b4aa656aeb",
+    "participant_package/uniflow/agent_core.py": "8debcc5f3f688a9d112d70041a89878b98beb40056d85541444025320ed915b4",
+    "participant_package/uniflow/audit.py": "e24b9be94fb0ce168289a8bd6ef53daf3ce13807c5788bb80378d7ccb68ad9f5",
+    "participant_package/uniflow/candidates.py": "ba8a38bdb0f283ca1f36712fcf2b92eec8077be83fb9a707e7df949a29fddee8",
+    "participant_package/uniflow/evaluation.py": "20c0cb6628d2ea221b00378609f1ea1f396e6659d334bb3106fd48cf983c5a8b",
+    "participant_package/uniflow/portfolio.py": "0309130147fda4e45827fce8252c0a32b78a55a993c046d2a6f86c6b35ff7716",
+    "participant_package/uniflow/posterior.py": "5677b6e97125c528bd0ebdd0f4f9728ae6e11e162108a5aec5f08cf53809b8ad",
+    "participant_package/uniflow/service_data.py": "611772d230ce7ba481fa844337620311f4da4b085d907ab73257263eed14e2e3",
+    "backend/__init__.py": "04e107e5189e2408172e7793d849bcae1be82fe4725fe5eebd0cabba1bbdae9b",
+    "backend/app.py": "841c96986ace94c0904c5a320bd46fd85401cb324cc51a503ac68eab772c6747",
+    "backend/models.py": "8ba6a1a7e9e2ab6c77763e210d9d6ac3cc3dfcc155b3dfaec394bc984658174b",
+    "backend/smoke.py": "9d4cdff1d188855c0b5a793d7ef114ff55990d297c74525a1cf1c9222a907311",
+    "backend/storage.py": "917c134e7381703053454128131a789beb2c5db57af28337db090c25fc01fb46",
+    "backend/worker.py": "acf84b480b1e2d7b0114417101f1875b41515160d465cd3a267f2a7fda9a6d9d"
+  },
+  "http_restart_persistence_verified": true,
+  "real_api_csv_matches_submission_bytes": true,
+  "frontend_files_modified": false,
+  "frontend_joint_acceptance_completed": false,
+  "frontend_limitation": "Frontend is owned by the second developer and is absent in this workspace; live backend HTTP contract was verified independently."
+}

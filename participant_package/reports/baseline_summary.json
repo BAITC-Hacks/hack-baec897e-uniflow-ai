@@ -1,0 +1,20 @@
+[
+  {
+    "scenario": "mock",
+    "strategy": "template",
+    "runs": 10,
+    "mean_net": -480836.183828768,
+    "median_net": -357947.7963826433,
+    "min_net": -1019431.0606441048,
+    "p10_net": -1019256.1103635122,
+    "negative_fraction": 1.0,
+    "all_conform": false,
+    "mean_communication_cost": 29270.4,
+    "mean_total_contacts": 7317.6,
+    "mean_unique_customers": 6547.3,
+    "mean_n_pilots": 6.0,
+    "mean_n_final_campaigns": 2.4,
+    "mean_runtime_seconds": 0.1085430099919904,
+    "max_runtime_seconds": 0.15434180002193898
+  }
+]

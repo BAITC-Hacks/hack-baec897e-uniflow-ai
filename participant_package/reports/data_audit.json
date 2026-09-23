@@ -1,0 +1,1169 @@
+{
+  "generated_at": "2026-09-23T09:59:00.791219+00:00",
+  "dataset_id": "1a2ed6872b5591be0f81750d84e61fe7288336fafc77e57d1d4c0c0111ebd177",
+  "input_sha256": {
+    "customer_profile.csv": "e377baa2553a790f030a1d3411b3b5c5ca6316ccc7485badc9b08afa6da17d3f",
+    "feature_dictionary.csv": "7cf844d19cceb29f6796d49b047296b2643a35e7345390a637320c33553fb5fd",
+    "tariff_dictionary.csv": "f28fdc513c562b86a86849c243340523b0f2bb450a6a74a999322aeab505f584",
+    "data/arpu_monthly.csv": "e72c0fd5a59df245a4972ccd83d0139ef5c81273708cd14fe75639d2d08558fa",
+    "data/change_tariff.csv": "655d6af287093e681e4057ce9db438d4953598b5340951d95b891ed0cb6ad257",
+    "data/dict_tariff.csv": "74ef4242c9a6c46bd391d78251d6e3b9a408d913590c6efad7aa3957018be74c",
+    "data/traffic.csv": "51bb265b0c561564899b0718b5598d662eeea1ad00e333e001433dcd196a0857"
+  },
+  "files": {
+    "customer_profile.csv": {
+      "rows": 23441,
+      "columns": [
+        "ID_NUMBER",
+        "ARPU_current",
+        "ARPU_3m_avg",
+        "ARPU_trend",
+        "current_tariff",
+        "OUT_LOC_ONNET_MIN",
+        "OUT_LOC_OFFNET_MIN",
+        "OUT_LOC_OFFNET_UNPAID_MIN",
+        "OUT_LOC_OFFNET_PAID_MIN",
+        "OUT_INTER_MIN",
+        "OUT_LOC_LAND_MIN",
+        "OUT_LOCAL_ONNET_SMS_AMT",
+        "OUT_LOCAL_OFFNET_SMS_AMT",
+        "OUT_LOCAL_LAND_PAID_SMS_AMT",
+        "OUT_INTER_SMS_AMT",
+        "DATA_VOLUME",
+        "LTE_DATA_VOLUME",
+        "TOTAL_ROAM_CALL_AMT",
+        "TOTAL_ROAM_SMS_AMT",
+        "TOTAL_ROAM_GPRS_MB",
+        "COUNT_CONTACT",
+        "AVG_TRANSACT_CONTACT",
+        "SUM_TRANSACT_CONTACT",
+        "AVG_DURATION_CONTACT",
+        "COUNT_BASE_STATION",
+        "arpu_segment",
+        "data_segment",
+        "call_segment",
+        "predicted_arpu"
+      ],
+      "dtypes": {
+        "ID_NUMBER": "int64",
+        "ARPU_current": "float64",
+        "ARPU_3m_avg": "float64",
+        "ARPU_trend": "str",
+        "current_tariff": "str",
+        "OUT_LOC_ONNET_MIN": "float64",
+        "OUT_LOC_OFFNET_MIN": "float64",
+        "OUT_LOC_OFFNET_UNPAID_MIN": "float64",
+        "OUT_LOC_OFFNET_PAID_MIN": "float64",
+        "OUT_INTER_MIN": "float64",
+        "OUT_LOC_LAND_MIN": "float64",
+        "OUT_LOCAL_ONNET_SMS_AMT": "float64",
+        "OUT_LOCAL_OFFNET_SMS_AMT": "float64",
+        "OUT_LOCAL_LAND_PAID_SMS_AMT": "float64",
+        "OUT_INTER_SMS_AMT": "float64",
+        "DATA_VOLUME": "float64",
+        "LTE_DATA_VOLUME": "float64",
+        "TOTAL_ROAM_CALL_AMT": "float64",
+        "TOTAL_ROAM_SMS_AMT": "float64",
+        "TOTAL_ROAM_GPRS_MB": "float64",
+        "COUNT_CONTACT": "float64",
+        "AVG_TRANSACT_CONTACT": "float64",
+        "SUM_TRANSACT_CONTACT": "float64",
+        "AVG_DURATION_CONTACT": "float64",
+        "COUNT_BASE_STATION": "float64",
+        "arpu_segment": "str",
+        "data_segment": "str",
+        "call_segment": "str",
+        "predicted_arpu": "float64"
+      },
+      "missing": {
+        "ID_NUMBER": 0,
+        "ARPU_current": 28,
+        "ARPU_3m_avg": 5,
+        "ARPU_trend": 5,
+        "current_tariff": 95,
+        "OUT_LOC_ONNET_MIN": 110,
+        "OUT_LOC_OFFNET_MIN": 110,
+        "OUT_LOC_OFFNET_UNPAID_MIN": 110,
+        "OUT_LOC_OFFNET_PAID_MIN": 110,
+        "OUT_INTER_MIN": 110,
+        "OUT_LOC_LAND_MIN": 110,
+        "OUT_LOCAL_ONNET_SMS_AMT": 110,
+        "OUT_LOCAL_OFFNET_SMS_AMT": 110,
+        "OUT_LOCAL_LAND_PAID_SMS_AMT": 110,
+        "OUT_INTER_SMS_AMT": 110,
+        "DATA_VOLUME": 110,
+        "LTE_DATA_VOLUME": 110,
+        "TOTAL_ROAM_CALL_AMT": 110,
+        "TOTAL_ROAM_SMS_AMT": 110,
+        "TOTAL_ROAM_GPRS_MB": 110,
+        "COUNT_CONTACT": 470,
+        "AVG_TRANSACT_CONTACT": 470,
+        "SUM_TRANSACT_CONTACT": 470,
+        "AVG_DURATION_CONTACT": 470,
+        "COUNT_BASE_STATION": 162,
+        "arpu_segment": 5,
+        "data_segment": 110,
+        "call_segment": 0,
+        "predicted_arpu": 0
+      },
+      "nonfinite_numeric": {
+        "ID_NUMBER": 0,
+        "ARPU_current": 0,
+        "ARPU_3m_avg": 0,
+        "OUT_LOC_ONNET_MIN": 0,
+        "OUT_LOC_OFFNET_MIN": 0,
+        "OUT_LOC_OFFNET_UNPAID_MIN": 0,
+        "OUT_LOC_OFFNET_PAID_MIN": 0,
+        "OUT_INTER_MIN": 0,
+        "OUT_LOC_LAND_MIN": 0,
+        "OUT_LOCAL_ONNET_SMS_AMT": 0,
+        "OUT_LOCAL_OFFNET_SMS_AMT": 0,
+        "OUT_LOCAL_LAND_PAID_SMS_AMT": 0,
+        "OUT_INTER_SMS_AMT": 0,
+        "DATA_VOLUME": 0,
+        "LTE_DATA_VOLUME": 0,
+        "TOTAL_ROAM_CALL_AMT": 0,
+        "TOTAL_ROAM_SMS_AMT": 0,
+        "TOTAL_ROAM_GPRS_MB": 0,
+        "COUNT_CONTACT": 0,
+        "AVG_TRANSACT_CONTACT": 0,
+        "SUM_TRANSACT_CONTACT": 0,
+        "AVG_DURATION_CONTACT": 0,
+        "COUNT_BASE_STATION": 0,
+        "predicted_arpu": 0
+      },
+      "unique_ids": 23441,
+      "duplicate_ids": 0
+    },
+    "feature_dictionary.csv": {
+      "rows": 38,
+      "columns": [
+        "feature",
+        "unit",
+        "description"
+      ],
+      "dtypes": {
+        "feature": "str",
+        "unit": "str",
+        "description": "str"
+      },
+      "missing": {
+        "feature": 0,
+        "unit": 0,
+        "description": 0
+      },
+      "nonfinite_numeric": {},
+      "unique_ids": null,
+      "duplicate_ids": null
+    },
+    "tariff_dictionary.csv": {
+      "rows": 21,
+      "columns": [
+        "Data_in_PKG",
+        "Min_another_operator_in_PKG",
+        "Min_another_operator_and_city_in_PKG",
+        "price_tariff",
+        "tariff_plan_code",
+        "description"
+      ],
+      "dtypes": {
+        "Data_in_PKG": "int64",
+        "Min_another_operator_in_PKG": "int64",
+        "Min_another_operator_and_city_in_PKG": "int64",
+        "price_tariff": "float64",
+        "tariff_plan_code": "str",
+        "description": "str"
+      },
+      "missing": {
+        "Data_in_PKG": 0,
+        "Min_another_operator_in_PKG": 0,
+        "Min_another_operator_and_city_in_PKG": 0,
+        "price_tariff": 0,
+        "tariff_plan_code": 0,
+        "description": 0
+      },
+      "nonfinite_numeric": {
+        "Data_in_PKG": 0,
+        "Min_another_operator_in_PKG": 0,
+        "Min_another_operator_and_city_in_PKG": 0,
+        "price_tariff": 0
+      },
+      "unique_ids": null,
+      "duplicate_ids": null
+    },
+    "data/arpu_monthly.csv": {
+      "rows": 78798,
+      "columns": [
+        "ARPU_1M",
+        "TIME_KEY",
+        "ID_NUMBER"
+      ],
+      "dtypes": {
+        "ARPU_1M": "float64",
+        "TIME_KEY": "str",
+        "ID_NUMBER": "int64"
+      },
+      "missing": {
+        "ARPU_1M": 0,
+        "TIME_KEY": 0,
+        "ID_NUMBER": 0
+      },
+      "nonfinite_numeric": {
+        "ARPU_1M": 0,
+        "ID_NUMBER": 0
+      },
+      "unique_ids": 14991,
+      "duplicate_ids": 63807
+    },
+    "data/change_tariff.csv": {
+      "rows": 14823,
+      "columns": [
+        "TIME_KEY",
+        "AVG_ARPU_PREV_3M",
+        "AVG_ARPU_NEXT_3M",
+        "ID_NUMBER",
+        "tariff_plan_code_from",
+        "tariff_plan_code_to"
+      ],
+      "dtypes": {
+        "TIME_KEY": "str",
+        "AVG_ARPU_PREV_3M": "float64",
+        "AVG_ARPU_NEXT_3M": "float64",
+        "ID_NUMBER": "int64",
+        "tariff_plan_code_from": "str",
+        "tariff_plan_code_to": "str"
+      },
+      "missing": {
+        "TIME_KEY": 0,
+        "AVG_ARPU_PREV_3M": 0,
+        "AVG_ARPU_NEXT_3M": 0,
+        "ID_NUMBER": 0,
+        "tariff_plan_code_from": 0,
+        "tariff_plan_code_to": 0
+      },
+      "nonfinite_numeric": {
+        "AVG_ARPU_PREV_3M": 0,
+        "AVG_ARPU_NEXT_3M": 0,
+        "ID_NUMBER": 0
+      },
+      "unique_ids": 14817,
+      "duplicate_ids": 6
+    },
+    "data/dict_tariff.csv": {
+      "rows": 21,
+      "columns": [
+        "Data_in_PKG",
+        "Min_another_operator_in_PKG",
+        "Min_another_operator_and_city_in_PKG",
+        "price_tariff",
+        "tariff_plan_code"
+      ],
+      "dtypes": {
+        "Data_in_PKG": "int64",
+        "Min_another_operator_in_PKG": "int64",
+        "Min_another_operator_and_city_in_PKG": "int64",
+        "price_tariff": "float64",
+        "tariff_plan_code": "str"
+      },
+      "missing": {
+        "Data_in_PKG": 0,
+        "Min_another_operator_in_PKG": 0,
+        "Min_another_operator_and_city_in_PKG": 0,
+        "price_tariff": 0,
+        "tariff_plan_code": 0
+      },
+      "nonfinite_numeric": {
+        "Data_in_PKG": 0,
+        "Min_another_operator_in_PKG": 0,
+        "Min_another_operator_and_city_in_PKG": 0,
+        "price_tariff": 0
+      },
+      "unique_ids": null,
+      "duplicate_ids": null
+    },
+    "data/traffic.csv": {
+      "rows": 75736,
+      "columns": [
+        "DEVICE_ID",
+        "time_key",
+        "OUT_LOC_ONNET_MIN",
+        "OUT_LOC_OFFNET_MIN",
+        "OUT_LOC_OFFNET_UNPAID_MIN",
+        "OUT_LOC_OFFNET_PAID_MIN",
+        "OUT_INTER_MIN",
+        "OUT_LOC_LAND_MIN",
+        "OUT_LOCAL_ONNET_SMS_AMT",
+        "OUT_LOCAL_OFFNET_SMS_AMT",
+        "OUT_LOCAL_LAND_PAID_SMS_AMT",
+        "OUT_INTER_SMS_AMT",
+        "DATA_VOLUME",
+        "LTE_DATA_VOLUME",
+        "TOTAL_ROAM_CALL_AMT",
+        "TOTAL_ROAM_SMS_AMT",
+        "TOTAL_ROAM_GPRS_MB",
+        "COUNT_CONTACT",
+        "AVG_TRANSACT_CONTACT",
+        "SUM_TRANSACT_CONTACT",
+        "AVG_DURATION_CONTACT",
+        "COUNT_BASE_STATION",
+        "FIRST_DISP_DIAG",
+        "OS_1",
+        "OS_2",
+        "OS_3",
+        "OS_4",
+        "date_issue_device",
+        "ID_NUMBER",
+        "tariff_plan_code"
+      ],
+      "dtypes": {
+        "DEVICE_ID": "float64",
+        "time_key": "str",
+        "OUT_LOC_ONNET_MIN": "float64",
+        "OUT_LOC_OFFNET_MIN": "float64",
+        "OUT_LOC_OFFNET_UNPAID_MIN": "float64",
+        "OUT_LOC_OFFNET_PAID_MIN": "float64",
+        "OUT_INTER_MIN": "float64",
+        "OUT_LOC_LAND_MIN": "float64",
+        "OUT_LOCAL_ONNET_SMS_AMT": "float64",
+        "OUT_LOCAL_OFFNET_SMS_AMT": "float64",
+        "OUT_LOCAL_LAND_PAID_SMS_AMT": "float64",
+        "OUT_INTER_SMS_AMT": "float64",
+        "DATA_VOLUME": "float64",
+        "LTE_DATA_VOLUME": "float64",
+        "TOTAL_ROAM_CALL_AMT": "float64",
+        "TOTAL_ROAM_SMS_AMT": "float64",
+        "TOTAL_ROAM_GPRS_MB": "float64",
+        "COUNT_CONTACT": "float64",
+        "AVG_TRANSACT_CONTACT": "float64",
+        "SUM_TRANSACT_CONTACT": "float64",
+        "AVG_DURATION_CONTACT": "float64",
+        "COUNT_BASE_STATION": "float64",
+        "FIRST_DISP_DIAG": "float64",
+        "OS_1": "float64",
+        "OS_2": "float64",
+        "OS_3": "float64",
+        "OS_4": "float64",
+        "date_issue_device": "str",
+        "ID_NUMBER": "int64",
+        "tariff_plan_code": "str"
+      },
+      "missing": {
+        "DEVICE_ID": 2697,
+        "time_key": 0,
+        "OUT_LOC_ONNET_MIN": 0,
+        "OUT_LOC_OFFNET_MIN": 0,
+        "OUT_LOC_OFFNET_UNPAID_MIN": 0,
+        "OUT_LOC_OFFNET_PAID_MIN": 0,
+        "OUT_INTER_MIN": 0,
+        "OUT_LOC_LAND_MIN": 0,
+        "OUT_LOCAL_ONNET_SMS_AMT": 0,
+        "OUT_LOCAL_OFFNET_SMS_AMT": 0,
+        "OUT_LOCAL_LAND_PAID_SMS_AMT": 0,
+        "OUT_INTER_SMS_AMT": 0,
+        "DATA_VOLUME": 0,
+        "LTE_DATA_VOLUME": 0,
+        "TOTAL_ROAM_CALL_AMT": 0,
+        "TOTAL_ROAM_SMS_AMT": 0,
+        "TOTAL_ROAM_GPRS_MB": 0,
+        "COUNT_CONTACT": 3987,
+        "AVG_TRANSACT_CONTACT": 3987,
+        "SUM_TRANSACT_CONTACT": 3987,
+        "AVG_DURATION_CONTACT": 3987,
+        "COUNT_BASE_STATION": 2251,
+        "FIRST_DISP_DIAG": 6302,
+        "OS_1": 6027,
+        "OS_2": 6027,
+        "OS_3": 6027,
+        "OS_4": 6027,
+        "date_issue_device": 0,
+        "ID_NUMBER": 0,
+        "tariff_plan_code": 16725
+      },
+      "nonfinite_numeric": {
+        "DEVICE_ID": 0,
+        "OUT_LOC_ONNET_MIN": 0,
+        "OUT_LOC_OFFNET_MIN": 0,
+        "OUT_LOC_OFFNET_UNPAID_MIN": 0,
+        "OUT_LOC_OFFNET_PAID_MIN": 0,
+        "OUT_INTER_MIN": 0,
+        "OUT_LOC_LAND_MIN": 0,
+        "OUT_LOCAL_ONNET_SMS_AMT": 0,
+        "OUT_LOCAL_OFFNET_SMS_AMT": 0,
+        "OUT_LOCAL_LAND_PAID_SMS_AMT": 0,
+        "OUT_INTER_SMS_AMT": 0,
+        "DATA_VOLUME": 0,
+        "LTE_DATA_VOLUME": 0,
+        "TOTAL_ROAM_CALL_AMT": 0,
+        "TOTAL_ROAM_SMS_AMT": 0,
+        "TOTAL_ROAM_GPRS_MB": 0,
+        "COUNT_CONTACT": 0,
+        "AVG_TRANSACT_CONTACT": 0,
+        "SUM_TRANSACT_CONTACT": 0,
+        "AVG_DURATION_CONTACT": 0,
+        "COUNT_BASE_STATION": 0,
+        "FIRST_DISP_DIAG": 0,
+        "OS_1": 0,
+        "OS_2": 0,
+        "OS_3": 0,
+        "OS_4": 0,
+        "ID_NUMBER": 0
+      },
+      "unique_ids": 14875,
+      "duplicate_ids": 60861
+    }
+  },
+  "customer_count": 23441,
+  "tariff_count": 21,
+  "baseline_revenue": 150641084.24626845,
+  "baseline_min": 0.0,
+  "baseline_max": 216619.82,
+  "invalid_baseline_count": 0,
+  "eligible_customer_count": 23341,
+  "excluded_customer_count": 100,
+  "excluded_baseline_revenue": 312540.2496033703,
+  "exclusion_counts": {
+    "missing_current_tariff": 95,
+    "unknown_current_tariff": 0,
+    "missing_arpu_segment": 5,
+    "unknown_arpu_segment": 0,
+    "both_invalid": 0
+  },
+  "exclusion_reason": "Неизвестный/пропущенный current_tariff или недопустимый/пропущенный arpu_segment; исходные строки сохранены.",
+  "optional_filter_unavailable": {
+    "data_segment": 110,
+    "call_segment": 0
+  },
+  "target_history_id_overlap": 0,
+  "history_join_policy": "Групповые агрегаты переходов; соединение целевой аудитории с историей по ID не применяется.",
+  "segment_policy": "Используется готовый arpu_segment, определённый ARPU_3m_avg; predicted_arpu не используется для пересегментации.",
+  "frequencies": {
+    "current_tariff": [
+      {
+        "value": "tariff_8",
+        "count": 6904
+      },
+      {
+        "value": "tariff_10",
+        "count": 3965
+      },
+      {
+        "value": "tariff_4",
+        "count": 3634
+      },
+      {
+        "value": "tariff_11",
+        "count": 2484
+      },
+      {
+        "value": "tariff_14",
+        "count": 1949
+      },
+      {
+        "value": "tariff_13",
+        "count": 1789
+      },
+      {
+        "value": "tariff_12",
+        "count": 1272
+      },
+      {
+        "value": "tariff_5",
+        "count": 245
+      },
+      {
+        "value": "tariff_3",
+        "count": 170
+      },
+      {
+        "value": "tariff_7",
+        "count": 153
+      },
+      {
+        "value": "tariff_9",
+        "count": 127
+      },
+      {
+        "value": "tariff_6",
+        "count": 119
+      },
+      {
+        "value": "tariff_15",
+        "count": 108
+      },
+      {
+        "value": null,
+        "count": 95
+      },
+      {
+        "value": "tariff_1",
+        "count": 83
+      },
+      {
+        "value": "tariff_19",
+        "count": 74
+      },
+      {
+        "value": "tariff_18",
+        "count": 67
+      },
+      {
+        "value": "tariff_17",
+        "count": 67
+      },
+      {
+        "value": "tariff_20",
+        "count": 50
+      },
+      {
+        "value": "tariff_2",
+        "count": 36
+      },
+      {
+        "value": "tariff_21",
+        "count": 30
+      },
+      {
+        "value": "tariff_16",
+        "count": 20
+      }
+    ],
+    "arpu_segment": [
+      {
+        "value": "HIGH",
+        "count": 13918
+      },
+      {
+        "value": "MID",
+        "count": 6780
+      },
+      {
+        "value": "LOW",
+        "count": 2738
+      },
+      {
+        "value": null,
+        "count": 5
+      }
+    ],
+    "data_segment": [
+      {
+        "value": "HEAVY",
+        "count": 11735
+      },
+      {
+        "value": "LITE",
+        "count": 10253
+      },
+      {
+        "value": "NON_USER",
+        "count": 1343
+      },
+      {
+        "value": null,
+        "count": 110
+      }
+    ],
+    "call_segment": [
+      {
+        "value": "LOW",
+        "count": 10716
+      },
+      {
+        "value": "MEDIUM",
+        "count": 8309
+      },
+      {
+        "value": "HIGH",
+        "count": 4416
+      }
+    ]
+  },
+  "segments": [
+    {
+      "current_tariff": "tariff_1",
+      "arpu_segment": "HIGH",
+      "customer_count": 11,
+      "baseline_revenue": 82638.48170901385,
+      "average_predicted_arpu": 7512.589246273987,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_1",
+      "arpu_segment": "LOW",
+      "customer_count": 40,
+      "baseline_revenue": 132219.59089506813,
+      "average_predicted_arpu": 3305.4897723767035,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_1",
+      "arpu_segment": "MID",
+      "customer_count": 32,
+      "baseline_revenue": 165169.06544740364,
+      "average_predicted_arpu": 5161.533295231364,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_10",
+      "arpu_segment": "HIGH",
+      "customer_count": 2950,
+      "baseline_revenue": 24190636.44091341,
+      "average_predicted_arpu": 8200.215742682512,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_10",
+      "arpu_segment": "LOW",
+      "customer_count": 370,
+      "baseline_revenue": 972233.5682257856,
+      "average_predicted_arpu": 2627.6582925021235,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_10",
+      "arpu_segment": "MID",
+      "customer_count": 645,
+      "baseline_revenue": 3003700.1472749137,
+      "average_predicted_arpu": 4656.899453139401,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_11",
+      "arpu_segment": "HIGH",
+      "customer_count": 1633,
+      "baseline_revenue": 14175708.002870273,
+      "average_predicted_arpu": 8680.776486754607,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_11",
+      "arpu_segment": "LOW",
+      "customer_count": 387,
+      "baseline_revenue": 1067637.79615389,
+      "average_predicted_arpu": 2758.7539952296897,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_11",
+      "arpu_segment": "MID",
+      "customer_count": 464,
+      "baseline_revenue": 2059004.340584057,
+      "average_predicted_arpu": 4437.509354707019,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_12",
+      "arpu_segment": "HIGH",
+      "customer_count": 567,
+      "baseline_revenue": 5244797.051878842,
+      "average_predicted_arpu": 9250.0829839133,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_12",
+      "arpu_segment": "LOW",
+      "customer_count": 363,
+      "baseline_revenue": 1017502.0543512055,
+      "average_predicted_arpu": 2803.0359624000153,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_12",
+      "arpu_segment": "MID",
+      "customer_count": 342,
+      "baseline_revenue": 1503059.9061305255,
+      "average_predicted_arpu": 4394.912006229607,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_13",
+      "arpu_segment": "HIGH",
+      "customer_count": 516,
+      "baseline_revenue": 3712751.1737852106,
+      "average_predicted_arpu": 7195.254212762036,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_13",
+      "arpu_segment": "LOW",
+      "customer_count": 251,
+      "baseline_revenue": 756421.0833960543,
+      "average_predicted_arpu": 3013.6298143269096,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_13",
+      "arpu_segment": "MID",
+      "customer_count": 1022,
+      "baseline_revenue": 5000571.238140449,
+      "average_predicted_arpu": 4892.926847495547,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_14",
+      "arpu_segment": "HIGH",
+      "customer_count": 963,
+      "baseline_revenue": 7609558.492534343,
+      "average_predicted_arpu": 7901.929898789556,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_14",
+      "arpu_segment": "LOW",
+      "customer_count": 231,
+      "baseline_revenue": 721988.3024613424,
+      "average_predicted_arpu": 3125.4904868456383,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_14",
+      "arpu_segment": "MID",
+      "customer_count": 755,
+      "baseline_revenue": 3686020.025355763,
+      "average_predicted_arpu": 4882.14572894803,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_15",
+      "arpu_segment": "HIGH",
+      "customer_count": 14,
+      "baseline_revenue": 96923.3666209267,
+      "average_predicted_arpu": 6923.097615780478,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_15",
+      "arpu_segment": "LOW",
+      "customer_count": 14,
+      "baseline_revenue": 43367.06010503619,
+      "average_predicted_arpu": 3097.6471503597277,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_15",
+      "arpu_segment": "MID",
+      "customer_count": 80,
+      "baseline_revenue": 402182.2596318361,
+      "average_predicted_arpu": 5027.278245397951,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_16",
+      "arpu_segment": "HIGH",
+      "customer_count": 2,
+      "baseline_revenue": 8012.469158351882,
+      "average_predicted_arpu": 4006.234579175941,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_16",
+      "arpu_segment": "LOW",
+      "customer_count": 8,
+      "baseline_revenue": 21006.127868354895,
+      "average_predicted_arpu": 2625.765983544362,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_16",
+      "arpu_segment": "MID",
+      "customer_count": 10,
+      "baseline_revenue": 47207.16015030426,
+      "average_predicted_arpu": 4720.716015030426,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_17",
+      "arpu_segment": "HIGH",
+      "customer_count": 27,
+      "baseline_revenue": 233018.89904674364,
+      "average_predicted_arpu": 8630.329594323839,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_17",
+      "arpu_segment": "LOW",
+      "customer_count": 8,
+      "baseline_revenue": 23317.104493311017,
+      "average_predicted_arpu": 2914.638061663877,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_17",
+      "arpu_segment": "MID",
+      "customer_count": 32,
+      "baseline_revenue": 166536.6493991783,
+      "average_predicted_arpu": 5204.270293724322,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_18",
+      "arpu_segment": "HIGH",
+      "customer_count": 35,
+      "baseline_revenue": 286137.2608227685,
+      "average_predicted_arpu": 8175.350309221957,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_18",
+      "arpu_segment": "LOW",
+      "customer_count": 19,
+      "baseline_revenue": 60062.980205548956,
+      "average_predicted_arpu": 3161.2094845025767,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_18",
+      "arpu_segment": "MID",
+      "customer_count": 13,
+      "baseline_revenue": 70016.1315313117,
+      "average_predicted_arpu": 5385.856271639361,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_19",
+      "arpu_segment": "HIGH",
+      "customer_count": 33,
+      "baseline_revenue": 259350.81354660034,
+      "average_predicted_arpu": 7859.115562018193,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_19",
+      "arpu_segment": "LOW",
+      "customer_count": 14,
+      "baseline_revenue": 40738.45038262726,
+      "average_predicted_arpu": 2909.8893130448046,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_19",
+      "arpu_segment": "MID",
+      "customer_count": 26,
+      "baseline_revenue": 119249.02399881552,
+      "average_predicted_arpu": 4586.500923031366,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_19",
+      "arpu_segment": null,
+      "customer_count": 1,
+      "baseline_revenue": 2438.498383103144,
+      "average_predicted_arpu": 2438.498383103144,
+      "eligible": false
+    },
+    {
+      "current_tariff": "tariff_2",
+      "arpu_segment": "HIGH",
+      "customer_count": 7,
+      "baseline_revenue": 36800.23072418845,
+      "average_predicted_arpu": 5257.175817741207,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_2",
+      "arpu_segment": "LOW",
+      "customer_count": 9,
+      "baseline_revenue": 23951.38715991484,
+      "average_predicted_arpu": 2661.265239990538,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_2",
+      "arpu_segment": "MID",
+      "customer_count": 20,
+      "baseline_revenue": 92193.04215266432,
+      "average_predicted_arpu": 4609.652107633216,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_20",
+      "arpu_segment": "HIGH",
+      "customer_count": 38,
+      "baseline_revenue": 287290.7229146005,
+      "average_predicted_arpu": 7560.282181963172,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_20",
+      "arpu_segment": "LOW",
+      "customer_count": 5,
+      "baseline_revenue": 18274.493795633207,
+      "average_predicted_arpu": 3654.8987591266414,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_20",
+      "arpu_segment": "MID",
+      "customer_count": 7,
+      "baseline_revenue": 40256.809537912915,
+      "average_predicted_arpu": 5750.972791130416,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_21",
+      "arpu_segment": "HIGH",
+      "customer_count": 5,
+      "baseline_revenue": 40063.8281615773,
+      "average_predicted_arpu": 8012.765632315461,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_21",
+      "arpu_segment": "LOW",
+      "customer_count": 12,
+      "baseline_revenue": 56342.329315095456,
+      "average_predicted_arpu": 4695.194109591288,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_21",
+      "arpu_segment": "MID",
+      "customer_count": 13,
+      "baseline_revenue": 57141.37776829388,
+      "average_predicted_arpu": 4395.490597561068,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_3",
+      "arpu_segment": "HIGH",
+      "customer_count": 27,
+      "baseline_revenue": 180049.65929309526,
+      "average_predicted_arpu": 6668.505899744269,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_3",
+      "arpu_segment": "LOW",
+      "customer_count": 56,
+      "baseline_revenue": 160544.44723558158,
+      "average_predicted_arpu": 2866.865129206814,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_3",
+      "arpu_segment": "MID",
+      "customer_count": 87,
+      "baseline_revenue": 353907.75615506346,
+      "average_predicted_arpu": 4067.9052431616487,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_4",
+      "arpu_segment": "HIGH",
+      "customer_count": 2108,
+      "baseline_revenue": 15794121.77170824,
+      "average_predicted_arpu": 7492.467633637685,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_4",
+      "arpu_segment": "LOW",
+      "customer_count": 299,
+      "baseline_revenue": 857563.179026669,
+      "average_predicted_arpu": 2868.1042776811673,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_4",
+      "arpu_segment": "MID",
+      "customer_count": 1227,
+      "baseline_revenue": 5840537.244104054,
+      "average_predicted_arpu": 4760.0140538745345,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_5",
+      "arpu_segment": "HIGH",
+      "customer_count": 109,
+      "baseline_revenue": 740120.0616143207,
+      "average_predicted_arpu": 6790.0923083882635,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_5",
+      "arpu_segment": "LOW",
+      "customer_count": 44,
+      "baseline_revenue": 132153.6839166647,
+      "average_predicted_arpu": 3003.4928162878346,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_5",
+      "arpu_segment": "MID",
+      "customer_count": 91,
+      "baseline_revenue": 367820.6101110265,
+      "average_predicted_arpu": 4041.9847264947966,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_5",
+      "arpu_segment": null,
+      "customer_count": 1,
+      "baseline_revenue": 3644.565627625858,
+      "average_predicted_arpu": 3644.565627625858,
+      "eligible": false
+    },
+    {
+      "current_tariff": "tariff_6",
+      "arpu_segment": "HIGH",
+      "customer_count": 53,
+      "baseline_revenue": 341665.53809705016,
+      "average_predicted_arpu": 6446.519586736796,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_6",
+      "arpu_segment": "LOW",
+      "customer_count": 30,
+      "baseline_revenue": 97039.6091558815,
+      "average_predicted_arpu": 3234.653638529383,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_6",
+      "arpu_segment": "MID",
+      "customer_count": 34,
+      "baseline_revenue": 135351.60083776535,
+      "average_predicted_arpu": 3980.9294364048633,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_6",
+      "arpu_segment": null,
+      "customer_count": 2,
+      "baseline_revenue": 9109.74472992551,
+      "average_predicted_arpu": 4554.872364962755,
+      "eligible": false
+    },
+    {
+      "current_tariff": "tariff_7",
+      "arpu_segment": "HIGH",
+      "customer_count": 72,
+      "baseline_revenue": 519437.624644454,
+      "average_predicted_arpu": 7214.411453395194,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_7",
+      "arpu_segment": "LOW",
+      "customer_count": 29,
+      "baseline_revenue": 93486.11254736516,
+      "average_predicted_arpu": 3223.6590533574195,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_7",
+      "arpu_segment": "MID",
+      "customer_count": 52,
+      "baseline_revenue": 267570.6779826569,
+      "average_predicted_arpu": 5145.589961204941,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_8",
+      "arpu_segment": "HIGH",
+      "customer_count": 4726,
+      "baseline_revenue": 36988107.97242949,
+      "average_predicted_arpu": 7826.514594250844,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_8",
+      "arpu_segment": "LOW",
+      "customer_count": 457,
+      "baseline_revenue": 1312258.1647560755,
+      "average_predicted_arpu": 2871.4620672999463,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_8",
+      "arpu_segment": "MID",
+      "customer_count": 1720,
+      "baseline_revenue": 8024489.894817886,
+      "average_predicted_arpu": 4665.401101638306,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_8",
+      "arpu_segment": null,
+      "customer_count": 1,
+      "baseline_revenue": 3906.5180204114554,
+      "average_predicted_arpu": 3906.5180204114554,
+      "eligible": false
+    },
+    {
+      "current_tariff": "tariff_9",
+      "arpu_segment": "HIGH",
+      "customer_count": 9,
+      "baseline_revenue": 52537.21275559646,
+      "average_predicted_arpu": 5837.468083955162,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_9",
+      "arpu_segment": "LOW",
+      "customer_count": 51,
+      "baseline_revenue": 157453.03508879975,
+      "average_predicted_arpu": 3087.3144135058774,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_9",
+      "arpu_segment": "MID",
+      "customer_count": 67,
+      "baseline_revenue": 281271.3997881733,
+      "average_predicted_arpu": 4198.080593853333,
+      "eligible": true
+    },
+    {
+      "current_tariff": null,
+      "arpu_segment": "HIGH",
+      "customer_count": 13,
+      "baseline_revenue": 84761.5720443282,
+      "average_predicted_arpu": 6520.120926486785,
+      "eligible": false
+    },
+    {
+      "current_tariff": null,
+      "arpu_segment": "LOW",
+      "customer_count": 41,
+      "baseline_revenue": 72143.31793394098,
+      "average_predicted_arpu": 1759.593120340024,
+      "eligible": false
+    },
+    {
+      "current_tariff": null,
+      "arpu_segment": "MID",
+      "customer_count": 41,
+      "baseline_revenue": 136536.03286403522,
+      "average_predicted_arpu": 3330.1471430252495,
+      "eligible": false
+    }
+  ],
+  "notices": [
+    {
+      "code": "SYNTHETIC_DATA",
+      "severity": "info",
+      "message": "Синтетические данные; результат симуляции не является прогнозом реального Beeline.",
+      "affected_count": null
+    },
+    {
+      "code": "INVALID_CURRENT_TARIFF",
+      "severity": "warning",
+      "message": "Нет пригодного текущего тарифа: исключены из адресных кандидатов.",
+      "affected_count": 95
+    },
+    {
+      "code": "INVALID_ARPU_SEGMENT",
+      "severity": "warning",
+      "message": "Нет пригодного ARPU-сегмента: исключены из адресных кандидатов.",
+      "affected_count": 5
+    },
+    {
+      "code": "MISSING_DATA_SEGMENT",
+      "severity": "info",
+      "message": "Нет пригодного data_segment: доступны общие группы, но не адресный фильтр по этому полю.",
+      "affected_count": 110
+    }
+  ]
+}

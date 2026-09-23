@@ -1,0 +1,35 @@
+{
+  "python": "3.13.5",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "versions": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "pytest": "9.1.1"
+  },
+  "organizer_and_data_sha256": {
+    "environment.py": "6385136a79814624449843930c55305b397a2d3d30c4d8c280e7b2b08bf033fc",
+    "scoring_core.py": "74e2316c2329872dd7c93165a4b47e6c583ecdb9af853671c14a8a11cb701cf7",
+    "mock_environment.py": "9c7515361270ebef8cec08f3a78ed0d288532a14d51e08eb6455de71994f9111",
+    "local_eval.py": "6af581b2c626c75adf72afd8cf965b883753518ef6b75df3844571d97a508e02",
+    "make_submission.py": "e5aa465252221835600efb007bd080693a1fdf2ac79318e818d62abb576718fe",
+    "agent_template.py": "739ec30073deef0767e64b814043dd6190ed85ed0eb70ec15dfe461cbeedf62f",
+    "customer_profile.csv": "e377baa2553a790f030a1d3411b3b5c5ca6316ccc7485badc9b08afa6da17d3f",
+    "data/change_tariff.csv": "655d6af287093e681e4057ce9db438d4953598b5340951d95b891ed0cb6ad257",
+    "data/dict_tariff.csv": "74ef4242c9a6c46bd391d78251d6e3b9a408d913590c6efad7aa3957018be74c"
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "agent_seed": 42,
+  "scenario_model_seed": 20260923,
+  "note": "Mock seed changes sampling/noise only. Families change true effects separately. p10 with ten runs is a coarse descriptive estimate, not a guarantee. Runtime measures act(), excluding loading/scoring."
+}

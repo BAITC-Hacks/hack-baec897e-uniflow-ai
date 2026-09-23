@@ -1,0 +1,46 @@
+{
+  "method": "At most two adjacent-order/channel replacement sweeps, 64 perturbations; posterior and pilots frozen. Objective uses same risk penalty and pilot overlap. No truth is fed to selection.",
+  "default_changed": false,
+  "runs": [
+    {
+      "seed": 0,
+      "attempted_perturbations": 26,
+      "accepted_sweeps": 0,
+      "risk_objective_before": 224725.96294130612,
+      "risk_objective_after": 224725.96294130612,
+      "official_net_before": 358934.2102444537,
+      "official_net_after": 358934.2102444537,
+      "official_net_change": 0.0,
+      "forecast_before": 1972107.353083657,
+      "forecast_after": 1972107.353083657,
+      "plan_changed": false
+    },
+    {
+      "seed": 1,
+      "attempted_perturbations": 28,
+      "accepted_sweeps": 1,
+      "risk_objective_before": 953001.1180532728,
+      "risk_objective_after": 953104.8798701979,
+      "official_net_before": -297696.92196291016,
+      "official_net_after": -295510.3851413992,
+      "official_net_change": 2186.536821510934,
+      "forecast_before": 2678155.3433003183,
+      "forecast_after": 2678389.1068671807,
+      "plan_changed": true
+    },
+    {
+      "seed": 42,
+      "attempted_perturbations": 29,
+      "accepted_sweeps": 0,
+      "risk_objective_before": 324188.05951169325,
+      "risk_objective_after": 324188.05951169325,
+      "official_net_before": 928158.7891481007,
+      "official_net_after": 928158.7891481007,
+      "official_net_change": 0.0,
+      "forecast_before": 2011436.9835516051,
+      "forecast_after": 2011436.9835516051,
+      "plan_changed": false
+    }
+  ],
+  "limitation": "Three mock seeds are a diagnostic, not a generalization guarantee. Refinement stays experimental unless broader benefit is established."
+}

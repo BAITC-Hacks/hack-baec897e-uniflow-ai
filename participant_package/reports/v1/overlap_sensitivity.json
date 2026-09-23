@@ -1,0 +1,853 @@
+{
+  "method": "Freeze each learned posterior and public remaining resources; compare the default risk-penalized optimizer with recorded pilot sizes versus no pilot metadata; evaluate both frozen plans using posterior-mean effects.",
+  "notes": [
+    "Only three local mock seeds: bounded sensitivity evidence, not a general quality guarantee.",
+    "Monte Carlo independently samples each homogeneous pilot without replacement from its known eligible group, using an RNG separate from the environment.",
+    "Posterior means are fixed. Reported Monte Carlo SE measures numerical simulation error only, not effect uncertainty or a predictive interval.",
+    "Analytic and Monte Carlo forecasts integrate pilot sampling only. Both plug posterior means into maxima and do not integrate posterior uncertainty.",
+    "Ignoring pilots changes optimizer overlap assumptions, while leaving learned posterior and already-spent resources identical.",
+    "selection_model_expected_net_gain for ignore_pilot_overlap omits pilot effects but still subtracts their already-incurred costs; common_pilot_inclusive_forecast compares both plans on the same accounting scope.",
+    "Both plan optimizations complete before organizer-only actual pilot IDs and true effects are accessed for scoring; those IDs never enter optimization.",
+    "Plan identity includes execution order, filters, target and channel; cosmetic campaign names are ignored."
+  ],
+  "source_sha256": {
+    "uniflow/agent_core.py": "b947907ee7602df223777bebb0c0e327a3b44c6f08853d38a1096408a34b48e1",
+    "uniflow/portfolio.py": "c653737d2c6c311417955f251e5d2c72ba4a45bb3e8a2a5511dffcaa078f0137",
+    "uniflow/candidates.py": "d9cad86a3098ed1e6a04166c531652c4a82997190a2daf039ffb4d628943d809",
+    "uniflow/posterior.py": "5677b6e97125c528bd0ebdd0f4f9728ae6e11e162108a5aec5f08cf53809b8ad"
+  },
+  "replicates_per_plan": 256,
+  "runs": [
+    {
+      "environment_seed": 0,
+      "agent_seed": 0,
+      "risk_penalty": 0.55,
+      "successful_pilots": 16,
+      "pilot_contacts": 3200,
+      "pilot_cost": 70400.0,
+      "remaining_budget": 29600.0,
+      "remaining_contacts": 11800,
+      "plan_changed_when_ignoring_pilots": true,
+      "analytic_minus_ignore_official_net_gain": -404515.90970086196,
+      "variants": {
+        "analytic_overlap": {
+          "plan": [
+            {
+              "campaign_name": "uniflow_01_tariff_8_tariff_16",
+              "filter_arpu_segment": "HIGH",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_8",
+              "target_tariff": "tariff_16",
+              "channel": "sms"
+            },
+            {
+              "campaign_name": "uniflow_02_tariff_8_tariff_9",
+              "filter_arpu_segment": "MID",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_8",
+              "target_tariff": "tariff_9",
+              "channel": "sms"
+            },
+            {
+              "campaign_name": "uniflow_03_tariff_10_tariff_9",
+              "filter_arpu_segment": "HIGH",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_10",
+              "target_tariff": "tariff_9",
+              "channel": "push"
+            },
+            {
+              "campaign_name": "uniflow_04_tariff_8_tariff_9",
+              "filter_arpu_segment": "LOW",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_8",
+              "target_tariff": "tariff_9",
+              "channel": "sms"
+            },
+            {
+              "campaign_name": "uniflow_05_tariff_4_tariff_9",
+              "filter_arpu_segment": "MID",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_4",
+              "target_tariff": "tariff_9",
+              "channel": "push"
+            },
+            {
+              "campaign_name": "uniflow_06_tariff_4_tariff_9",
+              "filter_arpu_segment": "LOW",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_4",
+              "target_tariff": "tariff_9",
+              "channel": "sms"
+            },
+            {
+              "campaign_name": "uniflow_07_tariff_10_tariff_9",
+              "filter_arpu_segment": "LOW",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_10",
+              "target_tariff": "tariff_9",
+              "channel": "push"
+            },
+            {
+              "campaign_name": "uniflow_08_tariff_1_tariff_9",
+              "filter_arpu_segment": "LOW",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_1",
+              "target_tariff": "tariff_9",
+              "channel": "sms"
+            },
+            {
+              "campaign_name": "uniflow_09_tariff_1_tariff_9",
+              "filter_arpu_segment": "HIGH",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_1",
+              "target_tariff": "tariff_9",
+              "channel": "digital_ads"
+            }
+          ],
+          "selection_model_expected_net_gain": 1972107.353083657,
+          "common_pilot_inclusive_forecast": {
+            "scope": "pilots_and_final",
+            "expected_gross_gain": 2071717.353083657,
+            "expected_net_gain": 1972107.353083657,
+            "net_gain_interval": null,
+            "expected_unique_reach": 12400.0,
+            "overlap_method": "Analytic independent uniform sampling within each pilot filter; posterior mean effects plugged into client-wise maxima. Final intersections exact, pilot IDs unknown; uncertainty of maxima is not integrated."
+          },
+          "monte_carlo": {
+            "replicates": 256,
+            "rng_seed": 20260923,
+            "gross_gain": {
+              "mean": 2071588.6018589963,
+              "simulation_standard_error": 101.88542964771011
+            },
+            "unique_reach": {
+              "mean": 12400.0,
+              "simulation_standard_error": 0.0
+            }
+          },
+          "analytic_vs_monte_carlo": {
+            "gross_gain": {
+              "analytic": 2071717.353083657,
+              "monte_carlo_mean": 2071588.6018589963,
+              "simulation_standard_error": 101.88542964771011,
+              "analytic_minus_monte_carlo": 128.75122466078028,
+              "difference_in_simulation_standard_errors": 1.263686329889997
+            },
+            "unique_reach": {
+              "analytic": 12400.0,
+              "monte_carlo_mean": 12400.0,
+              "simulation_standard_error": 0.0,
+              "analytic_minus_monte_carlo": 0.0,
+              "difference_in_simulation_standard_errors": null
+            }
+          },
+          "official_local_evaluation": {
+            "gross_gain": 458544.2102444537,
+            "net_arpu_gain": 358934.2102444537,
+            "communication_cost": 99610.0,
+            "total_contacts": 15000,
+            "unique_customers": 12400,
+            "n_final_campaigns": 9
+          }
+        },
+        "ignore_pilot_overlap": {
+          "plan": [
+            {
+              "campaign_name": "uniflow_01_tariff_8_tariff_16",
+              "filter_arpu_segment": "HIGH",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_8",
+              "target_tariff": "tariff_16",
+              "channel": "sms"
+            },
+            {
+              "campaign_name": "uniflow_02_tariff_8_tariff_9",
+              "filter_arpu_segment": "MID",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_8",
+              "target_tariff": "tariff_9",
+              "channel": "sms"
+            },
+            {
+              "campaign_name": "uniflow_03_tariff_8_tariff_9",
+              "filter_arpu_segment": "LOW",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_8",
+              "target_tariff": "tariff_9",
+              "channel": "sms"
+            },
+            {
+              "campaign_name": "uniflow_04_tariff_4_tariff_9",
+              "filter_arpu_segment": "MID",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_4",
+              "target_tariff": "tariff_9",
+              "channel": "push"
+            },
+            {
+              "campaign_name": "uniflow_05_tariff_4_tariff_9",
+              "filter_arpu_segment": "LOW",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_4",
+              "target_tariff": "tariff_9",
+              "channel": "sms"
+            },
+            {
+              "campaign_name": "uniflow_06_tariff_10_tariff_9",
+              "filter_arpu_segment": "LOW",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_10",
+              "target_tariff": "tariff_9",
+              "channel": "push"
+            },
+            {
+              "campaign_name": "uniflow_07_tariff_11_tariff_9",
+              "filter_arpu_segment": "LOW",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_11",
+              "target_tariff": "tariff_9",
+              "channel": "push"
+            },
+            {
+              "campaign_name": "uniflow_08_tariff_1_tariff_9",
+              "filter_arpu_segment": "LOW",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_1",
+              "target_tariff": "tariff_9",
+              "channel": "sms"
+            },
+            {
+              "campaign_name": "uniflow_09_tariff_1_tariff_9",
+              "filter_arpu_segment": "MID",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_1",
+              "target_tariff": "tariff_9",
+              "channel": "sms"
+            },
+            {
+              "campaign_name": "uniflow_10_tariff_14_tariff_9",
+              "filter_arpu_segment": "LOW",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_14",
+              "target_tariff": "tariff_9",
+              "channel": "push"
+            }
+          ],
+          "selection_model_expected_net_gain": 1803069.154018477,
+          "common_pilot_inclusive_forecast": {
+            "scope": "pilots_and_final",
+            "expected_gross_gain": 1833893.4976971934,
+            "expected_net_gain": 1734397.4976971934,
+            "net_gain_interval": null,
+            "expected_unique_reach": 10811.25884827563,
+            "overlap_method": "Analytic independent uniform sampling within each pilot filter; posterior mean effects plugged into client-wise maxima. Final intersections exact, pilot IDs unknown; uncertainty of maxima is not integrated."
+          },
+          "monte_carlo": {
+            "replicates": 256,
+            "rng_seed": 20260923,
+            "gross_gain": {
+              "mean": 1833829.7230344075,
+              "simulation_standard_error": 162.97912717203633
+            },
+            "unique_reach": {
+              "mean": 10811.15234375,
+              "simulation_standard_error": 0.47792986043706853
+            }
+          },
+          "analytic_vs_monte_carlo": {
+            "gross_gain": {
+              "analytic": 1833893.4976971934,
+              "monte_carlo_mean": 1833829.7230344075,
+              "simulation_standard_error": 162.97912717203633,
+              "analytic_minus_monte_carlo": 63.77466278593056,
+              "difference_in_simulation_standard_errors": 0.39130570823717664
+            },
+            "unique_reach": {
+              "analytic": 10811.25884827563,
+              "monte_carlo_mean": 10811.15234375,
+              "simulation_standard_error": 0.47792986043706853,
+              "analytic_minus_monte_carlo": 0.10650452562913415,
+              "difference_in_simulation_standard_errors": 0.2228455144688708
+            }
+          },
+          "official_local_evaluation": {
+            "gross_gain": 862946.1199453156,
+            "net_arpu_gain": 763450.1199453156,
+            "communication_cost": 99496.0,
+            "total_contacts": 12689,
+            "unique_customers": 10814,
+            "n_final_campaigns": 10
+          }
+        }
+      },
+      "runtime_seconds": 10.770852399989963
+    },
+    {
+      "environment_seed": 1,
+      "agent_seed": 1,
+      "risk_penalty": 0.55,
+      "successful_pilots": 16,
+      "pilot_contacts": 3200,
+      "pilot_cost": 70400.0,
+      "remaining_budget": 29600.0,
+      "remaining_contacts": 11800,
+      "plan_changed_when_ignoring_pilots": true,
+      "analytic_minus_ignore_official_net_gain": -882524.218202275,
+      "variants": {
+        "analytic_overlap": {
+          "plan": [
+            {
+              "campaign_name": "uniflow_01_tariff_8_tariff_17",
+              "filter_arpu_segment": "HIGH",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_8",
+              "target_tariff": "tariff_17",
+              "channel": "sms"
+            },
+            {
+              "campaign_name": "uniflow_02_tariff_4_tariff_9",
+              "filter_arpu_segment": "HIGH",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_4",
+              "target_tariff": "tariff_9",
+              "channel": "sms"
+            },
+            {
+              "campaign_name": "uniflow_03_tariff_10_tariff_15",
+              "filter_arpu_segment": "HIGH",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_10",
+              "target_tariff": "tariff_15",
+              "channel": "push"
+            },
+            {
+              "campaign_name": "uniflow_04_tariff_8_tariff_9",
+              "filter_arpu_segment": "MID",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_8",
+              "target_tariff": "tariff_9",
+              "channel": "push"
+            },
+            {
+              "campaign_name": "uniflow_05_tariff_4_tariff_9",
+              "filter_arpu_segment": "LOW",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_4",
+              "target_tariff": "tariff_9",
+              "channel": "sms"
+            }
+          ],
+          "selection_model_expected_net_gain": 2678155.3433003183,
+          "common_pilot_inclusive_forecast": {
+            "scope": "pilots_and_final",
+            "expected_gross_gain": 2777075.3433003183,
+            "expected_net_gain": 2678155.3433003183,
+            "net_gain_interval": null,
+            "expected_unique_reach": 12200.0,
+            "overlap_method": "Analytic independent uniform sampling within each pilot filter; posterior mean effects plugged into client-wise maxima. Final intersections exact, pilot IDs unknown; uncertainty of maxima is not integrated."
+          },
+          "monte_carlo": {
+            "replicates": 256,
+            "rng_seed": 20260924,
+            "gross_gain": {
+              "mean": 2777061.228370255,
+              "simulation_standard_error": 60.96695230171533
+            },
+            "unique_reach": {
+              "mean": 12200.0,
+              "simulation_standard_error": 0.0
+            }
+          },
+          "analytic_vs_monte_carlo": {
+            "gross_gain": {
+              "analytic": 2777075.3433003183,
+              "monte_carlo_mean": 2777061.228370255,
+              "simulation_standard_error": 60.96695230171533,
+              "analytic_minus_monte_carlo": 14.1149300634861,
+              "difference_in_simulation_standard_errors": 0.2315177244490368
+            },
+            "unique_reach": {
+              "analytic": 12200.0,
+              "monte_carlo_mean": 12200.0,
+              "simulation_standard_error": 0.0,
+              "analytic_minus_monte_carlo": 0.0,
+              "difference_in_simulation_standard_errors": null
+            }
+          },
+          "official_local_evaluation": {
+            "gross_gain": -198776.92196291016,
+            "net_arpu_gain": -297696.92196291016,
+            "communication_cost": 98920.0,
+            "total_contacts": 15000,
+            "unique_customers": 12200,
+            "n_final_campaigns": 5
+          }
+        },
+        "ignore_pilot_overlap": {
+          "plan": [
+            {
+              "campaign_name": "uniflow_01_tariff_8_tariff_17",
+              "filter_arpu_segment": "HIGH",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_8",
+              "target_tariff": "tariff_17",
+              "channel": "sms"
+            },
+            {
+              "campaign_name": "uniflow_02_tariff_4_tariff_9",
+              "filter_arpu_segment": "HIGH",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_4",
+              "target_tariff": "tariff_9",
+              "channel": "sms"
+            },
+            {
+              "campaign_name": "uniflow_03_tariff_8_tariff_9",
+              "filter_arpu_segment": "MID",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_8",
+              "target_tariff": "tariff_9",
+              "channel": "push"
+            },
+            {
+              "campaign_name": "uniflow_04_tariff_8_tariff_9",
+              "filter_arpu_segment": "LOW",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_8",
+              "target_tariff": "tariff_9",
+              "channel": "sms"
+            },
+            {
+              "campaign_name": "uniflow_05_tariff_4_tariff_9",
+              "filter_arpu_segment": "MID",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_4",
+              "target_tariff": "tariff_9",
+              "channel": "push"
+            },
+            {
+              "campaign_name": "uniflow_06_tariff_4_tariff_9",
+              "filter_arpu_segment": "LOW",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_4",
+              "target_tariff": "tariff_9",
+              "channel": "push"
+            },
+            {
+              "campaign_name": "uniflow_07_tariff_10_tariff_9",
+              "filter_arpu_segment": "LOW",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_10",
+              "target_tariff": "tariff_9",
+              "channel": "push"
+            },
+            {
+              "campaign_name": "uniflow_08_tariff_11_tariff_9",
+              "filter_arpu_segment": "LOW",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_11",
+              "target_tariff": "tariff_9",
+              "channel": "push"
+            },
+            {
+              "campaign_name": "uniflow_09_tariff_1_tariff_9",
+              "filter_arpu_segment": "LOW",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_1",
+              "target_tariff": "tariff_9",
+              "channel": "sms"
+            },
+            {
+              "campaign_name": "uniflow_10_tariff_1_tariff_9",
+              "filter_arpu_segment": "MID",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_1",
+              "target_tariff": "tariff_9",
+              "channel": "sms"
+            }
+          ],
+          "selection_model_expected_net_gain": 2583404.5007691323,
+          "common_pilot_inclusive_forecast": {
+            "scope": "pilots_and_final",
+            "expected_gross_gain": 2789837.366427539,
+            "expected_net_gain": 2689985.366427539,
+            "net_gain_interval": null,
+            "expected_unique_reach": 12488.258848275625,
+            "overlap_method": "Analytic independent uniform sampling within each pilot filter; posterior mean effects plugged into client-wise maxima. Final intersections exact, pilot IDs unknown; uncertainty of maxima is not integrated."
+          },
+          "monte_carlo": {
+            "replicates": 256,
+            "rng_seed": 20260924,
+            "gross_gain": {
+              "mean": 2789774.5858329646,
+              "simulation_standard_error": 99.99659193187392
+            },
+            "unique_reach": {
+              "mean": 12488.640625,
+              "simulation_standard_error": 0.462021770174519
+            }
+          },
+          "analytic_vs_monte_carlo": {
+            "gross_gain": {
+              "analytic": 2789837.366427539,
+              "monte_carlo_mean": 2789774.5858329646,
+              "simulation_standard_error": 99.99659193187392,
+              "analytic_minus_monte_carlo": 62.780594574287534,
+              "difference_in_simulation_standard_errors": 0.6278273425264228
+            },
+            "unique_reach": {
+              "analytic": 12488.258848275625,
+              "monte_carlo_mean": 12488.640625,
+              "simulation_standard_error": 0.462021770174519,
+              "analytic_minus_monte_carlo": -0.38177672437450383,
+              "difference_in_simulation_standard_errors": -0.8263176088656942
+            }
+          },
+          "official_local_evaluation": {
+            "gross_gain": 684679.2962393649,
+            "net_arpu_gain": 584827.2962393649,
+            "communication_cost": 99852.0,
+            "total_contacts": 14566,
+            "unique_customers": 12498,
+            "n_final_campaigns": 10
+          }
+        }
+      },
+      "runtime_seconds": 10.564747299998999
+    },
+    {
+      "environment_seed": 42,
+      "agent_seed": 42,
+      "risk_penalty": 0.55,
+      "successful_pilots": 16,
+      "pilot_contacts": 3200,
+      "pilot_cost": 70400.0,
+      "remaining_budget": 29600.0,
+      "remaining_contacts": 11800,
+      "plan_changed_when_ignoring_pilots": true,
+      "analytic_minus_ignore_official_net_gain": -172292.43658769876,
+      "variants": {
+        "analytic_overlap": {
+          "plan": [
+            {
+              "campaign_name": "uniflow_01_tariff_8_tariff_11",
+              "filter_arpu_segment": "HIGH",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_8",
+              "target_tariff": "tariff_11",
+              "channel": "sms"
+            },
+            {
+              "campaign_name": "uniflow_02_tariff_10_tariff_9",
+              "filter_arpu_segment": "HIGH",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_10",
+              "target_tariff": "tariff_9",
+              "channel": "push"
+            },
+            {
+              "campaign_name": "uniflow_03_tariff_8_tariff_9",
+              "filter_arpu_segment": "LOW",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_8",
+              "target_tariff": "tariff_9",
+              "channel": "digital_ads"
+            },
+            {
+              "campaign_name": "uniflow_04_tariff_4_tariff_9",
+              "filter_arpu_segment": "MID",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_4",
+              "target_tariff": "tariff_9",
+              "channel": "push"
+            },
+            {
+              "campaign_name": "uniflow_05_tariff_4_tariff_9",
+              "filter_arpu_segment": "LOW",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_4",
+              "target_tariff": "tariff_9",
+              "channel": "push"
+            },
+            {
+              "campaign_name": "uniflow_06_tariff_10_tariff_9",
+              "filter_arpu_segment": "LOW",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_10",
+              "target_tariff": "tariff_9",
+              "channel": "push"
+            },
+            {
+              "campaign_name": "uniflow_07_tariff_11_tariff_9",
+              "filter_arpu_segment": "LOW",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_11",
+              "target_tariff": "tariff_9",
+              "channel": "push"
+            },
+            {
+              "campaign_name": "uniflow_08_tariff_1_tariff_9",
+              "filter_arpu_segment": "LOW",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_1",
+              "target_tariff": "tariff_9",
+              "channel": "sms"
+            },
+            {
+              "campaign_name": "uniflow_09_tariff_1_tariff_9",
+              "filter_arpu_segment": "MID",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_1",
+              "target_tariff": "tariff_9",
+              "channel": "sms"
+            },
+            {
+              "campaign_name": "uniflow_10_tariff_14_tariff_9",
+              "filter_arpu_segment": "LOW",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_14",
+              "target_tariff": "tariff_9",
+              "channel": "push"
+            }
+          ],
+          "selection_model_expected_net_gain": 2011436.9835516051,
+          "common_pilot_inclusive_forecast": {
+            "scope": "pilots_and_final",
+            "expected_gross_gain": 2111082.983551605,
+            "expected_net_gain": 2011436.9835516051,
+            "net_gain_interval": null,
+            "expected_unique_reach": 11519.0,
+            "overlap_method": "Analytic independent uniform sampling within each pilot filter; posterior mean effects plugged into client-wise maxima. Final intersections exact, pilot IDs unknown; uncertainty of maxima is not integrated."
+          },
+          "monte_carlo": {
+            "replicates": 256,
+            "rng_seed": 20260965,
+            "gross_gain": {
+              "mean": 2110796.3538058605,
+              "simulation_standard_error": 277.8560639406091
+            },
+            "unique_reach": {
+              "mean": 11519.0,
+              "simulation_standard_error": 0.0
+            }
+          },
+          "analytic_vs_monte_carlo": {
+            "gross_gain": {
+              "analytic": 2111082.983551605,
+              "monte_carlo_mean": 2110796.3538058605,
+              "simulation_standard_error": 277.8560639406091,
+              "analytic_minus_monte_carlo": 286.6297457446344,
+              "difference_in_simulation_standard_errors": 1.0315763553243908
+            },
+            "unique_reach": {
+              "analytic": 11519.0,
+              "monte_carlo_mean": 11519.0,
+              "simulation_standard_error": 0.0,
+              "analytic_minus_monte_carlo": 0.0,
+              "difference_in_simulation_standard_errors": null
+            }
+          },
+          "official_local_evaluation": {
+            "gross_gain": 1027804.7891481007,
+            "net_arpu_gain": 928158.7891481007,
+            "communication_cost": 99646.0,
+            "total_contacts": 13919,
+            "unique_customers": 11519,
+            "n_final_campaigns": 10
+          }
+        },
+        "ignore_pilot_overlap": {
+          "plan": [
+            {
+              "campaign_name": "uniflow_01_tariff_8_tariff_11",
+              "filter_arpu_segment": "HIGH",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_8",
+              "target_tariff": "tariff_11",
+              "channel": "sms"
+            },
+            {
+              "campaign_name": "uniflow_02_tariff_8_tariff_9",
+              "filter_arpu_segment": "LOW",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_8",
+              "target_tariff": "tariff_9",
+              "channel": "digital_ads"
+            },
+            {
+              "campaign_name": "uniflow_03_tariff_4_tariff_9",
+              "filter_arpu_segment": "MID",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_4",
+              "target_tariff": "tariff_9",
+              "channel": "push"
+            },
+            {
+              "campaign_name": "uniflow_04_tariff_4_tariff_9",
+              "filter_arpu_segment": "LOW",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_4",
+              "target_tariff": "tariff_9",
+              "channel": "push"
+            },
+            {
+              "campaign_name": "uniflow_05_tariff_10_tariff_9",
+              "filter_arpu_segment": "LOW",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_10",
+              "target_tariff": "tariff_9",
+              "channel": "push"
+            },
+            {
+              "campaign_name": "uniflow_06_tariff_11_tariff_9",
+              "filter_arpu_segment": "LOW",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_11",
+              "target_tariff": "tariff_9",
+              "channel": "push"
+            },
+            {
+              "campaign_name": "uniflow_07_tariff_1_tariff_9",
+              "filter_arpu_segment": "LOW",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_1",
+              "target_tariff": "tariff_9",
+              "channel": "sms"
+            },
+            {
+              "campaign_name": "uniflow_08_tariff_1_tariff_9",
+              "filter_arpu_segment": "MID",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_1",
+              "target_tariff": "tariff_9",
+              "channel": "sms"
+            },
+            {
+              "campaign_name": "uniflow_09_tariff_14_tariff_9",
+              "filter_arpu_segment": "LOW",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_14",
+              "target_tariff": "tariff_9",
+              "channel": "push"
+            },
+            {
+              "campaign_name": "uniflow_10_tariff_4_tariff_9",
+              "filter_arpu_segment": "LOW",
+              "filter_data_segment": null,
+              "filter_call_segment": null,
+              "filter_current_tariff": "tariff_4",
+              "target_tariff": "tariff_9",
+              "channel": "sms"
+            }
+          ],
+          "selection_model_expected_net_gain": 1864960.2336507682,
+          "common_pilot_inclusive_forecast": {
+            "scope": "pilots_and_final",
+            "expected_gross_gain": 1775075.3678269242,
+            "expected_net_gain": 1675077.3678269242,
+            "net_gain_interval": null,
+            "expected_unique_reach": 9291.258848275627,
+            "overlap_method": "Analytic independent uniform sampling within each pilot filter; posterior mean effects plugged into client-wise maxima. Final intersections exact, pilot IDs unknown; uncertainty of maxima is not integrated."
+          },
+          "monte_carlo": {
+            "replicates": 256,
+            "rng_seed": 20260965,
+            "gross_gain": {
+              "mean": 1774781.0846995525,
+              "simulation_standard_error": 288.1400651627803
+            },
+            "unique_reach": {
+              "mean": 9292.21484375,
+              "simulation_standard_error": 0.4522747447704766
+            }
+          },
+          "analytic_vs_monte_carlo": {
+            "gross_gain": {
+              "analytic": 1775075.3678269242,
+              "monte_carlo_mean": 1774781.0846995525,
+              "simulation_standard_error": 288.1400651627803,
+              "analytic_minus_monte_carlo": 294.28312737168744,
+              "difference_in_simulation_standard_errors": 1.0213197085432626
+            },
+            "unique_reach": {
+              "analytic": 9291.258848275627,
+              "monte_carlo_mean": 9292.21484375,
+              "simulation_standard_error": 0.4522747447704766,
+              "analytic_minus_monte_carlo": -0.9559954743726848,
+              "difference_in_simulation_standard_errors": -2.11374940879761
+            }
+          },
+          "official_local_evaluation": {
+            "gross_gain": 1200449.2257357994,
+            "net_arpu_gain": 1100451.2257357994,
+            "communication_cost": 99998.0,
+            "total_contacts": 11057,
+            "unique_customers": 9279,
+            "n_final_campaigns": 10
+          }
+        }
+      },
+      "runtime_seconds": 10.862825899966992
+    }
+  ],
+  "summary": {
+    "plans_changed": 3,
+    "mean_analytic_minus_ignore_official_net_gain": -486444.18816361186,
+    "max_absolute_difference_in_simulation_standard_errors": 2.11374940879761,
+    "interpretation": "Sampling-overlap arithmetic agrees with the Monte Carlo approximation, but including overlap reduced official local net gain on all three tested seeds. This does not establish a universal strategy ordering; effects/posterior quality and the bounded optimizer remain separate uncertainties."
+  }
+}

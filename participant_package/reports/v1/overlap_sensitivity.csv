@@ -1,0 +1,7 @@
+seed,method,net_arpu_gain,total_contacts,communication_cost,unique_customers,plan_changed,n_final_campaigns
+0,analytic_overlap,358934.2102444537,15000,99610.0,12400,True,9
+0,ignore_pilot_overlap,763450.1199453156,12689,99496.0,10814,True,10
+1,analytic_overlap,-297696.92196291016,15000,98920.0,12200,True,5
+1,ignore_pilot_overlap,584827.2962393649,14566,99852.0,12498,True,10
+2,analytic_overlap,141206.2292875714,15000,98920.0,12200,True,5
+2,ignore_pilot_overlap,219152.7304601994,15000,99564.0,12717,True,6
