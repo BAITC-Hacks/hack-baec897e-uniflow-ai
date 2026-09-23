@@ -14,7 +14,7 @@ for (const width of [1440, 1280, 768, 390]) {
       await expect.poll(async () => page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1)).toBe(true)
       if (route === '/') await page.screenshot({ path: `test-results/overview-${width}.png`, fullPage: true })
     }
-    await page.evaluate(() => localStorage.setItem('uniflow-demo-runs-v1', JSON.stringify([{
+    await page.evaluate(() => localStorage.setItem('orbitduo-demo-runs-v1', JSON.stringify([{
       id: 'responsive-run', key: 'responsive-key', config: { seed: 42, risk_profile: 'balanced' }, created_at: new Date(Date.now() - 20000).toISOString(),
     }])))
     await page.goto('/runs/responsive-run')

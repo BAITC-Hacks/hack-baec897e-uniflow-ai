@@ -30,7 +30,7 @@ describe('demo API contract', () => {
   })
 
   it('provides an explicit empty audience fixture', async () => {
-    localStorage.setItem('uniflow-demo-fixture', 'empty')
+    localStorage.setItem('orbitduo-demo-fixture', 'empty')
     const response = await demoFetch('/api/v1/overview')
     const body = await response.json()
     expect(body.dataset.customer_count).toBe(0)

@@ -2,7 +2,7 @@ import overviewJson from './overview.json'
 import { buildSnapshot, type StoredRun } from './fixtures'
 import type { Overview, RunConfig, RunSnapshot } from '../lib/api/types'
 
-const storageKey = 'uniflow-demo-runs-v1'
+const storageKey = 'orbitduo-demo-runs-v1'
 const overview = overviewJson as Overview
 const json = (body: unknown, status = 200) => new Response(JSON.stringify(body), { status, headers: { 'Content-Type': 'application/json; charset=utf-8' } })
 const error = (status: number, code: string, message: string, details: Record<string, unknown> = {}) =>
@@ -33,7 +33,7 @@ export async function demoFetch(path: string, init: RequestInit = {}): Promise<R
   const pathname = route.pathname.replace(/^\/api\/v1/, '')
   if (pathname === '/health' && init.method !== 'POST') return json({ status: 'ok', api_version: '1', mode: 'demo' })
   if (pathname === '/overview' && init.method !== 'POST') {
-    if (localStorage.getItem('uniflow-demo-fixture') === 'empty') return json({ ...overview, dataset: { ...overview.dataset, customer_count: 0, baseline_revenue: 0, eligible_customer_count: 0, excluded_customer_count: 0, notices: [] }, segments: [] })
+    if (localStorage.getItem('orbitduo-demo-fixture') === 'empty') return json({ ...overview, dataset: { ...overview.dataset, customer_count: 0, baseline_revenue: 0, eligible_customer_count: 0, excluded_customer_count: 0, notices: [] }, segments: [] })
     return json(overview)
   }
   if (pathname === '/runs' && init.method === 'POST') {

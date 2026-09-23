@@ -20,10 +20,10 @@ test('create → progress → reload → result → drawer → export', async ({
   const downloadPromise = page.waitForEvent('download')
   await page.getByRole('button', { name: 'Скачать план CSV' }).click()
   const download = await downloadPromise
-  expect(download.suggestedFilename()).toMatch(/^uniflow-.*-campaigns\.csv$/)
+  expect(download.suggestedFilename()).toMatch(/^orbitduo-.*-campaigns\.csv$/)
   const reportPromise = page.waitForEvent('download')
   await page.getByRole('button', { name: 'Скачать отчёт JSON' }).click()
-  expect((await reportPromise).suggestedFilename()).toMatch(/^uniflow-.*-report\.json$/)
+  expect((await reportPromise).suggestedFilename()).toMatch(/^orbitduo-.*-report\.json$/)
 })
 
 test('negative forecast is explained without a success claim', async ({ page }) => {

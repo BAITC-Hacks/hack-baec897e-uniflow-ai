@@ -7,7 +7,7 @@ import type { RiskProfile, RunConfig } from '../../lib/api/types'
 import { money, number } from '../../lib/format'
 import { Card, ErrorPanel, Skeleton } from '../../components/ui/common'
 
-const pendingKey = 'uniflow-pending-create-v1'
+const pendingKey = 'orbitduo-pending-create-v1'
 
 export function NewRunPage() {
   const navigate = useNavigate()

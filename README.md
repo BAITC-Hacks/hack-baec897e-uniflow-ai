@@ -1,6 +1,6 @@
 # Beeline Tariff Marketing Campaigns
 
-Стартовый каркас решения кейса для UniFlow AI. Исходные данные, публичная среда
+Стартовый каркас решения кейса для OrbitDuo. Исходные данные, публичная среда
 и локальный evaluator находятся в `participant_package/`.
 
 ## Структура

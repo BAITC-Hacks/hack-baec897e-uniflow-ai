@@ -50,7 +50,7 @@ export const api = {
     const objectUrl = URL.createObjectURL(blob)
     const link = document.createElement('a')
     link.href = objectUrl
-    link.download = `uniflow-${id}-${filename}`
+    link.download = `orbitduo-${id}-${filename}`
     document.body.append(link)
     try { link.click() } finally { link.remove(); setTimeout(() => URL.revokeObjectURL(objectUrl), 1000) }
   },
