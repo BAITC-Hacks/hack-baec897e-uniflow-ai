@@ -1,0 +1,724 @@
+{
+  "mode": "demo",
+  "currency": "CU",
+  "dataset": {
+    "id": "a85e9badf4cb51b1",
+    "customer_count": 23441,
+    "baseline_revenue": 150641084.25,
+    "eligible_customer_count": 23341,
+    "excluded_customer_count": 100,
+    "exclusion_reason": "Для адресного подбора нужны текущий тариф и ARPU-сегмент.",
+    "notices": [
+      {
+        "code": "MISSING_SEGMENT_OR_TARIFF",
+        "severity": "warning",
+        "message": "Записи без текущего тарифа или ARPU-сегмента показаны отдельно и исключены из адресного подбора.",
+        "affected_count": 100
+      }
+    ]
+  },
+  "limits": {
+    "budget": 100000,
+    "contacts": 15000,
+    "pilots": 20,
+    "final_campaigns": 10,
+    "customers_per_campaign": 5000,
+    "pilot_size_min": 10,
+    "pilot_size_max": 200
+  },
+  "channels": [
+    {
+      "code": "push",
+      "label": "Push",
+      "cost_per_contact": 0,
+      "conversion_multiplier": 0.5
+    },
+    {
+      "code": "sms",
+      "label": "SMS",
+      "cost_per_contact": 4,
+      "conversion_multiplier": 0.65
+    },
+    {
+      "code": "digital_ads",
+      "label": "Digital ads",
+      "cost_per_contact": 22,
+      "conversion_multiplier": 0.85
+    },
+    {
+      "code": "call",
+      "label": "Звонок",
+      "cost_per_contact": 160,
+      "conversion_multiplier": 1.2
+    }
+  ],
+  "tariffs": [
+    {
+      "code": "tariff_1",
+      "monthly_fee": 0.0,
+      "description": "0.0 — стоимость тарифа в мес.; без интернета в пакете"
+    },
+    {
+      "code": "tariff_13",
+      "monthly_fee": 3108.6,
+      "description": "3,108.6 — стоимость тарифа в мес.; без интернета в пакете; 30 мин. на других операторов в пакете"
+    },
+    {
+      "code": "tariff_2",
+      "monthly_fee": 3140.0,
+      "description": "3,140.0 — стоимость тарифа в мес.; 2,048 МБ интернета в пакете"
+    },
+    {
+      "code": "tariff_15",
+      "monthly_fee": 3422.6,
+      "description": "3,422.6 — стоимость тарифа в мес.; без интернета в пакете; 50 мин. на других операторов в пакете"
+    },
+    {
+      "code": "tariff_9",
+      "monthly_fee": 4364.6,
+      "description": "4,364.6 — стоимость тарифа в мес.; 10,240 МБ интернета в пакете; 150 мин. на других операторов в пакете"
+    },
+    {
+      "code": "tariff_16",
+      "monthly_fee": 4364.6,
+      "description": "4,364.6 — стоимость тарифа в мес.; 12,288 МБ интернета в пакете; 150 мин. на других операторов в пакете"
+    },
+    {
+      "code": "tariff_4",
+      "monthly_fee": 4678.6,
+      "description": "4,678.6 — стоимость тарифа в мес.; 4,096 МБ интернета в пакете; 40 мин. на других операторов в пакете"
+    },
+    {
+      "code": "tariff_17",
+      "monthly_fee": 4992.6,
+      "description": "4,992.6 — стоимость тарифа в мес.; 7,168 МБ интернета в пакете; 40 мин. на других операторов в пакете"
+    },
+    {
+      "code": "tariff_3",
+      "monthly_fee": 5620.6,
+      "description": "5,620.6 — стоимость тарифа в мес.; 10,240 МБ интернета в пакете; 80 мин. на других операторов в пакете"
+    },
+    {
+      "code": "tariff_5",
+      "monthly_fee": 5934.6,
+      "description": "5,934.6 — стоимость тарифа в мес.; 8,192 МБ интернета в пакете; 80 мин. на других операторов в пакете"
+    },
+    {
+      "code": "tariff_6",
+      "monthly_fee": 5934.6,
+      "description": "5,934.6 — стоимость тарифа в мес.; 8,192 МБ интернета в пакете; 80 мин. на других операторов в пакете"
+    },
+    {
+      "code": "tariff_7",
+      "monthly_fee": 5934.6,
+      "description": "5,934.6 — стоимость тарифа в мес.; 8,192 МБ интернета в пакете; 80 мин. на других операторов в пакете"
+    },
+    {
+      "code": "tariff_8",
+      "monthly_fee": 5934.6,
+      "description": "5,934.6 — стоимость тарифа в мес.; 8,192 МБ интернета в пакете; 80 мин. на других операторов в пакете"
+    },
+    {
+      "code": "tariff_18",
+      "monthly_fee": 6248.6,
+      "description": "6,248.6 — стоимость тарифа в мес.; 12,288 МБ интернета в пакете; 80 мин. на других операторов в пакете"
+    },
+    {
+      "code": "tariff_21",
+      "monthly_fee": 6248.6,
+      "description": "6,248.6 — стоимость тарифа в мес.; 20,480 МБ интернета в пакете; 200 мин. на других операторов в пакете"
+    },
+    {
+      "code": "tariff_20",
+      "monthly_fee": 6562.6,
+      "description": "6,562.6 — стоимость тарифа в мес.; 15,360 МБ интернета в пакете; 100 мин. на других операторов в пакете"
+    },
+    {
+      "code": "tariff_19",
+      "monthly_fee": 6908.0,
+      "description": "6,908.0 — стоимость тарифа в мес.; 3,072 МБ интернета в пакете; 80 мин. на других операторов в пакете"
+    },
+    {
+      "code": "tariff_14",
+      "monthly_fee": 7410.4,
+      "description": "7,410.4 — стоимость тарифа в мес.; 2,048 МБ интернета в пакете; 80 мин. на других операторов в пакете"
+    },
+    {
+      "code": "tariff_10",
+      "monthly_fee": 7504.6,
+      "description": "7,504.6 — стоимость тарифа в мес.; 12,288 МБ интернета в пакете; 120 мин. на других операторов в пакете"
+    },
+    {
+      "code": "tariff_11",
+      "monthly_fee": 9388.6,
+      "description": "9,388.6 — стоимость тарифа в мес.; 20,480 МБ интернета в пакете; 200 мин. на других операторов в пакете"
+    },
+    {
+      "code": "tariff_12",
+      "monthly_fee": 12528.6,
+      "description": "12,528.6 — стоимость тарифа в мес.; 30,720 МБ интернета в пакете; 300 мин. на других операторов и городские номера в пакете"
+    }
+  ],
+  "segments": [
+    {
+      "current_tariff": null,
+      "arpu_segment": "HIGH",
+      "customer_count": 13,
+      "baseline_revenue": 84761.57,
+      "average_predicted_arpu": 6520.12,
+      "eligible": false
+    },
+    {
+      "current_tariff": null,
+      "arpu_segment": "LOW",
+      "customer_count": 41,
+      "baseline_revenue": 72143.32,
+      "average_predicted_arpu": 1759.59,
+      "eligible": false
+    },
+    {
+      "current_tariff": null,
+      "arpu_segment": "MID",
+      "customer_count": 41,
+      "baseline_revenue": 136536.03,
+      "average_predicted_arpu": 3330.15,
+      "eligible": false
+    },
+    {
+      "current_tariff": "tariff_1",
+      "arpu_segment": "HIGH",
+      "customer_count": 11,
+      "baseline_revenue": 82638.48,
+      "average_predicted_arpu": 7512.59,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_1",
+      "arpu_segment": "LOW",
+      "customer_count": 40,
+      "baseline_revenue": 132219.59,
+      "average_predicted_arpu": 3305.49,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_1",
+      "arpu_segment": "MID",
+      "customer_count": 32,
+      "baseline_revenue": 165169.07,
+      "average_predicted_arpu": 5161.53,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_10",
+      "arpu_segment": "HIGH",
+      "customer_count": 2950,
+      "baseline_revenue": 24190636.44,
+      "average_predicted_arpu": 8200.22,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_10",
+      "arpu_segment": "LOW",
+      "customer_count": 370,
+      "baseline_revenue": 972233.57,
+      "average_predicted_arpu": 2627.66,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_10",
+      "arpu_segment": "MID",
+      "customer_count": 645,
+      "baseline_revenue": 3003700.15,
+      "average_predicted_arpu": 4656.9,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_11",
+      "arpu_segment": "HIGH",
+      "customer_count": 1633,
+      "baseline_revenue": 14175708.0,
+      "average_predicted_arpu": 8680.78,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_11",
+      "arpu_segment": "LOW",
+      "customer_count": 387,
+      "baseline_revenue": 1067637.8,
+      "average_predicted_arpu": 2758.75,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_11",
+      "arpu_segment": "MID",
+      "customer_count": 464,
+      "baseline_revenue": 2059004.34,
+      "average_predicted_arpu": 4437.51,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_12",
+      "arpu_segment": "HIGH",
+      "customer_count": 567,
+      "baseline_revenue": 5244797.05,
+      "average_predicted_arpu": 9250.08,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_12",
+      "arpu_segment": "LOW",
+      "customer_count": 363,
+      "baseline_revenue": 1017502.05,
+      "average_predicted_arpu": 2803.04,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_12",
+      "arpu_segment": "MID",
+      "customer_count": 342,
+      "baseline_revenue": 1503059.91,
+      "average_predicted_arpu": 4394.91,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_13",
+      "arpu_segment": "HIGH",
+      "customer_count": 516,
+      "baseline_revenue": 3712751.17,
+      "average_predicted_arpu": 7195.25,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_13",
+      "arpu_segment": "LOW",
+      "customer_count": 251,
+      "baseline_revenue": 756421.08,
+      "average_predicted_arpu": 3013.63,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_13",
+      "arpu_segment": "MID",
+      "customer_count": 1022,
+      "baseline_revenue": 5000571.24,
+      "average_predicted_arpu": 4892.93,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_14",
+      "arpu_segment": "HIGH",
+      "customer_count": 963,
+      "baseline_revenue": 7609558.49,
+      "average_predicted_arpu": 7901.93,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_14",
+      "arpu_segment": "LOW",
+      "customer_count": 231,
+      "baseline_revenue": 721988.3,
+      "average_predicted_arpu": 3125.49,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_14",
+      "arpu_segment": "MID",
+      "customer_count": 755,
+      "baseline_revenue": 3686020.03,
+      "average_predicted_arpu": 4882.15,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_15",
+      "arpu_segment": "HIGH",
+      "customer_count": 14,
+      "baseline_revenue": 96923.37,
+      "average_predicted_arpu": 6923.1,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_15",
+      "arpu_segment": "LOW",
+      "customer_count": 14,
+      "baseline_revenue": 43367.06,
+      "average_predicted_arpu": 3097.65,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_15",
+      "arpu_segment": "MID",
+      "customer_count": 80,
+      "baseline_revenue": 402182.26,
+      "average_predicted_arpu": 5027.28,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_16",
+      "arpu_segment": "HIGH",
+      "customer_count": 2,
+      "baseline_revenue": 8012.47,
+      "average_predicted_arpu": 4006.23,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_16",
+      "arpu_segment": "LOW",
+      "customer_count": 8,
+      "baseline_revenue": 21006.13,
+      "average_predicted_arpu": 2625.77,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_16",
+      "arpu_segment": "MID",
+      "customer_count": 10,
+      "baseline_revenue": 47207.16,
+      "average_predicted_arpu": 4720.72,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_17",
+      "arpu_segment": "HIGH",
+      "customer_count": 27,
+      "baseline_revenue": 233018.9,
+      "average_predicted_arpu": 8630.33,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_17",
+      "arpu_segment": "LOW",
+      "customer_count": 8,
+      "baseline_revenue": 23317.1,
+      "average_predicted_arpu": 2914.64,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_17",
+      "arpu_segment": "MID",
+      "customer_count": 32,
+      "baseline_revenue": 166536.65,
+      "average_predicted_arpu": 5204.27,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_18",
+      "arpu_segment": "HIGH",
+      "customer_count": 35,
+      "baseline_revenue": 286137.26,
+      "average_predicted_arpu": 8175.35,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_18",
+      "arpu_segment": "LOW",
+      "customer_count": 19,
+      "baseline_revenue": 60062.98,
+      "average_predicted_arpu": 3161.21,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_18",
+      "arpu_segment": "MID",
+      "customer_count": 13,
+      "baseline_revenue": 70016.13,
+      "average_predicted_arpu": 5385.86,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_19",
+      "arpu_segment": null,
+      "customer_count": 1,
+      "baseline_revenue": 2438.5,
+      "average_predicted_arpu": 2438.5,
+      "eligible": false
+    },
+    {
+      "current_tariff": "tariff_19",
+      "arpu_segment": "HIGH",
+      "customer_count": 33,
+      "baseline_revenue": 259350.81,
+      "average_predicted_arpu": 7859.12,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_19",
+      "arpu_segment": "LOW",
+      "customer_count": 14,
+      "baseline_revenue": 40738.45,
+      "average_predicted_arpu": 2909.89,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_19",
+      "arpu_segment": "MID",
+      "customer_count": 26,
+      "baseline_revenue": 119249.02,
+      "average_predicted_arpu": 4586.5,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_2",
+      "arpu_segment": "HIGH",
+      "customer_count": 7,
+      "baseline_revenue": 36800.23,
+      "average_predicted_arpu": 5257.18,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_2",
+      "arpu_segment": "LOW",
+      "customer_count": 9,
+      "baseline_revenue": 23951.39,
+      "average_predicted_arpu": 2661.27,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_2",
+      "arpu_segment": "MID",
+      "customer_count": 20,
+      "baseline_revenue": 92193.04,
+      "average_predicted_arpu": 4609.65,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_20",
+      "arpu_segment": "HIGH",
+      "customer_count": 38,
+      "baseline_revenue": 287290.72,
+      "average_predicted_arpu": 7560.28,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_20",
+      "arpu_segment": "LOW",
+      "customer_count": 5,
+      "baseline_revenue": 18274.49,
+      "average_predicted_arpu": 3654.9,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_20",
+      "arpu_segment": "MID",
+      "customer_count": 7,
+      "baseline_revenue": 40256.81,
+      "average_predicted_arpu": 5750.97,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_21",
+      "arpu_segment": "HIGH",
+      "customer_count": 5,
+      "baseline_revenue": 40063.83,
+      "average_predicted_arpu": 8012.77,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_21",
+      "arpu_segment": "LOW",
+      "customer_count": 12,
+      "baseline_revenue": 56342.33,
+      "average_predicted_arpu": 4695.19,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_21",
+      "arpu_segment": "MID",
+      "customer_count": 13,
+      "baseline_revenue": 57141.38,
+      "average_predicted_arpu": 4395.49,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_3",
+      "arpu_segment": "HIGH",
+      "customer_count": 27,
+      "baseline_revenue": 180049.66,
+      "average_predicted_arpu": 6668.51,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_3",
+      "arpu_segment": "LOW",
+      "customer_count": 56,
+      "baseline_revenue": 160544.45,
+      "average_predicted_arpu": 2866.87,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_3",
+      "arpu_segment": "MID",
+      "customer_count": 87,
+      "baseline_revenue": 353907.76,
+      "average_predicted_arpu": 4067.91,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_4",
+      "arpu_segment": "HIGH",
+      "customer_count": 2108,
+      "baseline_revenue": 15794121.77,
+      "average_predicted_arpu": 7492.47,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_4",
+      "arpu_segment": "LOW",
+      "customer_count": 299,
+      "baseline_revenue": 857563.18,
+      "average_predicted_arpu": 2868.1,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_4",
+      "arpu_segment": "MID",
+      "customer_count": 1227,
+      "baseline_revenue": 5840537.24,
+      "average_predicted_arpu": 4760.01,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_5",
+      "arpu_segment": null,
+      "customer_count": 1,
+      "baseline_revenue": 3644.57,
+      "average_predicted_arpu": 3644.57,
+      "eligible": false
+    },
+    {
+      "current_tariff": "tariff_5",
+      "arpu_segment": "HIGH",
+      "customer_count": 109,
+      "baseline_revenue": 740120.06,
+      "average_predicted_arpu": 6790.09,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_5",
+      "arpu_segment": "LOW",
+      "customer_count": 44,
+      "baseline_revenue": 132153.68,
+      "average_predicted_arpu": 3003.49,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_5",
+      "arpu_segment": "MID",
+      "customer_count": 91,
+      "baseline_revenue": 367820.61,
+      "average_predicted_arpu": 4041.98,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_6",
+      "arpu_segment": null,
+      "customer_count": 2,
+      "baseline_revenue": 9109.74,
+      "average_predicted_arpu": 4554.87,
+      "eligible": false
+    },
+    {
+      "current_tariff": "tariff_6",
+      "arpu_segment": "HIGH",
+      "customer_count": 53,
+      "baseline_revenue": 341665.54,
+      "average_predicted_arpu": 6446.52,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_6",
+      "arpu_segment": "LOW",
+      "customer_count": 30,
+      "baseline_revenue": 97039.61,
+      "average_predicted_arpu": 3234.65,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_6",
+      "arpu_segment": "MID",
+      "customer_count": 34,
+      "baseline_revenue": 135351.6,
+      "average_predicted_arpu": 3980.93,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_7",
+      "arpu_segment": "HIGH",
+      "customer_count": 72,
+      "baseline_revenue": 519437.62,
+      "average_predicted_arpu": 7214.41,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_7",
+      "arpu_segment": "LOW",
+      "customer_count": 29,
+      "baseline_revenue": 93486.11,
+      "average_predicted_arpu": 3223.66,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_7",
+      "arpu_segment": "MID",
+      "customer_count": 52,
+      "baseline_revenue": 267570.68,
+      "average_predicted_arpu": 5145.59,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_8",
+      "arpu_segment": null,
+      "customer_count": 1,
+      "baseline_revenue": 3906.52,
+      "average_predicted_arpu": 3906.52,
+      "eligible": false
+    },
+    {
+      "current_tariff": "tariff_8",
+      "arpu_segment": "HIGH",
+      "customer_count": 4726,
+      "baseline_revenue": 36988107.97,
+      "average_predicted_arpu": 7826.51,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_8",
+      "arpu_segment": "LOW",
+      "customer_count": 457,
+      "baseline_revenue": 1312258.16,
+      "average_predicted_arpu": 2871.46,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_8",
+      "arpu_segment": "MID",
+      "customer_count": 1720,
+      "baseline_revenue": 8024489.89,
+      "average_predicted_arpu": 4665.4,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_9",
+      "arpu_segment": "HIGH",
+      "customer_count": 9,
+      "baseline_revenue": 52537.21,
+      "average_predicted_arpu": 5837.47,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_9",
+      "arpu_segment": "LOW",
+      "customer_count": 51,
+      "baseline_revenue": 157453.04,
+      "average_predicted_arpu": 3087.31,
+      "eligible": true
+    },
+    {
+      "current_tariff": "tariff_9",
+      "arpu_segment": "MID",
+      "customer_count": 67,
+      "baseline_revenue": 281271.4,
+      "average_predicted_arpu": 4198.08,
+      "eligible": true
+    }
+  ]
+}
