@@ -11,18 +11,25 @@ export class ApiError extends Error {
 async function transport(path: string, init: RequestInit = {}) {
   const url = `${base}${path}`
   try {
-    return demoMode ? await demoFetch(url, init) : await fetch(url, init)
+    return demoMode ? await demoFetch(`/api/v1${path}`, init) : await fetch(url, init)
   } catch (cause) {
-    if (cause instanceof DOMException && cause.name === 'AbortError') throw cause
+    if (isAbortError(cause)) throw cause
     throw new ApiError('NETWORK_ERROR', 'Нет соединения с API. Проверьте, запущен ли backend, и попробуйте снова.')
   }
+}
+
+function isAbortError(cause: unknown) {
+  return (cause instanceof DOMException || cause instanceof Error) && cause.name === 'AbortError'
 }
 
 async function expectJson<T>(response: Response): Promise<T> {
   const contentType = response.headers.get('Content-Type') || ''
   if (!contentType.includes('application/json')) throw new ApiError('INVALID_RESPONSE', 'Сервер вернул ответ в неожиданном формате.', response.status)
   let body: unknown
-  try { body = await response.json() } catch { throw new ApiError('INVALID_RESPONSE', 'Не удалось прочитать ответ сервера.', response.status) }
+  try { body = await response.json() } catch (cause) {
+    if (isAbortError(cause)) throw cause
+    throw new ApiError('INVALID_RESPONSE', 'Не удалось прочитать ответ сервера.', response.status)
+  }
   if (!response.ok) {
     const error = (body as Partial<ApiErrorBody>)?.error
     throw new ApiError(error?.code || 'HTTP_ERROR', error?.message || 'Запрос не выполнен.', response.status, error?.details || {}, error?.request_id || '')
@@ -32,11 +39,34 @@ async function expectJson<T>(response: Response): Promise<T> {
 
 async function get<T>(path: string, signal?: AbortSignal) { return expectJson<T>(await transport(path, { signal })) }
 
+const runCache = new Map<string, { etag: string; snapshot: RunSnapshot }>()
+
+async function getRun(id: string, signal?: AbortSignal): Promise<RunSnapshot> {
+  const cached = runCache.get(id)
+  const response = await transport(`/runs/${encodeURIComponent(id)}`, {
+    signal, headers: cached ? { 'If-None-Match': cached.etag } : {},
+  })
+  if (response.status === 304) {
+    if (cached) return cached.snapshot
+    throw new ApiError('INVALID_RESPONSE', 'Сервер вернул неизменённый запуск без сохранённого результата.', 304)
+  }
+  const snapshot = await expectJson<RunSnapshot>(response)
+  const etag = response.headers.get('ETag')
+  if (etag) {
+    runCache.delete(id)
+    runCache.set(id, { etag, snapshot })
+    if (runCache.size > 20) runCache.delete(runCache.keys().next().value!)
+  } else {
+    runCache.delete(id)
+  }
+  return snapshot
+}
+
 export const api = {
   health: (signal?: AbortSignal) => get<{ status: 'ok'; api_version: '1'; mode: Mode }>('/health', signal),
   overview: (signal?: AbortSignal) => get<Overview>('/overview', signal),
   runs: (limit = 20, signal?: AbortSignal) => get<{ items: RunSummary[] }>(`/runs?limit=${limit}`, signal),
-  run: (id: string, signal?: AbortSignal) => get<RunSnapshot>(`/runs/${encodeURIComponent(id)}`, signal),
+  run: getRun,
   createRun: async (config: RunConfig, key: string, signal?: AbortSignal) => expectJson<RunSnapshot>(await transport('/runs', {
     method: 'POST', signal, headers: { 'Content-Type': 'application/json', 'Idempotency-Key': key }, body: JSON.stringify(config),
   })),

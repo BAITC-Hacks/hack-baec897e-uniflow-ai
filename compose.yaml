@@ -1,0 +1,57 @@
+name: orbitduo
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    image: orbitduo-backend:local
+    restart: unless-stopped
+    init: true
+    environment:
+      ORBITDUO_DB_PATH: /data/runs.sqlite3
+    volumes:
+      - orbitduo-data:/data
+    ports:
+      - "127.0.0.1:${ORBITDUO_API_PORT:-8000}:8000"
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=64m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 1g
+    stop_grace_period: 310s
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_DEMO_MODE: "false"
+        VITE_API_BASE_URL: /api/v1
+    image: orbitduo-frontend:local
+    restart: unless-stopped
+    init: true
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:${ORBITDUO_WEB_PORT:-8080}:8080"
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=32m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 256m
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/healthz"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 10s
+
+volumes:
+  orbitduo-data:

@@ -34,7 +34,7 @@ def digest(path):
 
 def fingerprints():
     package = ROOT / "participant_package"
-    sources = list((ROOT / "backend").glob("*.py")) + list(package.glob("*.py")) + list((package / "uniflow").glob("*.py"))
+    sources = list((ROOT / "backend").glob("*.py")) + list(package.glob("*.py")) + list((package / "orbitduo").glob("*.py"))
     inputs = [path for path in package.glob("*.csv") if path.name != "submission.csv"] + list((package / "data").glob("*.csv"))
     return {
         label: {path.relative_to(ROOT).as_posix(): digest(path) for path in sorted(paths)}
@@ -66,7 +66,7 @@ def server(database):
         listener.bind(("127.0.0.1", 0))
         port = listener.getsockname()[1]
     base = f"http://127.0.0.1:{port}/api/v1"
-    environment = dict(os.environ, UNIFLOW_DB_PATH=str(database))
+    environment = dict(os.environ, ORBITDUO_DB_PATH=str(database))
     started = time.perf_counter()
     process = subprocess.Popen(
         [sys.executable, "-m", "uvicorn", "backend.app:app", "--host", "127.0.0.1", "--port", str(port), "--log-level", "warning"],
@@ -106,7 +106,7 @@ def main(argv=None):
     health_latencies, poll_latencies = [], []
     unchanged_polls, prefix_checks = 0, 0
 
-    with TemporaryDirectory(prefix="uniflow-final-http-") as directory:
+    with TemporaryDirectory(prefix="orbitduo-final-http-") as directory:
         database = Path(directory).resolve() / "runs.sqlite3"
         with server(database) as (base, startup_seconds):
             status, snapshot, _, post_seconds = request(base, "/runs", config, key)

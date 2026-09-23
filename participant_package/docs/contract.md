@@ -1,7 +1,7 @@
 # Реализованный конкурсный контракт
 
 `from agent import Agent; campaigns = Agent().act(env)` работает offline без аргументов,
-API, ключей, БД и GPU. Необходимые файлы сдачи: `agent.py`, каталог `uniflow/` с собственными
+API, ключей, БД и GPU. Необходимые файлы сдачи: `agent.py`, каталог `orbitduo/` с собственными
 decision-модулями и публичная `data/change_tariff.csv` для исторического prior. Без истории
 агент явно предупреждает и использует нейтральный prior. Зависимости: numpy/pandas.
 

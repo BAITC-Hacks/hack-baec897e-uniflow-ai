@@ -77,7 +77,7 @@ def run_experiment(seed=42, risk_profile="balanced", observer=None, **agent_opti
             combined[key] = None
     scored = score_campaigns(combined, env.customer_profile, model, env.tariffs,
                              float(env.customer_profile.predicted_arpu.sum()), _mock_fallback,
-                             team_id="uniflow_local")
+                             team_id="orbitduo_local")
     details = scored["campaigns_detail"][len(pilots):]
     if any(not 0 < row["n_contacts"] <= 5000 for row in details):
         raise ValueError("Final campaign has an empty or oversized executable audience")

@@ -8,3 +8,8 @@ __pycache__/
 backend/data/
 frontend/test-results/
 frontend/playwright-report/
+.env
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+*.server.lock

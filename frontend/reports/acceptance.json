@@ -1,0 +1,123 @@
+{
+  "generated_at": "2026-09-23T11:12:46.704244+00:00",
+  "product": "OrbitDuo Campaign Studio",
+  "versions": {
+    "host_node": "24.13.0",
+    "unit_test_node": "24.15.0",
+    "npm": "11.6.2",
+    "browser": "Chrome 153.0.8010.53",
+    "playwright": "1.63.0",
+    "vite": "8.3.0",
+    "vitest": "5.0.1"
+  },
+  "commands": [
+    {
+      "command": "npm ci --no-audit --no-fund",
+      "status": "passed",
+      "note": "Host Node 24.13.0 emitted jsdom engine warnings. package.json and README require Node 24.15+; unit tests used that supported version."
+    },
+    {
+      "command": "npm run build",
+      "status": "passed",
+      "javascript_bytes_displayed": "352.79 kB",
+      "javascript_gzip_displayed": "108.18 kB"
+    },
+    {
+      "command": "npm run lint",
+      "status": "passed"
+    },
+    {
+      "command": "npx --yes --package=node@24.15.0 -- node node_modules/vitest/vitest.mjs run",
+      "status": "passed",
+      "test_files": 4,
+      "tests": 10
+    },
+    {
+      "command": "npm run test:e2e",
+      "environment": {
+        "ORBITDUO_BROWSER_CHANNEL": "chrome"
+      },
+      "status": "passed",
+      "tests": 7,
+      "viewports_px": [
+        1440,
+        1280,
+        768,
+        390
+      ]
+    },
+    {
+      "command": "npm run test:e2e:live",
+      "environment": {
+        "ORBITDUO_BROWSER_CHANNEL": "chrome",
+        "ORBITDUO_BASE_URL": "http://127.0.0.1:8080"
+      },
+      "status": "passed",
+      "tests": 1,
+      "suite_seconds": 17.6
+    }
+  ],
+  "live_run": {
+    "id": "a85b3c1840184a4b80af10d028533131",
+    "status": "completed",
+    "mode": "local_simulation",
+    "config": {
+      "seed": 42,
+      "risk_profile": "balanced"
+    },
+    "pilots": 16,
+    "campaigns": 5,
+    "local_evaluation": {
+      "label": "local_simulation",
+      "gross_gain": 451321.11625114694,
+      "net_arpu_gain": 431321.11625114694,
+      "communication_cost": 20000.0,
+      "total_contacts": 10355,
+      "unique_customers": 8620,
+      "n_pilots": 16,
+      "n_final_campaigns": 5,
+      "runtime_seconds": 9.845625185000017
+    }
+  },
+  "live_assertions": [
+    "real API overview and local_simulation mode",
+    "OrbitDuo document title",
+    "create and reload saved run",
+    "completed status and nonempty pilots/plan",
+    "budget and contact limits",
+    "separate forecast and evaluator panels",
+    "campaign drawer uses saved target tariff",
+    "downloaded CSV and JSON match API bytes",
+    "JSON campaigns match snapshot",
+    "saved run visible in history",
+    "no browser page errors"
+  ],
+  "local_test_artifacts": [
+    "test-results/api-flow-real-API-create-r-7e12c-n-download-the-saved-result-chromium/live-result.png",
+    "test-results/api-flow-real-API-create-r-7e12c-n-download-the-saved-result-chromium/saved-campaigns.csv",
+    "test-results/api-flow-real-API-create-r-7e12c-n-download-the-saved-result-chromium/saved-report.json"
+  ],
+  "artifact_note": "test-results is generated and gitignored; rerun the live command to recreate browser artifacts.",
+  "source_sha256": {
+    "Dockerfile": "7787cc3c9edbcca8cf26df1831ca3c206c3279321d685f40e773256a17cb7b12",
+    "nginx.conf": "41d264969596d9d2922067e9f692096e286044361618876dd021274ca43fd08c",
+    "package-lock.json": "dd1c48b09fb75748db017d58e1968fc3571746820719f9fe869738758e0a5a92",
+    "package.json": "f8934f15b902f1b121bd105bbf6069a2481bd38aac6140e7fc6fa07fe0b8d3f1",
+    "playwright.live.config.ts": "82d56fb94b57864d033e6e1cb6cc1c2049fd6bbccea62a5e96ac4dcf88b22aef",
+    "src/app/Shell.tsx": "c8b2fd2cf4cb3ea0419cf4b45f1360086195c676c3081718cef26b4341f758a7",
+    "src/components/ui/common.tsx": "6452ad5a6c57ebbc6dca0a2ef197a83c014731f4290665d763bab8cd6826858d",
+    "src/features/audience/AudiencePage.tsx": "635931d0c96e9f8aea418e86d13271a0a9c78806aa8fcd4ba2d14a357213cac8",
+    "src/features/overview/OverviewPage.tsx": "74fca68ad67a928dab8269742f03eea52ad39d16cf92d890ed35d0553d51ba1e",
+    "src/features/runs/NewRunPage.tsx": "21a3710c1b82a89190a2baefa052e11b9f18951214ba167fddb0bae0246067c5",
+    "src/features/runs/RunPage.tsx": "658c8d0530d7f790c2f4e65f4332b78a0df494f6de0c9d5414bd39ad22208bf9",
+    "src/features/runs/RunsPage.tsx": "f6326f07196b0c422595976baf77f6c3a6e8f5db18d152651c4007fa79ccdb40",
+    "src/lib/api/client.ts": "b141b648a3e450e83c0e328670a201f21582e7e06913f3c229636b9a0f782510",
+    "src/lib/api/types.ts": "6b279fc20d0448cc7661dba29f87ba771b1d62ffd7dbd9f64e243adc45c5d87c",
+    "src/lib/format.ts": "5d6d4543e649f92fd56d91eeadba58244c01f53b8fe8181e92d5b0a10ca149fe",
+    "src/main.tsx": "2df747f4fc8ea58fc65493d9677384b8eaa0db6f4586005ef1ab0a3636f6954d",
+    "src/mocks/fixtures.ts": "7d299b8935cbfdf1db2c1c151467a7cd030eb779bb85d58f3644e730410d3b40",
+    "src/mocks/transport.ts": "6a590087657836661c9e98b118484080a9770e36a6c54734c1155cdb4a2fda64",
+    "src/vite-env.d.ts": "8f318b297b932bc583492ca45a28968cea3c4ddc99793acd91095cd3a8c0173b",
+    "vite.config.ts": "b1dd1ee900602e8f2ef40152aed394f7d126c65f9351a4594265513021ced2a4"
+  }
+}

@@ -234,11 +234,120 @@ def test_unexpected_http_failure_uses_error_envelope(tmp_path):
 
     with TestClient(create_app(db_path=tmp_path / "runs.db", overview_provider=broken_overview),
                     raise_server_exceptions=False) as client:
-        response = client.get("/api/v1/overview")
+        response = client.get("/api/v1/overview", headers={"Origin": "http://localhost:5173"})
         assert response.status_code == 500
         assert response.json()["error"]["code"] == "INTERNAL_ERROR"
         assert response.json()["error"]["request_id"] == response.headers["X-Request-ID"]
         assert "Internal diagnostic" not in response.text
+        assert response.headers["access-control-allow-origin"] == "http://localhost:5173"
+        assert "X-Request-ID" in response.headers["access-control-expose-headers"]
+        assert "Origin" in response.headers["vary"]
+
+
+def test_http_method_error_preserves_allow_header(tmp_path, overview):
+    with TestClient(create_app(db_path=tmp_path / "runs.db", overview_provider=lambda: overview)) as client:
+        response = client.post("/api/v1/health", headers={"Origin": "http://localhost:5173"})
+        assert response.status_code == 405
+        assert "GET" in response.headers["allow"]
+        assert response.json()["error"]["code"] == "HTTP_ERROR"
+        assert response.json()["error"]["request_id"] == response.headers["X-Request-ID"]
+        assert response.headers["access-control-allow-origin"] == "http://localhost:5173"
+
+
+def test_submit_failure_releases_active_slot_and_preserves_idempotency(tmp_path, overview, monkeypatch):
+    path = tmp_path / "runs.db"
+    with TestClient(create_app(db_path=path, overview_provider=lambda: overview, runner=lambda **kwargs: result())) as client:
+        executor = client.app.state.worker.executor
+        actual_submit = executor.submit
+
+        def unavailable(*args, **kwargs):
+            raise RuntimeError("Executor could not create a worker thread")
+
+        monkeypatch.setattr(executor, "submit", unavailable)
+        response = submit(client)
+        assert response.status_code == 500
+        persisted = submit(client)
+        assert persisted.status_code == 200
+        assert persisted.json()["status"] == "failed"
+        assert persisted.json()["failure"]["code"] == "WORKER_UNAVAILABLE"
+        run_id = persisted.json()["id"]
+        monkeypatch.setattr(executor, "submit", actual_submit)
+        next_run = submit(client, "after-worker-recovery")
+        assert next_run.status_code == 202
+        assert wait_terminal(client, next_run.json()["id"])["status"] == "completed"
+
+    with TestClient(create_app(db_path=path, overview_provider=lambda: overview)) as restarted:
+        assert submit(restarted).json()["id"] == run_id
+        assert submit(restarted).json()["failure"]["code"] == "WORKER_UNAVAILABLE"
+
+
+def test_concurrent_http_retries_execute_only_once(tmp_path, overview):
+    entered, release = Event(), Event()
+    calls = []
+
+    def runner(**kwargs):
+        calls.append(kwargs["seed"])
+        entered.set()
+        assert release.wait(10)
+        return result()
+
+    with TestClient(create_app(db_path=tmp_path / "runs.db", overview_provider=lambda: overview, runner=runner)) as client:
+        try:
+            with ThreadPoolExecutor(max_workers=8) as executor:
+                responses = list(executor.map(lambda _: submit(client), range(16)))
+            assert entered.wait(2)
+            assert all(response.status_code == 202 for response in responses)
+            run_ids = {response.json()["id"] for response in responses}
+            assert len(run_ids) == 1
+            assert calls == [42]
+        finally:
+            release.set()
+        assert wait_terminal(client, run_ids.pop())["status"] == "completed"
+
+
+def test_graceful_shutdown_keeps_database_lock_until_run_finishes(tmp_path, overview):
+    from backend.locking import ServerLock
+
+    entered, release, closing = Event(), Event(), Event()
+
+    def runner(**kwargs):
+        entered.set()
+        assert release.wait(10)
+        return result()
+
+    path = tmp_path / "runs.db"
+    application = create_app(db_path=path, overview_provider=lambda: overview, runner=runner)
+    client = TestClient(application)
+    client.__enter__()
+    run_id = submit(client).json()["id"]
+    assert entered.wait(2)
+
+    def close_client():
+        closing.set()
+        client.__exit__(None, None, None)
+
+    with ThreadPoolExecutor(max_workers=1) as executor:
+        finished = executor.submit(close_client)
+        try:
+            assert closing.wait(2)
+            assert not finished.done()
+            with pytest.raises(RuntimeError, match="Another OrbitDuo server"):
+                ServerLock(path).acquire()
+            assert application.state.store.get(run_id).status == "running"
+        finally:
+            release.set()
+        finished.result(timeout=10)
+    assert application.state.store.get(run_id).status == "completed"
+    owner = ServerLock(path).acquire()
+    owner.close()
+
+
+def test_orbitduo_environment_selects_persistent_database(tmp_path, overview, monkeypatch):
+    path = tmp_path / "environment.db"
+    monkeypatch.setenv("ORBITDUO_DB_PATH", str(path))
+    with TestClient(create_app(overview_provider=lambda: overview)) as client:
+        assert client.app.state.store.path == path.resolve()
+        assert client.get("/openapi.json").json()["info"]["title"] == "OrbitDuo Campaign Studio"
 
 
 def test_bad_progress_payload_does_not_change_calculation(tmp_path, overview):
@@ -265,7 +374,7 @@ def test_second_server_cannot_fail_live_run(tmp_path, overview):
         try:
             run_id = submit(first).json()["id"]
             assert entered.wait(2)
-            with pytest.raises(RuntimeError, match="Another UniFlow server"):
+            with pytest.raises(RuntimeError, match="Another OrbitDuo server"):
                 with TestClient(create_app(db_path=path, overview_provider=lambda: overview)):
                     pytest.fail("Second server unexpectedly acquired database")
             assert first.get(f"/api/v1/runs/{run_id}").json()["status"] == "running"
@@ -287,7 +396,7 @@ def test_os_lock_released_after_process_termination(tmp_path):
                              stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, **options)
     try:
         assert child.stdout.readline().strip() == "ready"
-        with pytest.raises(RuntimeError, match="Another UniFlow server"):
+        with pytest.raises(RuntimeError, match="Another OrbitDuo server"):
             ServerLock(path).acquire()
     finally:
         child.terminate()

@@ -4,6 +4,44 @@
 Метрика `net_arpu_gain` — дополнительная выручка за вычетом контактов, а не полная
 прибыль оператора. Результаты локального mock не гарантируют результат скрытой модели.
 
+## Запуск всего приложения через Docker
+
+Из корня проекта, при запущенном Docker Desktop с Linux-контейнерами:
+
+```powershell
+docker compose up -d --build --wait
+```
+
+- Приложение OrbitDuo: <http://localhost:8080>.
+- Документация API: <http://localhost:8000/docs>.
+- Проверка состояния: `docker compose ps`.
+- Журнал: `docker compose logs --tail=100 backend frontend`.
+- Остановка с сохранением запусков: `docker compose down`.
+
+Frontend работает с настоящим API; демонстрационный режим выключен. Nginx
+раздаёт сборку и передаёт `/api/v1` backend. SQLite хранится в отдельном Docker
+volume и переживает перезапуск/пересоздание контейнеров. `docker compose down -v`
+удаляет этот volume и историю: для обычной остановки флаг `-v` не нужен.
+Порты доступны только на локальной машине. При занятых портах задайте
+`ORBITDUO_WEB_PORT` и `ORBITDUO_API_PORT` перед запуском, например 8081 и 8001.
+
+Образы Python, Node и Nginx зафиксированы по digest. Оба сервиса выполняются
+без root с доступом к записи только во временные каталоги и volume базы.
+На первой сборке интернет нужен для загрузки образов и зависимостей;
+готовому агенту и приложению внешние сервисы или API-ключи не нужны.
+
+Сквозная проверка Docker из подготовленного Python-окружения:
+
+```powershell
+.\.venv\Scripts\python.exe -m scripts.verify_stack --restart
+```
+
+Она проверяет настоящий API через Nginx, исполнение плана, экспорт, повторный
+POST, ETag, SPA-маршруты и сохранность результата после перезапуска backend.
+Штатный `make_submission.py` отдельно запускается в чистом каталоге внутри
+Linux-контейнера; его CSV сравнивается с экспортом API побайтно. С локальным
+Windows-файлом сравниваются строки CSV: окончания строк платформ различаются.
+
 ## Установка
 
 PowerShell, из корня репозитория. Проверенная здесь среда: Python 3.14.4,
@@ -68,8 +106,10 @@ powershell -ExecutionPolicy Bypass -File .\scripts\start-demo.ps1
 запускает один backend и Vite с `VITE_DEMO_MODE=false`, затем печатает адреса.
 Сценарий показа на три минуты: [docs/DEMO.md](docs/DEMO.md).
 
-Для ручного запуска frontend с настоящим API сначала запустите backend командой
-выше. При первом запуске frontend:
+Для локальной разработки `frontend/.env.example` по умолчанию включает настоящий
+API (`VITE_DEMO_MODE=false`). Демо включается явно только для демонстрации.
+Для ручного запуска сначала запустите backend командой `uvicorn` выше.
+При первом запуске frontend:
 
 ```powershell
 Set-Location frontend
@@ -77,9 +117,12 @@ npm ci
 Copy-Item .env.example .env
 ```
 
-В `.env` установите `VITE_DEMO_MODE=false`, затем `npm run dev`.
+В `.env` оставьте `VITE_DEMO_MODE=false`, затем `npm run dev`.
 Vite передаёт `/api/v1` на backend порта 8000. Подробности и команды UI-проверок
 находятся в [frontend/README.md](frontend/README.md).
+Для frontend нужен Node 24.15+ в линии 24 LTS. Docker уже содержит подходящую
+версию сборщика.
+
 Проверки frontend из `frontend/`:
 
 ```powershell
@@ -93,8 +136,10 @@ npm run test:e2e:real
 Демо-тесты запускают Vite с явным `VITE_DEMO_MODE=true`. Отдельный реальный
 браузерный набор поднимает FastAPI и Vite с `VITE_DEMO_MODE=false`, использует
 временную SQLite-базу и настоящий локальный расчёт. Для него требуется Python
-в `participant_package/.venv/Scripts/python.exe`; другой путь задаётся через
+в корневой `.venv/Scripts/python.exe`; другой путь задаётся через
 `ORBITDUO_PYTHON`.
+Проверка уже работающего приложения через `npm run test:e2e:live` описана
+в [frontend/README.md](frontend/README.md).
 
 ## Оценка и submission
 
@@ -110,7 +155,7 @@ $submissionHash = (Get-FileHash -LiteralPath submission.csv -Algorithm SHA256).H
 ..\.venv\Scripts\python.exe make_submission.py
 if ((Get-FileHash -LiteralPath submission.csv -Algorithm SHA256).Hash -ne $submissionHash) { throw 'CSV не воспроизводится' }
 ..\.venv\Scripts\python.exe -m pytest -q
-..\.venv\Scripts\python.exe -m uniflow.evaluation
+..\.venv\Scripts\python.exe -m orbitduo.evaluation
 ..\.venv\Scripts\python.exe -m experiments.verify_delivery
 ```
 
@@ -132,7 +177,7 @@ Git HEAD и совпадение submission в чистой копии без ba
 проверяет balanced/42, CSV, события, идемпотентность, ETag и перезапуск.
 Он не изменяет пользовательские запуски.
 
-Сдавать `agent.py`, каталог `uniflow/`, `requirements.txt`, `submission.csv`
+Сдавать `agent.py`, каталог `orbitduo/`, `requirements.txt`, `submission.csv`
 и исторический `data/change_tariff.csv`, если его нет в поставке организатора.
 Без истории предусмотрен нейтральный prior, но для повторения результатов нужны
 те же входные CSV. Точка входа — `Agent().act(env)`.
@@ -172,12 +217,14 @@ Backend сохраняет неизменяемые завершённые ре�
 [Каталог отчётов](participant_package/reports/README.md) различает текущие
 измерения, архив v1 и промежуточную v2 с расширенным поиском.
 
-После окончательной фиксации проверены новые mock-seed 40, 41, 43, 44, 45:
+После фиксации стратегии проверены mock-seed 40, 41, 43, 44, 45. При переименовании
+в OrbitDuo обе версии повторно запущены: результаты совпали, время измерено заново
+при параллельной проверке Docker. Повтор не считается новой независимой выборкой.
 
 | Версия | Средний net, CU | Средние расходы, CU | Среднее act(), с |
 |---|---:|---:|---:|
-| v1 | 756 162.67 | 99 912.80 | 5.66 |
-| v2 | 1 255 793.25 | 36 965.60 | 2.57 |
+| v1 | 756 162.67 | 99 912.80 | 10.30 |
+| v2 | 1 255 793.25 | 36 965.60 | 4.58 |
 
 В этой серии средний net вырос примерно на 66%; обе версии дали положительные
 результаты во всех пяти запусках. Это малая выборка шума той же mock-модели,
@@ -188,11 +235,18 @@ Backend сохраняет неизменяемые завершённые ре�
 В v1 на этом seed было 928 158.79 CU при расходах 99 646: улучшение среднего
 не означает улучшения каждого запуска.
 
-Пройдены **66 тестов ядра и 31 тест backend**. Два штатных экспорта, чистая копия
-и настоящий HTTP API дали одинаковые байты submission.
-SHA256: `bb8d393538982c0ea672159b16ca9f0d39e72d8dd1a3ff573463db52c5a80bf3`.
+Пройдены **66 тестов ядра и 36 тестов backend** на Windows и все **102 теста в Linux-контейнере**.
+Frontend: сборка, lint, **10 unit-тестов и 8 браузерных тестов**, включая реальный API в Docker.
+Два штатных экспорта, чистая копия и настоящий HTTP API дали одинаковые байты submission
+в пределах каждой платформы; строки Windows и Linux совпали. После перезапуска контейнера
+сохранились результат, экспорт и ключ идемпотентности.
+SHA256 Windows CSV: `61149d82fcd740ef9e20acf16127abe014aa40f241758242b11e0aa49d7693e0`.
 В TestClient есть предупреждение Starlette об устаревающем httpx fallback;
 реальный TCP HTTP также проверен.
+
+Для проверки ТЗ: [матрица требований и приёмка](docs/ACCEPTANCE.md),
+[архитектура](docs/ARCHITECTURE.md), [сводка проверок](participant_package/reports/validation.json),
+[Docker](backend/reports/docker_acceptance.json) и [браузер](frontend/reports/acceptance.json).
 
 Смена seed проверяет шум одной mock-модели. Дополнительные семейства меняют
 истинные эффекты, однако гарантии на неизвестной модели нет. Возможны убытки

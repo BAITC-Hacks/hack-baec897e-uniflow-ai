@@ -6,7 +6,7 @@ import sys
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from uniflow.audit import PACKAGE_ROOT, build_audit, json_safe
+from orbitduo.audit import PACKAGE_ROOT, build_audit, json_safe
 
 
 def test_audit_counts_exclusions_and_history_overlap():
@@ -26,7 +26,7 @@ def test_audit_counts_exclusions_and_history_overlap():
 
 
 def test_unknown_values_are_null_and_overview_is_detached():
-    from uniflow.service_data import build_overview
+    from orbitduo.service_data import build_overview
     assert json_safe({"a": float("nan"), "b": float("inf"), "c": pd.NA}) == {"a": None, "b": None, "c": None}
     first = build_overview()
     first["dataset"]["customer_count"] = -1

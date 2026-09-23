@@ -5,8 +5,8 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from uniflow.candidates import Candidate, CandidateSpace
-from uniflow.portfolio import PilotOverlap, describe_portfolio, optimize, replay_plan
+from orbitduo.candidates import Candidate, CandidateSpace
+from orbitduo.portfolio import PilotOverlap, describe_portfolio, optimize, replay_plan
 
 
 CHANNELS = {"push": {"cost_per_contact": 0, "conversion_multiplier": .5},
@@ -124,7 +124,7 @@ def test_optimizer_and_replay_obey_remaining_resources(budget, contacts):
 
 @pytest.mark.parametrize("budget,contacts,contact_price,money_price", [(0, 31, 0, 0), (40, 31, 5, .2), (500, 19, 0, 1)])
 def test_compiled_cache_matches_independent_customerwise_greedy(budget, contacts, contact_price, money_price):
-    from uniflow.portfolio import _compiled_candidates, _greedy
+    from orbitduo.portfolio import _compiled_candidates, _greedy
     people = space(24).profile.copy()
     people.loc[12:, "arpu_segment"] = "MID"
     people.loc[people.index % 2 == 0, "data_segment"] = "LITE"

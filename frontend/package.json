@@ -3,13 +3,15 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
+  "engines": { "node": "^24.15.0 || >=26.0.0" },
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "test": "vitest run",
     "test:e2e": "playwright test",
-    "test:e2e:real": "playwright test --config playwright.real.config.ts"
+    "test:e2e:real": "playwright test --config playwright.real.config.ts",
+    "test:e2e:live": "playwright test --config playwright.live.config.ts"
   },
   "dependencies": {
     "@tanstack/react-query": "5.103.2",

@@ -360,7 +360,7 @@
       "id": "campaign-1",
       "execution_order": 1,
       "spec": {
-        "campaign_name": "uniflow_01_tariff_8_tariff_11",
+        "campaign_name": "orbitduo_01_tariff_8_tariff_11",
         "filter_arpu_segment": "HIGH",
         "filter_data_segment": null,
         "filter_call_segment": null,
@@ -864,5 +864,9 @@
     "n_pilots": 16,
     "n_final_campaigns": 1,
     "runtime_seconds": 5.047736000036821
+  },
+  "branding_migration": {
+    "archive": "participant_package/experiments/archive/pre_branding.tar.gz",
+    "note": "Presentation names normalized. Recorded old source hashes refer to the exact archived release, not the renamed current sources. Current verification is regenerated separately."
   }
 }

@@ -28,7 +28,7 @@ class ServerLock:
         except OSError as exc:
             handle.close()
             raise RuntimeError(
-                f"Another UniFlow server owns {self.path}. Use one server process per database."
+                f"Another OrbitDuo server owns {self.path}. Use one server process per database."
             ) from exc
         self._file = handle
         return self

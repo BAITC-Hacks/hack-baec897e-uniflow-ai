@@ -1,5 +1,11 @@
 # Локальный API OrbitDuo
 
+Для полного приложения из корня: `docker compose up -d --build --wait`.
+UI доступен на `http://localhost:8080`, API на `http://localhost:8000/docs`.
+В контейнере `ORBITDUO_DB_PATH=/data/runs.sqlite3`, каталог `/data` находится
+в постоянном volume. `docker compose down` сохраняет данные. Подробные команды
+и проверка перезапуска через `scripts.verify_stack` приведены в корневом README.
+
 Запускайте из корня репозитория в проверенном Python-окружении:
 
 ```powershell

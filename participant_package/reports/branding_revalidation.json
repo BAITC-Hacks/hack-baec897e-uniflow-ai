@@ -1,0 +1,75 @@
+{
+  "verified_at": "2026-09-23T11:16:22.711699+00:00",
+  "archive": "participant_package/experiments/archive/pre_branding.tar.gz",
+  "archive_sha256": "1b8a9f88976caf92cfebb4ae8a36c3b1a9603104e4fc75b7d5fda2841b94568f",
+  "measurements": 92,
+  "comparisons": [
+    {
+      "report": "participant_package/reports/improvement.csv",
+      "measurements": 76,
+      "outcomes_and_resources_match": true,
+      "columns_checked": [
+        "scenario",
+        "strategy",
+        "seed",
+        "agent_seed",
+        "net_arpu_gain",
+        "gross_gain",
+        "communication_cost",
+        "total_contacts",
+        "unique_customers",
+        "n_pilots",
+        "n_final_campaigns",
+        "negative",
+        "conforms"
+      ],
+      "runtime_seconds_min": 2.44922479998786,
+      "runtime_seconds_max": 24.80715040001087
+    },
+    {
+      "report": "participant_package/reports/improvement_model_holdout.csv",
+      "measurements": 6,
+      "outcomes_and_resources_match": true,
+      "columns_checked": [
+        "scenario",
+        "strategy",
+        "seed",
+        "agent_seed",
+        "net_arpu_gain",
+        "gross_gain",
+        "communication_cost",
+        "total_contacts",
+        "unique_customers",
+        "n_pilots",
+        "n_final_campaigns",
+        "negative",
+        "conforms"
+      ],
+      "runtime_seconds_min": 4.001531199959572,
+      "runtime_seconds_max": 10.30259069998283
+    },
+    {
+      "report": "participant_package/reports/improvement_final_holdout.csv",
+      "measurements": 10,
+      "outcomes_and_resources_match": true,
+      "columns_checked": [
+        "scenario",
+        "strategy",
+        "seed",
+        "agent_seed",
+        "net_arpu_gain",
+        "gross_gain",
+        "communication_cost",
+        "total_contacts",
+        "unique_customers",
+        "n_pilots",
+        "n_final_campaigns",
+        "negative",
+        "conforms"
+      ],
+      "runtime_seconds_min": 3.600446700002067,
+      "runtime_seconds_max": 15.504042199987452
+    }
+  ],
+  "note": "Both versions were actually rerun after the OrbitDuo package rename. All measured outcomes and resources match the archived pre-rename records; runtime was remeasured under concurrent Docker/browser validation and is excluded from equality. These are repeated cases, not a new independent hold-out. No strategy parameters changed."
+}

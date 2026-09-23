@@ -5,8 +5,8 @@ import pandas as pd
 import pytest
 
 from scoring_core import CHANNELS, apply_filters
-from uniflow.candidates import CandidateSpace, filter_audience
-from uniflow.posterior import HistoryPrior, NOISE_STD, PosteriorTable, VARIANCE_FLOOR, posterior_update
+from orbitduo.candidates import CandidateSpace, filter_audience
+from orbitduo.posterior import HistoryPrior, NOISE_STD, PosteriorTable, VARIANCE_FLOOR, posterior_update
 
 from test_public_mechanics import campaign, profile, tariffs
 

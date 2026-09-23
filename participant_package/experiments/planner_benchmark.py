@@ -6,7 +6,7 @@ from statistics import median
 from time import perf_counter
 
 from mock_environment import make_mock_env
-from uniflow.portfolio import optimize
+from orbitduo.portfolio import optimize
 from .benchmark import REPORTS, ROOT
 from .reference_v1 import Agent
 from .reference_v1.portfolio import optimize as original_optimize

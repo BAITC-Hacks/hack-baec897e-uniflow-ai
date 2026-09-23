@@ -294,7 +294,7 @@ def describe_portfolio(space, posterior, pilots, chosen, pilot_cost):
         marginal = float(np.dot(space.baseline[indices], values - current[indices]) - cost)
         best_final[indices], current[indices], reach[indices] = new_best, values, 1.0
         final_cost += cost
-        spec = candidate.spec(f"uniflow_{number:02d}_{candidate.audience.group[0]}_{candidate.target}")
+        spec = candidate.spec(f"orbitduo_{number:02d}_{candidate.audience.group[0]}_{candidate.target}")
         views.append({"id": f"campaign-{number}", "execution_order": number, "spec": spec,
                       "audience_count": len(indices), "communication_cost": cost,
                       "expected_incremental_net_gain": marginal,

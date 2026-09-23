@@ -6,9 +6,9 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from uniflow.candidates import Candidate, CandidateSpace, SPEC_FIELDS
-from uniflow.portfolio import PilotOverlap, best_contacted_effect, replay_plan
-from uniflow.posterior import HistoryPrior, PosteriorTable, posterior_update
+from orbitduo.candidates import Candidate, CandidateSpace, SPEC_FIELDS
+from orbitduo.portfolio import PilotOverlap, best_contacted_effect, replay_plan
+from orbitduo.posterior import HistoryPrior, PosteriorTable, posterior_update
 
 
 CHANNELS = {

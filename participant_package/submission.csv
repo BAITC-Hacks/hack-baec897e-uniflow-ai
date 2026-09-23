@@ -1,6 +1,6 @@
 campaign_name,filter_arpu_segment,filter_data_segment,filter_call_segment,filter_current_tariff,target_tariff,channel
-uniflow_01_tariff_11_tariff_9,HIGH,,,tariff_11,tariff_9,push
-uniflow_02_tariff_8_tariff_12,HIGH,,,tariff_8,tariff_12,push
-uniflow_03_tariff_8_tariff_9,LOW,,,tariff_8,tariff_9,push
-uniflow_04_tariff_4_tariff_9,LOW,,,tariff_4,tariff_9,push
-uniflow_05_tariff_1_tariff_9,LOW,,,tariff_1,tariff_9,push
+orbitduo_01_tariff_11_tariff_9,HIGH,,,tariff_11,tariff_9,push
+orbitduo_02_tariff_8_tariff_12,HIGH,,,tariff_8,tariff_12,push
+orbitduo_03_tariff_8_tariff_9,LOW,,,tariff_8,tariff_9,push
+orbitduo_04_tariff_4_tariff_9,LOW,,,tariff_4,tariff_9,push
+orbitduo_05_tariff_1_tariff_9,LOW,,,tariff_1,tariff_9,push

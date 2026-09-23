@@ -1,6 +1,6 @@
-# Проверяемый подход UniFlow, версия 2
+# Проверяемый подход OrbitDuo, версия 2
 
-`Agent().act(env)` работает offline. Решения принимают `uniflow/agent_core.py`,
+`Agent().act(env)` работает offline. Решения принимают `orbitduo/agent_core.py`,
 `candidates.py`, `posterior.py`, `portfolio.py`. Они не импортируют mock, оценщик
 или backend. Истинные эффекты использует отдельный evaluation adapter после фиксации
 решения. Версия 1 сохранена в `experiments/reference_v1/`, её измерения — в `reports/v1/`.

@@ -5,5 +5,5 @@
     "posterior.py": "5677b6e97125c528bd0ebdd0f4f9728ae6e11e162108a5aec5f08cf53809b8ad",
     "portfolio.py": "0309130147fda4e45827fce8252c0a32b78a55a993c046d2a6f86c6b35ff7716"
   },
-  "only_adjustment": "History file resolved from new snapshot directory; no policy changes."
+  "only_adjustment": "History file resolved from snapshot directory; campaign-name prefix updated to OrbitDuo. No numerical policy changes. Exact previous source bytes are preserved in experiments/archive/pre_branding.tar.gz."
 }

@@ -17,7 +17,7 @@ import pandas as pd
 from agent import Agent
 from mock_environment import make_mock_env, _mock_impact_model, _mock_fallback
 from scoring_core import score_campaigns, sanitize_campaigns
-from uniflow.portfolio import optimize, describe_portfolio, replay_plan
+from orbitduo.portfolio import optimize, describe_portfolio, replay_plan
 
 ROOT = Path(__file__).resolve().parents[1]
 MONTE_CARLO_SEED = 20260923
@@ -143,7 +143,7 @@ def main():
             "Plan identity includes execution order, filters, target and channel; cosmetic campaign names are ignored.",
         ],
         "source_sha256": {name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest()
-                          for name in ("uniflow/agent_core.py", "uniflow/portfolio.py", "uniflow/candidates.py", "uniflow/posterior.py")},
+                          for name in ("orbitduo/agent_core.py", "orbitduo/portfolio.py", "orbitduo/candidates.py", "orbitduo/posterior.py")},
         "replicates_per_plan": args.replicates, "runs": rows,
         "summary": {"plans_changed": sum(row["plan_changed_when_ignoring_pilots"] for row in rows),
                     "mean_analytic_minus_ignore_official_net_gain": float(np.mean([row["analytic_minus_ignore_official_net_gain"] for row in rows])),

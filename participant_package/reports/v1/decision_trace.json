@@ -360,7 +360,7 @@
       "id": "campaign-1",
       "execution_order": 1,
       "spec": {
-        "campaign_name": "uniflow_01_tariff_8_tariff_11",
+        "campaign_name": "orbitduo_01_tariff_8_tariff_11",
         "filter_arpu_segment": "HIGH",
         "filter_data_segment": null,
         "filter_call_segment": null,
@@ -387,7 +387,7 @@
       "id": "campaign-2",
       "execution_order": 2,
       "spec": {
-        "campaign_name": "uniflow_02_tariff_10_tariff_9",
+        "campaign_name": "orbitduo_02_tariff_10_tariff_9",
         "filter_arpu_segment": "HIGH",
         "filter_data_segment": null,
         "filter_call_segment": null,
@@ -414,7 +414,7 @@
       "id": "campaign-3",
       "execution_order": 3,
       "spec": {
-        "campaign_name": "uniflow_03_tariff_8_tariff_9",
+        "campaign_name": "orbitduo_03_tariff_8_tariff_9",
         "filter_arpu_segment": "LOW",
         "filter_data_segment": null,
         "filter_call_segment": null,
@@ -441,7 +441,7 @@
       "id": "campaign-4",
       "execution_order": 4,
       "spec": {
-        "campaign_name": "uniflow_04_tariff_4_tariff_9",
+        "campaign_name": "orbitduo_04_tariff_4_tariff_9",
         "filter_arpu_segment": "MID",
         "filter_data_segment": null,
         "filter_call_segment": null,
@@ -468,7 +468,7 @@
       "id": "campaign-5",
       "execution_order": 5,
       "spec": {
-        "campaign_name": "uniflow_05_tariff_4_tariff_9",
+        "campaign_name": "orbitduo_05_tariff_4_tariff_9",
         "filter_arpu_segment": "LOW",
         "filter_data_segment": null,
         "filter_call_segment": null,
@@ -495,7 +495,7 @@
       "id": "campaign-6",
       "execution_order": 6,
       "spec": {
-        "campaign_name": "uniflow_06_tariff_10_tariff_9",
+        "campaign_name": "orbitduo_06_tariff_10_tariff_9",
         "filter_arpu_segment": "LOW",
         "filter_data_segment": null,
         "filter_call_segment": null,
@@ -522,7 +522,7 @@
       "id": "campaign-7",
       "execution_order": 7,
       "spec": {
-        "campaign_name": "uniflow_07_tariff_11_tariff_9",
+        "campaign_name": "orbitduo_07_tariff_11_tariff_9",
         "filter_arpu_segment": "LOW",
         "filter_data_segment": null,
         "filter_call_segment": null,
@@ -549,7 +549,7 @@
       "id": "campaign-8",
       "execution_order": 8,
       "spec": {
-        "campaign_name": "uniflow_08_tariff_1_tariff_9",
+        "campaign_name": "orbitduo_08_tariff_1_tariff_9",
         "filter_arpu_segment": "LOW",
         "filter_data_segment": null,
         "filter_call_segment": null,
@@ -576,7 +576,7 @@
       "id": "campaign-9",
       "execution_order": 9,
       "spec": {
-        "campaign_name": "uniflow_09_tariff_1_tariff_9",
+        "campaign_name": "orbitduo_09_tariff_1_tariff_9",
         "filter_arpu_segment": "MID",
         "filter_data_segment": null,
         "filter_call_segment": null,
@@ -603,7 +603,7 @@
       "id": "campaign-10",
       "execution_order": 10,
       "spec": {
-        "campaign_name": "uniflow_10_tariff_14_tariff_9",
+        "campaign_name": "orbitduo_10_tariff_14_tariff_9",
         "filter_arpu_segment": "LOW",
         "filter_data_segment": null,
         "filter_call_segment": null,
@@ -1107,5 +1107,9 @@
     "n_pilots": 16,
     "n_final_campaigns": 10,
     "runtime_seconds": 8.746237200044561
+  },
+  "branding_migration": {
+    "archive": "participant_package/experiments/archive/pre_branding.tar.gz",
+    "note": "Presentation names normalized. Recorded old source hashes refer to the exact archived release, not the renamed current sources. Current verification is regenerated separately."
   }
 }

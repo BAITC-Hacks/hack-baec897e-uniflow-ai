@@ -1,39 +1,39 @@
 {
-  "verified_at": "2026-09-23T10:47:16.960795Z",
+  "verified_at": "2026-09-23T11:07:10.568783Z",
   "python": "3.13.5",
   "platform": "Windows",
   "config": {
     "seed": 42,
     "risk_profile": "balanced"
   },
-  "run_id": "83de8020068b46fbbd744f9243776aec",
-  "submission_sha256": "bb8d393538982c0ea672159b16ca9f0d39e72d8dd1a3ff573463db52c5a80bf3",
-  "submission_bytes": 420,
+  "run_id": "259f9343e6a4496fbcf85e5fd8db6b95",
+  "submission_sha256": "61149d82fcd740ef9e20acf16127abe014aa40f241758242b11e0aa49d7693e0",
+  "submission_bytes": 425,
   "source_sha256": {
-    "backend/__init__.py": "04e107e5189e2408172e7793d849bcae1be82fe4725fe5eebd0cabba1bbdae9b",
-    "backend/app.py": "87d861bb0244b65faeed4097f11deef5e951c7263df4b2520a5bf8a253572ad4",
-    "backend/benchmark_storage.py": "95343c4adb83dcd58c00ab650df0a8a516232d606a8a97e4b3c0c042726a810c",
-    "backend/final_smoke.py": "d4780afc70eca4a680508781edde413b6246c84a56771bae18fd8007ca3edb89",
-    "backend/locking.py": "7a595ef8865feca7e5707dd362c12d23db741d0d33e366a9745b9b57cce88765",
+    "backend/__init__.py": "2b2dce6a09e64fc2464166ff403a244999688e86004306c3f8d28717f949fd40",
+    "backend/app.py": "ab791f90d5a0cf636fb4bbd861dfdb35a6030b9045c96d36bbada2e71a32cc51",
+    "backend/benchmark_storage.py": "ecdb686c83d32fce78a58eeab3eaddde1950e2d2f3e7481ceb38bfb01eeb7bb2",
+    "backend/final_smoke.py": "46f85bc21fbd31ddc1077c541ce99cd5ea7d8799553a11a0a6fdeb15eb7859b3",
+    "backend/locking.py": "0339443deb24ed8ed5d73add73465e5a94a9916977bc68281168455a216d6616",
     "backend/models.py": "7148230e814797c773c496f2c304dfe903478b2aab02ad338907fabf0d8a93bc",
     "backend/smoke.py": "5941102ac996280b47e79a84c8d76585a609e03e38448038dc19410c30cd07ac",
     "backend/storage.py": "57d7ff4a3a2d4e7d5bb1bc8cc03d151afe8a5c63b088d80fed30b007a3a99ff9",
-    "backend/worker.py": "8ffa625d08a56ef085aabe0cf787ac8cd4691afd7abd630c9839fae1481dfcac",
-    "participant_package/agent.py": "356b3015cbbb2362704c6d84d2b20f0fa051550c73572fe13e16adf6fa2e2733",
+    "backend/worker.py": "8de7a19dddd83e2100a5537c66165d89cbe596a345e6fd553ed5c73f251add75",
+    "participant_package/agent.py": "b2b5f2eeeb9be4a78eebe8c4166d8e151fe99567f4605863239205abd4b45970",
     "participant_package/agent_template.py": "739ec30073deef0767e64b814043dd6190ed85ed0eb70ec15dfe461cbeedf62f",
     "participant_package/environment.py": "6385136a79814624449843930c55305b397a2d3d30c4d8c280e7b2b08bf033fc",
     "participant_package/local_eval.py": "6af581b2c626c75adf72afd8cf965b883753518ef6b75df3844571d97a508e02",
     "participant_package/make_submission.py": "e5aa465252221835600efb007bd080693a1fdf2ac79318e818d62abb576718fe",
     "participant_package/mock_environment.py": "9c7515361270ebef8cec08f3a78ed0d288532a14d51e08eb6455de71994f9111",
-    "participant_package/scoring_core.py": "74e2316c2329872dd7c93165a4b47e6c583ecdb9af853671c14a8a11cb701cf7",
-    "participant_package/uniflow/__init__.py": "0bbf9388678e04808700c7624d9e4d60ad0cdcc31d85534ac287b2b4aa656aeb",
-    "participant_package/uniflow/agent_core.py": "e1782a78a64df2013d18b38fa93ae9cdaa4329e4175bc3cf2c8bd073b02ef665",
-    "participant_package/uniflow/audit.py": "e24b9be94fb0ce168289a8bd6ef53daf3ce13807c5788bb80378d7ccb68ad9f5",
-    "participant_package/uniflow/candidates.py": "ba8a38bdb0f283ca1f36712fcf2b92eec8077be83fb9a707e7df949a29fddee8",
-    "participant_package/uniflow/evaluation.py": "20c0cb6628d2ea221b00378609f1ea1f396e6659d334bb3106fd48cf983c5a8b",
-    "participant_package/uniflow/portfolio.py": "79e62e1c80f6185fe575e187bdf34fa385e061cd4781cc44c6fe577d72958dc7",
-    "participant_package/uniflow/posterior.py": "aae10148a13cb9f07cefa7abeb5eaffd3658953dd72503f07a6db4e7fc4d0007",
-    "participant_package/uniflow/service_data.py": "611772d230ce7ba481fa844337620311f4da4b085d907ab73257263eed14e2e3"
+    "participant_package/orbitduo/__init__.py": "0bbf9388678e04808700c7624d9e4d60ad0cdcc31d85534ac287b2b4aa656aeb",
+    "participant_package/orbitduo/agent_core.py": "e1782a78a64df2013d18b38fa93ae9cdaa4329e4175bc3cf2c8bd073b02ef665",
+    "participant_package/orbitduo/audit.py": "e24b9be94fb0ce168289a8bd6ef53daf3ce13807c5788bb80378d7ccb68ad9f5",
+    "participant_package/orbitduo/candidates.py": "ba8a38bdb0f283ca1f36712fcf2b92eec8077be83fb9a707e7df949a29fddee8",
+    "participant_package/orbitduo/evaluation.py": "29869ceb93000507ac949732983020f9b82165826d39c819e73a37f01a1218b2",
+    "participant_package/orbitduo/portfolio.py": "741c891181bec6386dbd0085a1d349e8abd0ade330536572fdcd5a025039c546",
+    "participant_package/orbitduo/posterior.py": "aae10148a13cb9f07cefa7abeb5eaffd3658953dd72503f07a6db4e7fc4d0007",
+    "participant_package/orbitduo/service_data.py": "611772d230ce7ba481fa844337620311f4da4b085d907ab73257263eed14e2e3",
+    "participant_package/scoring_core.py": "74e2316c2329872dd7c93165a4b47e6c583ecdb9af853671c14a8a11cb701cf7"
   },
   "input_sha256": {
     "participant_package/customer_profile.csv": "e377baa2553a790f030a1d3411b3b5c5ca6316ccc7485badc9b08afa6da17d3f",
@@ -55,22 +55,22 @@
     "sources_unchanged_during_check": true
   },
   "metrics": {
-    "startup_seconds": 4.217685199982952,
-    "restart_seconds": 3.633919100044295,
-    "post_response_seconds": 0.027936499973293394,
-    "persisted_retry_seconds": 0.020740700012538582,
-    "maximum_health_latency_seconds": 0.044685999979265034,
-    "maximum_poll_latency_seconds": 0.12253860000055283,
-    "event_prefix_checks": 25,
-    "unchanged_polls": 6
+    "startup_seconds": 8.248509800003376,
+    "restart_seconds": 14.613447599986102,
+    "post_response_seconds": 0.050231600005645305,
+    "persisted_retry_seconds": 0.05389609996927902,
+    "maximum_health_latency_seconds": 0.12709170003654435,
+    "maximum_poll_latency_seconds": 0.17485670000314713,
+    "event_prefix_checks": 40,
+    "unchanged_polls": 14
   },
   "completed_snapshot": {
-    "id": "83de8020068b46fbbd744f9243776aec",
+    "id": "259f9343e6a4496fbcf85e5fd8db6b95",
     "status": "completed",
     "phase": "completed",
-    "created_at": "2026-09-23T10:47:07.953408Z",
-    "updated_at": "2026-09-23T10:47:12.986355Z",
-    "completed_at": "2026-09-23T10:47:12.985844Z",
+    "created_at": "2026-09-23T11:06:45.554651Z",
+    "updated_at": "2026-09-23T11:06:55.269012Z",
+    "completed_at": "2026-09-23T11:06:55.264109Z",
     "config": {
       "seed": 42,
       "risk_profile": "balanced"
@@ -119,7 +119,7 @@
         "observed_lift_total": -110374.4910213657,
         "selection_reason": "Diverse initial coverage; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 898828.35 CU.",
         "decision_after": "Posterior mean changed 0.01828 → -0.02662; portfolio recomputed with actual resource balances.",
-        "completed_at": "2026-09-23T10:47:09.072789Z"
+        "completed_at": "2026-09-23T11:06:47.095321Z"
       },
       {
         "id": "pilot-2",
@@ -140,7 +140,7 @@
         "observed_lift_total": 57043.56289671052,
         "selection_reason": "Diverse initial coverage; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 613451.04 CU.",
         "decision_after": "Posterior mean changed 0.00039 → 0.01538; portfolio recomputed with actual resource balances.",
-        "completed_at": "2026-09-23T10:47:09.312790Z"
+        "completed_at": "2026-09-23T11:06:47.555998Z"
       },
       {
         "id": "pilot-3",
@@ -161,7 +161,7 @@
         "observed_lift_total": -173782.68131932316,
         "selection_reason": "Diverse initial coverage; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 287744.66 CU.",
         "decision_after": "Posterior mean changed 0.00259 → -0.04258; portfolio recomputed with actual resource balances.",
-        "completed_at": "2026-09-23T10:47:09.603565Z"
+        "completed_at": "2026-09-23T11:06:47.984979Z"
       },
       {
         "id": "pilot-4",
@@ -182,7 +182,7 @@
         "observed_lift_total": -88420.73547670315,
         "selection_reason": "Diverse initial coverage; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 236024.10 CU.",
         "decision_after": "Posterior mean changed 0.00000 → -0.02486; portfolio recomputed with actual resource balances.",
-        "completed_at": "2026-09-23T10:47:09.794624Z"
+        "completed_at": "2026-09-23T11:06:48.376255Z"
       },
       {
         "id": "pilot-5",
@@ -203,7 +203,7 @@
         "observed_lift_total": 42270.76617258237,
         "selection_reason": "Diverse initial coverage; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 127654.92 CU.",
         "decision_after": "Posterior mean changed 0.00600 → 0.01744; portfolio recomputed with actual resource balances.",
-        "completed_at": "2026-09-23T10:47:09.992159Z"
+        "completed_at": "2026-09-23T11:06:48.718597Z"
       },
       {
         "id": "pilot-6",
@@ -224,7 +224,7 @@
         "observed_lift_total": -25493.461064972413,
         "selection_reason": "Diverse initial coverage; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 72299.15 CU.",
         "decision_after": "Posterior mean changed 0.00000 → -0.00438; portfolio recomputed with actual resource balances.",
-        "completed_at": "2026-09-23T10:47:10.183299Z"
+        "completed_at": "2026-09-23T11:06:49.139675Z"
       },
       {
         "id": "pilot-7",
@@ -245,7 +245,7 @@
         "observed_lift_total": 88612.13753711357,
         "selection_reason": "Decision-relevant uncertainty; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 419230.50 CU.",
         "decision_after": "Posterior mean changed 0.00078 → 0.01365; portfolio recomputed with actual resource balances.",
-        "completed_at": "2026-09-23T10:47:10.373466Z"
+        "completed_at": "2026-09-23T11:06:49.515421Z"
       },
       {
         "id": "pilot-8",
@@ -266,7 +266,7 @@
         "observed_lift_total": 54825.740353826,
         "selection_reason": "Decision-relevant uncertainty; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 158648.57 CU.",
         "decision_after": "Posterior mean changed 0.00373 → 0.00867; portfolio recomputed with actual resource balances.",
-        "completed_at": "2026-09-23T10:47:10.555367Z"
+        "completed_at": "2026-09-23T11:06:49.855721Z"
       },
       {
         "id": "pilot-9",
@@ -287,7 +287,7 @@
         "observed_lift_total": 81280.0530048846,
         "selection_reason": "Decision-relevant uncertainty; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 91898.40 CU.",
         "decision_after": "Posterior mean changed 0.00295 → 0.00991; portfolio recomputed with actual resource balances.",
-        "completed_at": "2026-09-23T10:47:10.728024Z"
+        "completed_at": "2026-09-23T11:06:50.339198Z"
       },
       {
         "id": "pilot-10",
@@ -308,7 +308,7 @@
         "observed_lift_total": 43356.97328205807,
         "selection_reason": "Decision-relevant uncertainty; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 77432.01 CU.",
         "decision_after": "Posterior mean changed 0.00047 → 0.00438; portfolio recomputed with actual resource balances.",
-        "completed_at": "2026-09-23T10:47:10.859274Z"
+        "completed_at": "2026-09-23T11:06:50.662051Z"
       },
       {
         "id": "pilot-11",
@@ -329,7 +329,7 @@
         "observed_lift_total": 35950.9067549348,
         "selection_reason": "Decision-relevant uncertainty; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 62354.33 CU.",
         "decision_after": "Posterior mean changed 0.00042 → 0.00335; portfolio recomputed with actual resource balances.",
-        "completed_at": "2026-09-23T10:47:11.003257Z"
+        "completed_at": "2026-09-23T11:06:50.952418Z"
       },
       {
         "id": "pilot-12",
@@ -350,7 +350,7 @@
         "observed_lift_total": -102798.69870639688,
         "selection_reason": "Decision-relevant uncertainty; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 48528.76 CU.",
         "decision_after": "Posterior mean changed 0.00790 → -0.00019; portfolio recomputed with actual resource balances.",
-        "completed_at": "2026-09-23T10:47:11.169471Z"
+        "completed_at": "2026-09-23T11:06:51.241560Z"
       },
       {
         "id": "pilot-13",
@@ -371,7 +371,7 @@
         "observed_lift_total": -5304.3884633850985,
         "selection_reason": "Decision-relevant uncertainty; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 46802.45 CU.",
         "decision_after": "Posterior mean changed 0.00000 → -0.00036; portfolio recomputed with actual resource balances.",
-        "completed_at": "2026-09-23T10:47:11.310695Z"
+        "completed_at": "2026-09-23T11:06:51.577336Z"
       },
       {
         "id": "pilot-14",
@@ -392,7 +392,7 @@
         "observed_lift_total": -37457.69009453002,
         "selection_reason": "Decision-relevant uncertainty; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 38320.11 CU.",
         "decision_after": "Posterior mean changed 0.00000 → -0.00250; portfolio recomputed with actual resource balances.",
-        "completed_at": "2026-09-23T10:47:11.480091Z"
+        "completed_at": "2026-09-23T11:06:51.922081Z"
       },
       {
         "id": "pilot-15",
@@ -413,7 +413,7 @@
         "observed_lift_total": 113138.76847305386,
         "selection_reason": "Decision-relevant uncertainty; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 32096.07 CU.",
         "decision_after": "Posterior mean changed 0.00343 → 0.00979; portfolio recomputed with actual resource balances.",
-        "completed_at": "2026-09-23T10:47:11.734883Z"
+        "completed_at": "2026-09-23T11:06:52.560442Z"
       },
       {
         "id": "pilot-16",
@@ -434,7 +434,7 @@
         "observed_lift_total": -8724.563926377878,
         "selection_reason": "Decision-relevant uncertainty; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 45824.34 CU.",
         "decision_after": "Posterior mean changed 0.00752 → 0.00574; portfolio recomputed with actual resource balances.",
-        "completed_at": "2026-09-23T10:47:12.024227Z"
+        "completed_at": "2026-09-23T11:06:53.181908Z"
       }
     ],
     "campaigns": [
@@ -442,7 +442,7 @@
         "id": "campaign-1",
         "execution_order": 1,
         "spec": {
-          "campaign_name": "uniflow_01_tariff_11_tariff_9",
+          "campaign_name": "orbitduo_01_tariff_11_tariff_9",
           "filter_arpu_segment": "HIGH",
           "filter_data_segment": null,
           "filter_call_segment": null,
@@ -469,7 +469,7 @@
         "id": "campaign-2",
         "execution_order": 2,
         "spec": {
-          "campaign_name": "uniflow_02_tariff_8_tariff_12",
+          "campaign_name": "orbitduo_02_tariff_8_tariff_12",
           "filter_arpu_segment": "HIGH",
           "filter_data_segment": null,
           "filter_call_segment": null,
@@ -497,7 +497,7 @@
         "id": "campaign-3",
         "execution_order": 3,
         "spec": {
-          "campaign_name": "uniflow_03_tariff_8_tariff_9",
+          "campaign_name": "orbitduo_03_tariff_8_tariff_9",
           "filter_arpu_segment": "LOW",
           "filter_data_segment": null,
           "filter_call_segment": null,
@@ -524,7 +524,7 @@
         "id": "campaign-4",
         "execution_order": 4,
         "spec": {
-          "campaign_name": "uniflow_04_tariff_4_tariff_9",
+          "campaign_name": "orbitduo_04_tariff_4_tariff_9",
           "filter_arpu_segment": "LOW",
           "filter_data_segment": null,
           "filter_call_segment": null,
@@ -551,7 +551,7 @@
         "id": "campaign-5",
         "execution_order": 5,
         "spec": {
-          "campaign_name": "uniflow_05_tariff_1_tariff_9",
+          "campaign_name": "orbitduo_05_tariff_1_tariff_9",
           "filter_arpu_segment": "LOW",
           "filter_data_segment": null,
           "filter_call_segment": null,
@@ -577,25 +577,25 @@
     ],
     "events": [
       {
-        "id": "194a13c4cad747f2a048d4764e2533bf",
+        "id": "debb45cc4cb641d4aa2ec2dd724b4c27",
         "sequence": 1,
-        "created_at": "2026-09-23T10:47:07.953568Z",
+        "created_at": "2026-09-23T11:06:45.555398Z",
         "phase": "queued",
         "title": "queued",
         "message": "Задание сохранено."
       },
       {
-        "id": "cd2df7f2373444b7b01ccb06169cb752",
+        "id": "22dc1e07066e4448a6dcc67e6b189067",
         "sequence": 2,
-        "created_at": "2026-09-23T10:47:07.972929Z",
+        "created_at": "2026-09-23T11:06:45.577115Z",
         "phase": "audit",
         "title": "audit",
         "message": "Проверка данных и построение стратегии."
       },
       {
-        "id": "b74e0087af064ea7b75dad230e16d259",
+        "id": "ad94064ff3c845c2b7b92db096292c36",
         "sequence": 3,
-        "created_at": "2026-09-23T10:47:08.003209Z",
+        "created_at": "2026-09-23T11:06:45.622572Z",
         "phase": "audit",
         "title": "audit",
         "message": "Чтение публичных данных и создание независимой среды."
@@ -603,7 +603,7 @@
       {
         "id": "event-1",
         "sequence": 4,
-        "created_at": "2026-09-23T10:47:08.289908Z",
+        "created_at": "2026-09-23T11:06:46.024196Z",
         "phase": "audit",
         "title": "Public profile audit",
         "message": "Validating customer identifiers, public segment labels and baseline values."
@@ -611,7 +611,7 @@
       {
         "id": "event-2",
         "sequence": 5,
-        "created_at": "2026-09-23T10:47:08.861462Z",
+        "created_at": "2026-09-23T11:06:46.722924Z",
         "phase": "candidates",
         "title": "Candidates constructed",
         "message": "63 homogeneous groups and 1260 source/target hypotheses; no same-tariff offers."
@@ -619,7 +619,7 @@
       {
         "id": "event-3",
         "sequence": 6,
-        "created_at": "2026-09-23T10:47:08.979170Z",
+        "created_at": "2026-09-23T11:06:46.883180Z",
         "phase": "planning",
         "title": "Initial feasible plan",
         "message": "1 executable final campaigns; risk penalty 0.55 standard deviations."
@@ -627,7 +627,7 @@
       {
         "id": "event-4",
         "sequence": 7,
-        "created_at": "2026-09-23T10:47:09.041142Z",
+        "created_at": "2026-09-23T11:06:46.991664Z",
         "phase": "pilots",
         "title": "Pilot selected",
         "message": "tariff_8/HIGH → tariff_9, digital_ads, requested 200. Diverse initial coverage; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 898828.35 CU."
@@ -635,7 +635,7 @@
       {
         "id": "event-5",
         "sequence": 8,
-        "created_at": "2026-09-23T10:47:09.072818Z",
+        "created_at": "2026-09-23T11:06:47.095409Z",
         "phase": "pilots",
         "title": "Pilot observed",
         "message": "pilot-1: actual n=200, observed lift=-0.06742; Posterior mean changed 0.01828 → -0.02662; portfolio recomputed with actual resource balances."
@@ -643,7 +643,7 @@
       {
         "id": "event-6",
         "sequence": 9,
-        "created_at": "2026-09-23T10:47:09.188675Z",
+        "created_at": "2026-09-23T11:06:47.349194Z",
         "phase": "planning",
         "title": "Portfolio updated",
         "message": "1 final campaigns; forecast net including pilots -46058.77 CU."
@@ -651,7 +651,7 @@
       {
         "id": "event-7",
         "sequence": 10,
-        "created_at": "2026-09-23T10:47:09.265473Z",
+        "created_at": "2026-09-23T11:06:47.468087Z",
         "phase": "pilots",
         "title": "Pilot selected",
         "message": "tariff_10/HIGH → tariff_21, digital_ads, requested 200. Diverse initial coverage; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 613451.04 CU."
@@ -659,7 +659,7 @@
       {
         "id": "event-8",
         "sequence": 11,
-        "created_at": "2026-09-23T10:47:09.312851Z",
+        "created_at": "2026-09-23T11:06:47.556090Z",
         "phase": "pilots",
         "title": "Pilot observed",
         "message": "pilot-2: actual n=200, observed lift=0.03603; Posterior mean changed 0.00039 → 0.01538; portfolio recomputed with actual resource balances."
@@ -667,7 +667,7 @@
       {
         "id": "event-9",
         "sequence": 12,
-        "created_at": "2026-09-23T10:47:09.518805Z",
+        "created_at": "2026-09-23T11:06:47.834845Z",
         "phase": "planning",
         "title": "Portfolio updated",
         "message": "1 final campaigns; forecast net including pilots -16001.00 CU."
@@ -675,7 +675,7 @@
       {
         "id": "event-10",
         "sequence": 13,
-        "created_at": "2026-09-23T10:47:09.576959Z",
+        "created_at": "2026-09-23T11:06:47.935037Z",
         "phase": "pilots",
         "title": "Pilot selected",
         "message": "tariff_11/HIGH → tariff_12, digital_ads, requested 200. Diverse initial coverage; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 287744.66 CU."
@@ -683,7 +683,7 @@
       {
         "id": "event-11",
         "sequence": 14,
-        "created_at": "2026-09-23T10:47:09.603597Z",
+        "created_at": "2026-09-23T11:06:47.985012Z",
         "phase": "pilots",
         "title": "Pilot observed",
         "message": "pilot-3: actual n=200, observed lift=-0.09674; Posterior mean changed 0.00259 → -0.04258; portfolio recomputed with actual resource balances."
@@ -691,7 +691,7 @@
       {
         "id": "event-12",
         "sequence": 15,
-        "created_at": "2026-09-23T10:47:09.699426Z",
+        "created_at": "2026-09-23T11:06:48.177981Z",
         "phase": "planning",
         "title": "Portfolio updated",
         "message": "1 final campaigns; forecast net including pilots -97082.62 CU."
@@ -699,7 +699,7 @@
       {
         "id": "event-13",
         "sequence": 16,
-        "created_at": "2026-09-23T10:47:09.759577Z",
+        "created_at": "2026-09-23T11:06:48.307676Z",
         "phase": "pilots",
         "title": "Pilot selected",
         "message": "tariff_4/HIGH → tariff_14, digital_ads, requested 200. Diverse initial coverage; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 236024.10 CU."
@@ -707,7 +707,7 @@
       {
         "id": "event-14",
         "sequence": 17,
-        "created_at": "2026-09-23T10:47:09.794650Z",
+        "created_at": "2026-09-23T11:06:48.376297Z",
         "phase": "pilots",
         "title": "Pilot observed",
         "message": "pilot-4: actual n=200, observed lift=-0.05960; Posterior mean changed 0.00000 → -0.02486; portfolio recomputed with actual resource balances."
@@ -715,7 +715,7 @@
       {
         "id": "event-15",
         "sequence": 18,
-        "created_at": "2026-09-23T10:47:09.899367Z",
+        "created_at": "2026-09-23T11:06:48.578821Z",
         "phase": "planning",
         "title": "Portfolio updated",
         "message": "1 final campaigns; forecast net including pilots -130350.27 CU."
@@ -723,7 +723,7 @@
       {
         "id": "event-16",
         "sequence": 19,
-        "created_at": "2026-09-23T10:47:09.959528Z",
+        "created_at": "2026-09-23T11:06:48.673209Z",
         "phase": "pilots",
         "title": "Pilot selected",
         "message": "tariff_8/MID → tariff_10, sms, requested 200. Diverse initial coverage; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 127654.92 CU."
@@ -731,7 +731,7 @@
       {
         "id": "event-17",
         "sequence": 20,
-        "created_at": "2026-09-23T10:47:09.992199Z",
+        "created_at": "2026-09-23T11:06:48.718640Z",
         "phase": "pilots",
         "title": "Pilot observed",
         "message": "pilot-5: actual n=200, observed lift=0.04489; Posterior mean changed 0.00600 → 0.01744; portfolio recomputed with actual resource balances."
@@ -739,7 +739,7 @@
       {
         "id": "event-18",
         "sequence": 21,
-        "created_at": "2026-09-23T10:47:10.083262Z",
+        "created_at": "2026-09-23T11:06:48.957289Z",
         "phase": "planning",
         "title": "Portfolio updated",
         "message": "1 final campaigns; forecast net including pilots -102640.15 CU."
@@ -747,7 +747,7 @@
       {
         "id": "event-19",
         "sequence": 22,
-        "created_at": "2026-09-23T10:47:10.141869Z",
+        "created_at": "2026-09-23T11:06:49.085003Z",
         "phase": "pilots",
         "title": "Pilot selected",
         "message": "tariff_14/HIGH → tariff_15, sms, requested 200. Diverse initial coverage; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 72299.15 CU."
@@ -755,7 +755,7 @@
       {
         "id": "event-20",
         "sequence": 23,
-        "created_at": "2026-09-23T10:47:10.183326Z",
+        "created_at": "2026-09-23T11:06:49.139735Z",
         "phase": "pilots",
         "title": "Pilot observed",
         "message": "pilot-6: actual n=200, observed lift=-0.01707; Posterior mean changed 0.00000 → -0.00438; portfolio recomputed with actual resource balances."
@@ -763,7 +763,7 @@
       {
         "id": "event-21",
         "sequence": 24,
-        "created_at": "2026-09-23T10:47:10.270877Z",
+        "created_at": "2026-09-23T11:06:49.344172Z",
         "phase": "planning",
         "title": "Portfolio updated",
         "message": "1 final campaigns; forecast net including pilots -98467.78 CU."
@@ -771,7 +771,7 @@
       {
         "id": "event-22",
         "sequence": 25,
-        "created_at": "2026-09-23T10:47:10.325706Z",
+        "created_at": "2026-09-23T11:06:49.443200Z",
         "phase": "pilots",
         "title": "Pilot selected",
         "message": "tariff_8/HIGH → tariff_10, sms, requested 200. Decision-relevant uncertainty; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 419230.50 CU."
@@ -779,7 +779,7 @@
       {
         "id": "event-23",
         "sequence": 26,
-        "created_at": "2026-09-23T10:47:10.373500Z",
+        "created_at": "2026-09-23T11:06:49.515528Z",
         "phase": "pilots",
         "title": "Pilot observed",
         "message": "pilot-7: actual n=200, observed lift=0.05418; Posterior mean changed 0.00078 → 0.01365; portfolio recomputed with actual resource balances."
@@ -787,7 +787,7 @@
       {
         "id": "event-24",
         "sequence": 27,
-        "created_at": "2026-09-23T10:47:10.475820Z",
+        "created_at": "2026-09-23T11:06:49.716545Z",
         "phase": "planning",
         "title": "Portfolio updated",
         "message": "1 final campaigns; forecast net including pilots -71470.91 CU."
@@ -795,7 +795,7 @@
       {
         "id": "event-25",
         "sequence": 28,
-        "created_at": "2026-09-23T10:47:10.514312Z",
+        "created_at": "2026-09-23T11:06:49.795048Z",
         "phase": "pilots",
         "title": "Pilot selected",
         "message": "tariff_10/HIGH → tariff_9, push, requested 200. Decision-relevant uncertainty; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 158648.57 CU."
@@ -803,7 +803,7 @@
       {
         "id": "event-26",
         "sequence": 29,
-        "created_at": "2026-09-23T10:47:10.555396Z",
+        "created_at": "2026-09-23T11:06:49.855765Z",
         "phase": "pilots",
         "title": "Pilot observed",
         "message": "pilot-8: actual n=200, observed lift=0.03446; Posterior mean changed 0.00373 → 0.00867; portfolio recomputed with actual resource balances."
@@ -811,7 +811,7 @@
       {
         "id": "event-27",
         "sequence": 30,
-        "created_at": "2026-09-23T10:47:10.651304Z",
+        "created_at": "2026-09-23T11:06:50.180277Z",
         "phase": "planning",
         "title": "Portfolio updated",
         "message": "1 final campaigns; forecast net including pilots -53083.23 CU."
@@ -819,7 +819,7 @@
       {
         "id": "event-28",
         "sequence": 31,
-        "created_at": "2026-09-23T10:47:10.687254Z",
+        "created_at": "2026-09-23T11:06:50.256970Z",
         "phase": "pilots",
         "title": "Pilot selected",
         "message": "tariff_11/HIGH → tariff_9, push, requested 200. Decision-relevant uncertainty; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 91898.40 CU."
@@ -827,7 +827,7 @@
       {
         "id": "event-29",
         "sequence": 32,
-        "created_at": "2026-09-23T10:47:10.728056Z",
+        "created_at": "2026-09-23T11:06:50.339354Z",
         "phase": "pilots",
         "title": "Pilot observed",
         "message": "pilot-9: actual n=200, observed lift=0.04847; Posterior mean changed 0.00295 → 0.00991; portfolio recomputed with actual resource balances."
@@ -835,7 +835,7 @@
       {
         "id": "event-30",
         "sequence": 33,
-        "created_at": "2026-09-23T10:47:10.786430Z",
+        "created_at": "2026-09-23T11:06:50.486461Z",
         "phase": "planning",
         "title": "Portfolio updated",
         "message": "1 final campaigns; forecast net including pilots 137372.38 CU."
@@ -843,7 +843,7 @@
       {
         "id": "event-31",
         "sequence": 34,
-        "created_at": "2026-09-23T10:47:10.824575Z",
+        "created_at": "2026-09-23T11:06:50.568135Z",
         "phase": "pilots",
         "title": "Pilot selected",
         "message": "tariff_8/HIGH → tariff_12, push, requested 200. Decision-relevant uncertainty; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 77432.01 CU."
@@ -851,7 +851,7 @@
       {
         "id": "event-32",
         "sequence": 35,
-        "created_at": "2026-09-23T10:47:10.859303Z",
+        "created_at": "2026-09-23T11:06:50.662170Z",
         "phase": "pilots",
         "title": "Pilot observed",
         "message": "pilot-10: actual n=200, observed lift=0.02837; Posterior mean changed 0.00047 → 0.00438; portfolio recomputed with actual resource balances."
@@ -859,7 +859,7 @@
       {
         "id": "event-33",
         "sequence": 36,
-        "created_at": "2026-09-23T10:47:10.927564Z",
+        "created_at": "2026-09-23T11:06:50.827999Z",
         "phase": "planning",
         "title": "Portfolio updated",
         "message": "4 final campaigns; forecast net including pilots 179876.18 CU."
@@ -867,7 +867,7 @@
       {
         "id": "event-34",
         "sequence": 37,
-        "created_at": "2026-09-23T10:47:10.966463Z",
+        "created_at": "2026-09-23T11:06:50.898622Z",
         "phase": "pilots",
         "title": "Pilot selected",
         "message": "tariff_8/HIGH → tariff_11, push, requested 200. Decision-relevant uncertainty; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 62354.33 CU."
@@ -875,7 +875,7 @@
       {
         "id": "event-35",
         "sequence": 38,
-        "created_at": "2026-09-23T10:47:11.003345Z",
+        "created_at": "2026-09-23T11:06:50.952494Z",
         "phase": "pilots",
         "title": "Pilot observed",
         "message": "pilot-11: actual n=200, observed lift=0.02293; Posterior mean changed 0.00042 → 0.00335; portfolio recomputed with actual resource balances."
@@ -883,7 +883,7 @@
       {
         "id": "event-36",
         "sequence": 39,
-        "created_at": "2026-09-23T10:47:11.085411Z",
+        "created_at": "2026-09-23T11:06:51.122206Z",
         "phase": "planning",
         "title": "Portfolio updated",
         "message": "4 final campaigns; forecast net including pilots 178482.10 CU."
@@ -891,7 +891,7 @@
       {
         "id": "event-37",
         "sequence": 40,
-        "created_at": "2026-09-23T10:47:11.128301Z",
+        "created_at": "2026-09-23T11:06:51.186970Z",
         "phase": "pilots",
         "title": "Pilot selected",
         "message": "tariff_10/HIGH → tariff_9, push, requested 200. Decision-relevant uncertainty; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 48528.76 CU."
@@ -899,7 +899,7 @@
       {
         "id": "event-38",
         "sequence": 41,
-        "created_at": "2026-09-23T10:47:11.169501Z",
+        "created_at": "2026-09-23T11:06:51.241635Z",
         "phase": "pilots",
         "title": "Pilot observed",
         "message": "pilot-12: actual n=200, observed lift=-0.06427; Posterior mean changed 0.00790 → -0.00019; portfolio recomputed with actual resource balances."
@@ -907,7 +907,7 @@
       {
         "id": "event-39",
         "sequence": 42,
-        "created_at": "2026-09-23T10:47:11.231560Z",
+        "created_at": "2026-09-23T11:06:51.372993Z",
         "phase": "planning",
         "title": "Portfolio updated",
         "message": "1 final campaigns; forecast net including pilots 114662.28 CU."
@@ -915,7 +915,7 @@
       {
         "id": "event-40",
         "sequence": 43,
-        "created_at": "2026-09-23T10:47:11.269598Z",
+        "created_at": "2026-09-23T11:06:51.451683Z",
         "phase": "pilots",
         "title": "Pilot selected",
         "message": "tariff_10/HIGH → tariff_14, push, requested 200. Decision-relevant uncertainty; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 46802.45 CU."
@@ -923,7 +923,7 @@
       {
         "id": "event-41",
         "sequence": 44,
-        "created_at": "2026-09-23T10:47:11.310724Z",
+        "created_at": "2026-09-23T11:06:51.577397Z",
         "phase": "pilots",
         "title": "Pilot observed",
         "message": "pilot-13: actual n=200, observed lift=-0.00313; Posterior mean changed 0.00000 → -0.00036; portfolio recomputed with actual resource balances."
@@ -931,7 +931,7 @@
       {
         "id": "event-42",
         "sequence": 45,
-        "created_at": "2026-09-23T10:47:11.393509Z",
+        "created_at": "2026-09-23T11:06:51.758519Z",
         "phase": "planning",
         "title": "Portfolio updated",
         "message": "4 final campaigns; forecast net including pilots 146786.01 CU."
@@ -939,7 +939,7 @@
       {
         "id": "event-43",
         "sequence": 46,
-        "created_at": "2026-09-23T10:47:11.442209Z",
+        "created_at": "2026-09-23T11:06:51.857213Z",
         "phase": "pilots",
         "title": "Pilot selected",
         "message": "tariff_10/HIGH → tariff_15, push, requested 200. Decision-relevant uncertainty; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 38320.11 CU."
@@ -947,7 +947,7 @@
       {
         "id": "event-44",
         "sequence": 47,
-        "created_at": "2026-09-23T10:47:11.480186Z",
+        "created_at": "2026-09-23T11:06:51.922135Z",
         "phase": "pilots",
         "title": "Pilot observed",
         "message": "pilot-14: actual n=200, observed lift=-0.02320; Posterior mean changed 0.00000 → -0.00250; portfolio recomputed with actual resource balances."
@@ -955,7 +955,7 @@
       {
         "id": "event-45",
         "sequence": 48,
-        "created_at": "2026-09-23T10:47:11.582154Z",
+        "created_at": "2026-09-23T11:06:52.149954Z",
         "phase": "planning",
         "title": "Portfolio updated",
         "message": "4 final campaigns; forecast net including pilots 139566.76 CU."
@@ -963,7 +963,7 @@
       {
         "id": "event-46",
         "sequence": 49,
-        "created_at": "2026-09-23T10:47:11.666164Z",
+        "created_at": "2026-09-23T11:06:52.299673Z",
         "phase": "pilots",
         "title": "Pilot selected",
         "message": "tariff_8/HIGH → tariff_12, push, requested 200. Decision-relevant uncertainty; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 32096.07 CU."
@@ -971,7 +971,7 @@
       {
         "id": "event-47",
         "sequence": 50,
-        "created_at": "2026-09-23T10:47:11.734923Z",
+        "created_at": "2026-09-23T11:06:52.560526Z",
         "phase": "pilots",
         "title": "Pilot observed",
         "message": "pilot-15: actual n=200, observed lift=0.07129; Posterior mean changed 0.00343 → 0.00979; portfolio recomputed with actual resource balances."
@@ -979,7 +979,7 @@
       {
         "id": "event-48",
         "sequence": 51,
-        "created_at": "2026-09-23T10:47:11.874438Z",
+        "created_at": "2026-09-23T11:06:52.853698Z",
         "phase": "planning",
         "title": "Portfolio updated",
         "message": "5 final campaigns; forecast net including pilots 490245.11 CU."
@@ -987,7 +987,7 @@
       {
         "id": "event-49",
         "sequence": 52,
-        "created_at": "2026-09-23T10:47:11.933088Z",
+        "created_at": "2026-09-23T11:06:52.992238Z",
         "phase": "pilots",
         "title": "Pilot selected",
         "message": "tariff_8/HIGH → tariff_10, push, requested 200. Decision-relevant uncertainty; compared sample sizes 40/100/200 and available unsaturated channels; heuristic value 45824.34 CU."
@@ -995,7 +995,7 @@
       {
         "id": "event-50",
         "sequence": 53,
-        "created_at": "2026-09-23T10:47:12.024311Z",
+        "created_at": "2026-09-23T11:06:53.181948Z",
         "phase": "pilots",
         "title": "Pilot observed",
         "message": "pilot-16: actual n=200, observed lift=-0.00557; Posterior mean changed 0.00752 → 0.00574; portfolio recomputed with actual resource balances."
@@ -1003,7 +1003,7 @@
       {
         "id": "event-51",
         "sequence": 54,
-        "created_at": "2026-09-23T10:47:12.180267Z",
+        "created_at": "2026-09-23T11:06:53.387510Z",
         "phase": "planning",
         "title": "Portfolio updated",
         "message": "5 final campaigns; forecast net including pilots 469183.49 CU."
@@ -1011,23 +1011,23 @@
       {
         "id": "event-52",
         "sequence": 55,
-        "created_at": "2026-09-23T10:47:12.362312Z",
+        "created_at": "2026-09-23T11:06:53.816188Z",
         "phase": "planning",
         "title": "Final plan validated",
-        "message": "5 campaigns, 16 successful pilots, runtime 4.073s. Official evaluation runs separately."
+        "message": "5 campaigns, 16 successful pilots, runtime 7.792s. Official evaluation runs separately."
       },
       {
-        "id": "f74dc8ec9e71451d8f91fe9742e11bf4",
+        "id": "9717fb0323134d9fa960a2ebf791b2f2",
         "sequence": 56,
-        "created_at": "2026-09-23T10:47:12.424919Z",
+        "created_at": "2026-09-23T11:06:54.034130Z",
         "phase": "evaluation",
         "title": "evaluation",
         "message": "План зафиксирован; независимая оценка локальным harness."
       },
       {
-        "id": "b347777f22de4bbc96eb9d9b7e7e6fb2",
+        "id": "d28b7cfee91d477883da1c2a3626d76c",
         "sequence": 57,
-        "created_at": "2026-09-23T10:47:12.985886Z",
+        "created_at": "2026-09-23T11:06:55.264633Z",
         "phase": "completed",
         "title": "completed",
         "message": "План проверен, локальная оценка и экспорт сохранены."
@@ -1050,7 +1050,7 @@
       "unique_customers": 8620,
       "n_pilots": 16,
       "n_final_campaigns": 5,
-      "runtime_seconds": 4.982158400001936
+      "runtime_seconds": 9.622619599977043
     },
     "warnings": [
       {

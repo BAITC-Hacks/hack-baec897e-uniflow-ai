@@ -62,7 +62,7 @@ test('lost connection keeps run and recovers without a second POST', async ({ pa
   await page.getByRole('button', { name: 'Подобрать кампании' }).click()
   await expect(page).toHaveURL(/\/runs\/[0-9a-f]{32}$/)
   const runId = page.url().split('/runs/')[1]
-  await expect(page.getByRole('heading', { name: 'Агент проверяет гипотезы' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'Программа подбирает предложения' })).toBeVisible()
   outage = true
   await expect(page.getByText('Обновление данных приостановлено — показан последний ответ')).toBeVisible({ timeout: 15000 })
   await page.unroute('**/api/v1/runs/*')

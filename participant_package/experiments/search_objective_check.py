@@ -14,13 +14,13 @@ import numpy as np
 
 from agent import Agent
 from mock_environment import make_mock_env
-from uniflow.portfolio import optimize, replay_plan
+from orbitduo.portfolio import optimize, replay_plan
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
 def hashes():
-    return {f"uniflow/{name}": hashlib.sha256((ROOT / "uniflow" / name).read_bytes()).hexdigest()
+    return {f"orbitduo/{name}": hashlib.sha256((ROOT / "orbitduo" / name).read_bytes()).hexdigest()
             for name in ("agent_core.py", "posterior.py", "candidates.py", "portfolio.py")}
 
 

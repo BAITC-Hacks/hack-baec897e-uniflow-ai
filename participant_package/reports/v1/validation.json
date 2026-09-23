@@ -6,8 +6,8 @@
     "python make_submission.py (twice; identical bytes)",
     "python -m pytest -q (participant_package)",
     "python -m pytest -q backend/tests",
-    "python -m uniflow.audit",
-    "python -m uniflow.evaluation",
+    "python -m orbitduo.audit",
+    "python -m orbitduo.evaluation",
     "python -m experiments.benchmark --runs 10 --scenario-runs 3",
     "python -m experiments.sensitivity --runs 3",
     "python -m experiments.diverse_fixed",
@@ -167,14 +167,14 @@
   },
   "decision_source_sha256": {
     "participant_package/agent.py": "356b3015cbbb2362704c6d84d2b20f0fa051550c73572fe13e16adf6fa2e2733",
-    "participant_package/uniflow/__init__.py": "0bbf9388678e04808700c7624d9e4d60ad0cdcc31d85534ac287b2b4aa656aeb",
-    "participant_package/uniflow/agent_core.py": "8debcc5f3f688a9d112d70041a89878b98beb40056d85541444025320ed915b4",
-    "participant_package/uniflow/audit.py": "e24b9be94fb0ce168289a8bd6ef53daf3ce13807c5788bb80378d7ccb68ad9f5",
-    "participant_package/uniflow/candidates.py": "ba8a38bdb0f283ca1f36712fcf2b92eec8077be83fb9a707e7df949a29fddee8",
-    "participant_package/uniflow/evaluation.py": "20c0cb6628d2ea221b00378609f1ea1f396e6659d334bb3106fd48cf983c5a8b",
-    "participant_package/uniflow/portfolio.py": "0309130147fda4e45827fce8252c0a32b78a55a993c046d2a6f86c6b35ff7716",
-    "participant_package/uniflow/posterior.py": "5677b6e97125c528bd0ebdd0f4f9728ae6e11e162108a5aec5f08cf53809b8ad",
-    "participant_package/uniflow/service_data.py": "611772d230ce7ba481fa844337620311f4da4b085d907ab73257263eed14e2e3",
+    "participant_package/orbitduo/__init__.py": "0bbf9388678e04808700c7624d9e4d60ad0cdcc31d85534ac287b2b4aa656aeb",
+    "participant_package/orbitduo/agent_core.py": "8debcc5f3f688a9d112d70041a89878b98beb40056d85541444025320ed915b4",
+    "participant_package/orbitduo/audit.py": "e24b9be94fb0ce168289a8bd6ef53daf3ce13807c5788bb80378d7ccb68ad9f5",
+    "participant_package/orbitduo/candidates.py": "ba8a38bdb0f283ca1f36712fcf2b92eec8077be83fb9a707e7df949a29fddee8",
+    "participant_package/orbitduo/evaluation.py": "20c0cb6628d2ea221b00378609f1ea1f396e6659d334bb3106fd48cf983c5a8b",
+    "participant_package/orbitduo/portfolio.py": "0309130147fda4e45827fce8252c0a32b78a55a993c046d2a6f86c6b35ff7716",
+    "participant_package/orbitduo/posterior.py": "5677b6e97125c528bd0ebdd0f4f9728ae6e11e162108a5aec5f08cf53809b8ad",
+    "participant_package/orbitduo/service_data.py": "611772d230ce7ba481fa844337620311f4da4b085d907ab73257263eed14e2e3",
     "backend/__init__.py": "04e107e5189e2408172e7793d849bcae1be82fe4725fe5eebd0cabba1bbdae9b",
     "backend/app.py": "841c96986ace94c0904c5a320bd46fd85401cb324cc51a503ac68eab772c6747",
     "backend/models.py": "8ba6a1a7e9e2ab6c77763e210d9d6ac3cc3dfcc155b3dfaec394bc984658174b",
@@ -186,5 +186,9 @@
   "real_api_csv_matches_submission_bytes": true,
   "frontend_files_modified": false,
   "frontend_joint_acceptance_completed": false,
-  "frontend_limitation": "Frontend is owned by the second developer and is absent in this workspace; live backend HTTP contract was verified independently."
+  "frontend_limitation": "Frontend is owned by the second developer and is absent in this workspace; live backend HTTP contract was verified independently.",
+  "branding_migration": {
+    "archive": "participant_package/experiments/archive/pre_branding.tar.gz",
+    "note": "Presentation names normalized. Recorded old source hashes refer to the exact archived release, not the renamed current sources. Current verification is regenerated separately."
+  }
 }

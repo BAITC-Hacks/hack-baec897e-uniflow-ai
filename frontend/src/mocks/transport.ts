@@ -8,10 +8,43 @@ const json = (body: unknown, status = 200) => new Response(JSON.stringify(body),
 const error = (status: number, code: string, message: string, details: Record<string, unknown> = {}) =>
   json({ error: { code, message, details, request_id: 'demo-request' } }, status)
 
-function readRuns(): StoredRun[] {
-  try { return JSON.parse(localStorage.getItem(storageKey) || '[]') as StoredRun[] } catch { return [] }
+let memoryRuns: StoredRun[] = []
+let memoryOnly = false
+
+const isRecord = (value: unknown): value is Record<string, unknown> => typeof value === 'object' && value !== null && !Array.isArray(value)
+function isConfig(value: unknown): value is RunConfig {
+  return isRecord(value) && typeof value.seed === 'number' && Number.isInteger(value.seed) && value.seed >= 0 && value.seed <= 2147483647
+    && (value.risk_profile === 'balanced' || value.risk_profile === 'conservative')
 }
-function saveRuns(runs: StoredRun[]) { localStorage.setItem(storageKey, JSON.stringify(runs)) }
+function isStoredRun(value: unknown): value is StoredRun {
+  return isRecord(value) && typeof value.id === 'string' && value.id.length > 0 && typeof value.key === 'string' && value.key.length > 0
+    && typeof value.created_at === 'string' && Number.isFinite(Date.parse(value.created_at)) && isConfig(value.config)
+}
+function readRuns(): StoredRun[] {
+  if (memoryOnly) return memoryRuns
+  let stored: string | null
+  try { stored = localStorage.getItem(storageKey) } catch { memoryOnly = true; return memoryRuns }
+  try {
+    const decoded: unknown = JSON.parse(stored || '[]')
+    memoryRuns = Array.isArray(decoded) ? decoded.filter(isStoredRun).sort((a, b) => Date.parse(b.created_at) - Date.parse(a.created_at)) : []
+  } catch { memoryRuns = [] }
+  return memoryRuns
+}
+function saveRuns(runs: StoredRun[]) {
+  memoryRuns = runs
+  if (!memoryOnly) {
+    try { localStorage.setItem(storageKey, JSON.stringify(runs)) } catch { memoryOnly = true }
+  }
+}
+function snapshotFor(run: StoredRun) {
+  const snapshot = buildSnapshot(run)
+  if (memoryOnly) snapshot.warnings.push({ code: 'DEMO_STORAGE_UNAVAILABLE', severity: 'warning', affected_count: null,
+    message: 'Браузер не разрешил сохранить историю. Демонстрационный запуск доступен в этой вкладке до обновления страницы.' })
+  return snapshot
+}
+function emptyFixture() {
+  try { return localStorage.getItem('orbitduo-demo-fixture') === 'empty' } catch { return false }
+}
 
 function csvEscape(value: string | null): string {
   const cell = value ?? ''
@@ -33,28 +66,29 @@ export async function demoFetch(path: string, init: RequestInit = {}): Promise<R
   const pathname = route.pathname.replace(/^\/api\/v1/, '')
   if (pathname === '/health' && init.method !== 'POST') return json({ status: 'ok', api_version: '1', mode: 'demo' })
   if (pathname === '/overview' && init.method !== 'POST') {
-    if (localStorage.getItem('orbitduo-demo-fixture') === 'empty') return json({ ...overview, dataset: { ...overview.dataset, customer_count: 0, baseline_revenue: 0, eligible_customer_count: 0, excluded_customer_count: 0, notices: [] }, segments: [] })
+    if (emptyFixture()) return json({ ...overview, dataset: { ...overview.dataset, customer_count: 0, baseline_revenue: 0, eligible_customer_count: 0, excluded_customer_count: 0, notices: [] }, segments: [] })
     return json(overview)
   }
   if (pathname === '/runs' && init.method === 'POST') {
     const key = new Headers(init.headers).get('Idempotency-Key')
     if (!key) return error(422, 'VALIDATION_ERROR', 'Не указан Idempotency-Key.')
-    let config: RunConfig
-    try { config = JSON.parse(String(init.body)) as RunConfig } catch { return error(422, 'VALIDATION_ERROR', 'Неверное тело запроса.') }
-    if (!Number.isInteger(config.seed) || config.seed < 0 || config.seed > 2147483647 || !['balanced', 'conservative'].includes(config.risk_profile))
+    let parsed: unknown
+    try { parsed = JSON.parse(String(init.body)) } catch { return error(422, 'VALIDATION_ERROR', 'Неверное тело запроса.') }
+    if (!isConfig(parsed) || Object.keys(parsed).some(field => field !== 'seed' && field !== 'risk_profile'))
       return error(422, 'VALIDATION_ERROR', 'Неверные настройки запуска.')
+    const config: RunConfig = { seed: parsed.seed, risk_profile: parsed.risk_profile }
     const runs = readRuns()
     const same = runs.find(run => run.key === key)
     if (same) {
-      if (JSON.stringify(same.config) !== JSON.stringify(config)) return error(409, 'IDEMPOTENCY_CONFLICT', 'Ключ уже использован с другими настройками.')
-      const snapshot = buildSnapshot(same)
+      if (same.config.seed !== config.seed || same.config.risk_profile !== config.risk_profile) return error(409, 'IDEMPOTENCY_CONFLICT', 'Ключ уже использован с другими настройками.')
+      const snapshot = snapshotFor(same)
       return json(snapshot, snapshot.status === 'running' || snapshot.status === 'queued' ? 202 : 200)
     }
     const active = runs.find(run => !['completed', 'failed'].includes(buildSnapshot(run).status))
     if (active) return error(409, 'RUN_ALREADY_ACTIVE', 'Расчёт уже выполняется.', { active_run_id: active.id })
     const run: StoredRun = { id: crypto.randomUUID(), key, config, created_at: new Date().toISOString() }
     saveRuns([run, ...runs])
-    return json(buildSnapshot(run), 202)
+    return json(snapshotFor(run), 202)
   }
   if (pathname === '/runs' && init.method !== 'POST') {
     const limit = Number(route.searchParams.get('limit') || 20)
@@ -69,7 +103,7 @@ export async function demoFetch(path: string, init: RequestInit = {}): Promise<R
   if (match && init.method !== 'POST') {
     const run = readRuns().find(item => item.id === match[1])
     if (!run) return error(404, 'RUN_NOT_FOUND', 'Запуск не найден.')
-    const snapshot = buildSnapshot(run)
+    const snapshot = snapshotFor(run)
     if (!match[2]) return json(snapshot)
     if (snapshot.status !== 'completed') return error(409, 'RUN_NOT_READY', 'План ещё рассчитывается.')
     const isCsv = match[2] === 'campaigns.csv'

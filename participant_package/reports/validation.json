@@ -1,6 +1,7 @@
 {
-  "generated_at": "2026-09-23T10:50:06.569394Z",
-  "release": "v2, advanced_search=True; frozen after broader paired comparison",
+  "generated_at": "2026-09-23T11:17:26.072483+00:00",
+  "product": "OrbitDuo Campaign Studio",
+  "release": "v2 advanced_search=True; branding, API hardening and Docker acceptance; strategy parameters unchanged",
   "python": "3.13.5",
   "versions": {
     "numpy": "2.5.3",
@@ -12,31 +13,54 @@
     "uvicorn": "0.53.0",
     "httpx": "0.28.1"
   },
+  "linux_container_environment": {
+    "python": "3.13.15",
+    "packages": {
+      "numpy": "2.5.3",
+      "pandas": "3.0.6",
+      "pytest": "9.1.1",
+      "fastapi": "0.141.1",
+      "pydantic": "2.13.5",
+      "starlette": "1.7.0",
+      "uvicorn": "0.53.0",
+      "httpx": "0.28.1"
+    }
+  },
   "commands_completed": [
     "python local_eval.py",
     "python local_eval.py --runs 10",
     "python make_submission.py (twice; identical bytes)",
     "python -m pytest -q (participant_package)",
     "python -m pytest backend/tests -q",
-    "python -m uniflow.evaluation",
+    "python -m orbitduo.evaluation",
     "python -m experiments.verify_delivery",
-    "python -m experiments.improvement --scope full --versions new (validated cached v1)",
-    "python -m experiments.improvement --scope model_holdout --versions new (validated cached v1)",
-    "python -m experiments.improvement --scope final_holdout --versions new (validated cached v1)",
-    "python -m experiments.v2_ablation",
+    "python -m experiments.improvement --scope full --versions both",
+    "python -m experiments.improvement --scope model_holdout --versions both",
+    "python -m experiments.improvement --scope final_holdout --versions both",
     "python -m experiments.publish_reports",
     "python -m backend.final_smoke",
-    "python -m backend.benchmark_storage",
-    "python -m pip check",
-    "git diff --check"
+    "docker compose up -d --build --wait --wait-timeout 180",
+    "python -m scripts.verify_stack --restart",
+    "docker compose run (isolated temporary database): python -m pytest participant_package/tests backend/tests -q -p no:cacheprovider"
   ],
   "tests": {
-    "participant_passed": 66,
-    "backend_passed": 31,
-    "failed": 0,
-    "participant_seconds": 6.32,
-    "backend_seconds": 11.48,
-    "warning": "Installed Starlette TestClient deprecates httpx fallback; real TCP HTTP also passes."
+    "windows": {
+      "participant_passed": 66,
+      "backend_passed": 36,
+      "failed": 0,
+      "participant_seconds": 7.94,
+      "backend_seconds": 10.81
+    },
+    "linux_docker": {
+      "passed": 102,
+      "failed": 0,
+      "seconds": 14.73
+    },
+    "frontend_unit_passed": 10,
+    "frontend_demo_browser_passed": 7,
+    "frontend_real_api_browser_passed": 1,
+    "frontend_build_and_lint_passed": true,
+    "warning": "Starlette TestClient emits a deprecation warning about its httpx fallback. Real TCP HTTP and browser acceptance also passed."
   },
   "dataset_id": "1a2ed6872b5591be0f81750d84e61fe7288336fafc77e57d1d4c0c0111ebd177",
   "standard_seed42": {
@@ -48,9 +72,10 @@
     "unique_customers": 8620,
     "n_pilots": 16,
     "n_final_campaigns": 5,
-    "runtime_seconds": 4.220474200032186
+    "runtime_seconds": 5.281408799986821
   },
   "comparison_measurements": 92,
+  "comparison_all_conform": true,
   "comparison_summaries": {
     "improvement": [
       {
@@ -68,8 +93,8 @@
         "mean_unique_customers": 10009.666666666666,
         "mean_n_pilots": 16.0,
         "mean_n_final_campaigns": 7.333333333333333,
-        "mean_runtime_seconds": 3.2640455666502626,
-        "max_runtime_seconds": 3.627603299973998
+        "mean_runtime_seconds": 3.1265959666731455,
+        "max_runtime_seconds": 3.4509054999798536
       },
       {
         "scenario": "low_conversion",
@@ -86,8 +111,8 @@
         "mean_unique_customers": 11508.666666666666,
         "mean_n_pilots": 16.0,
         "mean_n_final_campaigns": 7.666666666666667,
-        "mean_runtime_seconds": 5.59667016666693,
-        "max_runtime_seconds": 7.064795799960848
+        "mean_runtime_seconds": 8.17347839998547,
+        "max_runtime_seconds": 11.290491899999324
       },
       {
         "scenario": "mock_heldout",
@@ -104,8 +129,8 @@
         "mean_unique_customers": 12213.0,
         "mean_n_pilots": 16.0,
         "mean_n_final_campaigns": 7.5,
-        "mean_runtime_seconds": 3.0593585099850316,
-        "max_runtime_seconds": 4.200808199995663
+        "mean_runtime_seconds": 7.681219510000664,
+        "max_runtime_seconds": 13.49643840000499
       },
       {
         "scenario": "mock_heldout",
@@ -114,7 +139,7 @@
         "mean_net": 274342.8184163697,
         "median_net": 243001.47836757524,
         "min_net": -313555.37672237767,
-        "p10_net": -208521.64829847476,
+        "p10_net": -208521.64829847479,
         "negative_fraction": 0.2,
         "all_conform": true,
         "mean_communication_cost": 99729.4,
@@ -122,8 +147,8 @@
         "mean_unique_customers": 11411.0,
         "mean_n_pilots": 16.0,
         "mean_n_final_campaigns": 7.1,
-        "mean_runtime_seconds": 5.2934746500046455,
-        "max_runtime_seconds": 6.637591400009114
+        "mean_runtime_seconds": 15.226658430002862,
+        "max_runtime_seconds": 22.650812300038524
       },
       {
         "scenario": "mock_tuning",
@@ -140,8 +165,8 @@
         "mean_unique_customers": 10460.9,
         "mean_n_pilots": 16.0,
         "mean_n_final_campaigns": 5.9,
-        "mean_runtime_seconds": 3.100539739994565,
-        "max_runtime_seconds": 4.553602600004524
+        "mean_runtime_seconds": 5.7190396300051365,
+        "max_runtime_seconds": 19.2127565999981
       },
       {
         "scenario": "mock_tuning",
@@ -158,8 +183,8 @@
         "mean_unique_customers": 11748.3,
         "mean_n_pilots": 16.0,
         "mean_n_final_campaigns": 7.7,
-        "mean_runtime_seconds": 5.786522060009884,
-        "max_runtime_seconds": 7.237841700029094
+        "mean_runtime_seconds": 11.146621990000131,
+        "max_runtime_seconds": 21.667860099987593
       },
       {
         "scenario": "near_zero",
@@ -176,8 +201,8 @@
         "mean_unique_customers": 10083.0,
         "mean_n_pilots": 16.0,
         "mean_n_final_campaigns": 7.0,
-        "mean_runtime_seconds": 2.6198330666908682,
-        "max_runtime_seconds": 2.8499108999967575
+        "mean_runtime_seconds": 3.981002733344212,
+        "max_runtime_seconds": 4.9177277000271715
       },
       {
         "scenario": "near_zero",
@@ -194,8 +219,8 @@
         "mean_unique_customers": 11508.666666666666,
         "mean_n_pilots": 16.0,
         "mean_n_final_campaigns": 7.666666666666667,
-        "mean_runtime_seconds": 5.96538143333358,
-        "max_runtime_seconds": 7.649190700030886
+        "mean_runtime_seconds": 7.347008499995961,
+        "max_runtime_seconds": 9.2299275000114
       },
       {
         "scenario": "permuted_leaders",
@@ -212,8 +237,8 @@
         "mean_unique_customers": 11158.0,
         "mean_n_pilots": 16.0,
         "mean_n_final_campaigns": 8.666666666666666,
-        "mean_runtime_seconds": 2.4560281333203116,
-        "max_runtime_seconds": 2.560883699974511
+        "mean_runtime_seconds": 6.72654559998773,
+        "max_runtime_seconds": 10.173880899965297
       },
       {
         "scenario": "permuted_leaders",
@@ -230,8 +255,8 @@
         "mean_unique_customers": 11575.333333333334,
         "mean_n_pilots": 16.0,
         "mean_n_final_campaigns": 7.333333333333333,
-        "mean_runtime_seconds": 5.320714933332056,
-        "max_runtime_seconds": 6.123542300018016
+        "mean_runtime_seconds": 10.95630579998639,
+        "max_runtime_seconds": 13.404445399995893
       },
       {
         "scenario": "saturated_calls",
@@ -248,17 +273,17 @@
         "mean_unique_customers": 12966.0,
         "mean_n_pilots": 16.0,
         "mean_n_final_campaigns": 5.666666666666667,
-        "mean_runtime_seconds": 2.367404233353833,
-        "max_runtime_seconds": 2.4620853000087664
+        "mean_runtime_seconds": 3.64692769998995,
+        "max_runtime_seconds": 4.118194199982099
       },
       {
         "scenario": "saturated_calls",
         "strategy": "v1",
         "runs": 3,
-        "mean_net": 19390072.16816647,
-        "median_net": 19800006.397464637,
-        "min_net": 18439804.71140508,
-        "p10_net": 18711845.04861699,
+        "mean_net": 19390072.168166462,
+        "median_net": 19800006.397464633,
+        "min_net": 18439804.711405076,
+        "p10_net": 18711845.048616987,
         "negative_fraction": 0.0,
         "all_conform": true,
         "mean_communication_cost": 98878.66666666667,
@@ -266,8 +291,8 @@
         "mean_unique_customers": 12318.333333333334,
         "mean_n_pilots": 16.0,
         "mean_n_final_campaigns": 5.0,
-        "mean_runtime_seconds": 4.026284766674507,
-        "max_runtime_seconds": 4.074540900008287
+        "mean_runtime_seconds": 7.675582033349201,
+        "max_runtime_seconds": 10.66930200002389
       },
       {
         "scenario": "sign_reversed",
@@ -284,8 +309,8 @@
         "mean_unique_customers": 9551.666666666666,
         "mean_n_pilots": 16.0,
         "mean_n_final_campaigns": 3.6666666666666665,
-        "mean_runtime_seconds": 2.435462466654523,
-        "max_runtime_seconds": 2.5528650999767706
+        "mean_runtime_seconds": 4.447189066694894,
+        "max_runtime_seconds": 4.869999800052028
       },
       {
         "scenario": "sign_reversed",
@@ -302,8 +327,8 @@
         "mean_unique_customers": 11442.0,
         "mean_n_pilots": 16.0,
         "mean_n_final_campaigns": 7.0,
-        "mean_runtime_seconds": 5.443458233319689,
-        "max_runtime_seconds": 6.671952100005001
+        "mean_runtime_seconds": 13.711885900003836,
+        "max_runtime_seconds": 24.80715040001087
       },
       {
         "scenario": "weak_history",
@@ -320,8 +345,8 @@
         "mean_unique_customers": 11693.0,
         "mean_n_pilots": 16.0,
         "mean_n_final_campaigns": 4.666666666666667,
-        "mean_runtime_seconds": 2.6218933000151687,
-        "max_runtime_seconds": 2.91361320001306
+        "mean_runtime_seconds": 2.827284333334925,
+        "max_runtime_seconds": 3.5747858000104316
       },
       {
         "scenario": "weak_history",
@@ -329,8 +354,8 @@
         "runs": 3,
         "mean_net": 10982842.829793597,
         "median_net": 11013313.47243859,
-        "min_net": 10203794.828981737,
-        "p10_net": 10365698.557673108,
+        "min_net": 10203794.828981735,
+        "p10_net": 10365698.557673106,
         "negative_fraction": 0.0,
         "all_conform": true,
         "mean_communication_cost": 100000.0,
@@ -338,8 +363,8 @@
         "mean_unique_customers": 12280.0,
         "mean_n_pilots": 16.0,
         "mean_n_final_campaigns": 5.666666666666667,
-        "mean_runtime_seconds": 4.701956000004429,
-        "max_runtime_seconds": 5.04346210003132
+        "mean_runtime_seconds": 6.290347699987858,
+        "max_runtime_seconds": 7.097600899985991
       }
     ],
     "improvement_model_holdout": [
@@ -358,17 +383,17 @@
         "mean_unique_customers": 13785.0,
         "mean_n_pilots": 16.0,
         "mean_n_final_campaigns": 8.0,
-        "mean_runtime_seconds": 2.692309200007003,
-        "max_runtime_seconds": 2.692309200007003
+        "mean_runtime_seconds": 4.574405900028069,
+        "max_runtime_seconds": 4.574405900028069
       },
       {
         "scenario": "model_holdout_permuted_leaders",
         "strategy": "v1",
         "runs": 1,
-        "mean_net": -904721.136927136,
-        "median_net": -904721.136927136,
-        "min_net": -904721.136927136,
-        "p10_net": -904721.136927136,
+        "mean_net": -904721.1369271361,
+        "median_net": -904721.1369271361,
+        "min_net": -904721.1369271361,
+        "p10_net": -904721.1369271361,
         "negative_fraction": 1.0,
         "all_conform": true,
         "mean_communication_cost": 100000.0,
@@ -376,8 +401,8 @@
         "mean_unique_customers": 12046.0,
         "mean_n_pilots": 16.0,
         "mean_n_final_campaigns": 10.0,
-        "mean_runtime_seconds": 5.323716800019611,
-        "max_runtime_seconds": 5.323716800019611
+        "mean_runtime_seconds": 10.30259069998283,
+        "max_runtime_seconds": 10.30259069998283
       },
       {
         "scenario": "model_holdout_saturated_calls",
@@ -394,8 +419,8 @@
         "mean_unique_customers": 12290.0,
         "mean_n_pilots": 16.0,
         "mean_n_final_campaigns": 5.0,
-        "mean_runtime_seconds": 3.732652099977713,
-        "max_runtime_seconds": 3.732652099977713
+        "mean_runtime_seconds": 4.001531199959572,
+        "max_runtime_seconds": 4.001531199959572
       },
       {
         "scenario": "model_holdout_saturated_calls",
@@ -412,8 +437,8 @@
         "mean_unique_customers": 12125.0,
         "mean_n_pilots": 16.0,
         "mean_n_final_campaigns": 5.0,
-        "mean_runtime_seconds": 4.69330829998944,
-        "max_runtime_seconds": 4.69330829998944
+        "mean_runtime_seconds": 7.262102300010156,
+        "max_runtime_seconds": 7.262102300010156
       },
       {
         "scenario": "model_holdout_weak_history",
@@ -430,8 +455,8 @@
         "mean_unique_customers": 12384.0,
         "mean_n_pilots": 16.0,
         "mean_n_final_campaigns": 6.0,
-        "mean_runtime_seconds": 3.1556129999808036,
-        "max_runtime_seconds": 3.1556129999808036
+        "mean_runtime_seconds": 5.251284999947529,
+        "max_runtime_seconds": 5.251284999947529
       },
       {
         "scenario": "model_holdout_weak_history",
@@ -448,8 +473,8 @@
         "mean_unique_customers": 11505.0,
         "mean_n_pilots": 16.0,
         "mean_n_final_campaigns": 7.0,
-        "mean_runtime_seconds": 4.443440500006545,
-        "max_runtime_seconds": 4.443440500006545
+        "mean_runtime_seconds": 9.895989899989218,
+        "max_runtime_seconds": 9.895989899989218
       }
     ],
     "improvement_final_holdout": [
@@ -468,8 +493,8 @@
         "mean_unique_customers": 10909.8,
         "mean_n_pilots": 16.0,
         "mean_n_final_campaigns": 8.8,
-        "mean_runtime_seconds": 2.566049119993113,
-        "max_runtime_seconds": 2.899167600029614
+        "mean_runtime_seconds": 4.578740060015116,
+        "max_runtime_seconds": 6.121037200035062
       },
       {
         "scenario": "mock_fresh",
@@ -486,139 +511,16 @@
         "mean_unique_customers": 11442.4,
         "mean_n_pilots": 16.0,
         "mean_n_final_campaigns": 9.2,
-        "mean_runtime_seconds": 5.663279919989873,
-        "max_runtime_seconds": 6.578577400010545
+        "mean_runtime_seconds": 10.297496860008687,
+        "max_runtime_seconds": 15.504042199987452
       }
     ]
   },
-  "ablation": [
-    {
-      "scenario": "mock",
-      "strategy": "basic_planner",
-      "runs": 3,
-      "mean_net": 1244620.914802104,
-      "median_net": 1266292.5412997846,
-      "min_net": 944818.0037831955,
-      "p10_net": 1009112.9112865133,
-      "negative_fraction": 0.0,
-      "all_conform": true,
-      "mean_communication_cost": 64332.666666666664,
-      "mean_total_contacts": 11532.666666666666,
-      "mean_unique_customers": 10520.333333333334,
-      "mean_n_pilots": 16.0,
-      "mean_n_final_campaigns": 9.333333333333334,
-      "mean_runtime_seconds": 2.9754595000025197,
-      "max_runtime_seconds": 3.13072800001828
-    },
-    {
-      "scenario": "mock",
-      "strategy": "fixed_diverse",
-      "runs": 3,
-      "mean_net": 738438.2255411047,
-      "median_net": 760016.6757896383,
-      "min_net": 578471.0000429137,
-      "p10_net": 614780.1351922586,
-      "negative_fraction": 0.0,
-      "all_conform": true,
-      "mean_communication_cost": 89981.33333333333,
-      "mean_total_contacts": 13787.0,
-      "mean_unique_customers": 12059.333333333334,
-      "mean_n_pilots": 16.0,
-      "mean_n_final_campaigns": 10.0,
-      "mean_runtime_seconds": 2.616415199978898,
-      "max_runtime_seconds": 2.6931517999619246
-    },
-    {
-      "scenario": "mock",
-      "strategy": "fixed_prior",
-      "runs": 3,
-      "mean_net": 522876.2832336028,
-      "median_net": 429636.8501411567,
-      "min_net": 170979.3138876002,
-      "p10_net": 222710.8211383115,
-      "negative_fraction": 0.0,
-      "all_conform": true,
-      "mean_communication_cost": 95760.0,
-      "mean_total_contacts": 15000.0,
-      "mean_unique_customers": 12355.666666666666,
-      "mean_n_pilots": 16.0,
-      "mean_n_final_campaigns": 7.0,
-      "mean_runtime_seconds": 3.978777866674742,
-      "max_runtime_seconds": 4.671346799994353
-    },
-    {
-      "scenario": "mock",
-      "strategy": "no_history",
-      "runs": 3,
-      "mean_net": -189142.002975784,
-      "median_net": -162036.79849724728,
-      "min_net": -257237.34770785444,
-      "p10_net": -238197.237865733,
-      "negative_fraction": 1.0,
-      "all_conform": true,
-      "mean_communication_cost": 20000.0,
-      "mean_total_contacts": 5431.0,
-      "mean_unique_customers": 4465.333333333333,
-      "mean_n_pilots": 16.0,
-      "mean_n_final_campaigns": 1.6666666666666667,
-      "mean_runtime_seconds": 2.782017266668845,
-      "max_runtime_seconds": 3.637514200003352
-    },
-    {
-      "scenario": "mock",
-      "strategy": "no_risk_penalty",
-      "runs": 3,
-      "mean_net": 666206.8113277389,
-      "median_net": 587646.5449701294,
-      "min_net": 519931.6351925344,
-      "p10_net": 533474.6171480534,
-      "negative_fraction": 0.0,
-      "all_conform": true,
-      "mean_communication_cost": 98850.0,
-      "mean_total_contacts": 15000.0,
-      "mean_unique_customers": 13510.0,
-      "mean_n_pilots": 16.0,
-      "mean_n_final_campaigns": 7.666666666666667,
-      "mean_runtime_seconds": 3.031258200004231,
-      "max_runtime_seconds": 3.280713599990122
-    },
-    {
-      "scenario": "mock",
-      "strategy": "push_only",
-      "runs": 3,
-      "mean_net": 945456.2036209168,
-      "median_net": 911806.8925591321,
-      "min_net": 909498.4470074216,
-      "p10_net": 909960.1361177637,
-      "negative_fraction": 0.0,
-      "all_conform": true,
-      "mean_communication_cost": 0.0,
-      "mean_total_contacts": 9381.0,
-      "mean_unique_customers": 8617.333333333334,
-      "mean_n_pilots": 16.0,
-      "mean_n_final_campaigns": 7.666666666666667,
-      "mean_runtime_seconds": 2.0366173333410793,
-      "max_runtime_seconds": 2.2742694999906234
-    },
-    {
-      "scenario": "mock",
-      "strategy": "v2",
-      "runs": 3,
-      "mean_net": 1244620.914802104,
-      "median_net": 1266292.5412997846,
-      "min_net": 944818.0037831955,
-      "p10_net": 1009112.9112865133,
-      "negative_fraction": 0.0,
-      "all_conform": true,
-      "mean_communication_cost": 64332.666666666664,
-      "mean_total_contacts": 11532.666666666666,
-      "mean_unique_customers": 10520.333333333334,
-      "mean_n_pilots": 16.0,
-      "mean_n_final_campaigns": 9.333333333333334,
-      "mean_runtime_seconds": 3.4554525333223864,
-      "max_runtime_seconds": 3.8344626000034623
-    }
-  ],
+  "comparison_revalidation": "reports/branding_revalidation.json: all 92 numerical outcomes and resources equal archived pre-branding results; repeated cases, not new independent hold-outs.",
+  "historical_ablation": {
+    "report": "reports/v2_ablation_summary.json",
+    "note": "Component ablations were measured before branding; original sources and outputs retained in experiments/archive/pre_branding.tar.gz. They were not rerun for this API/branding-only change."
+  },
   "delivery": {
     "organizer_files": [
       {
@@ -689,35 +591,57 @@
     ],
     "all_originals_unchanged": true,
     "clean_copy_submission_matches": true,
-    "submission_sha256": "bb8d393538982c0ea672159b16ca9f0d39e72d8dd1a3ff573463db52c5a80bf3",
+    "submission_sha256": "61149d82fcd740ef9e20acf16127abe014aa40f241758242b11e0aa49d7693e0",
     "core_imports_fastapi": false,
     "core_imports_scorer": false
   },
   "decision_and_backend_source_sha256": {
-    "backend/__init__.py": "04e107e5189e2408172e7793d849bcae1be82fe4725fe5eebd0cabba1bbdae9b",
-    "backend/app.py": "87d861bb0244b65faeed4097f11deef5e951c7263df4b2520a5bf8a253572ad4",
-    "backend/benchmark_storage.py": "95343c4adb83dcd58c00ab650df0a8a516232d606a8a97e4b3c0c042726a810c",
-    "backend/final_smoke.py": "d4780afc70eca4a680508781edde413b6246c84a56771bae18fd8007ca3edb89",
-    "backend/locking.py": "7a595ef8865feca7e5707dd362c12d23db741d0d33e366a9745b9b57cce88765",
+    "backend/__init__.py": "2b2dce6a09e64fc2464166ff403a244999688e86004306c3f8d28717f949fd40",
+    "backend/app.py": "ab791f90d5a0cf636fb4bbd861dfdb35a6030b9045c96d36bbada2e71a32cc51",
+    "backend/benchmark_storage.py": "ecdb686c83d32fce78a58eeab3eaddde1950e2d2f3e7481ceb38bfb01eeb7bb2",
+    "backend/final_smoke.py": "46f85bc21fbd31ddc1077c541ce99cd5ea7d8799553a11a0a6fdeb15eb7859b3",
+    "backend/locking.py": "0339443deb24ed8ed5d73add73465e5a94a9916977bc68281168455a216d6616",
     "backend/models.py": "7148230e814797c773c496f2c304dfe903478b2aab02ad338907fabf0d8a93bc",
     "backend/smoke.py": "5941102ac996280b47e79a84c8d76585a609e03e38448038dc19410c30cd07ac",
     "backend/storage.py": "57d7ff4a3a2d4e7d5bb1bc8cc03d151afe8a5c63b088d80fed30b007a3a99ff9",
-    "backend/worker.py": "8ffa625d08a56ef085aabe0cf787ac8cd4691afd7abd630c9839fae1481dfcac",
-    "participant_package/agent.py": "356b3015cbbb2362704c6d84d2b20f0fa051550c73572fe13e16adf6fa2e2733",
+    "backend/worker.py": "8de7a19dddd83e2100a5537c66165d89cbe596a345e6fd553ed5c73f251add75",
+    "participant_package/agent.py": "b2b5f2eeeb9be4a78eebe8c4166d8e151fe99567f4605863239205abd4b45970",
     "participant_package/agent_template.py": "739ec30073deef0767e64b814043dd6190ed85ed0eb70ec15dfe461cbeedf62f",
     "participant_package/environment.py": "6385136a79814624449843930c55305b397a2d3d30c4d8c280e7b2b08bf033fc",
     "participant_package/local_eval.py": "6af581b2c626c75adf72afd8cf965b883753518ef6b75df3844571d97a508e02",
     "participant_package/make_submission.py": "e5aa465252221835600efb007bd080693a1fdf2ac79318e818d62abb576718fe",
     "participant_package/mock_environment.py": "9c7515361270ebef8cec08f3a78ed0d288532a14d51e08eb6455de71994f9111",
-    "participant_package/scoring_core.py": "74e2316c2329872dd7c93165a4b47e6c583ecdb9af853671c14a8a11cb701cf7",
-    "participant_package/uniflow/__init__.py": "0bbf9388678e04808700c7624d9e4d60ad0cdcc31d85534ac287b2b4aa656aeb",
-    "participant_package/uniflow/agent_core.py": "e1782a78a64df2013d18b38fa93ae9cdaa4329e4175bc3cf2c8bd073b02ef665",
-    "participant_package/uniflow/audit.py": "e24b9be94fb0ce168289a8bd6ef53daf3ce13807c5788bb80378d7ccb68ad9f5",
-    "participant_package/uniflow/candidates.py": "ba8a38bdb0f283ca1f36712fcf2b92eec8077be83fb9a707e7df949a29fddee8",
-    "participant_package/uniflow/evaluation.py": "20c0cb6628d2ea221b00378609f1ea1f396e6659d334bb3106fd48cf983c5a8b",
-    "participant_package/uniflow/portfolio.py": "79e62e1c80f6185fe575e187bdf34fa385e061cd4781cc44c6fe577d72958dc7",
-    "participant_package/uniflow/posterior.py": "aae10148a13cb9f07cefa7abeb5eaffd3658953dd72503f07a6db4e7fc4d0007",
-    "participant_package/uniflow/service_data.py": "611772d230ce7ba481fa844337620311f4da4b085d907ab73257263eed14e2e3"
+    "participant_package/orbitduo/__init__.py": "0bbf9388678e04808700c7624d9e4d60ad0cdcc31d85534ac287b2b4aa656aeb",
+    "participant_package/orbitduo/agent_core.py": "e1782a78a64df2013d18b38fa93ae9cdaa4329e4175bc3cf2c8bd073b02ef665",
+    "participant_package/orbitduo/audit.py": "e24b9be94fb0ce168289a8bd6ef53daf3ce13807c5788bb80378d7ccb68ad9f5",
+    "participant_package/orbitduo/candidates.py": "ba8a38bdb0f283ca1f36712fcf2b92eec8077be83fb9a707e7df949a29fddee8",
+    "participant_package/orbitduo/evaluation.py": "29869ceb93000507ac949732983020f9b82165826d39c819e73a37f01a1218b2",
+    "participant_package/orbitduo/portfolio.py": "741c891181bec6386dbd0085a1d349e8abd0ade330536572fdcd5a025039c546",
+    "participant_package/orbitduo/posterior.py": "aae10148a13cb9f07cefa7abeb5eaffd3658953dd72503f07a6db4e7fc4d0007",
+    "participant_package/orbitduo/service_data.py": "611772d230ce7ba481fa844337620311f4da4b085d907ab73257263eed14e2e3",
+    "participant_package/scoring_core.py": "74e2316c2329872dd7c93165a4b47e6c583ecdb9af853671c14a8a11cb701cf7"
+  },
+  "frontend_source_sha256": {
+    "Dockerfile": "7787cc3c9edbcca8cf26df1831ca3c206c3279321d685f40e773256a17cb7b12",
+    "nginx.conf": "41d264969596d9d2922067e9f692096e286044361618876dd021274ca43fd08c",
+    "package-lock.json": "dd1c48b09fb75748db017d58e1968fc3571746820719f9fe869738758e0a5a92",
+    "package.json": "f8934f15b902f1b121bd105bbf6069a2481bd38aac6140e7fc6fa07fe0b8d3f1",
+    "playwright.live.config.ts": "82d56fb94b57864d033e6e1cb6cc1c2049fd6bbccea62a5e96ac4dcf88b22aef",
+    "src/app/Shell.tsx": "c8b2fd2cf4cb3ea0419cf4b45f1360086195c676c3081718cef26b4341f758a7",
+    "src/components/ui/common.tsx": "6452ad5a6c57ebbc6dca0a2ef197a83c014731f4290665d763bab8cd6826858d",
+    "src/features/audience/AudiencePage.tsx": "635931d0c96e9f8aea418e86d13271a0a9c78806aa8fcd4ba2d14a357213cac8",
+    "src/features/overview/OverviewPage.tsx": "74fca68ad67a928dab8269742f03eea52ad39d16cf92d890ed35d0553d51ba1e",
+    "src/features/runs/NewRunPage.tsx": "21a3710c1b82a89190a2baefa052e11b9f18951214ba167fddb0bae0246067c5",
+    "src/features/runs/RunPage.tsx": "658c8d0530d7f790c2f4e65f4332b78a0df494f6de0c9d5414bd39ad22208bf9",
+    "src/features/runs/RunsPage.tsx": "f6326f07196b0c422595976baf77f6c3a6e8f5db18d152651c4007fa79ccdb40",
+    "src/lib/api/client.ts": "b141b648a3e450e83c0e328670a201f21582e7e06913f3c229636b9a0f782510",
+    "src/lib/api/types.ts": "6b279fc20d0448cc7661dba29f87ba771b1d62ffd7dbd9f64e243adc45c5d87c",
+    "src/lib/format.ts": "5d6d4543e649f92fd56d91eeadba58244c01f53b8fe8181e92d5b0a10ca149fe",
+    "src/main.tsx": "2df747f4fc8ea58fc65493d9677384b8eaa0db6f4586005ef1ab0a3636f6954d",
+    "src/mocks/fixtures.ts": "7d299b8935cbfdf1db2c1c151467a7cd030eb779bb85d58f3644e730410d3b40",
+    "src/mocks/transport.ts": "6a590087657836661c9e98b118484080a9770e36a6c54734c1155cdb4a2fda64",
+    "src/vite-env.d.ts": "8f318b297b932bc583492ca45a28968cea3c4ddc99793acd91095cd3a8c0173b",
+    "vite.config.ts": "b1dd1ee900602e8f2ef40152aed394f7d126c65f9351a4594265513021ced2a4"
   },
   "http_checks": {
     "csv_matches_official_submission_bytes": true,
@@ -730,25 +654,112 @@
     "sources_unchanged_during_check": true
   },
   "http_metrics": {
-    "startup_seconds": 4.217685199982952,
-    "restart_seconds": 3.633919100044295,
-    "post_response_seconds": 0.027936499973293394,
-    "persisted_retry_seconds": 0.020740700012538582,
-    "maximum_health_latency_seconds": 0.044685999979265034,
-    "maximum_poll_latency_seconds": 0.12253860000055283,
-    "event_prefix_checks": 25,
-    "unchanged_polls": 6
+    "startup_seconds": 8.248509800003376,
+    "restart_seconds": 14.613447599986102,
+    "post_response_seconds": 0.050231600005645305,
+    "persisted_retry_seconds": 0.05389609996927902,
+    "maximum_health_latency_seconds": 0.12709170003654435,
+    "maximum_poll_latency_seconds": 0.17485670000314713,
+    "event_prefix_checks": 40,
+    "unchanged_polls": 14
   },
   "http_report": "backend/reports/http_final_smoke.json",
-  "real_api_csv_matches_submission_bytes": true,
-  "http_restart_persistence_verified": true,
-  "frontend_files_modified": false,
-  "frontend_joint_acceptance_completed": false,
-  "frontend_limitation": "Real HTTP contract and exports verified; browser acceptance of the separately owned frontend was not performed.",
+  "docker_checks": {
+    "real_proxy_api": true,
+    "spa_deep_link": true,
+    "validation_envelope": true,
+    "stable_events": true,
+    "conditional_polling": true,
+    "idempotency": true,
+    "saved_exports": true,
+    "official_offline_linux_submission": true,
+    "local_and_container_campaigns_equal": true,
+    "restart_persistence": true
+  },
+  "docker_report": "backend/reports/docker_acceptance.json",
+  "docker_post_response_seconds": 0.03413629997521639,
+  "docker_services_at_final_check": [
+    {
+      "Service": "backend",
+      "Image": "orbitduo-backend:local",
+      "State": "running",
+      "Health": "healthy",
+      "Ports": "127.0.0.1:8000->8000/tcp"
+    },
+    {
+      "Service": "frontend",
+      "Image": "orbitduo-frontend:local",
+      "State": "running",
+      "Health": "healthy",
+      "Ports": "127.0.0.1:8080->8080/tcp"
+    }
+  ],
+  "submission_sha256_windows": "61149d82fcd740ef9e20acf16127abe014aa40f241758242b11e0aa49d7693e0",
+  "submission_sha256_linux": "7ee9ff3a4c85719fb4e43d490ac725ec64018f41fae85c2a039f8964fc2fb54e",
+  "submission_note": "Byte identity verified against official generation within each platform; CRLF versus LF is the only cross-platform byte difference.",
+  "frontend_files_modified": true,
+  "frontend_joint_acceptance_completed": true,
+  "frontend_report": "frontend/reports/acceptance.json",
+  "frontend_commands": [
+    {
+      "command": "npm ci --no-audit --no-fund",
+      "status": "passed",
+      "note": "Host Node 24.13.0 emitted jsdom engine warnings. package.json and README require Node 24.15+; unit tests used that supported version."
+    },
+    {
+      "command": "npm run build",
+      "status": "passed",
+      "javascript_bytes_displayed": "352.79 kB",
+      "javascript_gzip_displayed": "108.18 kB"
+    },
+    {
+      "command": "npm run lint",
+      "status": "passed"
+    },
+    {
+      "command": "npx --yes --package=node@24.15.0 -- node node_modules/vitest/vitest.mjs run",
+      "status": "passed",
+      "test_files": 4,
+      "tests": 10
+    },
+    {
+      "command": "npm run test:e2e",
+      "environment": {
+        "ORBITDUO_BROWSER_CHANNEL": "chrome"
+      },
+      "status": "passed",
+      "tests": 7,
+      "viewports_px": [
+        1440,
+        1280,
+        768,
+        390
+      ]
+    },
+    {
+      "command": "npm run test:e2e:live",
+      "environment": {
+        "ORBITDUO_BROWSER_CHANNEL": "chrome",
+        "ORBITDUO_BASE_URL": "http://127.0.0.1:8080"
+      },
+      "status": "passed",
+      "tests": 1,
+      "suite_seconds": 17.6
+    }
+  ],
   "selection_limitations": [
     "Main and model_holdout cases were reused during structural planner comparison; do not call them untouched final holdouts.",
     "Advanced search retained after broader evidence, before reading final new-seed metrics.",
     "Fresh final mock seeds 40,41,43,44,45 test noise/sampling, not a new truth model.",
-    "Some seeds and altered-effect scenarios degrade. No guaranteed profit or universal dominance."
-  ]
+    "Some seeds and altered-effect scenarios degrade. No guaranteed profit or universal dominance.",
+    "Branding revalidation repeats known seeds without policy changes. It is a regression check, not an additional independent quality evaluation."
+  ],
+  "artifact_sha256": {
+    "backend/reports/http_final_smoke.json": "953c6f0ec8fc23d3910fe458b8a8c751759875aef252cace2a7ed9aa1207e929",
+    "backend/reports/docker_acceptance.json": "d3883e19df6ca9f151298eb2a5e6d0991ecc3b70b1744b07d795de73d443b2fd",
+    "frontend/reports/acceptance.json": "a50c6b0a3e3e1938a11e4ff2ec8d0ca3622a958857f74bad9e13ce62d19fe555",
+    "participant_package/reports/delivery_verification.json": "65801a9c0da5fd20a26b5f068241eaf93f36d999b385e79ce13bcb4492b50270",
+    "participant_package/reports/branding_revalidation.json": "45684bd620f388d34040c1832883a0f397bd1afe2fc06c88aefeff76dc58b03f",
+    "participant_package/reports/publication_manifest.json": "907dda299b0aababfc53c3094d061ea39dcef22a0ed89aaa959a302abeceaca6"
+  }
 }

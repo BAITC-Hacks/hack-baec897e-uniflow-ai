@@ -5,9 +5,9 @@ import numpy as np
 import pytest
 
 from scoring_core import CHANNELS
-from uniflow.candidates import CandidateSpace
-from uniflow.portfolio import PilotOverlap, best_contacted_effect, describe_portfolio, optimize, replay_plan
-from uniflow.posterior import HistoryPrior, PosteriorTable
+from orbitduo.candidates import CandidateSpace
+from orbitduo.portfolio import PilotOverlap, best_contacted_effect, describe_portfolio, optimize, replay_plan
+from orbitduo.posterior import HistoryPrior, PosteriorTable
 from test_public_mechanics import campaign, profile, score, tariffs
 
 

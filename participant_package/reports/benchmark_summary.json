@@ -14,8 +14,8 @@
     "mean_unique_customers": 11748.3,
     "mean_n_pilots": 16.0,
     "mean_n_final_campaigns": 7.7,
-    "mean_runtime_seconds": 5.786522060009884,
-    "max_runtime_seconds": 7.237841700029094
+    "mean_runtime_seconds": 11.146621990000131,
+    "max_runtime_seconds": 21.667860099987596
   },
   {
     "scenario": "mock",
@@ -32,8 +32,8 @@
     "mean_unique_customers": 10460.9,
     "mean_n_pilots": 16.0,
     "mean_n_final_campaigns": 5.9,
-    "mean_runtime_seconds": 3.100539739994565,
-    "max_runtime_seconds": 4.553602600004524
+    "mean_runtime_seconds": 5.7190396300051365,
+    "max_runtime_seconds": 19.2127565999981
   },
   {
     "scenario": "mock",

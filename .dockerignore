@@ -1,0 +1,16 @@
+**
+!backend/
+!backend/**
+!participant_package/
+!participant_package/**
+**/__pycache__/
+**/.pytest_cache/
+**/*.pyc
+backend/data/
+backend/reports/
+backend/tests/
+participant_package/reports/
+participant_package/experiments/archive/
+participant_package/experiments/reference_v1/
+participant_package/tests/
+participant_package/submission.csv

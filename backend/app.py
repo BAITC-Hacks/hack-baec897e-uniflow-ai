@@ -27,12 +27,12 @@ CAMPAIGN_COLUMNS = ["campaign_name", "filter_arpu_segment", "filter_data_segment
 
 
 def default_overview():
-    from participant_package.uniflow.service_data import build_overview
+    from participant_package.orbitduo.service_data import build_overview
     return build_overview()
 
 
 def default_runner(**kwargs):
-    from participant_package.uniflow.evaluation import run_experiment
+    from participant_package.orbitduo.evaluation import run_experiment
     return run_experiment(**kwargs)
 
 
@@ -76,23 +76,24 @@ def create_app(*, db_path: str | Path | None = None, overview_provider=None, run
 
     application = FastAPI(title="OrbitDuo Campaign Studio", version="1", lifespan=lifespan,
                           responses={status: {"model": ErrorResponse} for status in (404, 409, 422, 500)})
-    application.add_middleware(CORSMiddleware,
-                               allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
-                               allow_methods=["GET", "POST"], allow_headers=["Content-Type", "Idempotency-Key", "If-None-Match"],
-                               expose_headers=["Content-Disposition", "X-Request-ID", "ETag"])
 
     @application.middleware("http")
     async def request_id(request: Request, call_next):
         request.state.request_id = uuid4().hex
-        response = await call_next(request)
+        try:
+            response = await call_next(request)
+        except Exception as exc:
+            # Turn unexpected application failures into the public envelope
+            # inside CORS, so a browser can read the same error as an API client.
+            response = await unexpected_error(request, exc)
         response.headers["X-Request-ID"] = request.state.request_id
         return response
 
-    def error_response(request, status, code, message, details=None):
+    def error_response(request, status, code, message, details=None, headers=None):
         identifier = getattr(request.state, "request_id", uuid4().hex)
         return JSONResponse(status_code=status, content={"error": {
             "code": code, "message": message, "details": details or {}, "request_id": identifier,
-        }}, headers={"X-Request-ID": identifier})
+        }}, headers={**(headers or {}), "X-Request-ID": identifier})
 
     @application.exception_handler(APIError)
     async def domain_error(request: Request, exc: APIError):
@@ -106,7 +107,7 @@ def create_app(*, db_path: str | Path | None = None, overview_provider=None, run
 
     @application.exception_handler(HTTPException)
     async def http_error(request: Request, exc: HTTPException):
-        return error_response(request, exc.status_code, "HTTP_ERROR", str(exc.detail))
+        return error_response(request, exc.status_code, "HTTP_ERROR", str(exc.detail), headers=exc.headers)
 
     @application.exception_handler(Exception)
     async def unexpected_error(request: Request, exc: Exception):
@@ -178,6 +179,12 @@ def create_app(*, db_path: str | Path | None = None, overview_provider=None, run
         return Response(snapshot.model_dump_json(indent=2), media_type="application/json",
                         headers={"Content-Disposition": f'attachment; filename="report-{snapshot.id}.json"'})
 
+    # Added last: outermost user middleware also decorates generated 500
+    # responses and exposes their request ids to the separate Vite origin.
+    application.add_middleware(CORSMiddleware,
+                               allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+                               allow_methods=["GET", "POST"], allow_headers=["Content-Type", "Idempotency-Key", "If-None-Match"],
+                               expose_headers=["Content-Disposition", "X-Request-ID", "ETag"])
     return application
 
 

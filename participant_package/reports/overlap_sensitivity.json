@@ -11,10 +11,10 @@
     "Plan identity includes execution order, filters, target and channel; cosmetic campaign names are ignored."
   ],
   "source_sha256": {
-    "uniflow/agent_core.py": "b947907ee7602df223777bebb0c0e327a3b44c6f08853d38a1096408a34b48e1",
-    "uniflow/portfolio.py": "c653737d2c6c311417955f251e5d2c72ba4a45bb3e8a2a5511dffcaa078f0137",
-    "uniflow/candidates.py": "d9cad86a3098ed1e6a04166c531652c4a82997190a2daf039ffb4d628943d809",
-    "uniflow/posterior.py": "5677b6e97125c528bd0ebdd0f4f9728ae6e11e162108a5aec5f08cf53809b8ad"
+    "orbitduo/agent_core.py": "b947907ee7602df223777bebb0c0e327a3b44c6f08853d38a1096408a34b48e1",
+    "orbitduo/portfolio.py": "c653737d2c6c311417955f251e5d2c72ba4a45bb3e8a2a5511dffcaa078f0137",
+    "orbitduo/candidates.py": "d9cad86a3098ed1e6a04166c531652c4a82997190a2daf039ffb4d628943d809",
+    "orbitduo/posterior.py": "5677b6e97125c528bd0ebdd0f4f9728ae6e11e162108a5aec5f08cf53809b8ad"
   },
   "replicates_per_plan": 256,
   "runs": [
@@ -33,7 +33,7 @@
         "analytic_overlap": {
           "plan": [
             {
-              "campaign_name": "uniflow_01_tariff_8_tariff_16",
+              "campaign_name": "orbitduo_01_tariff_8_tariff_16",
               "filter_arpu_segment": "HIGH",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -42,7 +42,7 @@
               "channel": "sms"
             },
             {
-              "campaign_name": "uniflow_02_tariff_8_tariff_9",
+              "campaign_name": "orbitduo_02_tariff_8_tariff_9",
               "filter_arpu_segment": "MID",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -51,7 +51,7 @@
               "channel": "sms"
             },
             {
-              "campaign_name": "uniflow_03_tariff_10_tariff_9",
+              "campaign_name": "orbitduo_03_tariff_10_tariff_9",
               "filter_arpu_segment": "HIGH",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -60,7 +60,7 @@
               "channel": "push"
             },
             {
-              "campaign_name": "uniflow_04_tariff_8_tariff_9",
+              "campaign_name": "orbitduo_04_tariff_8_tariff_9",
               "filter_arpu_segment": "LOW",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -69,7 +69,7 @@
               "channel": "sms"
             },
             {
-              "campaign_name": "uniflow_05_tariff_4_tariff_9",
+              "campaign_name": "orbitduo_05_tariff_4_tariff_9",
               "filter_arpu_segment": "MID",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -78,7 +78,7 @@
               "channel": "push"
             },
             {
-              "campaign_name": "uniflow_06_tariff_4_tariff_9",
+              "campaign_name": "orbitduo_06_tariff_4_tariff_9",
               "filter_arpu_segment": "LOW",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -87,7 +87,7 @@
               "channel": "sms"
             },
             {
-              "campaign_name": "uniflow_07_tariff_10_tariff_9",
+              "campaign_name": "orbitduo_07_tariff_10_tariff_9",
               "filter_arpu_segment": "LOW",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -96,7 +96,7 @@
               "channel": "push"
             },
             {
-              "campaign_name": "uniflow_08_tariff_1_tariff_9",
+              "campaign_name": "orbitduo_08_tariff_1_tariff_9",
               "filter_arpu_segment": "LOW",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -105,7 +105,7 @@
               "channel": "sms"
             },
             {
-              "campaign_name": "uniflow_09_tariff_1_tariff_9",
+              "campaign_name": "orbitduo_09_tariff_1_tariff_9",
               "filter_arpu_segment": "HIGH",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -163,7 +163,7 @@
         "ignore_pilot_overlap": {
           "plan": [
             {
-              "campaign_name": "uniflow_01_tariff_8_tariff_16",
+              "campaign_name": "orbitduo_01_tariff_8_tariff_16",
               "filter_arpu_segment": "HIGH",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -172,7 +172,7 @@
               "channel": "sms"
             },
             {
-              "campaign_name": "uniflow_02_tariff_8_tariff_9",
+              "campaign_name": "orbitduo_02_tariff_8_tariff_9",
               "filter_arpu_segment": "MID",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -181,7 +181,7 @@
               "channel": "sms"
             },
             {
-              "campaign_name": "uniflow_03_tariff_8_tariff_9",
+              "campaign_name": "orbitduo_03_tariff_8_tariff_9",
               "filter_arpu_segment": "LOW",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -190,7 +190,7 @@
               "channel": "sms"
             },
             {
-              "campaign_name": "uniflow_04_tariff_4_tariff_9",
+              "campaign_name": "orbitduo_04_tariff_4_tariff_9",
               "filter_arpu_segment": "MID",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -199,7 +199,7 @@
               "channel": "push"
             },
             {
-              "campaign_name": "uniflow_05_tariff_4_tariff_9",
+              "campaign_name": "orbitduo_05_tariff_4_tariff_9",
               "filter_arpu_segment": "LOW",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -208,7 +208,7 @@
               "channel": "sms"
             },
             {
-              "campaign_name": "uniflow_06_tariff_10_tariff_9",
+              "campaign_name": "orbitduo_06_tariff_10_tariff_9",
               "filter_arpu_segment": "LOW",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -217,7 +217,7 @@
               "channel": "push"
             },
             {
-              "campaign_name": "uniflow_07_tariff_11_tariff_9",
+              "campaign_name": "orbitduo_07_tariff_11_tariff_9",
               "filter_arpu_segment": "LOW",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -226,7 +226,7 @@
               "channel": "push"
             },
             {
-              "campaign_name": "uniflow_08_tariff_1_tariff_9",
+              "campaign_name": "orbitduo_08_tariff_1_tariff_9",
               "filter_arpu_segment": "LOW",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -235,7 +235,7 @@
               "channel": "sms"
             },
             {
-              "campaign_name": "uniflow_09_tariff_1_tariff_9",
+              "campaign_name": "orbitduo_09_tariff_1_tariff_9",
               "filter_arpu_segment": "MID",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -244,7 +244,7 @@
               "channel": "sms"
             },
             {
-              "campaign_name": "uniflow_10_tariff_14_tariff_9",
+              "campaign_name": "orbitduo_10_tariff_14_tariff_9",
               "filter_arpu_segment": "LOW",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -317,7 +317,7 @@
         "analytic_overlap": {
           "plan": [
             {
-              "campaign_name": "uniflow_01_tariff_8_tariff_17",
+              "campaign_name": "orbitduo_01_tariff_8_tariff_17",
               "filter_arpu_segment": "HIGH",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -326,7 +326,7 @@
               "channel": "sms"
             },
             {
-              "campaign_name": "uniflow_02_tariff_4_tariff_9",
+              "campaign_name": "orbitduo_02_tariff_4_tariff_9",
               "filter_arpu_segment": "HIGH",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -335,7 +335,7 @@
               "channel": "sms"
             },
             {
-              "campaign_name": "uniflow_03_tariff_10_tariff_15",
+              "campaign_name": "orbitduo_03_tariff_10_tariff_15",
               "filter_arpu_segment": "HIGH",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -344,7 +344,7 @@
               "channel": "push"
             },
             {
-              "campaign_name": "uniflow_04_tariff_8_tariff_9",
+              "campaign_name": "orbitduo_04_tariff_8_tariff_9",
               "filter_arpu_segment": "MID",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -353,7 +353,7 @@
               "channel": "push"
             },
             {
-              "campaign_name": "uniflow_05_tariff_4_tariff_9",
+              "campaign_name": "orbitduo_05_tariff_4_tariff_9",
               "filter_arpu_segment": "LOW",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -411,7 +411,7 @@
         "ignore_pilot_overlap": {
           "plan": [
             {
-              "campaign_name": "uniflow_01_tariff_8_tariff_17",
+              "campaign_name": "orbitduo_01_tariff_8_tariff_17",
               "filter_arpu_segment": "HIGH",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -420,7 +420,7 @@
               "channel": "sms"
             },
             {
-              "campaign_name": "uniflow_02_tariff_4_tariff_9",
+              "campaign_name": "orbitduo_02_tariff_4_tariff_9",
               "filter_arpu_segment": "HIGH",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -429,7 +429,7 @@
               "channel": "sms"
             },
             {
-              "campaign_name": "uniflow_03_tariff_8_tariff_9",
+              "campaign_name": "orbitduo_03_tariff_8_tariff_9",
               "filter_arpu_segment": "MID",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -438,7 +438,7 @@
               "channel": "push"
             },
             {
-              "campaign_name": "uniflow_04_tariff_8_tariff_9",
+              "campaign_name": "orbitduo_04_tariff_8_tariff_9",
               "filter_arpu_segment": "LOW",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -447,7 +447,7 @@
               "channel": "sms"
             },
             {
-              "campaign_name": "uniflow_05_tariff_4_tariff_9",
+              "campaign_name": "orbitduo_05_tariff_4_tariff_9",
               "filter_arpu_segment": "MID",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -456,7 +456,7 @@
               "channel": "push"
             },
             {
-              "campaign_name": "uniflow_06_tariff_4_tariff_9",
+              "campaign_name": "orbitduo_06_tariff_4_tariff_9",
               "filter_arpu_segment": "LOW",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -465,7 +465,7 @@
               "channel": "push"
             },
             {
-              "campaign_name": "uniflow_07_tariff_10_tariff_9",
+              "campaign_name": "orbitduo_07_tariff_10_tariff_9",
               "filter_arpu_segment": "LOW",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -474,7 +474,7 @@
               "channel": "push"
             },
             {
-              "campaign_name": "uniflow_08_tariff_11_tariff_9",
+              "campaign_name": "orbitduo_08_tariff_11_tariff_9",
               "filter_arpu_segment": "LOW",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -483,7 +483,7 @@
               "channel": "push"
             },
             {
-              "campaign_name": "uniflow_09_tariff_1_tariff_9",
+              "campaign_name": "orbitduo_09_tariff_1_tariff_9",
               "filter_arpu_segment": "LOW",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -492,7 +492,7 @@
               "channel": "sms"
             },
             {
-              "campaign_name": "uniflow_10_tariff_1_tariff_9",
+              "campaign_name": "orbitduo_10_tariff_1_tariff_9",
               "filter_arpu_segment": "MID",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -565,7 +565,7 @@
         "analytic_overlap": {
           "plan": [
             {
-              "campaign_name": "uniflow_01_tariff_8_tariff_11",
+              "campaign_name": "orbitduo_01_tariff_8_tariff_11",
               "filter_arpu_segment": "HIGH",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -574,7 +574,7 @@
               "channel": "sms"
             },
             {
-              "campaign_name": "uniflow_02_tariff_10_tariff_9",
+              "campaign_name": "orbitduo_02_tariff_10_tariff_9",
               "filter_arpu_segment": "HIGH",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -583,7 +583,7 @@
               "channel": "push"
             },
             {
-              "campaign_name": "uniflow_03_tariff_8_tariff_9",
+              "campaign_name": "orbitduo_03_tariff_8_tariff_9",
               "filter_arpu_segment": "LOW",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -592,7 +592,7 @@
               "channel": "digital_ads"
             },
             {
-              "campaign_name": "uniflow_04_tariff_4_tariff_9",
+              "campaign_name": "orbitduo_04_tariff_4_tariff_9",
               "filter_arpu_segment": "MID",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -601,7 +601,7 @@
               "channel": "push"
             },
             {
-              "campaign_name": "uniflow_05_tariff_4_tariff_9",
+              "campaign_name": "orbitduo_05_tariff_4_tariff_9",
               "filter_arpu_segment": "LOW",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -610,7 +610,7 @@
               "channel": "push"
             },
             {
-              "campaign_name": "uniflow_06_tariff_10_tariff_9",
+              "campaign_name": "orbitduo_06_tariff_10_tariff_9",
               "filter_arpu_segment": "LOW",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -619,7 +619,7 @@
               "channel": "push"
             },
             {
-              "campaign_name": "uniflow_07_tariff_11_tariff_9",
+              "campaign_name": "orbitduo_07_tariff_11_tariff_9",
               "filter_arpu_segment": "LOW",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -628,7 +628,7 @@
               "channel": "push"
             },
             {
-              "campaign_name": "uniflow_08_tariff_1_tariff_9",
+              "campaign_name": "orbitduo_08_tariff_1_tariff_9",
               "filter_arpu_segment": "LOW",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -637,7 +637,7 @@
               "channel": "sms"
             },
             {
-              "campaign_name": "uniflow_09_tariff_1_tariff_9",
+              "campaign_name": "orbitduo_09_tariff_1_tariff_9",
               "filter_arpu_segment": "MID",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -646,7 +646,7 @@
               "channel": "sms"
             },
             {
-              "campaign_name": "uniflow_10_tariff_14_tariff_9",
+              "campaign_name": "orbitduo_10_tariff_14_tariff_9",
               "filter_arpu_segment": "LOW",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -704,7 +704,7 @@
         "ignore_pilot_overlap": {
           "plan": [
             {
-              "campaign_name": "uniflow_01_tariff_8_tariff_11",
+              "campaign_name": "orbitduo_01_tariff_8_tariff_11",
               "filter_arpu_segment": "HIGH",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -713,7 +713,7 @@
               "channel": "sms"
             },
             {
-              "campaign_name": "uniflow_02_tariff_8_tariff_9",
+              "campaign_name": "orbitduo_02_tariff_8_tariff_9",
               "filter_arpu_segment": "LOW",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -722,7 +722,7 @@
               "channel": "digital_ads"
             },
             {
-              "campaign_name": "uniflow_03_tariff_4_tariff_9",
+              "campaign_name": "orbitduo_03_tariff_4_tariff_9",
               "filter_arpu_segment": "MID",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -731,7 +731,7 @@
               "channel": "push"
             },
             {
-              "campaign_name": "uniflow_04_tariff_4_tariff_9",
+              "campaign_name": "orbitduo_04_tariff_4_tariff_9",
               "filter_arpu_segment": "LOW",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -740,7 +740,7 @@
               "channel": "push"
             },
             {
-              "campaign_name": "uniflow_05_tariff_10_tariff_9",
+              "campaign_name": "orbitduo_05_tariff_10_tariff_9",
               "filter_arpu_segment": "LOW",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -749,7 +749,7 @@
               "channel": "push"
             },
             {
-              "campaign_name": "uniflow_06_tariff_11_tariff_9",
+              "campaign_name": "orbitduo_06_tariff_11_tariff_9",
               "filter_arpu_segment": "LOW",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -758,7 +758,7 @@
               "channel": "push"
             },
             {
-              "campaign_name": "uniflow_07_tariff_1_tariff_9",
+              "campaign_name": "orbitduo_07_tariff_1_tariff_9",
               "filter_arpu_segment": "LOW",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -767,7 +767,7 @@
               "channel": "sms"
             },
             {
-              "campaign_name": "uniflow_08_tariff_1_tariff_9",
+              "campaign_name": "orbitduo_08_tariff_1_tariff_9",
               "filter_arpu_segment": "MID",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -776,7 +776,7 @@
               "channel": "sms"
             },
             {
-              "campaign_name": "uniflow_09_tariff_14_tariff_9",
+              "campaign_name": "orbitduo_09_tariff_14_tariff_9",
               "filter_arpu_segment": "LOW",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -785,7 +785,7 @@
               "channel": "push"
             },
             {
-              "campaign_name": "uniflow_10_tariff_4_tariff_9",
+              "campaign_name": "orbitduo_10_tariff_4_tariff_9",
               "filter_arpu_segment": "LOW",
               "filter_data_segment": null,
               "filter_call_segment": null,
@@ -849,5 +849,9 @@
     "mean_analytic_minus_ignore_official_net_gain": -486444.18816361186,
     "max_absolute_difference_in_simulation_standard_errors": 2.11374940879761,
     "interpretation": "Sampling-overlap arithmetic agrees with the Monte Carlo approximation, but including overlap reduced official local net gain on all three tested seeds. This does not establish a universal strategy ordering; effects/posterior quality and the bounded optimizer remain separate uncertainties."
+  },
+  "branding_migration": {
+    "archive": "participant_package/experiments/archive/pre_branding.tar.gz",
+    "note": "Presentation names normalized. Recorded old source hashes refer to the exact archived release, not the renamed current sources. Current verification is regenerated separately."
   }
 }

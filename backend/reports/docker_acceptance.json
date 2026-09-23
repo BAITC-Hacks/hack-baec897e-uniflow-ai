@@ -1,0 +1,102 @@
+{
+  "verified_at": "2026-09-23T11:11:19.147350Z",
+  "base_url": "http://127.0.0.1:8080",
+  "run_id": "95ff00bd9c5b4fbea873b4022207c01e",
+  "config": {
+    "seed": 42,
+    "risk_profile": "balanced"
+  },
+  "post_response_seconds": 0.03413629997521639,
+  "polls": 35,
+  "existing_job_busy_responses": 0,
+  "dataset_id": "1a2ed6872b5591be0f81750d84e61fe7288336fafc77e57d1d4c0c0111ebd177",
+  "local_evaluation": {
+    "label": "local_simulation",
+    "gross_gain": 451321.11625114694,
+    "net_arpu_gain": 431321.11625114694,
+    "communication_cost": 20000.0,
+    "total_contacts": 10355,
+    "unique_customers": 8620,
+    "n_pilots": 16,
+    "n_final_campaigns": 5,
+    "runtime_seconds": 5.0631435220000185
+  },
+  "csv_sha256_linux": "7ee9ff3a4c85719fb4e43d490ac725ec64018f41fae85c2a039f8964fc2fb54e",
+  "official_linux_generation": {
+    "sha256": "7ee9ff3a4c85719fb4e43d490ac725ec64018f41fae85c2a039f8964fc2fb54e",
+    "bytes": 419
+  },
+  "csv_platform_note": "CSV rows equal local Windows submission; Linux byte equality uses a fresh official generation in Linux.",
+  "checks": {
+    "real_proxy_api": true,
+    "spa_deep_link": true,
+    "validation_envelope": true,
+    "stable_events": true,
+    "conditional_polling": true,
+    "idempotency": true,
+    "saved_exports": true,
+    "official_offline_linux_submission": true,
+    "local_and_container_campaigns_equal": true,
+    "restart_persistence": true
+  },
+  "containers": [
+    {
+      "Command": "\"python -m uvicorn b…\"",
+      "CreatedAt": "2026-09-23 16:09:43 +0500 +05",
+      "ExitCode": 0,
+      "Health": "starting",
+      "ID": "99a5f4170659",
+      "Image": "orbitduo-backend:local",
+      "Labels": "com.docker.compose.config-hash=89ec19562dd88acf7c66c133c057731d938cfbd3425be82571d578b1a0ef4afc,com.docker.compose.depends_on=,com.docker.compose.image=sha256:d316f56fe32c26ce34ae251fc54ec57d42f690838ab31ee0780607c510bffd2b,com.docker.compose.oneoff=False,com.docker.compose.project=orbitduo,com.docker.compose.project.config_files=C:\\Users\\yeras\\OneDrive\\Desktop\\Hackathon\\compose.yaml,com.docker.compose.replace=backend-1,com.docker.compose.container-number=1,com.docker.compose.project.working_dir=C:\\Users\\yeras\\OneDrive\\Desktop\\Hackathon,com.docker.compose.service=backend,com.docker.compose.version=5.1.1,desktop.docker.io/ports.scheme=v2,desktop.docker.io/ports/8000/tcp=127.0.0.1:8000",
+      "LocalVolumes": "1",
+      "Mounts": "orbitduo_orbit…",
+      "Name": "orbitduo-backend-1",
+      "Names": "orbitduo-backend-1",
+      "Networks": "orbitduo_default",
+      "Ports": "127.0.0.1:8000->8000/tcp",
+      "Project": "orbitduo",
+      "Publishers": [
+        {
+          "URL": "127.0.0.1",
+          "TargetPort": 8000,
+          "PublishedPort": 8000,
+          "Protocol": "tcp"
+        }
+      ],
+      "RunningFor": "About a minute ago",
+      "Service": "backend",
+      "Size": "0B",
+      "State": "running",
+      "Status": "Up 4 seconds (health: starting)"
+    },
+    {
+      "Command": "\"/docker-entrypoint.…\"",
+      "CreatedAt": "2026-09-23 16:09:46 +0500 +05",
+      "ExitCode": 0,
+      "Health": "healthy",
+      "ID": "773682f7d4d7",
+      "Image": "orbitduo-frontend:local",
+      "Labels": "org.opencontainers.image.description=Unprivileged NGINX Dockerfiles,org.opencontainers.image.source=https://github.com/nginx/docker-nginx-unprivileged,org.opencontainers.image.title=docker-nginx-unprivileged,org.opencontainers.image.url=https://github.com/nginx/docker-nginx-unprivileged,org.opencontainers.image.version=1.28.2-alpine,com.docker.compose.container-number=1,com.docker.compose.project.config_files=C:\\Users\\yeras\\OneDrive\\Desktop\\Hackathon\\compose.yaml,com.docker.compose.replace=frontend-1,com.docker.compose.oneoff=False,com.docker.compose.version=5.1.1,org.opencontainers.image.licenses=Apache-2.0,org.opencontainers.image.revision=61141700fbe3bb03ee7379fd0a5cba5c9c5fc885,com.docker.compose.service=frontend,desktop.docker.io/ports/8080/tcp=127.0.0.1:8080,maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>,com.docker.compose.config-hash=ce9a007e0ace5c9b0b08d24e81c1ab63f2066343acc39dfdaff0844234c0a532,com.docker.compose.depends_on=backend:service_healthy:false,com.docker.compose.image=sha256:9bdf4814f1ee4b58c72a349294d8372deaac51772babd911dc984fea8d56c42f,com.docker.compose.project=orbitduo,com.docker.compose.project.working_dir=C:\\Users\\yeras\\OneDrive\\Desktop\\Hackathon,desktop.docker.io/ports.scheme=v2,org.opencontainers.image.created=2026-02-23T01:48:31.459Z",
+      "LocalVolumes": "0",
+      "Mounts": "",
+      "Name": "orbitduo-frontend-1",
+      "Names": "orbitduo-frontend-1",
+      "Networks": "orbitduo_default",
+      "Ports": "127.0.0.1:8080->8080/tcp",
+      "Project": "orbitduo",
+      "Publishers": [
+        {
+          "URL": "127.0.0.1",
+          "TargetPort": 8080,
+          "PublishedPort": 8080,
+          "Protocol": "tcp"
+        }
+      ],
+      "RunningFor": "About a minute ago",
+      "Service": "frontend",
+      "Size": "0B",
+      "State": "running",
+      "Status": "Up About a minute (healthy)"
+    }
+  ]
+}

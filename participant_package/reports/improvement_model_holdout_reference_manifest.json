@@ -3,7 +3,7 @@
     "experiments/reference_v1/__init__.py": "a86e4c2d4b57a2a1f9cd3b493a13736b8effc703a69ca5bedac16f17640c6201",
     "experiments/reference_v1/agent_core.py": "451e8898ec4aa2eed20ee7ad7d080e5febb2a3a3fdefa8d4454483341d152ac4",
     "experiments/reference_v1/candidates.py": "6df3e030c186aea30254d3f9c7cf689baf8857e2a6795b51ec023dc8575ea67f",
-    "experiments/reference_v1/portfolio.py": "f638dfb68110de664e78adea858edbb13dd5120c472a3ab82418208d6f6c85d1",
+    "experiments/reference_v1/portfolio.py": "d94622b29068533214db408fa8831da217b9385f21b3484b7cbd3d9a3ac43a1f",
     "experiments/reference_v1/posterior.py": "abfb816341d47380ca448696574f96a3e2509cb2b14210d2e943b1dc8f585969"
   },
   "data_and_organizer": {

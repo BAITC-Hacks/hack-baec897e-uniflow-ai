@@ -1,1 +1,1 @@
-"""UniFlow's optional local HTTP service; the contest agent is independent."""
+"""OrbitDuo's optional local HTTP service; the contest agent is independent."""

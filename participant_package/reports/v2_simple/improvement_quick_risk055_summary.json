@@ -16,11 +16,11 @@
         "experiments/reference_v1/posterior.py": "abfb816341d47380ca448696574f96a3e2509cb2b14210d2e943b1dc8f585969"
       },
       "new": {
-        "uniflow/__init__.py": "0bbf9388678e04808700c7624d9e4d60ad0cdcc31d85534ac287b2b4aa656aeb",
-        "uniflow/agent_core.py": "7f1096bafedeae87d4b05ec8d8de0d39f7552769737aadd471632f4b131f488a",
-        "uniflow/candidates.py": "ba8a38bdb0f283ca1f36712fcf2b92eec8077be83fb9a707e7df949a29fddee8",
-        "uniflow/portfolio.py": "624279b4ea86424f688da8652f12fa97414dd626c7fa8d23c5bd8c20a649ad09",
-        "uniflow/posterior.py": "05edab257f772bc0f7021c39060b4c3495d4bfe1379de68858dc143183bd4c8d"
+        "orbitduo/__init__.py": "0bbf9388678e04808700c7624d9e4d60ad0cdcc31d85534ac287b2b4aa656aeb",
+        "orbitduo/agent_core.py": "7f1096bafedeae87d4b05ec8d8de0d39f7552769737aadd471632f4b131f488a",
+        "orbitduo/candidates.py": "ba8a38bdb0f283ca1f36712fcf2b92eec8077be83fb9a707e7df949a29fddee8",
+        "orbitduo/portfolio.py": "624279b4ea86424f688da8652f12fa97414dd626c7fa8d23c5bd8c20a649ad09",
+        "orbitduo/posterior.py": "05edab257f772bc0f7021c39060b4c3495d4bfe1379de68858dc143183bd4c8d"
       }
     },
     "dataset_and_organizer_hashes": {
@@ -404,5 +404,9 @@
       "fraction_new_better": 1.0,
       "fraction_new_worse": 0.0
     }
-  ]
+  ],
+  "branding_migration": {
+    "archive": "participant_package/experiments/archive/pre_branding.tar.gz",
+    "note": "Presentation names normalized. Recorded old source hashes refer to the exact archived release, not the renamed current sources. Current verification is regenerated separately."
+  }
 }

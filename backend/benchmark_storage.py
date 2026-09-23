@@ -34,7 +34,7 @@ def main():
     if snapshot.status not in {"completed", "failed"}:
         raise ValueError("Benchmark needs a saved terminal snapshot")
 
-    with TemporaryDirectory(prefix="uniflow-storage-") as directory:
+    with TemporaryDirectory(prefix="orbitduo-storage-") as directory:
         store = RunStore(Path(directory) / "benchmark.db")
         with store.connection(write=True) as conn:
             for index in range(100):

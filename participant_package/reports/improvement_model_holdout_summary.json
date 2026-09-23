@@ -4,7 +4,7 @@
     "scope": "model_holdout",
     "status": "completed",
     "planned_scenario_seed_pairs": 3,
-    "harness_sha256": "c60b58bd426e6ff8c5fa34d85090d6c142c218f9ce1e1fe166a9c1372d6d852e",
+    "harness_sha256": "a964c580d37cceee0e993b49632c7fd7e178a77c450c70bc3a25953eccc0969f",
     "model_rng_seed": 20260925,
     "agent_seed": 42,
     "new_options": {},
@@ -22,15 +22,15 @@
         "experiments/reference_v1/__init__.py": "a86e4c2d4b57a2a1f9cd3b493a13736b8effc703a69ca5bedac16f17640c6201",
         "experiments/reference_v1/agent_core.py": "451e8898ec4aa2eed20ee7ad7d080e5febb2a3a3fdefa8d4454483341d152ac4",
         "experiments/reference_v1/candidates.py": "6df3e030c186aea30254d3f9c7cf689baf8857e2a6795b51ec023dc8575ea67f",
-        "experiments/reference_v1/portfolio.py": "f638dfb68110de664e78adea858edbb13dd5120c472a3ab82418208d6f6c85d1",
+        "experiments/reference_v1/portfolio.py": "d94622b29068533214db408fa8831da217b9385f21b3484b7cbd3d9a3ac43a1f",
         "experiments/reference_v1/posterior.py": "abfb816341d47380ca448696574f96a3e2509cb2b14210d2e943b1dc8f585969"
       },
       "new": {
-        "uniflow/__init__.py": "0bbf9388678e04808700c7624d9e4d60ad0cdcc31d85534ac287b2b4aa656aeb",
-        "uniflow/agent_core.py": "e1782a78a64df2013d18b38fa93ae9cdaa4329e4175bc3cf2c8bd073b02ef665",
-        "uniflow/candidates.py": "ba8a38bdb0f283ca1f36712fcf2b92eec8077be83fb9a707e7df949a29fddee8",
-        "uniflow/portfolio.py": "79e62e1c80f6185fe575e187bdf34fa385e061cd4781cc44c6fe577d72958dc7",
-        "uniflow/posterior.py": "aae10148a13cb9f07cefa7abeb5eaffd3658953dd72503f07a6db4e7fc4d0007"
+        "orbitduo/__init__.py": "0bbf9388678e04808700c7624d9e4d60ad0cdcc31d85534ac287b2b4aa656aeb",
+        "orbitduo/agent_core.py": "e1782a78a64df2013d18b38fa93ae9cdaa4329e4175bc3cf2c8bd073b02ef665",
+        "orbitduo/candidates.py": "ba8a38bdb0f283ca1f36712fcf2b92eec8077be83fb9a707e7df949a29fddee8",
+        "orbitduo/portfolio.py": "741c891181bec6386dbd0085a1d349e8abd0ade330536572fdcd5a025039c546",
+        "orbitduo/posterior.py": "aae10148a13cb9f07cefa7abeb5eaffd3658953dd72503f07a6db4e7fc4d0007"
       }
     },
     "dataset_and_organizer_hashes": {
@@ -128,7 +128,7 @@
       "adaptive": true,
       "max_pilots": 16
     },
-    "elapsed_seconds": 10.541981199989095,
+    "elapsed_seconds": 44.83999830001267,
     "measurement_count": 6
   },
   "strategy_summaries": [
@@ -147,17 +147,17 @@
       "mean_unique_customers": 13785.0,
       "mean_n_pilots": 16.0,
       "mean_n_final_campaigns": 8.0,
-      "mean_runtime_seconds": 2.692309200007003,
-      "max_runtime_seconds": 2.692309200007003
+      "mean_runtime_seconds": 4.574405900028069,
+      "max_runtime_seconds": 4.574405900028069
     },
     {
       "scenario": "model_holdout_permuted_leaders",
       "strategy": "v1",
       "runs": 1,
-      "mean_net": -904721.136927136,
-      "median_net": -904721.136927136,
-      "min_net": -904721.136927136,
-      "p10_net": -904721.136927136,
+      "mean_net": -904721.1369271361,
+      "median_net": -904721.1369271361,
+      "min_net": -904721.1369271361,
+      "p10_net": -904721.1369271361,
       "negative_fraction": 1.0,
       "all_conform": true,
       "mean_communication_cost": 100000.0,
@@ -165,8 +165,8 @@
       "mean_unique_customers": 12046.0,
       "mean_n_pilots": 16.0,
       "mean_n_final_campaigns": 10.0,
-      "mean_runtime_seconds": 5.323716800019611,
-      "max_runtime_seconds": 5.323716800019611
+      "mean_runtime_seconds": 10.30259069998283,
+      "max_runtime_seconds": 10.30259069998283
     },
     {
       "scenario": "model_holdout_saturated_calls",
@@ -183,8 +183,8 @@
       "mean_unique_customers": 12290.0,
       "mean_n_pilots": 16.0,
       "mean_n_final_campaigns": 5.0,
-      "mean_runtime_seconds": 3.732652099977713,
-      "max_runtime_seconds": 3.732652099977713
+      "mean_runtime_seconds": 4.001531199959572,
+      "max_runtime_seconds": 4.001531199959572
     },
     {
       "scenario": "model_holdout_saturated_calls",
@@ -201,8 +201,8 @@
       "mean_unique_customers": 12125.0,
       "mean_n_pilots": 16.0,
       "mean_n_final_campaigns": 5.0,
-      "mean_runtime_seconds": 4.69330829998944,
-      "max_runtime_seconds": 4.69330829998944
+      "mean_runtime_seconds": 7.262102300010156,
+      "max_runtime_seconds": 7.262102300010156
     },
     {
       "scenario": "model_holdout_weak_history",
@@ -219,8 +219,8 @@
       "mean_unique_customers": 12384.0,
       "mean_n_pilots": 16.0,
       "mean_n_final_campaigns": 6.0,
-      "mean_runtime_seconds": 3.1556129999808036,
-      "max_runtime_seconds": 3.1556129999808036
+      "mean_runtime_seconds": 5.251284999947529,
+      "max_runtime_seconds": 5.251284999947529
     },
     {
       "scenario": "model_holdout_weak_history",
@@ -237,17 +237,17 @@
       "mean_unique_customers": 11505.0,
       "mean_n_pilots": 16.0,
       "mean_n_final_campaigns": 7.0,
-      "mean_runtime_seconds": 4.443440500006545,
-      "max_runtime_seconds": 4.443440500006545
+      "mean_runtime_seconds": 9.895989899989218,
+      "max_runtime_seconds": 9.895989899989218
     }
   ],
   "paired_comparisons": [
     {
       "scenario": "model_holdout_permuted_leaders",
       "paired_runs": 1,
-      "mean_net_difference": 607940.0787051725,
-      "median_net_difference": 607940.0787051725,
-      "min_net_difference": 607940.0787051725,
+      "mean_net_difference": 607940.0787051726,
+      "median_net_difference": 607940.0787051726,
+      "min_net_difference": 607940.0787051726,
       "fraction_new_better": 1.0,
       "fraction_new_worse": 0.0
     },

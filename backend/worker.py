@@ -86,7 +86,7 @@ def validate_completed(snapshot: RunSnapshot):
 class RunWorker:
     def __init__(self, store: RunStore, runner):
         self.store, self.runner = store, runner
-        self.executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="uniflow-worker")
+        self.executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="orbitduo-worker")
 
     def submit(self, run_id: str):
         try:

@@ -55,7 +55,7 @@ def family_model(name, complete, seed=MODEL_SEED):
 
 
 def policy_hashes(version):
-    folder = ROOT / ("experiments/reference_v1" if version == "v1" else "uniflow")
+    folder = ROOT / ("experiments/reference_v1" if version == "v1" else "orbitduo")
     return {str(path.relative_to(ROOT)).replace("\\", "/"): hashlib.sha256(path.read_bytes()).hexdigest()
             for path in sorted(folder.glob("*.py"))
             if version == "v1" or path.name not in {"audit.py", "evaluation.py", "service_data.py"}}

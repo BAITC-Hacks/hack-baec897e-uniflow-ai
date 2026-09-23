@@ -8,7 +8,7 @@ for (const width of [1440, 1280, 768, 390]) {
     for (const route of ['/', '/audience', '/runs/new']) {
       await page.goto(route)
       await expect(page.getByText('Демо · синтетические данные')).toBeVisible()
-      if (route === '/') await expect(page.getByRole('heading', { name: /Решения для аудитории/ })).toBeVisible()
+      if (route === '/') await expect(page.getByRole('heading', { name: /Кому предложить тариф/ })).toBeVisible()
       if (route === '/audience') await expect(page.getByRole('heading', { name: 'Кого можно включить в план' })).toBeVisible()
       if (route === '/runs/new') await expect(page.getByRole('radio', { name: /Сбалансированный/ })).toBeVisible()
       await expect.poll(async () => page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1)).toBe(true)

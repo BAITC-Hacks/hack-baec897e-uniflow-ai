@@ -5,7 +5,7 @@ import numpy as np
 import pytest
 
 from scoring_core import CHANNELS
-from uniflow.posterior import HistoryPrior, NOISE_STD, PosteriorTable
+from orbitduo.posterior import HistoryPrior, NOISE_STD, PosteriorTable
 
 
 def neutral_table():

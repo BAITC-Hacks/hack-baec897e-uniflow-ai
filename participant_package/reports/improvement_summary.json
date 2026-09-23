@@ -4,7 +4,7 @@
     "scope": "full",
     "status": "completed",
     "planned_scenario_seed_pairs": 38,
-    "harness_sha256": "c60b58bd426e6ff8c5fa34d85090d6c142c218f9ce1e1fe166a9c1372d6d852e",
+    "harness_sha256": "a964c580d37cceee0e993b49632c7fd7e178a77c450c70bc3a25953eccc0969f",
     "model_rng_seed": 20260924,
     "agent_seed": 42,
     "new_options": {},
@@ -22,15 +22,15 @@
         "experiments/reference_v1/__init__.py": "a86e4c2d4b57a2a1f9cd3b493a13736b8effc703a69ca5bedac16f17640c6201",
         "experiments/reference_v1/agent_core.py": "451e8898ec4aa2eed20ee7ad7d080e5febb2a3a3fdefa8d4454483341d152ac4",
         "experiments/reference_v1/candidates.py": "6df3e030c186aea30254d3f9c7cf689baf8857e2a6795b51ec023dc8575ea67f",
-        "experiments/reference_v1/portfolio.py": "f638dfb68110de664e78adea858edbb13dd5120c472a3ab82418208d6f6c85d1",
+        "experiments/reference_v1/portfolio.py": "d94622b29068533214db408fa8831da217b9385f21b3484b7cbd3d9a3ac43a1f",
         "experiments/reference_v1/posterior.py": "abfb816341d47380ca448696574f96a3e2509cb2b14210d2e943b1dc8f585969"
       },
       "new": {
-        "uniflow/__init__.py": "0bbf9388678e04808700c7624d9e4d60ad0cdcc31d85534ac287b2b4aa656aeb",
-        "uniflow/agent_core.py": "e1782a78a64df2013d18b38fa93ae9cdaa4329e4175bc3cf2c8bd073b02ef665",
-        "uniflow/candidates.py": "ba8a38bdb0f283ca1f36712fcf2b92eec8077be83fb9a707e7df949a29fddee8",
-        "uniflow/portfolio.py": "79e62e1c80f6185fe575e187bdf34fa385e061cd4781cc44c6fe577d72958dc7",
-        "uniflow/posterior.py": "aae10148a13cb9f07cefa7abeb5eaffd3658953dd72503f07a6db4e7fc4d0007"
+        "orbitduo/__init__.py": "0bbf9388678e04808700c7624d9e4d60ad0cdcc31d85534ac287b2b4aa656aeb",
+        "orbitduo/agent_core.py": "e1782a78a64df2013d18b38fa93ae9cdaa4329e4175bc3cf2c8bd073b02ef665",
+        "orbitduo/candidates.py": "ba8a38bdb0f283ca1f36712fcf2b92eec8077be83fb9a707e7df949a29fddee8",
+        "orbitduo/portfolio.py": "741c891181bec6386dbd0085a1d349e8abd0ade330536572fdcd5a025039c546",
+        "orbitduo/posterior.py": "aae10148a13cb9f07cefa7abeb5eaffd3658953dd72503f07a6db4e7fc4d0007"
       }
     },
     "dataset_and_organizer_hashes": {
@@ -133,7 +133,7 @@
       "adaptive": true,
       "max_pilots": 16
     },
-    "elapsed_seconds": 120.95362919999752,
+    "elapsed_seconds": 693.1097167000407,
     "measurement_count": 76
   },
   "strategy_summaries": [
@@ -152,8 +152,8 @@
       "mean_unique_customers": 10009.666666666666,
       "mean_n_pilots": 16.0,
       "mean_n_final_campaigns": 7.333333333333333,
-      "mean_runtime_seconds": 3.2640455666502626,
-      "max_runtime_seconds": 3.627603299973998
+      "mean_runtime_seconds": 3.1265959666731455,
+      "max_runtime_seconds": 3.4509054999798536
     },
     {
       "scenario": "low_conversion",
@@ -170,8 +170,8 @@
       "mean_unique_customers": 11508.666666666666,
       "mean_n_pilots": 16.0,
       "mean_n_final_campaigns": 7.666666666666667,
-      "mean_runtime_seconds": 5.59667016666693,
-      "max_runtime_seconds": 7.064795799960848
+      "mean_runtime_seconds": 8.17347839998547,
+      "max_runtime_seconds": 11.290491899999324
     },
     {
       "scenario": "mock_heldout",
@@ -188,8 +188,8 @@
       "mean_unique_customers": 12213.0,
       "mean_n_pilots": 16.0,
       "mean_n_final_campaigns": 7.5,
-      "mean_runtime_seconds": 3.0593585099850316,
-      "max_runtime_seconds": 4.200808199995663
+      "mean_runtime_seconds": 7.681219510000664,
+      "max_runtime_seconds": 13.49643840000499
     },
     {
       "scenario": "mock_heldout",
@@ -198,7 +198,7 @@
       "mean_net": 274342.8184163697,
       "median_net": 243001.47836757524,
       "min_net": -313555.37672237767,
-      "p10_net": -208521.64829847476,
+      "p10_net": -208521.64829847479,
       "negative_fraction": 0.2,
       "all_conform": true,
       "mean_communication_cost": 99729.4,
@@ -206,8 +206,8 @@
       "mean_unique_customers": 11411.0,
       "mean_n_pilots": 16.0,
       "mean_n_final_campaigns": 7.1,
-      "mean_runtime_seconds": 5.2934746500046455,
-      "max_runtime_seconds": 6.637591400009114
+      "mean_runtime_seconds": 15.226658430002862,
+      "max_runtime_seconds": 22.650812300038524
     },
     {
       "scenario": "mock_tuning",
@@ -224,8 +224,8 @@
       "mean_unique_customers": 10460.9,
       "mean_n_pilots": 16.0,
       "mean_n_final_campaigns": 5.9,
-      "mean_runtime_seconds": 3.100539739994565,
-      "max_runtime_seconds": 4.553602600004524
+      "mean_runtime_seconds": 5.7190396300051365,
+      "max_runtime_seconds": 19.2127565999981
     },
     {
       "scenario": "mock_tuning",
@@ -242,8 +242,8 @@
       "mean_unique_customers": 11748.3,
       "mean_n_pilots": 16.0,
       "mean_n_final_campaigns": 7.7,
-      "mean_runtime_seconds": 5.786522060009884,
-      "max_runtime_seconds": 7.237841700029094
+      "mean_runtime_seconds": 11.146621990000131,
+      "max_runtime_seconds": 21.667860099987593
     },
     {
       "scenario": "near_zero",
@@ -260,8 +260,8 @@
       "mean_unique_customers": 10083.0,
       "mean_n_pilots": 16.0,
       "mean_n_final_campaigns": 7.0,
-      "mean_runtime_seconds": 2.6198330666908682,
-      "max_runtime_seconds": 2.8499108999967575
+      "mean_runtime_seconds": 3.981002733344212,
+      "max_runtime_seconds": 4.9177277000271715
     },
     {
       "scenario": "near_zero",
@@ -278,8 +278,8 @@
       "mean_unique_customers": 11508.666666666666,
       "mean_n_pilots": 16.0,
       "mean_n_final_campaigns": 7.666666666666667,
-      "mean_runtime_seconds": 5.96538143333358,
-      "max_runtime_seconds": 7.649190700030886
+      "mean_runtime_seconds": 7.347008499995961,
+      "max_runtime_seconds": 9.2299275000114
     },
     {
       "scenario": "permuted_leaders",
@@ -296,8 +296,8 @@
       "mean_unique_customers": 11158.0,
       "mean_n_pilots": 16.0,
       "mean_n_final_campaigns": 8.666666666666666,
-      "mean_runtime_seconds": 2.4560281333203116,
-      "max_runtime_seconds": 2.560883699974511
+      "mean_runtime_seconds": 6.72654559998773,
+      "max_runtime_seconds": 10.173880899965297
     },
     {
       "scenario": "permuted_leaders",
@@ -314,8 +314,8 @@
       "mean_unique_customers": 11575.333333333334,
       "mean_n_pilots": 16.0,
       "mean_n_final_campaigns": 7.333333333333333,
-      "mean_runtime_seconds": 5.320714933332056,
-      "max_runtime_seconds": 6.123542300018016
+      "mean_runtime_seconds": 10.95630579998639,
+      "max_runtime_seconds": 13.404445399995893
     },
     {
       "scenario": "saturated_calls",
@@ -332,17 +332,17 @@
       "mean_unique_customers": 12966.0,
       "mean_n_pilots": 16.0,
       "mean_n_final_campaigns": 5.666666666666667,
-      "mean_runtime_seconds": 2.367404233353833,
-      "max_runtime_seconds": 2.4620853000087664
+      "mean_runtime_seconds": 3.64692769998995,
+      "max_runtime_seconds": 4.118194199982099
     },
     {
       "scenario": "saturated_calls",
       "strategy": "v1",
       "runs": 3,
-      "mean_net": 19390072.16816647,
-      "median_net": 19800006.397464637,
-      "min_net": 18439804.71140508,
-      "p10_net": 18711845.04861699,
+      "mean_net": 19390072.168166462,
+      "median_net": 19800006.397464633,
+      "min_net": 18439804.711405076,
+      "p10_net": 18711845.048616987,
       "negative_fraction": 0.0,
       "all_conform": true,
       "mean_communication_cost": 98878.66666666667,
@@ -350,8 +350,8 @@
       "mean_unique_customers": 12318.333333333334,
       "mean_n_pilots": 16.0,
       "mean_n_final_campaigns": 5.0,
-      "mean_runtime_seconds": 4.026284766674507,
-      "max_runtime_seconds": 4.074540900008287
+      "mean_runtime_seconds": 7.675582033349201,
+      "max_runtime_seconds": 10.66930200002389
     },
     {
       "scenario": "sign_reversed",
@@ -368,8 +368,8 @@
       "mean_unique_customers": 9551.666666666666,
       "mean_n_pilots": 16.0,
       "mean_n_final_campaigns": 3.6666666666666665,
-      "mean_runtime_seconds": 2.435462466654523,
-      "max_runtime_seconds": 2.5528650999767706
+      "mean_runtime_seconds": 4.447189066694894,
+      "max_runtime_seconds": 4.869999800052028
     },
     {
       "scenario": "sign_reversed",
@@ -386,8 +386,8 @@
       "mean_unique_customers": 11442.0,
       "mean_n_pilots": 16.0,
       "mean_n_final_campaigns": 7.0,
-      "mean_runtime_seconds": 5.443458233319689,
-      "max_runtime_seconds": 6.671952100005001
+      "mean_runtime_seconds": 13.711885900003836,
+      "max_runtime_seconds": 24.80715040001087
     },
     {
       "scenario": "weak_history",
@@ -404,8 +404,8 @@
       "mean_unique_customers": 11693.0,
       "mean_n_pilots": 16.0,
       "mean_n_final_campaigns": 4.666666666666667,
-      "mean_runtime_seconds": 2.6218933000151687,
-      "max_runtime_seconds": 2.91361320001306
+      "mean_runtime_seconds": 2.827284333334925,
+      "max_runtime_seconds": 3.5747858000104316
     },
     {
       "scenario": "weak_history",
@@ -413,8 +413,8 @@
       "runs": 3,
       "mean_net": 10982842.829793597,
       "median_net": 11013313.47243859,
-      "min_net": 10203794.828981737,
-      "p10_net": 10365698.557673108,
+      "min_net": 10203794.828981735,
+      "p10_net": 10365698.557673106,
       "negative_fraction": 0.0,
       "all_conform": true,
       "mean_communication_cost": 100000.0,
@@ -422,8 +422,8 @@
       "mean_unique_customers": 12280.0,
       "mean_n_pilots": 16.0,
       "mean_n_final_campaigns": 5.666666666666667,
-      "mean_runtime_seconds": 4.701956000004429,
-      "max_runtime_seconds": 5.04346210003132
+      "mean_runtime_seconds": 6.290347699987858,
+      "max_runtime_seconds": 7.097600899985991
     }
   ],
   "paired_comparisons": [
@@ -475,9 +475,9 @@
     {
       "scenario": "saturated_calls",
       "paired_runs": 3,
-      "mean_net_difference": -300700.9199216105,
+      "mean_net_difference": -300700.919921608,
       "median_net_difference": -1438675.5589787178,
-      "min_net_difference": -1615478.9995400868,
+      "min_net_difference": -1615478.999540083,
       "fraction_new_better": 0.3333333333333333,
       "fraction_new_worse": 0.6666666666666666
     },
@@ -493,9 +493,9 @@
     {
       "scenario": "weak_history",
       "paired_runs": 3,
-      "mean_net_difference": 209670.63632789007,
+      "mean_net_difference": 209670.63632789068,
       "median_net_difference": 293675.35340715013,
-      "min_net_difference": -393266.38084420376,
+      "min_net_difference": -393266.3808442019,
       "fraction_new_better": 0.6666666666666666,
       "fraction_new_worse": 0.3333333333333333
     }

@@ -383,7 +383,7 @@
         "id": "campaign-1",
         "execution_order": 1,
         "spec": {
-          "campaign_name": "uniflow_01_tariff_8_tariff_12",
+          "campaign_name": "orbitduo_01_tariff_8_tariff_12",
           "filter_arpu_segment": "HIGH",
           "filter_data_segment": null,
           "filter_call_segment": null,
@@ -943,5 +943,9 @@
   "idempotency_and_active_conflicts_verified": true,
   "conditional_polling_verified": true,
   "event_prefix_checks": 7,
-  "maximum_health_latency_seconds": 0.02280939999036491
+  "maximum_health_latency_seconds": 0.02280939999036491,
+  "branding_migration": {
+    "archive": "participant_package/experiments/archive/pre_branding.tar.gz",
+    "note": "Presentation names normalized. Recorded old source hashes refer to the exact archived release, not the renamed current sources. Current verification is regenerated separately."
+  }
 }

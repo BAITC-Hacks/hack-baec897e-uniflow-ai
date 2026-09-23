@@ -93,7 +93,10 @@ export function buildSnapshot(run: StoredRun, now = Date.now()): RunSnapshot {
       phase === 'candidates' ? 'Подбираем предложения' : phase === 'pilots' ? 'Агент проверяет гипотезы' : 'Собираем план',
     resources: resources(pilots, completed, negative), pilots: pilots === 0 ? [] : pilots === 1 ? [pilotOne(run.created_at)] : [pilotOne(run.created_at), pilotTwo(run.created_at)],
     campaigns: completed ? negative ? [{ ...negativeCampaign, expected_incremental_net_gain: cautious ? -10760 : -6760 }] : cautious ? campaigns.map(item => ({ ...item, expected_incremental_net_gain: Math.round((item.expected_incremental_net_gain || 0) * 0.89) })) : campaigns : [],
-    events: events(run.created_at, failed ? 5 : activeEvents, negative), forecast, local_evaluation: local,
+    events: failed ? [...events(run.created_at, 4, negative), {
+      id: 'event-failed', sequence: 5, created_at: iso(run.created_at, 11), phase: 'failed', title: 'Расчёт остановлен',
+      message: 'Демонстрационный сбой при сборке плана. Пилоты сохранены; готового плана нет.',
+    }] : events(run.created_at, activeEvents, negative), forecast, local_evaluation: local,
     warnings: completed && negative ? [{ code: 'NEGATIVE_FORECAST', severity: 'warning', message: 'Уверенно выгодные варианты не найдены.', affected_count: null }] : [],
     failure: failed ? { code: 'DEMO_FAILURE', message: 'Демонстрационная ошибка расчёта. Ранее полученные пилоты сохранены.', retryable: true } : null,
   }

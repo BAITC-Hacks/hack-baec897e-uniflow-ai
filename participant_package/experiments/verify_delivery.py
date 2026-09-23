@@ -38,15 +38,15 @@ def main():
         if not matches:
             raise AssertionError(f"Organizer input modified: {relative}")
     submission = (PACKAGE / "submission.csv").read_bytes()
-    with tempfile.TemporaryDirectory(prefix="uniflow-delivery-") as temporary:
+    with tempfile.TemporaryDirectory(prefix="orbitduo-delivery-") as temporary:
         delivery = Path(temporary).resolve()
         # An explicit set of files, with no repository, web server or frontend.
         for name in ("agent.py", "environment.py", "mock_environment.py", "make_submission.py",
                      "customer_profile.csv"):
             shutil.copy2(PACKAGE / name, delivery / name)
-        (delivery / "uniflow").mkdir()
-        for path in (PACKAGE / "uniflow").glob("*.py"):
-            shutil.copy2(path, delivery / "uniflow" / path.name)
+        (delivery / "orbitduo").mkdir()
+        for path in (PACKAGE / "orbitduo").glob("*.py"):
+            shutil.copy2(path, delivery / "orbitduo" / path.name)
         (delivery / "data").mkdir()
         for name in ("change_tariff.csv", "dict_tariff.csv"):
             shutil.copy2(PACKAGE / "data" / name, delivery / "data" / name)

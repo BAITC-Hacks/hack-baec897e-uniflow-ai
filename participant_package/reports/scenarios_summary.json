@@ -14,8 +14,8 @@
     "mean_unique_customers": 10009.666666666666,
     "mean_n_pilots": 16.0,
     "mean_n_final_campaigns": 7.333333333333333,
-    "mean_runtime_seconds": 3.2640455666502626,
-    "max_runtime_seconds": 3.627603299973998
+    "mean_runtime_seconds": 3.1265959666731455,
+    "max_runtime_seconds": 3.4509054999798536
   },
   {
     "scenario": "low_conversion",
@@ -32,8 +32,8 @@
     "mean_unique_customers": 11508.666666666666,
     "mean_n_pilots": 16.0,
     "mean_n_final_campaigns": 7.666666666666667,
-    "mean_runtime_seconds": 5.59667016666693,
-    "max_runtime_seconds": 7.064795799960848
+    "mean_runtime_seconds": 8.17347839998547,
+    "max_runtime_seconds": 11.290491899999324
   },
   {
     "scenario": "model_holdout_permuted_leaders",
@@ -50,8 +50,8 @@
     "mean_unique_customers": 13785.0,
     "mean_n_pilots": 16.0,
     "mean_n_final_campaigns": 8.0,
-    "mean_runtime_seconds": 2.692309200007003,
-    "max_runtime_seconds": 2.692309200007003
+    "mean_runtime_seconds": 4.574405900028069,
+    "max_runtime_seconds": 4.574405900028069
   },
   {
     "scenario": "model_holdout_permuted_leaders",
@@ -68,8 +68,8 @@
     "mean_unique_customers": 12046.0,
     "mean_n_pilots": 16.0,
     "mean_n_final_campaigns": 10.0,
-    "mean_runtime_seconds": 5.323716800019611,
-    "max_runtime_seconds": 5.323716800019611
+    "mean_runtime_seconds": 10.30259069998283,
+    "max_runtime_seconds": 10.30259069998283
   },
   {
     "scenario": "model_holdout_saturated_calls",
@@ -86,8 +86,8 @@
     "mean_unique_customers": 12290.0,
     "mean_n_pilots": 16.0,
     "mean_n_final_campaigns": 5.0,
-    "mean_runtime_seconds": 3.732652099977713,
-    "max_runtime_seconds": 3.732652099977713
+    "mean_runtime_seconds": 4.001531199959572,
+    "max_runtime_seconds": 4.001531199959572
   },
   {
     "scenario": "model_holdout_saturated_calls",
@@ -104,8 +104,8 @@
     "mean_unique_customers": 12125.0,
     "mean_n_pilots": 16.0,
     "mean_n_final_campaigns": 5.0,
-    "mean_runtime_seconds": 4.69330829998944,
-    "max_runtime_seconds": 4.69330829998944
+    "mean_runtime_seconds": 7.262102300010156,
+    "max_runtime_seconds": 7.262102300010156
   },
   {
     "scenario": "model_holdout_weak_history",
@@ -122,8 +122,8 @@
     "mean_unique_customers": 12384.0,
     "mean_n_pilots": 16.0,
     "mean_n_final_campaigns": 6.0,
-    "mean_runtime_seconds": 3.155612999980804,
-    "max_runtime_seconds": 3.155612999980804
+    "mean_runtime_seconds": 5.251284999947529,
+    "max_runtime_seconds": 5.251284999947529
   },
   {
     "scenario": "model_holdout_weak_history",
@@ -140,8 +140,8 @@
     "mean_unique_customers": 11505.0,
     "mean_n_pilots": 16.0,
     "mean_n_final_campaigns": 7.0,
-    "mean_runtime_seconds": 4.443440500006545,
-    "max_runtime_seconds": 4.443440500006545
+    "mean_runtime_seconds": 9.895989899989218,
+    "max_runtime_seconds": 9.895989899989218
   },
   {
     "scenario": "near_zero",
@@ -158,8 +158,8 @@
     "mean_unique_customers": 10083.0,
     "mean_n_pilots": 16.0,
     "mean_n_final_campaigns": 7.0,
-    "mean_runtime_seconds": 2.6198330666908682,
-    "max_runtime_seconds": 2.849910899996757
+    "mean_runtime_seconds": 3.981002733344212,
+    "max_runtime_seconds": 4.917727700027172
   },
   {
     "scenario": "near_zero",
@@ -176,8 +176,8 @@
     "mean_unique_customers": 11508.666666666666,
     "mean_n_pilots": 16.0,
     "mean_n_final_campaigns": 7.666666666666667,
-    "mean_runtime_seconds": 5.96538143333358,
-    "max_runtime_seconds": 7.649190700030886
+    "mean_runtime_seconds": 7.347008499995961,
+    "max_runtime_seconds": 9.2299275000114
   },
   {
     "scenario": "permuted_leaders",
@@ -194,8 +194,8 @@
     "mean_unique_customers": 11158.0,
     "mean_n_pilots": 16.0,
     "mean_n_final_campaigns": 8.666666666666666,
-    "mean_runtime_seconds": 2.4560281333203116,
-    "max_runtime_seconds": 2.560883699974511
+    "mean_runtime_seconds": 6.72654559998773,
+    "max_runtime_seconds": 10.173880899965296
   },
   {
     "scenario": "permuted_leaders",
@@ -212,8 +212,8 @@
     "mean_unique_customers": 11575.333333333334,
     "mean_n_pilots": 16.0,
     "mean_n_final_campaigns": 7.333333333333333,
-    "mean_runtime_seconds": 5.320714933332056,
-    "max_runtime_seconds": 6.123542300018016
+    "mean_runtime_seconds": 10.95630579998639,
+    "max_runtime_seconds": 13.404445399995891
   },
   {
     "scenario": "saturated_calls",
@@ -230,15 +230,15 @@
     "mean_unique_customers": 12966.0,
     "mean_n_pilots": 16.0,
     "mean_n_final_campaigns": 5.666666666666667,
-    "mean_runtime_seconds": 2.367404233353833,
-    "max_runtime_seconds": 2.4620853000087664
+    "mean_runtime_seconds": 3.64692769998995,
+    "max_runtime_seconds": 4.118194199982099
   },
   {
     "scenario": "saturated_calls",
     "strategy": "v1",
     "runs": 3,
     "mean_net": 19390072.16816647,
-    "median_net": 19800006.39746464,
+    "median_net": 19800006.397464637,
     "min_net": 18439804.71140508,
     "p10_net": 18711845.04861699,
     "negative_fraction": 0.0,
@@ -248,8 +248,8 @@
     "mean_unique_customers": 12318.333333333334,
     "mean_n_pilots": 16.0,
     "mean_n_final_campaigns": 5.0,
-    "mean_runtime_seconds": 4.026284766674507,
-    "max_runtime_seconds": 4.074540900008287
+    "mean_runtime_seconds": 7.675582033349201,
+    "max_runtime_seconds": 10.66930200002389
   },
   {
     "scenario": "sign_reversed",
@@ -266,8 +266,8 @@
     "mean_unique_customers": 9551.666666666666,
     "mean_n_pilots": 16.0,
     "mean_n_final_campaigns": 3.6666666666666665,
-    "mean_runtime_seconds": 2.435462466654523,
-    "max_runtime_seconds": 2.5528650999767706
+    "mean_runtime_seconds": 4.447189066694894,
+    "max_runtime_seconds": 4.869999800052028
   },
   {
     "scenario": "sign_reversed",
@@ -284,8 +284,8 @@
     "mean_unique_customers": 11442.0,
     "mean_n_pilots": 16.0,
     "mean_n_final_campaigns": 7.0,
-    "mean_runtime_seconds": 5.443458233319689,
-    "max_runtime_seconds": 6.671952100005001
+    "mean_runtime_seconds": 13.711885900003836,
+    "max_runtime_seconds": 24.80715040001087
   },
   {
     "scenario": "weak_history",
@@ -302,8 +302,8 @@
     "mean_unique_customers": 11693.0,
     "mean_n_pilots": 16.0,
     "mean_n_final_campaigns": 4.666666666666667,
-    "mean_runtime_seconds": 2.6218933000151687,
-    "max_runtime_seconds": 2.91361320001306
+    "mean_runtime_seconds": 2.827284333334925,
+    "max_runtime_seconds": 3.574785800010432
   },
   {
     "scenario": "weak_history",
@@ -320,7 +320,7 @@
     "mean_unique_customers": 12280.0,
     "mean_n_pilots": 16.0,
     "mean_n_final_campaigns": 5.666666666666667,
-    "mean_runtime_seconds": 4.701956000004429,
-    "max_runtime_seconds": 5.04346210003132
+    "mean_runtime_seconds": 6.290347699987858,
+    "max_runtime_seconds": 7.097600899985991
   }
 ]

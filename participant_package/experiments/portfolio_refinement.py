@@ -12,7 +12,7 @@ from agent import Agent
 from environment import make_environment
 from mock_environment import _mock_fallback
 from scoring_core import CHANNELS, MAX_TOTAL_CONTACTS, TOTAL_BUDGET, score_campaigns
-from uniflow.portfolio import PilotOverlap, best_contacted_effect, describe_portfolio, optimize
+from orbitduo.portfolio import PilotOverlap, best_contacted_effect, describe_portfolio, optimize
 from .benchmark import REPORTS, load_inputs
 
 

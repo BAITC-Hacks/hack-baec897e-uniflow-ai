@@ -7,7 +7,7 @@ import pytest
 from agent import Agent
 from environment import make_environment
 from scoring_core import CHANNELS
-from uniflow.portfolio import replay_plan
+from orbitduo.portfolio import replay_plan
 from test_public_mechanics import model, profile, tariffs, zero_fallback
 
 
@@ -109,7 +109,7 @@ def test_pilots_reserve_nonempty_final_plan_with_low_contact_balance(adaptive, c
 
 def test_decision_modules_do_not_import_evaluator_or_hidden_state():
     package = Path(__file__).resolve().parents[1]
-    paths = [package / "agent.py"] + [path for path in (package / "uniflow").glob("*.py")
+    paths = [package / "agent.py"] + [path for path in (package / "orbitduo").glob("*.py")
         if path.name not in {"evaluation.py", "service_data.py", "audit.py", "__init__.py"}]
     forbidden_imports = {"mock_environment", "scoring_core", "environment", "gc", "inspect", "evaluation"}
     forbidden_attributes = {"__closure__", "__globals__", "internals", "executed_pilot_campaigns"}
