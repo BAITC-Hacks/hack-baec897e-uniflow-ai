@@ -85,7 +85,7 @@ def test_health_real_overview_and_openapi(tmp_path):
         assert len(parsed.tariffs) > 0
         assert "NaN" not in response.text and "Infinity" not in response.text
         schema = client.get("/openapi.json").json()
-        assert sum(len(methods) for path, methods in schema["paths"].items() if path.startswith("/api/v1")) == 7
+        assert sum(len(methods) for path, methods in schema["paths"].items() if path.startswith("/api/v1")) == 8
         assert "RunSnapshot" in schema["components"]["schemas"]
 
 

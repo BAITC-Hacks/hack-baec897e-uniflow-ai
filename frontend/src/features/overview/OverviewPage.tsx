@@ -6,7 +6,7 @@ import { channel, money, number, risk, status, when } from '../../lib/format'
 import { explainExclusionReason, explainNotice } from '../../lib/explanations'
 import { Card, CardHeader, EmptyState, ErrorPanel, Skeleton, StatusPill } from '../../components/ui/common'
 import { HelpButton } from '../../components/ui/HelpCenter'
-import { CalculatorPromo } from '../calculator/CalculatorPage'
+import { CalculatorPromo } from '../calculator/CalculatorPromo'
 
 export function OverviewPage() {
   const overview = useQuery({ queryKey: ['overview'], queryFn: ({ signal }) => api.overview(signal) })

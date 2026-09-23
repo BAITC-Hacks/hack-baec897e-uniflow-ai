@@ -3,6 +3,47 @@
 .calculator-intro h2 { font-size: clamp(28px, 3vw, 38px); max-width: 780px; line-height: 1.16; }
 .calculator-intro > p:not(.eyebrow) { max-width: 770px; margin: 12px 0 17px; color: var(--muted); font-size: 14px; line-height: 1.75; }
 .calculator-live-preview { display: none; }
+.calculator-quick-links { display: flex; flex-wrap: wrap; gap: 9px 20px; font-size: 13px; color: #446335; }
+.calculator-quick-links a { min-height: 32px; display: inline-flex; align-items: center; text-decoration: underline; text-underline-offset: 4px; }
+.scenario-library, .sensitivity-scenarios { padding: 27px; min-width: 0; scroll-margin-top: 115px; }
+.scenario-library .section-intro h2, .sensitivity-scenarios .section-intro h2 { font-size: 24px; line-height: 1.35; }
+.scenario-library .section-intro > p:not(.eyebrow), .sensitivity-scenarios .section-intro > p:not(.eyebrow) { font-size: 13px; color: var(--muted); line-height: 1.8; max-width: 880px; }
+.scenario-save-form { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 15px; margin-top: 22px; }
+.scenario-save-form label, .scenario-share label, .sensitivity-step > label { display: block; color: #344b2d; font-size: 13px; font-weight: 650; margin-bottom: 8px; }
+.scenario-save-form label span { color: var(--muted); font-weight: 400; }
+.scenario-save-form input, .scenario-save-form textarea, .scenario-share input, .sensitivity-step input { display: block; width: 100%; min-width: 0; min-height: 44px; border: 1px solid #cdd7c5; border-radius: 9px; padding: 10px 12px; background: #fcfdf9; font: inherit; font-size: 14px; }
+.scenario-save-form textarea { resize: vertical; max-height: 220px; }
+.scenario-library-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 10px; }
+.scenario-library-error { border-radius: 9px; padding: 12px 14px; background: #fff1e9; color: #873f22; font-size: 13px; line-height: 1.7; }
+.scenario-library-status { border-radius: 9px; padding: 12px 14px; background: #edf5e7; color: #365a2b; font-size: 13px; line-height: 1.7; }
+.scenario-share { padding: 17px; margin-top: 16px; background: #f4f7ee; border: 1px solid #dde7d2; border-radius: 11px; min-width: 0; }
+.scenario-share > button { margin-top: 10px; }
+.scenario-share > p { font-size: 13px; line-height: 1.7; color: var(--muted); margin: 10px 0 0; }
+.scenario-saved-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 28px; }
+.scenario-saved-heading h3 { font-size: 17px; margin: 0; }
+.scenario-saved-heading > span { color: var(--muted); font-size: 13px; white-space: nowrap; }
+.scenario-saved-list { list-style: none; padding: 0; margin: 12px 0 0; }
+.scenario-saved-list > li { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 0; border-top: 1px solid var(--line); }
+.scenario-saved-list > li > div:first-child { min-width: 0; flex: 1; overflow-wrap: anywhere; }
+.scenario-saved-list h4 { font-size: 15px; margin: 0 0 7px; }
+.scenario-saved-list p { font-size: 13px; line-height: 1.7; color: var(--muted); margin: 4px 0; }
+.scenario-saved-list p.scenario-note { color: #364730; white-space: pre-wrap; }
+.scenario-saved-list small { color: var(--muted); font-size: 12px; }
+.scenario-saved-list p.scenario-library-error { color: #873f22; margin-top: 9px; }
+.scenario-saved-buttons { display: flex; align-items: center; gap: 10px; }
+.scenario-saved-buttons .icon-button { min-width: 42px; min-height: 42px; }
+.sensitivity-step { display: grid; grid-template-columns: minmax(180px, auto) 105px minmax(0, 1fr); align-items: center; gap: 12px; padding: 16px; margin: 20px 0; background: #f4f7ee; border-radius: 10px; }
+.sensitivity-step > label { margin: 0; }
+.sensitivity-step > p { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.7; }
+.sensitivity-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.sensitivity-variant { border: 1px solid #dce3d5; background: #fafbf7; padding: 20px; border-radius: 11px; min-width: 0; }
+.sensitivity-variant.base { background: #eef5e5; border-color: #a8bf94; }
+.sensitivity-variant h3 { font-size: 15px; margin: 0 0 15px; }
+.sensitivity-variant > strong { display: block; font-size: clamp(20px, 2.1vw, 28px); color: #365b2f; overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
+.sensitivity-variant > strong.negative-text { color: var(--red); }
+.sensitivity-variant p { font-size: 13px; line-height: 1.7; margin: 12px 0 3px; color: #516348; }
+.sensitivity-variant small { font-size: 13px; line-height: 1.7; color: var(--muted); }
+#sensitivity-title { scroll-margin-top: 115px; }
 .calculator-badge { display: inline-flex; align-items: center; gap: 7px; padding: 8px 11px; border: 1px solid #d7e2ca; border-radius: 8px; background: #eef4e5; color: #3c5d32; font-size: 13px; font-weight: 650; }
 .calculator-badge svg { flex: none; }
 .calculator-layout { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 24px; align-items: start; }
@@ -110,6 +151,8 @@
   .calculator-total { font-size: 35px; }
 }
 @media (max-width: 960px) {
+  .sensitivity-step { grid-template-columns: minmax(0, 1fr) 105px; }
+  .sensitivity-step > p { grid-column: 1 / -1; }
   .calculator-layout { grid-template-columns: minmax(0, 1fr); }
   .calculator-result { position: static; }
   .calculator-live-preview { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 16px; align-items: center; position: sticky; top: 8px; z-index: 10; padding: 14px 18px; border: 1px solid #bacaaf; border-radius: 12px; background: #f7faf2; box-shadow: 0 5px 24px #253d2630; }
@@ -126,6 +169,12 @@
   .calculator-next > div { flex-basis: 100%; }
 }
 @media (max-width: 540px) {
+  .scenario-library, .sensitivity-scenarios { padding: 21px 18px; }
+  .scenario-save-form, .sensitivity-grid { grid-template-columns: minmax(0, 1fr); }
+  .scenario-saved-list > li { align-items: flex-start; flex-wrap: wrap; }
+  .scenario-saved-list > li > div:first-child { flex-basis: 100%; }
+  .sensitivity-variant { padding: 17px; }
+  .sensitivity-variant > strong { font-size: 26px; }
   .calculator-intro h2 { font-size: 28px; }
   .calculator-controls, .calculator-result { padding: 21px 18px; }
   .calculator-control-header { gap: 10px; margin-bottom: 21px; }

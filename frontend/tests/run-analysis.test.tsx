@@ -175,7 +175,7 @@ it('opens the actual campaign from the recommendation and provides anchors for f
   const openCampaign = vi.fn()
   render(<RunAnalysis run={run} onOpenCampaign={openCampaign} />)
   expect(screen.getByRole('heading', { name: 'Разбор результата' })).toBeInTheDocument()
-  expect(screen.getByText(/вручную добавить или убрать их здесь нельзя/)).toBeInTheDocument()
+  expect(screen.getByText(/Исключение кампаний можно проверить в отдельном эксперименте/)).toBeInTheDocument()
   expect(screen.getByRole('link', { name: 'Настроить новый подбор' })).toHaveAttribute('href', '/runs/new')
   await userEvent.setup().click(screen.getAllByRole('button', { name: 'Разобрать кампанию № 2' })[0])
   expect(openCampaign).toHaveBeenCalledWith('campaign-2')

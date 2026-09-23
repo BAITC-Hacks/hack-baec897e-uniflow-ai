@@ -17,6 +17,7 @@ function pageTitle(path: string) {
   if (path === '/audience') return 'Аудитория'
   if (path === '/calculator') return 'Калькулятор'
   if (path === '/runs/new') return 'Новый подбор'
+  if (path === '/runs/compare') return 'Сравнение запусков'
   if (path.startsWith('/runs/')) return 'Результат запуска'
   if (path === '/runs') return 'Запуски'
   return 'Подбор предложений'

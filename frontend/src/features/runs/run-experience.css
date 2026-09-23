@@ -146,3 +146,4 @@
   .run-page .campaign-dialog { border-radius: 0; width: 100%; }
   .campaign-dialog .drawer-content { padding: 22px 18px; }
 }
+.run-presentation-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }

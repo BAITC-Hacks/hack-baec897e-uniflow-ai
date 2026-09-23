@@ -1,0 +1,40 @@
+.campaign-what-if { margin-top: 24px; }
+.what-if-heading { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+.what-if-heading h2 { margin: 0; }
+.what-if-heading .status-pill { margin-left: auto; }
+.what-if-icon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 15px; background: #edf2e8; color: #45613d; flex: 0 0 auto; }
+.what-if-intro { color: var(--muted); line-height: 1.7; max-width: 960px; margin: 18px 0; }
+.what-if-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; border: 0; padding: 0; margin: 20px 0; min-width: 0; }
+.what-if-options legend { font-weight: 650; padding: 0 0 12px; }
+.what-if-option { display: flex; align-items: center; gap: 12px; border: 1px solid var(--line); border-radius: 13px; padding: 14px; cursor: pointer; background: #f8faf6; }
+.what-if-option input { accent-color: #476b3f; width: 19px; height: 19px; flex: 0 0 auto; }
+.what-if-option strong, .what-if-option small { display: block; }
+.what-if-option strong { font-size: 14px; }
+.what-if-option small { color: var(--muted); margin-top: 5px; line-height: 1.5; }
+.what-if-excluded { background: #fff; border-style: dashed; }
+.what-if-selection { margin-left: auto; color: var(--muted); font-size: 12px; }
+.what-if-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+.what-if-note, .what-if-disclaimer, .what-if-method p { color: var(--muted); font-size: 13px; line-height: 1.7; }
+.what-if-disclaimer { padding-top: 16px; margin: 20px 0 0; border-top: 1px solid var(--line); }
+.what-if-result { margin-top: 22px; }
+.what-if-difference { background: #f4f6f0; border-radius: 15px; padding: 18px; }
+.what-if-difference > span { font-size: 13px; color: var(--muted); }
+.what-if-difference > strong { display: block; font-size: clamp(24px, 3vw, 36px); margin: 5px 0; }
+.what-if-difference > p { margin: 0; color: var(--ink); line-height: 1.6; }
+.what-if-comparison { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
+.what-if-comparison > div { padding: 18px; border: 1px solid var(--line); border-radius: 14px; }
+.what-if-comparison h3 { margin: 0 0 14px; }
+.what-if-comparison dl { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px 16px; font-size: 13px; margin: 0; }
+.what-if-comparison dt { color: var(--muted); }
+.what-if-comparison dd { margin: 0; font-weight: 600; text-align: right; }
+.what-if-warning { padding: 14px; background: #fff6dd; border-radius: 12px; line-height: 1.6; }
+.what-if-method { margin-top: 18px; }
+.what-if-method summary { cursor: pointer; font-weight: 600; font-size: 14px; }
+@media (max-width: 700px) {
+  .what-if-options, .what-if-comparison { grid-template-columns: 1fr; }
+  .what-if-heading .status-pill { margin-left: 0; }
+  .what-if-controls .button { width: 100%; justify-content: center; white-space: normal; text-align: center; }
+  .what-if-selection { display: none; }
+  .what-if-comparison dl { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .what-if-comparison dd { overflow-wrap: anywhere; }
+}

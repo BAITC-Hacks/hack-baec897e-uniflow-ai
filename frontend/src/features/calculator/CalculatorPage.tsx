@@ -1,12 +1,15 @@
 import { useState, type CSSProperties } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { ArrowRight, Calculator, Info, RotateCcw, SlidersHorizontal, TrendingUp } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { api } from '../../lib/api/client'
 import type { Channel, Overview } from '../../lib/api/types'
 import { channel, money, number, percentage, segment, tariff } from '../../lib/format'
 import { calculateScenario, type ScenarioInput } from '../../lib/scenarioCalculator'
 import { Card, ErrorPanel, Skeleton } from '../../components/ui/common'
+import { ScenarioLibrary } from './ScenarioLibrary'
+import { SensitivityScenarios } from './SensitivityScenarios'
+import { matchingGroupIndex, parseSharedScenario, scenarioCompatibility, type ScenarioParameters } from './calculatorScenarioStore'
 import './calculator.css'
 
 const parse = (value: string) => value.trim() === '' ? NaN : Number(value)
@@ -60,15 +63,21 @@ function SensitivityChart({ input }: { input: ScenarioInput }) {
   </div>
 }
 
-function ScenarioWorkbench({ overview }: { overview: Overview }) {
+function ScenarioWorkbench({ overview, search }: { overview: Overview; search: string }) {
   const groups = overview.segments.filter(item => item.eligible && item.customer_count > 0)
-  const [groupKey, setGroupKey] = useState('all')
-  const [selectedChannel, setSelectedChannel] = useState<Channel>(overview.channels[0]?.code || 'push')
   const initialCount = String(Math.min(1000, overview.limits.customers_per_campaign, overview.limits.contacts, groups.reduce((sum, group) => sum + group.customer_count, 0)))
-  const [count, setCount] = useState(initialCount)
-  const [budget, setBudget] = useState(String(overview.limits.budget))
-  const [conversion, setConversion] = useState('10')
-  const [lift, setLift] = useState('10')
+  const [initial] = useState(() => {
+    const shared = parseSharedScenario(search)
+    const error = shared.error || (shared.parameters ? scenarioCompatibility(shared.parameters, overview) : null)
+    return { parameters: error ? null : shared.parameters, error }
+  })
+  const [groupKey, setGroupKey] = useState(initial.parameters?.group ? String(matchingGroupIndex(initial.parameters, overview)) : 'all')
+  const [selectedChannel, setSelectedChannel] = useState<Channel>(initial.parameters?.channel || overview.channels[0]?.code || 'push')
+  const [count, setCount] = useState(String(initial.parameters?.contacts ?? initialCount))
+  const [budget, setBudget] = useState(String(initial.parameters?.budget ?? overview.limits.budget))
+  const [conversion, setConversion] = useState(String(initial.parameters?.conversion ?? 10))
+  const [lift, setLift] = useState(String(initial.parameters?.lift ?? 10))
+  const [spread, setSpread] = useState(String(initial.parameters?.spread ?? 5))
   const selectedGroups = groupKey === 'all' ? groups : groups.filter((_, index) => String(index) === groupKey)
   const audienceSize = selectedGroups.reduce((sum, group) => sum + group.customer_count, 0)
   const revenue = selectedGroups.reduce((sum, group) => sum + group.baseline_revenue, 0)
@@ -86,7 +95,17 @@ function ScenarioWorkbench({ overview }: { overview: Overview }) {
   const uiError = input.budget > overview.limits.budget ? 'Бюджет сценария превышает лимит набора данных.' : input.requestedContacts > maxContacts ? 'Число абонентов превышает доступную аудиторию или лимит одной кампании.' : null
   const valid = result.valid && !uiError && audienceSize > 0
   const state = result.netGain > 0 ? 'positive' : result.netGain < 0 ? 'negative' : 'neutral'
-  const reset = () => { setGroupKey('all'); setSelectedChannel(overview.channels[0]?.code || 'push'); setCount(initialCount); setBudget(String(overview.limits.budget)); setConversion('10'); setLift('10') }
+  const reset = () => { setGroupKey('all'); setSelectedChannel(overview.channels[0]?.code || 'push'); setCount(initialCount); setBudget(String(overview.limits.budget)); setConversion('10'); setLift('10'); setSpread('5') }
+  const parameters: ScenarioParameters | null = valid && Number.isFinite(parse(spread)) && parse(spread) >= 0 && parse(spread) <= 100 ? {
+    version: 1, datasetId: overview.dataset.id, mode: overview.mode,
+    group: groupKey === 'all' ? null : { tariff: selectedGroups[0].current_tariff, arpu: selectedGroups[0].arpu_segment },
+    channel: selectedChannel, contacts: parse(count), budget: parse(budget), conversion: parse(conversion), lift: parse(lift), spread: parse(spread),
+  } : null
+  function loadScenario(parameters: ScenarioParameters) {
+    setGroupKey(parameters.group ? String(matchingGroupIndex(parameters, overview)) : 'all')
+    setSelectedChannel(parameters.channel); setCount(String(parameters.contacts)); setBudget(String(parameters.budget))
+    setConversion(String(parameters.conversion)); setLift(String(parameters.lift)); setSpread(String(parameters.spread))
+  }
   function changeGroup(value: string) {
     setGroupKey(value)
     const available = value === 'all' ? groups.reduce((sum, group) => sum + group.customer_count, 0) : groups[Number(value)]?.customer_count || 0
@@ -95,6 +114,9 @@ function ScenarioWorkbench({ overview }: { overview: Overview }) {
 
   return <>
     <div className="calculator-assumptions"><Info size={20} aria-hidden="true" /><p><strong>Попробуйте «что будет, если».</strong> Аудитория и цены связи взяты из данных. Вероятность перехода и изменение выручки — ваши предположения; стартовые 10% приведены для примера. Ползунки сразу пересчитывают результат без запуска подбора.</p></div>
+    {initial.error && <p className="scenario-library-error" role="alert">{initial.error}</p>}
+    {initial.parameters && <p className="scenario-library-status">Открыты условия из ссылки. Оценка пересчитана по текущему набору данных. Ссылка сохраняет параметры, а не фиксированную сумму результата.</p>}
+    <nav className="calculator-quick-links" aria-label="Разделы калькулятора"><a href="#scenario-result">К результату</a><a href="#sensitivity-title">Три сценария</a><a href="#scenario-library">Сохранить или открыть сценарий</a></nav>
     <a className="calculator-live-preview" href="#scenario-result"><span>Предварительный эффект</span><strong className={state}>{valid ? money(result.netGain) : 'Проверьте значения'}</strong><small>К деталям ↓</small></a>
     <div className="calculator-layout">
       <Card className="calculator-controls">
@@ -118,24 +140,23 @@ function ScenarioWorkbench({ overview }: { overview: Overview }) {
         <p className="calculator-chart-caption">Это оценка одного предложения за период исходных данных. Она не включает пилоты, повторные контакты, пересечения аудиторий и прочие расходы бизнеса. Полную прибыль по ней определить нельзя.</p>
       </section>
     </div>
+    {valid && <SensitivityScenarios input={input} spread={spread} onChange={setSpread} />}
     {valid && <section aria-labelledby="channel-comparison-heading"><div className="section-intro"><p className="eyebrow">СРАВНИТЕ ВАРИАНТЫ</p><h2 id="channel-comparison-heading">А если выбрать другой способ связи?</h2><p>Те же предположения и бюджет. Доступное число контактов зависит от цены. Нажмите вариант, чтобы применить его к калькулятору.</p></div><div className="calculator-channel-grid">{overview.channels.map(item => {
       const comparison = calculateScenario({ ...input, costPerContact: item.cost_per_contact, conversionMultiplier: item.conversion_multiplier })
       return <button type="button" key={item.code} className={`calculator-channel ${selectedChannel === item.code ? 'selected' : ''}`} disabled={!comparison.valid} aria-pressed={selectedChannel === item.code} onClick={() => setSelectedChannel(item.code)}><span>{channel(item.code)}</span><strong className={comparison.netGain < 0 ? 'negative-text' : ''}>{comparison.valid ? money(comparison.netGain) : 'Нет оценки'}</strong><small>{comparison.valid ? `${number(comparison.contacts)} контактов · расход ${money(comparison.communicationCost)}` : comparison.error}</small></button>
     })}</div></section>}
+    <ScenarioLibrary parameters={parameters} overview={overview} onLoad={loadScenario} />
     <details className="calculator-formula"><summary>Как получилась эта сумма и чему можно доверять?</summary><div><p><strong>Эффект = контакты × средняя выручка × изменение выручки × вероятность с учётом канала − расходы на связь.</strong></p><p>Расходы на связь = контакты × цена одной попытки. Вероятность с учётом канала = ваше предположение × влияние канала, максимум 100%. Количество контактов ограничено аудиторией, бюджетом и лимитами одной кампании.</p><p>Средняя выручка вычисляется только по доступным группам. Калькулятор не знает, кто действительно перейдёт на другой тариф. Он не подбирает целевой тариф и не оценивает его скрытый эффект: для этого нужен полноценный подбор с пробными проверками.</p><p>Все суммы — в условных единицах. Подсчёт выполняется без округления промежуточных значений; на экране денежные суммы округлены. График и сравнение каналов отражают одни и те же предположения, а не доказательство лучшего предложения.</p></div></details>
     <Card className="calculator-next"><div><p className="eyebrow">СЛЕДУЮЩИЙ ШАГ</p><h2>Проверьте идеи автоматическим подбором</h2><p>Программа сама выберет аудитории и тарифы, проведёт пробные проверки и соберёт план. Значения калькулятора служат для знакомства и не передаются в настройки подбора.</p></div><Link to="/runs/new" className="button button-primary">Перейти к подбору <ArrowRight size={17} aria-hidden="true" /></Link></Card>
   </>
 }
 
-export function CalculatorPromo() {
-  return <div className="calculator-promo"><Calculator size={26} aria-hidden="true" /><div><strong>Сначала прикиньте эффект</strong><p>Изменяйте аудиторию, бюджет и отклик — предварительная оценка обновится сразу.</p></div><Link className="text-link" to="/calculator">Открыть калькулятор <ArrowRight size={17} aria-hidden="true" /></Link></div>
-}
-
 export function CalculatorPage() {
+  const location = useLocation()
   const overview = useQuery({ queryKey: ['overview'], queryFn: ({ signal }) => api.overview(signal) })
   return <div className="page-stack calculator-page"><div className="section-intro calculator-intro"><p className="eyebrow">ПЕРЕД ПОДБОРОМ</p><h2>Калькулятор эффекта</h2><p>Посмотрите, как аудитория, отклик и расходы влияют на результат одного предложения.</p><span className="calculator-badge"><Calculator size={15} aria-hidden="true" /> Мгновенный расчёт по вашим условиям</span></div>
     {overview.isPending && <Card><Skeleton rows={6} /></Card>}
     {overview.error && <ErrorPanel error={overview.error} onRetry={() => void overview.refetch()} title={overview.data ? 'Показаны последние доступные данные' : 'Не удалось загрузить данные для калькулятора'} />}
-    {overview.data && <ScenarioWorkbench key={overview.data.dataset.id} overview={overview.data} />}
+    {overview.data && <ScenarioWorkbench key={`${overview.data.dataset.id}:${location.search}`} overview={overview.data} search={location.search} />}
   </div>
 }

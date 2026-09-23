@@ -22,6 +22,12 @@ export const tariff = (code: string | null | undefined) => {
   return /[а-яё]/i.test(code) && !/[a-z_]/i.test(code) ? code : 'Другой тариф'
 }
 export const risk = (code: RiskProfile) => code === 'conservative' ? 'Осторожный' : 'Сбалансированный'
+export function filterLabel(value: string | null, kind: 'data' | 'calls') {
+  const names: Record<string, string> = kind === 'data'
+    ? { NON_USER: 'Не используют интернет', LITE: 'Небольшой объём интернета', HEAVY: 'Активно используют интернет' }
+    : { LOW: 'Мало звонков', MEDIUM: 'Среднее количество звонков', HIGH: 'Много звонков' }
+  return value?.split(';').map(code => names[code.trim()] || 'Другая группа').join(', ') || 'Все'
+}
 export const status = (code: RunStatus) => ({ queued: 'В очереди', running: 'Идёт расчёт', completed: 'План готов', failed: 'Ошибка' })[code]
 export const elapsed = (from: string, to = Date.now()) => {
   const start = Date.parse(from)

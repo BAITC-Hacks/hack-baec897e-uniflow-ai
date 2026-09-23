@@ -20,6 +20,8 @@ from .models import ErrorResponse, Health, Overview, RunConfig, RunList, RunSnap
 from .locking import ServerLock
 from .storage import APIError, RunStore
 from .worker import RunWorker, finite_json
+from .whatif import WhatIfService
+from .whatif_models import WhatIfRequest, WhatIfResult
 
 logger = logging.getLogger(__name__)
 CAMPAIGN_COLUMNS = ["campaign_name", "filter_arpu_segment", "filter_data_segment", "filter_call_segment",
@@ -39,6 +41,7 @@ def default_runner(**kwargs):
 def create_app(*, db_path: str | Path | None = None, overview_provider=None, runner=None) -> FastAPI:
     database = db_path or os.environ.get("ORBITDUO_DB_PATH") or os.environ.get("UNIFLOW_DB_PATH") or Path(__file__).parent / "data" / "runs.sqlite3"
     provider = overview_provider or default_overview
+    what_if = WhatIfService()
 
     @lru_cache(maxsize=1)
     def overview() -> Overview:
@@ -158,6 +161,11 @@ def create_app(*, db_path: str | Path | None = None, overview_provider=None, run
         if snapshot.status != "completed":
             raise APIError(409, "RUN_NOT_READY", "Экспорт доступен после успешного завершения расчёта.")
         return snapshot
+
+    @application.post("/api/v1/runs/{run_id}/what-if", response_model=WhatIfResult)
+    async def compare_exclusions(request: Request, run_id: str, selection: WhatIfRequest):
+        snapshot = await run_in_threadpool(request.app.state.store.get, run_id)
+        return await run_in_threadpool(what_if.evaluate, snapshot, selection)
 
     @application.get("/api/v1/runs/{run_id}/campaigns.csv", response_class=Response,
                      responses={200: {"content": {"text/csv": {"schema": {"type": "string"}}}}})

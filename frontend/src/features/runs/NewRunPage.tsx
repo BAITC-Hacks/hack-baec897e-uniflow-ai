@@ -6,7 +6,7 @@ import { api, ApiError } from '../../lib/api/client'
 import type { RiskProfile, RunConfig } from '../../lib/api/types'
 import { money, number } from '../../lib/format'
 import { Card, ErrorPanel, Skeleton } from '../../components/ui/common'
-import { CalculatorPromo } from '../calculator/CalculatorPage'
+import { CalculatorPromo } from '../calculator/CalculatorPromo'
 import './run-experience.css'
 
 const pendingKey = 'orbitduo-pending-create-v1'
@@ -79,7 +79,7 @@ export function NewRunPage() {
       <aside className="setup-aside" aria-label="Помощь с запуском">
         <Card className="setup-guide"><div className="setup-guide-icon"><FileText size={23} aria-hidden="true" /></div><p className="eyebrow">ЧТО ВЫ ПОЛУЧИТЕ</p><h3>План и разбор результата</h3><ul><li><Check size={17} aria-hidden="true" /><span>Кому предложить тариф и как связаться.</span></li><li><Check size={17} aria-hidden="true" /><span>Сколько денег и попыток связи потребуется.</span></li><li><Check size={17} aria-hidden="true" /><span>Какой эффект ожидается и что стоит проверить.</span></li><li><Check size={17} aria-hidden="true" /><span>Таблицу плана (CSV) и подробный отчёт (JSON).</span></li></ul><div className="setup-audience"><Users size={18} aria-hidden="true" /><div><strong>{number(overview.data.dataset.eligible_customer_count)} абонентов</strong><span>доступно для подбора</span></div></div><Link to="/audience" className="text-link">Посмотреть аудиторию <ArrowRight size={15} aria-hidden="true" /></Link></Card>
         <div className="setup-reassurance"><Shield size={18} aria-hidden="true" /><div><strong>{overview.data.mode === 'demo' ? 'Учебный пример' : 'Проверка в симуляции'}</strong><p>Симуляция — компьютерная проверка на учебных данных. Реальные сообщения абонентам не отправляются.</p></div></div>
-        <details className="run-help-details"><summary>Как изменить или улучшить готовый план?</summary><p>Вручную добавлять и удалять кампании в готовом результате нельзя. Сначала изучите разбор и причины выбора, затем создайте новый расчёт с другим подходом к риску. Для сравнения оставьте тот же номер сценария; оба результата сохранятся в «Запусках».</p></details>
+        <details className="run-help-details"><summary>Как изменить или улучшить готовый план?</summary><p>Готовый результат сохраняется без изменений. На его странице можно проверить исключение кампаний отдельным экспериментом или начать новый подбор с другим подходом к риску. Для сравнения оставьте тот же номер сценария; оба результата сохранятся в «Запусках».</p></details>
         <details className="run-help-details"><summary>Нужно ли ждать на этой странице?</summary><p>После создания запуск сохраняется. Вы можете перейти в другой раздел и вернуться к нему через «Запуски». Повторно нажимать кнопку подбора для просмотра результата не нужно.</p></details>
       </aside>
     </div>
