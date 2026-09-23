@@ -4,17 +4,18 @@
     "scope": "final_holdout",
     "status": "completed",
     "planned_scenario_seed_pairs": 5,
-    "harness_sha256": "5a5e6a3d4603a7b440b461f6faa8580272b6c48df8499707e2f6fb51b11ca38c",
+    "harness_sha256": "c60b58bd426e6ff8c5fa34d85090d6c142c218f9ce1e1fe166a9c1372d6d852e",
     "model_rng_seed": null,
     "agent_seed": 42,
     "new_options": {},
     "final_policy_revision": {
-      "default_advanced_search": false,
-      "decision_basis": "Structural removal of advanced search after the first held-out evaluation, based on zero improvement in development component ablations and frozen-posterior diagnostics.",
+      "default_advanced_search": true,
+      "decision_basis": "Initial three-seed development ablation and frozen-posterior diagnostics showed zero advanced-search gain, so it was temporarily disabled. A broader paired comparison then showed material gains on reused mock and shifted-family cases, particularly saturated calls. Advanced search was restored before any fresh-check metrics were communicated to the selection decision; no other parameters changed.",
       "other_parameter_changes": false,
       "previous_advanced_reports": "reports/v2_advanced",
-      "reused_evaluation_warning": "Repeated full/model_holdout cases are not fresh independent hold-outs after the structural decision.",
-      "fresh_check": "Final_holdout mock seeds40,41,43,44,45 were declared after the final structural freeze. The initially proposed interval40..44 accidentally included the known standardseed42; it was excluded and replaced by45 to correct bookkeeping, not based on outcomes. These seeds change pilot noise/sampling, not mock true effects. No further tuning is performed."
+      "temporary_simple_reports": "reports/v2_simple",
+      "reused_evaluation_warning": "Repeated full/model_holdout cases informed the restoration decision and are not fresh independent hold-outs.",
+      "fresh_check": "Final_holdout mock seeds40,41,43,44,45: temporary-simple runs were produced independently before restoration, but their metrics were withheld from the selection decision. Final advanced runs occur after restoration/freeze. The initially proposed interval40..44 accidentally included known standardseed42; it was excluded and replaced by45 for bookkeeping, not outcomes. These seeds change pilot noise/sampling, not true effects. No further tuning follows."
     },
     "source_hashes": {
       "v1": {
@@ -26,7 +27,7 @@
       },
       "new": {
         "uniflow/__init__.py": "0bbf9388678e04808700c7624d9e4d60ad0cdcc31d85534ac287b2b4aa656aeb",
-        "uniflow/agent_core.py": "7d9ee85211fe833c41e7cc9dc7aab19313e1efd651f1bb5d12b52849f3605fcf",
+        "uniflow/agent_core.py": "e1782a78a64df2013d18b38fa93ae9cdaa4329e4175bc3cf2c8bd073b02ef665",
         "uniflow/candidates.py": "ba8a38bdb0f283ca1f36712fcf2b92eec8077be83fb9a707e7df949a29fddee8",
         "uniflow/portfolio.py": "79e62e1c80f6185fe575e187bdf34fa385e061cd4781cc44c6fe577d72958dc7",
         "uniflow/posterior.py": "aae10148a13cb9f07cefa7abeb5eaffd3658953dd72503f07a6db4e7fc4d0007"
@@ -97,9 +98,9 @@
       "All agents receive only the public environment; true effects are used exclusively by the harness after act().",
       "Mock seeds change pilot noise and sampling, not true effect family. Separate synthetic families use fresh model RNG 20260924 plus family index.",
       "Quick checkpoint uses mock seeds 0..2 and family seeds 10..11; its results may guide development, so those subsets are not claimed as unseen afterward.",
-      "Full run repeats mock0..9, mock20..29 and six shifted families10..12 after the structural removal of advanced search. These repeated cases are no longer fresh independent hold-outs.",
-      "The model_holdout tables from RNG20260925/environment seed31 were new in the advanced-search evaluation; they are reused here after the structural decision and must not be called newly unseen.",
-      "Final_holdout uses mock noise/sample seeds40,41,43,44,45 after final structural freeze, with no further tuning; standardseed42 is excluded as already known. The mock true-effect table remains the same.",
+      "Full run repeats mock0..9, mock20..29 and six shifted families10..12 after the temporary removal and evidence-based restoration of advanced search. These cases informed the structural decision and are not fresh independent hold-outs.",
+      "The model_holdout tables from RNG20260925/environment seed31 were new in the initial advanced-search evaluation. Repeated comparisons informed restoration; they are no longer newly unseen.",
+      "Final_holdout uses mock noise/sample seeds40,41,43,44,45 after the final advanced-search freeze, with no further tuning. Temporary-simple metrics for this set were withheld from the selection decision. Standardseed42 is excluded as already known; true mock effects are unchanged.",
       "p10 from ten runs and especially three family runs is descriptive, not a guarantee. No significance claim is made.",
       "Reference timing may be reused from cached runs; compare runtimes cautiously under concurrent development load.",
       "Sign reversal includes magnitude jitter; low conversion uses random factors0.01..0.05; calls use conversion0.90..1.0; near-zero varies delta and conversion."
@@ -114,7 +115,7 @@
       "max_pilots": 16,
       "strategy_version": "v2",
       "calibrate_prior": true,
-      "advanced_search": false
+      "advanced_search": true
     },
     "resolved_reference_options": {
       "seed": 42,
@@ -125,7 +126,7 @@
       "adaptive": true,
       "max_pilots": 16
     },
-    "elapsed_seconds": 20.66531050001504,
+    "elapsed_seconds": 14.233505499956664,
     "measurement_count": 10
   },
   "strategy_summaries": [
@@ -144,8 +145,8 @@
       "mean_unique_customers": 10909.8,
       "mean_n_pilots": 16.0,
       "mean_n_final_campaigns": 8.8,
-      "mean_runtime_seconds": 2.4452543399995195,
-      "max_runtime_seconds": 2.796578600013163
+      "mean_runtime_seconds": 2.566049119993113,
+      "max_runtime_seconds": 2.899167600029614
     },
     {
       "scenario": "mock_fresh",

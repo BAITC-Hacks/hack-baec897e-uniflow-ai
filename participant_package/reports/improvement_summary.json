@@ -2,7 +2,7 @@
   "metadata": {
     "python": "3.13.5",
     "scope": "full",
-    "status": "running",
+    "status": "completed",
     "planned_scenario_seed_pairs": 38,
     "harness_sha256": "c60b58bd426e6ff8c5fa34d85090d6c142c218f9ce1e1fe166a9c1372d6d852e",
     "model_rng_seed": 20260924,
@@ -133,9 +133,46 @@
       "adaptive": true,
       "max_pilots": 16
     },
-    "elapsed_seconds": 87.21970050001983
+    "elapsed_seconds": 120.95362919999752,
+    "measurement_count": 76
   },
   "strategy_summaries": [
+    {
+      "scenario": "low_conversion",
+      "strategy": "new",
+      "runs": 3,
+      "mean_net": -24709.09745285936,
+      "median_net": -30464.28357624537,
+      "min_net": -49497.84194228629,
+      "p10_net": -45691.13026907811,
+      "negative_fraction": 0.6666666666666666,
+      "all_conform": true,
+      "mean_communication_cost": 45192.0,
+      "mean_total_contacts": 11358.0,
+      "mean_unique_customers": 10009.666666666666,
+      "mean_n_pilots": 16.0,
+      "mean_n_final_campaigns": 7.333333333333333,
+      "mean_runtime_seconds": 3.2640455666502626,
+      "max_runtime_seconds": 3.627603299973998
+    },
+    {
+      "scenario": "low_conversion",
+      "strategy": "v1",
+      "runs": 3,
+      "mean_net": -89770.99181225042,
+      "median_net": -88593.2064757256,
+      "min_net": -95905.69135337089,
+      "p10_net": -94443.19437784184,
+      "negative_fraction": 1.0,
+      "all_conform": true,
+      "mean_communication_cost": 99885.33333333333,
+      "mean_total_contacts": 15000.0,
+      "mean_unique_customers": 11508.666666666666,
+      "mean_n_pilots": 16.0,
+      "mean_n_final_campaigns": 7.666666666666667,
+      "mean_runtime_seconds": 5.59667016666693,
+      "max_runtime_seconds": 7.064795799960848
+    },
     {
       "scenario": "mock_heldout",
       "strategy": "new",
@@ -209,6 +246,42 @@
       "max_runtime_seconds": 7.237841700029094
     },
     {
+      "scenario": "near_zero",
+      "strategy": "new",
+      "runs": 3,
+      "mean_net": -35637.70846874735,
+      "median_net": -38231.49484049193,
+      "min_net": -49358.53119928182,
+      "p10_net": -47133.12392752384,
+      "negative_fraction": 1.0,
+      "all_conform": true,
+      "mean_communication_cost": 45801.333333333336,
+      "mean_total_contacts": 11345.333333333334,
+      "mean_unique_customers": 10083.0,
+      "mean_n_pilots": 16.0,
+      "mean_n_final_campaigns": 7.0,
+      "mean_runtime_seconds": 2.6198330666908682,
+      "max_runtime_seconds": 2.8499108999967575
+    },
+    {
+      "scenario": "near_zero",
+      "strategy": "v1",
+      "runs": 3,
+      "mean_net": -89549.99792588114,
+      "median_net": -87934.87292782331,
+      "min_net": -107004.72473409049,
+      "p10_net": -103190.75437283705,
+      "negative_fraction": 1.0,
+      "all_conform": true,
+      "mean_communication_cost": 99885.33333333333,
+      "mean_total_contacts": 15000.0,
+      "mean_unique_customers": 11508.666666666666,
+      "mean_n_pilots": 16.0,
+      "mean_n_final_campaigns": 7.666666666666667,
+      "mean_runtime_seconds": 5.96538143333358,
+      "max_runtime_seconds": 7.649190700030886
+    },
+    {
       "scenario": "permuted_leaders",
       "strategy": "new",
       "runs": 3,
@@ -243,6 +316,42 @@
       "mean_n_final_campaigns": 7.333333333333333,
       "mean_runtime_seconds": 5.320714933332056,
       "max_runtime_seconds": 6.123542300018016
+    },
+    {
+      "scenario": "saturated_calls",
+      "strategy": "new",
+      "runs": 3,
+      "mean_net": 19089371.248244856,
+      "median_net": 18491729.836650968,
+      "min_net": 18184527.39792455,
+      "p10_net": 18245967.885669835,
+      "negative_fraction": 0.0,
+      "all_conform": true,
+      "mean_communication_cost": 98863.33333333333,
+      "mean_total_contacts": 14895.333333333334,
+      "mean_unique_customers": 12966.0,
+      "mean_n_pilots": 16.0,
+      "mean_n_final_campaigns": 5.666666666666667,
+      "mean_runtime_seconds": 2.367404233353833,
+      "max_runtime_seconds": 2.4620853000087664
+    },
+    {
+      "scenario": "saturated_calls",
+      "strategy": "v1",
+      "runs": 3,
+      "mean_net": 19390072.16816647,
+      "median_net": 19800006.397464637,
+      "min_net": 18439804.71140508,
+      "p10_net": 18711845.04861699,
+      "negative_fraction": 0.0,
+      "all_conform": true,
+      "mean_communication_cost": 98878.66666666667,
+      "mean_total_contacts": 15000.0,
+      "mean_unique_customers": 12318.333333333334,
+      "mean_n_pilots": 16.0,
+      "mean_n_final_campaigns": 5.0,
+      "mean_runtime_seconds": 4.026284766674507,
+      "max_runtime_seconds": 4.074540900008287
     },
     {
       "scenario": "sign_reversed",
@@ -283,41 +392,50 @@
     {
       "scenario": "weak_history",
       "strategy": "new",
-      "runs": 1,
-      "mean_net": 11306988.82584574,
+      "runs": 3,
+      "mean_net": 11192513.466121487,
       "median_net": 11306988.82584574,
-      "min_net": 11306988.82584574,
-      "p10_net": 11306988.82584574,
+      "min_net": 9810528.448137533,
+      "p10_net": 10109820.523679174,
       "negative_fraction": 0.0,
       "all_conform": true,
-      "mean_communication_cost": 99996.0,
-      "mean_total_contacts": 12039.0,
-      "mean_unique_customers": 9674.0,
+      "mean_communication_cost": 98352.0,
+      "mean_total_contacts": 14013.0,
+      "mean_unique_customers": 11693.0,
       "mean_n_pilots": 16.0,
-      "mean_n_final_campaigns": 4.0,
-      "mean_runtime_seconds": 2.3160197000252083,
-      "max_runtime_seconds": 2.3160197000252083
+      "mean_n_final_campaigns": 4.666666666666667,
+      "mean_runtime_seconds": 2.6218933000151687,
+      "max_runtime_seconds": 2.91361320001306
     },
     {
       "scenario": "weak_history",
       "strategy": "v1",
-      "runs": 1,
-      "mean_net": 11013313.47243859,
+      "runs": 3,
+      "mean_net": 10982842.829793597,
       "median_net": 11013313.47243859,
-      "min_net": 11013313.47243859,
-      "p10_net": 11013313.47243859,
+      "min_net": 10203794.828981737,
+      "p10_net": 10365698.557673108,
       "negative_fraction": 0.0,
       "all_conform": true,
       "mean_communication_cost": 100000.0,
       "mean_total_contacts": 15000.0,
-      "mean_unique_customers": 12435.0,
+      "mean_unique_customers": 12280.0,
       "mean_n_pilots": 16.0,
-      "mean_n_final_campaigns": 6.0,
-      "mean_runtime_seconds": 4.403712900006212,
-      "max_runtime_seconds": 4.403712900006212
+      "mean_n_final_campaigns": 5.666666666666667,
+      "mean_runtime_seconds": 4.701956000004429,
+      "max_runtime_seconds": 5.04346210003132
     }
   ],
   "paired_comparisons": [
+    {
+      "scenario": "low_conversion",
+      "paired_runs": 3,
+      "mean_net_difference": 65061.89435939106,
+      "median_net_difference": 58128.92289948023,
+      "min_net_difference": 46407.84941108459,
+      "fraction_new_better": 1.0,
+      "fraction_new_worse": 0.0
+    },
     {
       "scenario": "mock_heldout",
       "paired_runs": 10,
@@ -337,11 +455,29 @@
       "fraction_new_worse": 0.6
     },
     {
+      "scenario": "near_zero",
+      "paired_runs": 3,
+      "mean_net_difference": 53912.28945713379,
+      "median_net_difference": 38576.34172854149,
+      "min_net_difference": 35478.90127523769,
+      "fraction_new_better": 1.0,
+      "fraction_new_worse": 0.0
+    },
+    {
       "scenario": "permuted_leaders",
       "paired_runs": 3,
       "mean_net_difference": -90359.26164408533,
       "median_net_difference": -146532.53110942163,
       "min_net_difference": -221986.40063477476,
+      "fraction_new_better": 0.3333333333333333,
+      "fraction_new_worse": 0.6666666666666666
+    },
+    {
+      "scenario": "saturated_calls",
+      "paired_runs": 3,
+      "mean_net_difference": -300700.9199216105,
+      "median_net_difference": -1438675.5589787178,
+      "min_net_difference": -1615478.9995400868,
       "fraction_new_better": 0.3333333333333333,
       "fraction_new_worse": 0.6666666666666666
     },
@@ -356,12 +492,12 @@
     },
     {
       "scenario": "weak_history",
-      "paired_runs": 1,
-      "mean_net_difference": 293675.35340715013,
+      "paired_runs": 3,
+      "mean_net_difference": 209670.63632789007,
       "median_net_difference": 293675.35340715013,
-      "min_net_difference": 293675.35340715013,
-      "fraction_new_better": 1.0,
-      "fraction_new_worse": 0.0
+      "min_net_difference": -393266.38084420376,
+      "fraction_new_better": 0.6666666666666666,
+      "fraction_new_worse": 0.3333333333333333
     }
   ]
 }
