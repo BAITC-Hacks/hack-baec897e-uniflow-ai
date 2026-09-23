@@ -8,7 +8,7 @@ import { Card, CardHeader, EmptyState, ErrorPanel, Skeleton, StatusPill } from '
 export function OverviewPage() {
   const overview = useQuery({ queryKey: ['overview'], queryFn: ({ signal }) => api.overview(signal) })
   const runs = useQuery({ queryKey: ['runs', 1], queryFn: ({ signal }) => api.runs(1, signal) })
-  if (overview.isPending) return <div className="page-stack"><Card><Skeleton rows={4} /></Card><Card><Skeleton rows={3} /></Card></div>
+  if (overview.isPending && !overview.isError) return <div className="page-stack"><Card><Skeleton rows={4} /></Card><Card><Skeleton rows={3} /></Card></div>
   if (overview.error || !overview.data) return <ErrorPanel error={overview.error} onRetry={() => void overview.refetch()} title="Обзор недоступен" />
   const { dataset, limits } = overview.data
   const last = runs.data?.items[0]

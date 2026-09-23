@@ -1,4 +1,4 @@
-# UniFlow Campaign Studio
+# OrbitDuo Campaign Studio
 
 Офлайн-агент и локальный backend для Beeline Tariff Marketing Campaigns.
 Метрика `net_arpu_gain` — дополнительная выручка за вычетом контактов, а не полная
@@ -6,7 +6,7 @@
 
 ## Установка
 
-PowerShell, из корня репозитория. Проверенная среда: Python 3.13.5,
+PowerShell, из корня репозитория. Проверенная здесь среда: Python 3.14.4,
 NumPy 2.5.3, pandas 3.0.6, pytest 9.1.1, FastAPI 0.141.1,
 Pydantic 2.13.5, Starlette 1.7.0, Uvicorn 0.53.0, httpx 0.28.1.
 
@@ -27,7 +27,7 @@ python -m venv .venv
 ```
 
 Один процесс, без `--workers`. SQLite по умолчанию находится в
-`backend/data/runs.sqlite3`; другой путь задаётся через `UNIFLOW_DB_PATH`.
+`backend/data/runs.sqlite3`; другой путь задаётся через `ORBITDUO_DB_PATH`.
 ОС-блокировка не допускает второй сервер с той же БД. Миграция существующей базы
 сохраняет результаты и ключи идемпотентности. После аварии незавершённые задания
 получают `failed / SERVER_RESTARTED`; готовые результаты остаются доступны.
@@ -58,9 +58,18 @@ Polling примерно раз в секунду до `completed` или `faile
 независимая локальная оценка. Денежные значения — CU (у.е.).
 Нерассчитанный интервал равен `null`.
 
-Frontend принадлежит второму разработчику. Для настоящего API нужно отключить
-демо: `frontend/.env.example` по умолчанию включает демонстрационные данные.
-При первом запуске:
+Для общего запуска frontend и API из корня репозитория:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\start-demo.ps1
+```
+
+Скрипт проверяет Python и npm, при необходимости устанавливает зависимости,
+запускает один backend и Vite с `VITE_DEMO_MODE=false`, затем печатает адреса.
+Сценарий показа на три минуты: [docs/DEMO.md](docs/DEMO.md).
+
+Для ручного запуска frontend с настоящим API сначала запустите backend командой
+выше. При первом запуске frontend:
 
 ```powershell
 Set-Location frontend
@@ -71,8 +80,21 @@ Copy-Item .env.example .env
 В `.env` установите `VITE_DEMO_MODE=false`, затем `npm run dev`.
 Vite передаёт `/api/v1` на backend порта 8000. Подробности и команды UI-проверок
 находятся в [frontend/README.md](frontend/README.md).
-В рамках этой работы проверен реальный HTTP API; браузерная приёмка frontend
-остаётся отдельной задачей. Файлы frontend не изменялись.
+Проверки frontend из `frontend/`:
+
+```powershell
+npm run build
+npm run lint
+npm run test
+npm run test:e2e
+npm run test:e2e:real
+```
+
+Демо-тесты запускают Vite с явным `VITE_DEMO_MODE=true`. Отдельный реальный
+браузерный набор поднимает FastAPI и Vite с `VITE_DEMO_MODE=false`, использует
+временную SQLite-базу и настоящий локальный расчёт. Для него требуется Python
+в `participant_package/.venv/Scripts/python.exe`; другой путь задаётся через
+`ORBITDUO_PYTHON`.
 
 ## Оценка и submission
 

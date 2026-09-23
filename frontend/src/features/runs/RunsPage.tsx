@@ -7,7 +7,7 @@ import { Card, CardHeader, EmptyState, ErrorPanel, Skeleton, StatusPill } from '
 
 export function RunsPage() {
   const query = useQuery({ queryKey: ['runs', 20], queryFn: ({ signal }) => api.runs(20, signal), refetchInterval: q => q.state.data?.items.some(item => item.status === 'queued' || item.status === 'running') ? 2000 : false })
-  if (query.isPending) return <Card><Skeleton rows={6} /></Card>
+  if (query.isPending && !query.isError) return <Card><Skeleton rows={6} /></Card>
   if (query.error && !query.data) return <ErrorPanel error={query.error} onRetry={() => void query.refetch()} title="История недоступна" />
   const runs = query.data?.items || []
   return <div className="page-stack"><div className="section-intro with-action"><div><p className="eyebrow">СОХРАНЁННЫЕ РЕШЕНИЯ</p><h2>История запусков</h2><p>Прогноз агента и результат локальной синтетической оценки показаны отдельно.</p></div><Link to="/runs/new" className="button button-primary"><Plus size={18} /> Новый подбор</Link></div>

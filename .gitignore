@@ -5,3 +5,6 @@ __pycache__/
 .pytest_cache/
 **/.pytest_cache/
 *.py[cod]
+backend/data/
+frontend/test-results/
+frontend/playwright-report/

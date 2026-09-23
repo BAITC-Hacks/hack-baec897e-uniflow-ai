@@ -37,7 +37,7 @@ def default_runner(**kwargs):
 
 
 def create_app(*, db_path: str | Path | None = None, overview_provider=None, runner=None) -> FastAPI:
-    database = db_path or os.environ.get("UNIFLOW_DB_PATH") or Path(__file__).parent / "data" / "runs.sqlite3"
+    database = db_path or os.environ.get("ORBITDUO_DB_PATH") or os.environ.get("UNIFLOW_DB_PATH") or Path(__file__).parent / "data" / "runs.sqlite3"
     provider = overview_provider or default_overview
 
     @lru_cache(maxsize=1)
@@ -74,7 +74,7 @@ def create_app(*, db_path: str | Path | None = None, overview_provider=None, run
             finally:
                 owner.close()
 
-    application = FastAPI(title="UniFlow Campaign Studio", version="1", lifespan=lifespan,
+    application = FastAPI(title="OrbitDuo Campaign Studio", version="1", lifespan=lifespan,
                           responses={status: {"model": ErrorResponse} for status in (404, 409, 422, 500)})
     application.add_middleware(CORSMiddleware,
                                allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],

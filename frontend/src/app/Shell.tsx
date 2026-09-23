@@ -21,7 +21,7 @@ function pageTitle(path: string) {
 export function Shell() {
   const location = useLocation()
   const health = useQuery({ queryKey: ['health'], queryFn: ({ signal }) => api.health(signal), refetchInterval: 15000, retry: false })
-  const connected = health.data?.status === 'ok'
+  const connected = health.data?.status === 'ok' && !health.isError
   const mode = demoMode ? 'Демо · синтетические данные' : 'Локальная симуляция · синтетические данные'
   return <div className="app-shell">
     <aside className="sidebar">
@@ -35,7 +35,7 @@ export function Shell() {
       <div className="sidebar-bottom"><span className="case-tag">BEELINE CASE</span><p>Инструмент для исследования тарифных кампаний на синтетических данных.</p></div>
     </aside>
     <div className="main-column">
-      <header className="topbar"><div><p className="mobile-brand">OrbitDuo <span>Campaign Studio</span></p><h1>{pageTitle(location.pathname)}</h1></div><div className="header-signals"><span className="mode-chip">{mode}</span><span className={`connection ${connected ? 'online' : 'offline'}`} title={connected ? 'API доступен' : 'API недоступен'}>{connected ? <Wifi size={16} /> : <WifiOff size={16} />}<span>{connected ? 'Подключено' : health.isPending ? 'Подключение…' : 'Нет связи'}</span></span></div></header>
+      <header className="topbar"><div><p className="mobile-brand">OrbitDuo <span>Campaign Studio</span></p><h1>{pageTitle(location.pathname)}</h1></div><div className="header-signals"><span className="mode-chip">{mode}</span><span className={`connection ${connected ? 'online' : 'offline'}`} role="status" aria-label={connected ? 'API доступен' : health.isPending ? 'Подключение к API' : 'API недоступен'} title={connected ? 'API доступен' : 'API недоступен'}>{connected ? <Wifi size={16} /> : <WifiOff size={16} />}<span>{connected ? 'Подключено' : health.isPending ? 'Подключение…' : 'Нет связи'}</span></span></div></header>
       <main className="page-content"><Outlet /></main>
       <footer className="footer"><CircleHelp size={15} aria-hidden="true" /> Пилот — небольшая проверка предложения. ARPU — средняя выручка на абонента. Контакты включают повторные попытки.</footer>
     </div>

@@ -42,7 +42,7 @@ export function NewRunPage() {
     } finally { submitting.current = false; setPending(false) }
   }
 
-  if (overview.isPending) return <Card><Skeleton rows={6} /></Card>
+  if (overview.isPending && !overview.isError) return <Card><Skeleton rows={6} /></Card>
   if (overview.error || !overview.data) return <ErrorPanel error={overview.error} onRetry={() => void overview.refetch()} />
   const limits = overview.data.limits
   const noAudience = overview.data.dataset.eligible_customer_count === 0

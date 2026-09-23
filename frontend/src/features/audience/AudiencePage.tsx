@@ -22,7 +22,7 @@ export function AudiencePage() {
         return descending ? -compare : compare
       })
   }, [query.data, search, segmentFilter, sort, descending])
-  if (query.isPending) return <div className="page-stack"><Card><Skeleton rows={5} /></Card><Card><Skeleton rows={8} /></Card></div>
+  if (query.isPending && !query.isError) return <div className="page-stack"><Card><Skeleton rows={5} /></Card><Card><Skeleton rows={8} /></Card></div>
   if (query.error || !query.data) return <ErrorPanel error={query.error} onRetry={() => void query.refetch()} title="Аудитория недоступна" />
   const { dataset, segments } = query.data
   const distribution = segmentOrder.map(code => ({ code, count: segments.filter(row => row.arpu_segment === code).reduce((sum, row) => sum + row.customer_count, 0) }))

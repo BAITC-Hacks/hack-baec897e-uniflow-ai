@@ -1752,12 +1752,14 @@ b,
 @media (max-width: 480px) {
   .topbar {
     align-items: flex-start;
+    flex-wrap: wrap;
   }
   .header-signals {
-    justify-content: flex-end;
+    justify-content: flex-start;
+    width: 100%;
   }
   .connection {
-    display: none;
+    display: inline-flex;
   }
   .page-content {
     padding: 19px 14px 108px;
