@@ -1,19 +1,21 @@
 import { useEffect, useRef } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
-import { ArrowUpRight, BarChart3, ChevronRight, CircleHelp, LayoutDashboard, ListChecks, Wifi, WifiOff } from 'lucide-react'
+import { ArrowUpRight, BarChart3, Calculator, ChevronRight, CircleHelp, LayoutDashboard, ListChecks, Wifi, WifiOff } from 'lucide-react'
 import { api, demoMode } from '../lib/api/client'
 import { HelpButton, HelpProvider } from '../components/ui/HelpCenter'
 
 const navigation = [
   { to: '/', label: 'Обзор', icon: LayoutDashboard, end: true },
   { to: '/audience', label: 'Аудитория', icon: BarChart3, end: false },
+  { to: '/calculator', label: 'Калькулятор', icon: Calculator, end: false },
   { to: '/runs', label: 'Запуски', icon: ListChecks, end: false },
 ]
 
 function pageTitle(path: string) {
   if (path === '/') return 'Обзор'
   if (path === '/audience') return 'Аудитория'
+  if (path === '/calculator') return 'Калькулятор'
   if (path === '/runs/new') return 'Новый подбор'
   if (path.startsWith('/runs/')) return 'Результат запуска'
   if (path === '/runs') return 'Запуски'

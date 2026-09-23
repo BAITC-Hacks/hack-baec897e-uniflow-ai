@@ -228,7 +228,7 @@ kbd { font-family: inherit; border: 1px solid #cdd6c2; background: white; paddin
   .page-content { padding: 25px 20px 36px; }
   .page-stack { gap: 20px; }
   .mobile-nav { z-index: 30; box-shadow: 0 -4px 25px #17261b15; }
-  .mobile-nav-link { min-height: 51px; font-size: 11px; }
+  .mobile-nav-link { min-height: 51px; min-width: 0; flex: 1; padding-inline: 6px; font-size: 11px; }
   .footer { padding: 19px 20px calc(95px + env(safe-area-inset-bottom)); }
   .studio-hero { padding: 28px; }
   .hero-copy h2 { font-size: 29px; }

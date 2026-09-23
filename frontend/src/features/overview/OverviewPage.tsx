@@ -6,6 +6,7 @@ import { channel, money, number, risk, status, when } from '../../lib/format'
 import { explainExclusionReason, explainNotice } from '../../lib/explanations'
 import { Card, CardHeader, EmptyState, ErrorPanel, Skeleton, StatusPill } from '../../components/ui/common'
 import { HelpButton } from '../../components/ui/HelpCenter'
+import { CalculatorPromo } from '../calculator/CalculatorPage'
 
 export function OverviewPage() {
   const overview = useQuery({ queryKey: ['overview'], queryFn: ({ signal }) => api.overview(signal) })
@@ -31,6 +32,7 @@ export function OverviewPage() {
       <div className="hero-copy"><span className="hero-label"><Sparkles size={15} aria-hidden="true" /> НАЧНИТЕ С ПОДБОРА</span><h2 id="hero-title">Получите план предложений<br /><span>с объяснением каждого выбора.</span></h2><p>Кампания — предложение одного тарифа выбранной группе через один способ связи. Помощник проверит варианты на небольших группах и выберет кампании в пределах бюджета.</p><div className="hero-actions">{active || canStart ? <Link className="button button-primary" to={active ? `/runs/${last.id}` : '/runs/new'}>{active ? 'Продолжить наблюдение' : 'Подобрать кампании'} <ArrowRight size={18} aria-hidden="true" /></Link> : <button className="button button-primary" disabled>Нет доступной аудитории</button>}<span><ShieldCheck size={15} aria-hidden="true" /> {overview.data.mode === 'demo' ? 'Учебный пример' : 'Учебный расчёт'}</span></div><small>{active ? 'Расчёт уже идёт. Откройте его, чтобы увидеть текущий этап.' : 'Данные об абонентах учебные. Реальные сообщения не отправляются.'}</small></div>
       <div className="hero-workflow" aria-label="Как устроен подбор"><div className="workflow-heading"><span>ЧТО СДЕЛАЕТ ПОМОЩНИК</span><span className="workflow-orbit" aria-hidden="true">↗</span></div><div className="workflow-row"><span className="workflow-icon"><Database size={18} aria-hidden="true" /></span><div><strong>Изучит абонентов</strong><p>Проверит тарифы и данные о выручке</p></div><span className="workflow-index">01</span></div><div className="workflow-row"><span className="workflow-icon"><FlaskConical size={18} aria-hidden="true" /></span><div><strong>Проверит предложения</strong><p>Проведёт пробные расчёты — пилоты</p></div><span className="workflow-index">02</span></div><div className="workflow-row"><span className="workflow-icon"><CheckCheck size={18} aria-hidden="true" /></span><div><strong>Составит план</strong><p>Покажет аудиторию, расходы и прогноз</p></div><span className="workflow-index">03</span></div></div>
     </section>
+    <CalculatorPromo />
     <div className="overview-resources" aria-label="Ограничения подбора">
       <div><Wallet size={19} aria-hidden="true" /><span>Бюджет на связь<strong>{money(limits.budget)}</strong><small>Фиксирован для проверок и плана</small></span></div>
       <div><Users size={19} aria-hidden="true" /><span>Доступные контакты<strong>{number(limits.contacts)}</strong><small>Включая повторные попытки</small></span></div>

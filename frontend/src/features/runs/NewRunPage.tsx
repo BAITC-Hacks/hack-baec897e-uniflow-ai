@@ -6,6 +6,7 @@ import { api, ApiError } from '../../lib/api/client'
 import type { RiskProfile, RunConfig } from '../../lib/api/types'
 import { money, number } from '../../lib/format'
 import { Card, ErrorPanel, Skeleton } from '../../components/ui/common'
+import { CalculatorPromo } from '../calculator/CalculatorPage'
 import './run-experience.css'
 
 const pendingKey = 'orbitduo-pending-create-v1'
@@ -54,6 +55,7 @@ export function NewRunPage() {
   return <div className="page-stack setup-page">
     <div className="section-intro"><Link to="/" className="back-link"><ArrowLeft size={16} aria-hidden="true" /> К обзору</Link><p className="eyebrow">НОВЫЙ РАСЧЁТ</p><h2>Подберите тарифные предложения</h2><p>Для первого раза оставьте настройки ниже и нажмите «Подобрать кампании». Программа сама выберет группы абонентов, тарифы и способы связи.</p></div>
     <ol className="run-journey" aria-label="Как устроен подбор"><li className="current" aria-current="step"><span>01</span><div><strong>Настройте подбор</strong><small>Выберите подход к риску</small></div></li><li><span>02</span><div><strong>Следите за проверкой</strong><small>Пробные предложения и выводы</small></div></li><li><span>03</span><div><strong>Изучите и скачайте план</strong><small>Что предложить и зачем</small></div></li></ol>
+    <CalculatorPromo />
     <div className="setup-layout">
       <form onSubmit={submit} className="run-form" aria-label="Настройки подбора кампаний" aria-busy={pending}>
         <Card><div className="form-heading"><div className="form-icon"><Sparkles size={21} aria-hidden="true" /></div><div><p className="eyebrow">ШАГ 1</p><h3 id="risk-heading">Как оценивать риск</h3><p id="risk-help">Риск — возможность получить меньший эффект, чем обещает прогноз. Выберите, насколько осторожным должен быть подбор.</p></div></div>

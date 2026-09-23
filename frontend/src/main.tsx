@@ -6,6 +6,7 @@ import { AppErrorBoundary, NotFoundPage } from './app/RouteStates'
 import { Shell } from './app/Shell'
 import { OverviewPage } from './features/overview/OverviewPage'
 import { AudiencePage } from './features/audience/AudiencePage'
+import { CalculatorPage } from './features/calculator/CalculatorPage'
 import { NewRunPage } from './features/runs/NewRunPage'
 import { RunPage } from './features/runs/RunPage'
 import { RunsPage } from './features/runs/RunsPage'
@@ -19,6 +20,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <Route element={<Shell />}>
       <Route index element={<OverviewPage />} />
       <Route path="audience" element={<AudiencePage />} />
+      <Route path="calculator" element={<CalculatorPage />} />
       <Route path="runs" element={<RunsPage />} />
       <Route path="runs/new" element={<NewRunPage />} />
       <Route path="runs/:id" element={<RunPage />} />
