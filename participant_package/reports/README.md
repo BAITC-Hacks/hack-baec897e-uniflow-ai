@@ -17,6 +17,7 @@
 | `publication_manifest.json` | Источники и хэши агрегированных CSV |
 | `planner_benchmark.json` | Скорость кэша на одинаковом замороженном posterior v1, без времени пилотов |
 | `search_objective_check.json` | Сравнение базового и расширенного поиска на двух замороженных posterior |
+| `advanced_vs_simple.csv`, `advanced_vs_simple_summary.json` | Более широкое парное сравнение вариантов поиска: 41 случай, без финальных новых seed |
 | `decision_trace.json` | Фактический текущий balanced/42: запросы, ответы, оценки, план, ресурсы, локальный итог |
 | `delivery_verification.json` | Неизменность организаторских файлов, экспорт из чистой копии, хэш submission |
 | `validation.json` | Итоговая проверка поставки, команды, тесты и ссылки на HTTP-проверку |

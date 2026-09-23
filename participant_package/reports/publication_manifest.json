@@ -1,0 +1,15 @@
+{
+  "method": "Aggregate existing measured rows, retaining source/version labels. No new scoring.",
+  "fixed_v1": "Frozen earlier fixed policy; not the current v2 fixed-diverse ablation.",
+  "template": "Original organizer template; one invalid empty-final run is intentionally retained.",
+  "advanced_search": true,
+  "sha256": {
+    "benchmark.csv": "8e7c74959d8256b7f136d6e9050160c43164de6090b367ad00de2d61400c7dcd",
+    "ablation.csv": "a2cf123893f0cadc76961b40f3c3c460cf74c4ee713c182fe82000f0d5eaca13",
+    "scenarios.csv": "3ad9c5da291b883974763923158c8e6ff7077d536ca9bfa5d8c9166b6be3f328",
+    "improvement.csv": "10a2fe135b94e2caa1019fe3b930735b8278897e350114c4e1133d17446411e8",
+    "improvement_model_holdout.csv": "445815eccbecb9d7ad65076a7c18b86a06d4e0de73d1c5d1b568f1fb8a7b8e7e",
+    "v2_ablation.csv": "a76a81d7bca33ed0a248b48655197e7bfa36ad4b3adb435456094efd9a9fe0d5",
+    "v1/benchmark.csv": "2c951b663f539cf6e22ba7f973f039c7ad2f95bc15f9703bb0c5192eded35726"
+  }
+}
